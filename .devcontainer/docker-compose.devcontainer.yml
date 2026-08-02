@@ -1,0 +1,20 @@
+# GWS · Compose override del devcontainer (E9)
+# Extiende docker-compose.yml del repo: agrega el servicio `app` (backend)
+# conectado a `postgres` por red interna, sin exponer 5432 al host.
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    init: true
+    depends_on:
+      - postgres
+    environment:
+      NODE_ENV: development
+    volumes:
+      - ..:/workspace:cached
+    working_dir: /workspace
+    ports:
+      - "3001:3001"
+    # Postgres del compose del repo debe estar sano antes de correr migraciones.
+    command: sleep infinity

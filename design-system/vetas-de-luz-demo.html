@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GWS · Vetas de Luz — Librería de componentes</title>
+  <!-- Fuente canónica + capa de componentes. -->
+  <link rel="stylesheet" href="./gws-design-tokens.css" />
+  <link rel="stylesheet" href="./gws-components.css" />
+  <!-- Fuentes de producción (Instrument Serif / Inter / IBM Plex Mono). -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body class="gw-app" data-galaxy="g2">
+  <!-- Nav — G2 activa (azul borosilicato). -->
+  <nav class="gw-nav">
+    <span class="gw-nav__brand">Glass World Studio</span>
+    <a class="gw-nav__link" href="#">G1 · Maestros</a>
+    <a class="gw-nav__link gw-nav__link--active" href="#">G2 · Marketplace</a>
+    <a class="gw-nav__link" href="#">G3 · Comunidad</a>
+    <a class="gw-nav__link" href="#">G6 · Ingeniería</a>
+    <span class="gw-nav__spacer"></span>
+    <button class="gw-btn gw-btn--ghost">Iniciar sesión</button>
+    <button class="gw-btn gw-btn--primary">Crear cuenta</button>
+  </nav>
+
+  <main class="gw-container" style="padding-top: 40px; padding-bottom: 80px;">
+    <h1 class="gw-section-title">Marketplace del vidrio</h1>
+    <p class="gw-section-sub">
+      Insumos, herramientas y obras terminadas. Todo dato técnico en mono — un
+      comprador industrial decide por COE y temperatura, no por marketing.
+    </p>
+
+    <!-- Filtros técnicos: rango de COE y temperatura de fusión. -->
+    <section class="gw-card gw-card--glass" data-galaxy="g2" style="padding: 20px; margin-bottom: 28px;">
+      <form onsubmit="return false" style="display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-end;">
+        <div class="gw-filter">
+          <span class="gw-filter__label">COE (x10⁻⁷/°C)</span>
+          <div class="gw-filter__row">
+            <input class="gw-input gw-filter__input" type="number" placeholder="Min" aria-label="COE mínimo" />
+            <span class="tech" style="color: var(--text-muted);">–</span>
+            <input class="gw-input gw-filter__input" type="number" placeholder="Max" aria-label="COE máximo" />
+          </div>
+        </div>
+        <div class="gw-filter">
+          <span class="gw-filter__label">Temperatura de fusión (°C)</span>
+          <div class="gw-filter__row">
+            <input class="gw-input gw-filter__input" type="number" placeholder="Min" aria-label="Temperatura mínima" />
+            <span class="tech" style="color: var(--text-muted);">–</span>
+            <input class="gw-input gw-filter__input" type="number" placeholder="Max" aria-label="Temperatura máxima" />
+          </div>
+        </div>
+        <div class="gw-field" style="flex: 1; min-width: 200px;">
+          <label class="gw-field__label">Categoría</label>
+          <select class="gw-select">
+            <option>Todas</option>
+            <option>Insumos críticos</option>
+            <option>Herramientas y maquinaria</option>
+            <option>Obras terminadas</option>
+          </select>
+        </div>
+        <button class="gw-btn gw-btn--primary">Aplicar filtros</button>
+        <span class="gw-badge gw-badge--galaxy">3.412 resultados</span>
+      </form>
+    </section>
+
+    <!-- Grid de productos — G2. -->
+    <section class="gw-grid gw-grid--wide">
+      <article class="gw-card--glass" style="border-radius: var(--glass-radius); padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 class="gw-card__title">Varilla de borosilicato 3.3</h3>
+        <p class="gw-card__meta">Insumo crítico · vidrio de laboratorio</p>
+        <div class="gw-spec"><span class="gw-spec__key">COE</span><span class="gw-spec__value">33.0</span></div>
+        <div class="gw-spec"><span class="gw-spec__key">Fusión</span><span class="gw-spec__value">1.260 °C</span></div>
+        <div class="gw-spec"><span class="gw-spec__key">Diámetro</span><span class="gw-spec__value">6 mm</span></div>
+        <div class="gw-spec"><span class="gw-spec__key">Lote</span><span class="gw-spec__value">B-2207-AR</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span class="gw-price">$14.50 / kg</span>
+          <button class="gw-btn gw-btn--primary">Ver variantes</button>
+        </div>
+      </article>
+
+      <article class="gw-card--glass" style="border-radius: var(--glass-radius); padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 class="gw-card__title">Varilla de borosilicato 3.3</h3>
+        <p class="gw-card__meta">Insumo crítico · vidrio de laboratorio</p>
+        <div class="gw-spec"><span class="gw-spec__key">COE</span><span class="gw-spec__value">96.0</span></div>
+        <div class="gw-spec"><span class="gw-spec__key">Fusión</span><span class="gw-spec__value">1.420 °C</span></div>
+        <div class="gw-spec"><span class="gw-spec__key">Diámetro</span><span class="gw-spec__value">10 mm</span></div>
+        <div class="gw-spec"><span class="gw-spec__key">Lote</span><span class="gw-spec__value">B-2214-MX</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span class="gw-price">$9.80 / kg</span>
+          <button class="gw-btn gw-btn--primary">Ver variantes</button>
+        </div>
+      </article>
+
+      <!-- Card de nivel Ícono: .glass-edge con halo de Galaxia. -->
+      <article class="gw-card--icon glass-edge" data-galaxy="g1" style="border-radius: var(--glass-radius); padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span class="gw-avatar">JM</span>
+          <div>
+            <h3 class="gw-card__title" style="font-size: 1rem; margin: 0;">Jorge Esper</h3>
+            <span class="gw-badge gw-badge--verified">✓ verificado</span>
+          </div>
+        </div>
+        <p class="gw-card__meta">Maestro vidriero · 40 años en vitrofusión</p>
+        <div class="gw-spec"><span class="gw-spec__key">Trayectoria</span><span class="gw-spec__value">40 años</span></div>
+        <button class="gw-btn gw-btn--primary">Ver catálogo de autor</button>
+      </article>
+
+      <!-- Card de nivel base (vanguardia): sobria, sin blur. -->
+      <article class="gw-card" style="border-radius: var(--glass-radius); padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 class="gw-card__title">Soplo a mano — pieza única</h3>
+        <p class="gw-card__meta">Obra terminada · color transparente</p>
+        <div class="gw-spec"><span class="gw-spec__key">COE</span><span class="gw-spec__value">96.0</span></div>
+        <div class="gw-spec"><span class="gw-spec__key">Altura</span><span class="gw-spec__value">24 cm</span></div>
+        <div class="gw-rating">★★★★★ <span class="gw-rating__count">(12)</span></div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span class="gw-price">$180.00</span>
+          <button class="gw-btn">Ofertar</button>
+        </div>
+      </article>
+    </section>
+
+    <div class="gw-divider"></div>
+
+    <!-- Tabs + tabla técnica de lotes (todo en mono). -->
+    <section data-galaxy="g6">
+      <h2 class="gw-section-title">Trazabilidad de lote</h2>
+      <p class="gw-section-sub">Cada compra industrial sabe de qué lote proviene — dato técnico, no adorno.</p>
+      <div class="gw-tabs" style="margin-bottom: 16px;">
+        <button class="gw-tab gw-tab--active">Lotes activos</button>
+        <button class="gw-tab">Históricos</button>
+        <button class="gw-tab">Reclamos</button>
+      </div>
+      <div class="gw-card--glass" style="border-radius: var(--glass-radius); overflow: hidden;">
+        <table class="gw-table">
+          <thead>
+            <tr><th>Lote</th><th>COE</th><th>Fusión</th><th>Volumen</th><th>COA</th><th>Estado</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>B-2207-AR</td><td>33.0</td><td>1.260 °C</td><td>840 kg</td><td><span class="tech" style="color: var(--g6-glow);">visto</span></td><td><span class="gw-badge gw-badge--galaxy">disponible</span></td></tr>
+            <tr><td>B-2214-MX</td><td>96.0</td><td>1.420 °C</td><td>1.200 kg</td><td><span class="tech" style="color: var(--g6-glow);">visto</span></td><td><span class="gw-badge gw-badge--galaxy">disponible</span></td></tr>
+            <tr><td>B-2145-AR</td><td>54.0</td><td>1.350 °C</td><td>0 kg</td><td><span class="tech" style="color: var(--text-muted);">—</span></td><td><span class="gw-badge gw-badge--neutral">agotado</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="gw-divider"></div>
+
+    <!-- Setup 2FA (stepper) + notificación de elevación (satellite). -->
+    <section data-galaxy="g3" style="display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <div class="gw-card--glass" style="border-radius: var(--glass-radius); padding: 24px;">
+        <h2 class="gw-section-title" style="font-size: 1.3rem;">Activar 2FA</h2>
+        <p class="gw-section-sub">Requerido para acciones elevadas (CLAUDE.md §3.5).</p>
+        <div class="gw-stepper" style="margin-bottom: 20px;">
+          <div class="gw-step gw-step--done"><span class="gw-step__dot">✓</span> Contraseña</div>
+          <span class="gw-step__line"></span>
+          <div class="gw-step gw-step--active"><span class="gw-step__dot">2</span> Escanear QR</div>
+          <span class="gw-step__line"></span>
+          <div class="gw-step"><span class="gw-step__dot">3</span> Código</div>
+        </div>
+        <div class="gw-field">
+          <label class="gw-field__label">Código de la app</label>
+          <input class="gw-input" inputmode="numeric" maxlength="6" placeholder="000000" style="font-family: var(--font-mono);" />
+          <span class="gw-field__hint">6 dígitos · ventana ±30 s</span>
+        </div>
+        <button class="gw-btn gw-btn--primary gw-btn--block" style="margin-top: 12px;">Confirmar y activar</button>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <div class="gw-alert gw-alert--info" data-galaxy="satellite">
+          <span class="gw-alert__icon">▲</span>
+          <div>
+            <strong>Elevación de privilegio registrada</strong><br />
+            <span class="tech">IP 200.xx.xx.x · ventana 25 min · timestamp logueado</span>
+          </div>
+        </div>
+        <div class="gw-alert gw-alert--warn">
+          <span class="gw-alert__icon">!</span>
+          <div>
+            <strong>Licitación en curso</strong><br />
+            <span class="tech">LOT-0842 · cierre en 48 h · 3 ofertas</span>
+          </div>
+        </div>
+        <div class="gw-card" style="border-radius: var(--glass-radius); padding: 16px;">
+          <span class="gw-badge gw-badge--alert">satélite</span>
+          <p class="gw-card__meta" style="margin-top: 10px; margin-bottom: 0;">
+            El Satélite es transversal y no pertenece a ninguna Galaxia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paginación + loading states. -->
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 40px; flex-wrap: wrap; gap: 16px;">
+      <div class="gw-pagination">
+        <button class="gw-page">‹</button>
+        <button class="gw-page">1</button>
+        <button class="gw-page gw-page--current">2</button>
+        <button class="gw-page">3</button>
+        <button class="gw-page">›</button>
+      </div>
+      <div style="display: flex; gap: 8px;">
+        <div class="gw-skeleton" style="width: 120px;"></div>
+        <div class="gw-skeleton" style="width: 80px;"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="gw-toast" data-galaxy="g6">Código TOTP correcto · 2FA activado</div>
+</body>
+</html>

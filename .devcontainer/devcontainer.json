@@ -1,0 +1,21 @@
+{
+  "name": "GWS Backend",
+  "dockerComposeFile": ["../docker-compose.yml", "docker-compose.devcontainer.yml"],
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3001],
+  "portsAttributes": {
+    "3001": {
+      "label": "GWS API",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "mtxr.sqltools", "mtxr.sqltools-driver-pg"]
+    }
+  },
+  "postCreateCommand": "bash -c 'test -f .env || cp .env.example .env; sed -i s/DB_HOST=localhost/DB_HOST=postgres/ .env; npm install'",
+  "postStartCommand": "bash -c 'npm run migration:run || true'",
+  "remoteUser": "root"
+}

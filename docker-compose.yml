@@ -1,0 +1,17 @@
+# GWS · Postgres local para desarrollo (Mes 1-2 del plan de trabajo)
+# No requiere ningún hosting pago. Correr con: docker compose up -d
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: gws_dev
+      POSTGRES_PASSWORD: gws_dev_password_local_only
+      POSTGRES_DB: gws_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - gws_pgdata:/var/lib/postgresql/data
+
+volumes:
+  gws_pgdata:

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Código del Fuego · Manual Maestro de Glass World Studio</title>
+  <meta name="description" content="Manual maestro de Glass World Studio. Secciones estancas por Galaxia, blindaje jurídico y navegación por enlaces de salto." />
+  <link rel="stylesheet" href="./gws-design-tokens.css" />
+  <link rel="stylesheet" href="./gws-components.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ================================================================
+       El Código del Fuego · Manual Maestro
+       Capa de página sobre los tokens canónicos de GWS. Obsidiana de
+       fondo, una veta ámbar (rescoldo) y navegación por salto directo.
+       Cada Galaxia usa SOLO su color core/glow — nunca tonos inventados.
+       ================================================================ */
+
+    html { scroll-behavior: smooth; }
+
+    .manual {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding-bottom: 96px;
+    }
+
+    /* Obsidiana pulida + rescoldo ámbar (misma masa de vidrio de la portada). */
+    .manual::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(1200px 700px at 85% -10%, rgba(46, 38, 92, 0.20), transparent 60%),
+        radial-gradient(1000px 800px at -10% 110%, rgba(120, 60, 24, 0.16), transparent 55%),
+        radial-gradient(1400px 900px at 50% 130%, rgba(14, 22, 34, 0.9), transparent 70%),
+        var(--bg-void);
+    }
+    .manual::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ---------- Encabezado del manual ---------- */
+    .manual-head {
+      padding: 72px 0 40px;
+      text-align: center;
+      position: relative;
+    }
+    .manual-head .kicker {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--g6-glow);
+      margin-bottom: 16px;
+    }
+    .manual-head h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(2.4rem, 6vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -0.01em;
+      background: linear-gradient(180deg,
+        #fdf6e3 0%, #fef3c7 14%,
+        #fbbf24 32%, #f59e0b 52%,
+        #ea580c 74%, #b45309 90%, #78350f 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 2px 18px rgba(245, 158, 11, 0.16));
+    }
+    .manual-head .sub {
+      margin-top: 14px;
+      color: var(--text-muted);
+      max-width: 620px;
+      margin-inline: auto;
+      font-size: 0.98rem;
+    }
+    .manual-head .meta {
+      margin-top: 22px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .manual-head .meta strong { color: var(--g1-glow); font-weight: 500; }
+
+    /* ---------- Caparazón: índice lateral + lectura ---------- */
+    .manual-shell {
+      display: grid;
+      grid-template-columns: 264px minmax(0, 1fr);
+      gap: 44px;
+      align-items: start;
+      padding: 8px 0 40px;
+    }
+
+    .manual-side {
+      position: sticky;
+      top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .nav-card {
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 14px;
+      background: rgba(8, 12, 20, 0.55);
+      backdrop-filter: blur(8px);
+      padding: 16px 14px;
+    }
+    .nav-card .nav-title {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 0 0 10px 2px;
+    }
+    .nav-list { display: flex; flex-direction: column; gap: 2px; }
+    .nav-link {
+      display: block;
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      line-height: 1.35;
+      border-left: 2px solid transparent;
+      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .nav-link:hover { background: rgba(255, 255, 255, 0.05); color: var(--text-primary); }
+    .nav-link.active {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-primary);
+      border-left-color: var(--g1-glow);
+    }
+    .nav-link .n {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      opacity: 0.55;
+      margin-right: 6px;
+    }
+
+    .side-cta {
+      border: 1px solid rgba(245, 158, 11, 0.28);
+      border-radius: 14px;
+      background: rgba(120, 53, 15, 0.12);
+      padding: 14px 16px;
+    }
+    .side-cta p { margin: 0 0 10px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
+    .side-cta p strong { color: var(--g1-glow); font-weight: 600; }
+
+    /* ---------- Contenido ---------- */
+    .manual-body { min-width: 0; }
+
+    .sec {
+      scroll-margin-top: 24px;
+      margin-bottom: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      background: rgba(6, 9, 16, 0.5);
+      overflow: hidden;
+    }
+    .sec > header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .sec > header .num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+    }
+    .sec > header h2 {
+      margin: 0;
+      font-size: 1.28rem;
+      letter-spacing: -0.01em;
+    }
+    .sec > header .who {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .sec .sec-body { padding: 20px 24px 24px; }
+    .sec .sec-body > p { margin: 0 0 14px; color: var(--text-muted); line-height: 1.7; font-size: 0.92rem; }
+    .sec .sec-body > p:last-child { margin-bottom: 0; }
+    .sec .sec-body strong { color: var(--text-primary); font-weight: 600; }
+
+    .sec h3 {
+      margin: 22px 0 10px;
+      font-size: 0.98rem;
+      color: var(--text-primary);
+    }
+
+    .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.09); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+    th, td {
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      vertical-align: top;
+    }
+    th {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    td { color: var(--text-muted); line-height: 1.55; }
+    tr:last-child td { border-bottom: 0; }
+    td.mono, th.mono { font-family: var(--font-mono); font-size: 0.78rem; }
+    td.hot { color: var(--g1-glow); font-weight: 600; }
+
+    ul.steps, ul.clean { margin: 0 0 14px; padding-left: 20px; color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+    ul.steps li, ul.clean li { margin-bottom: 6px; }
+    ul.steps li::marker { color: var(--g6-glow); }
+    ul.clean li::marker { color: var(--g4-glow); }
+
+    .callout {
+      border-left: 3px solid var(--g1-glow);
+      border-radius: 0 10px 10px 0;
+      background: rgba(120, 53, 15, 0.10);
+      padding: 12px 16px;
+      margin: 14px 0;
+      font-size: 0.84rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+    .callout strong { color: var(--g1-glow); font-weight: 600; }
+    .callout.legal { border-left-color: var(--g1-glow); background: rgba(120, 53, 15, 0.14); }
+    .callout.legal strong { color: var(--g1-glow); }
+
+    /* ---------- Acentos por Galaxia (colores SOLO de los tokens) ---------- */
+    .sec[data-galaxy="legal"] > header h2 { color: var(--g1-glow); }
+    .sec[data-galaxy="legal"] > header .num { color: var(--g1-glow); }
+    .sec[data-galaxy="g1"] > header h2 { color: var(--g1-glow); }
+    .sec[data-galaxy="g1"] > header .num { color: var(--g1-glow); }
+    .sec[data-galaxy="g2"] > header h2 { color: var(--g2-glow); }
+    .sec[data-galaxy="g2"] > header .num { color: var(--g2-glow); }
+    .sec[data-galaxy="g3"] > header h2 { color: var(--g3-glow); }
+    .sec[data-galaxy="g3"] > header .num { color: var(--g3-glow); }
+    .sec[data-galaxy="g4"] > header h2 { color: var(--g4-glow); }
+    .sec[data-galaxy="g4"] > header .num { color: var(--g4-glow); }
+    .sec[data-galaxy="g5"] > header h2 { color: var(--g5-amber); }
+    .sec[data-galaxy="g5"] > header .num { color: var(--g5-amber); }
+    .sec[data-galaxy="g6"] > header h2 { color: var(--g6-glow); }
+    .sec[data-galaxy="g6"] > header .num { color: var(--g6-glow); }
+    .sec[data-galaxy="boveda"] > header h2 { color: var(--g4-glow); }
+    .sec[data-galaxy="boveda"] > header .num { color: var(--g4-glow); }
+    .sec[data-galaxy="bunker"] > header h2 { color: var(--g1-glow); }
+    .sec[data-galaxy="bunker"] > header .num { color: var(--g1-glow); }
+
+    /* ---------- Pie del manual ---------- */
+    .manual-foot {
+      text-align: center;
+      padding: 28px 0 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: var(--font-mono);
+      font-size: 0.66rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .manual-foot .gw-btn { align-self: center; }
+
+    /* ---------- Móvil: el índice se vuelve horizontal ---------- */
+    @media (max-width: 900px) {
+      .manual-shell { grid-template-columns: 1fr; gap: 20px; }
+      .manual-side { position: static; }
+      .nav-list { flex-direction: row; overflow-x: auto; padding-bottom: 6px; gap: 8px; }
+      .nav-link { border-left: 0; border-bottom: 2px solid transparent; white-space: nowrap; border-radius: 8px; }
+      .nav-link.active { border-bottom-color: var(--g1-glow); border-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="manual">
+    <header class="manual-head">
+      <div class="gw-container">
+        <div class="kicker">Glass World Studio · la vidriera del mundo del vidrio</div>
+        <h1>El Código del Fuego</h1>
+        <p class="sub">Manual Maestro de lectura quirúrgica. Secciones estancas e independientes: cada Galaxia y módulo del ecosistema tiene su propio capítulo, con blindaje jurídico global en la cabecera.</p>
+        <div class="meta">
+          <span>versión <strong>2.0</strong> · 2026-08-02</span>
+          <span>Orden Suprema · Jorge Eduardo Esper</span>
+          <span>fuente de verdad: <strong>docs/manual/codigo-del-fuego.md</strong></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="manual-shell gw-container">
+      <!-- ============ ÍNDICE LATERAL (enlaces de salto) ============ -->
+      <aside class="manual-side">
+        <nav class="nav-card" aria-label="Índice del manual">
+          <p class="nav-title">Índice · un clic te lleva</p>
+          <div class="nav-list" id="manual-nav">
+            <a class="nav-link" href="#s-legal"><span class="n">0</span>Blindaje Jurídico Global</a>
+            <a class="nav-link" href="#s-g1"><span class="n">1</span>G1 · Íconos Maestros</a>
+            <a class="nav-link" href="#s-g234"><span class="n">2</span>G2 · G3 · G4 · Marketplace y Comunidad</a>
+            <a class="nav-link" href="#s-g5"><span class="n">3</span>G5 · Gran Industria</a>
+            <a class="nav-link" href="#s-g6"><span class="n">4</span>G6 · Ingeniería y Oficio</a>
+            <a class="nav-link" href="#s-boveda"><span class="n">5</span>Bóveda del Conocimiento</a>
+            <a class="nav-link" href="#s-bunker"><span class="n">6</span>Búnker · Servicio Técnico</a>
+            <a class="nav-link" href="#s-carteleras"><span class="n">7</span>Carteleras Publicitarias</a>
+            <a class="nav-link" href="#s-settlement"><span class="n">8</span>Settlement · USD + USDT</a>
+            <a class="nav-link" href="#s-escrow"><span class="n">9</span>Escrow y Embalaje Certificado</a>
+            <a class="nav-link" href="#s-soporte"><span class="n">10</span>Soporte</a>
+          </div>
+        </nav>
+        <div class="side-cta">
+          <p><strong>Regla de gobernanza:</strong> si el producto contradice este manual, no lo aceptes — avisá y el producto se corrige.</p>
+          <a class="gw-btn gw-btn--ghost" href="../docs/manual/codigo-del-fuego.md">Leer fuente .md</a>
+        </div>
+      </aside>
+
+      <!-- ============ CUERPO DEL MANUAL ============ -->
+      <main class="manual-body" id="contenido">
+
+        <!-- 0 · BLINDAJE JURÍDICO -->
+        <section class="sec" id="s-legal" data-galaxy="legal">
+          <header>
+            <span class="num">0</span>
+            <h2>Blindaje Jurídico Global — Exención Total de Responsabilidad</h2>
+            <span class="who">Global · aplica a todo</span>
+          </header>
+          <div class="sec-body">
+            <p><strong>Conexión global sin intermediación física.</strong> Glass World Studio es un <strong>puente tecnológico y digital</strong>: conecta de forma directa a un artesano de Chile con un proveedor de Japón, sin intermediarios físicos. La plataforma <strong>no fabrica, no transporta, no almacena, no importa ni exporta mercancía</strong>.</p>
+            <p><strong>Limitación absoluta de responsabilidad.</strong> GWS actúa exclusivamente como soporte tecnológico de vinculación, pasarela de pago y escrow automatizado. <strong>No asume responsabilidad civil, penal, comercial ni logística</strong> por el uso indebido, fraudulento, de mala fe o malintencionado que terceros intenten realizar. No actúa como asegurador, garante ni fiador de ninguna operación particular.</p>
+            <div class="callout legal">
+              <strong>Tolerancia Cero al Fraude.</strong> Las herramientas de control, los plazos de liberación de fondos (de 24 horas a 10 días) y los estándares de empaquetado protegen a los usuarios legítimos. Cualquier intento de maniobra fraudulenta recae bajo la absoluta y exclusiva responsabilidad personal y legal del actor malintencionado. GWS conservará el registro auditable y colaborará con las autoridades competentes.
+            </div>
+            <p><span class="mono" style="font-family:var(--font-mono);font-size:0.78rem;color:var(--text-muted);">Nota de gobernanza: base legal redactada por Orden Suprema; la validación jurídica final del texto definitivo permanece en el checklist legal de la plataforma.</span></p>
+          </div>
+        </section>
+
+        <!-- 1 · G1 -->
+        <section class="sec" id="s-g1" data-galaxy="g1">
+          <header>
+            <span class="num">1</span>
+            <h2>Galaxia 1 · Íconos Maestros</h2>
+            <span class="who">Artistas · maestros · galerías</span>
+          </header>
+          <div class="sec-body">
+            <p>Perfil de <strong>maestro consagrado</strong> con galería de obra propia, cursos, talleres, bibliografía y líneas propias de herramientas o materiales de autor. El directorio distingue entre <strong>obra de arte</strong> y <strong>producto de autor</strong>: cada tipo tributa su regla.</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Tipo de transacción</th><th class="mono">Comisión</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Venta de obra de arte y piezas de colección</td><td class="mono hot">30 %</td></tr>
+                  <tr><td>Herramientas, materiales, insumos, cursos y libros propios del maestro</td><td class="mono">18 % (estándar)</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <h3>Reglas de plataforma</h3>
+            <ul class="steps">
+              <li>Toda negociación y contacto dentro de GWS (soberanía — bloqueo de fuga de canal).</li>
+              <li>La obra se exhibe con su procedencia y garantía de autor.</li>
+              <li>El cobro soporta <span class="mono">USD</span> y <span class="mono">USDT</span> a elección de las partes.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 2 · G2 G3 G4 -->
+        <section class="sec" id="s-g234" data-galaxy="g2">
+          <header>
+            <span class="num">2</span>
+            <h2>Galaxias 2 · 3 · 4 — Marketplace, Comunidad, Boro</h2>
+            <span class="who">Comerciantes · talleres · usuarios</span>
+          </header>
+          <div class="sec-body">
+            <p><strong>G2 · Marketplace:</strong> compraventa de piezas, insumos, materias primas y obras terminadas. Comisión estándar <strong>18 %</strong>.</p>
+            <p><strong>G3 · Comunidad:</strong> debates, publicaciones, networking. El chat interno es la única vía de contacto.</p>
+            <p><strong>G4 · Borosilicato y Envases:</strong> cristalería técnica y de laboratorio. <em>Reservada: se abre con contenido real, jamás un espacio vacío.</em></p>
+            <ul class="clean">
+              <li>Fichas técnicas de insumos con el autopredictor de G6 o fallback manual.</li>
+              <li>Comisión estándar <strong>18 %</strong> salvo G1 obra (30 %) y G5 maquinaria (20 %).</li>
+              <li>Pagos retenidos en escrow liberados según categoría (ver sección 9).</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 3 · G5 -->
+        <section class="sec" id="s-g5" data-galaxy="g5">
+          <header>
+            <span class="num">3</span>
+            <h2>Galaxia 5 · Gran Industria</h2>
+            <span class="who">Plantas · proveeduría pesada</span>
+          </header>
+          <div class="sec-body">
+            <p>Maquinaria pesada, hornos industriales, sistemas y proveeduría para plantas de vidrio. <strong>Cotización aduanera</strong> orientativa (no vinculante) con referencia versionada de aranceles.</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Concepto</th><th class="mono">Valor</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Comisión</td><td class="mono hot">20 %</td></tr>
+                  <tr><td>Liberación de fondos en escrow</td><td class="mono">10 días</td></tr>
+                  <tr><td>Embalaje</td><td>Madera tratada (ISPM 15) + fleje metálico + checklist de puesta en marcha</td></tr>
+                  <tr><td>Settlement</td><td class="mono">USD y USDT nativos</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 · G6 -->
+        <section class="sec" id="s-g6" data-galaxy="g6">
+          <header>
+            <span class="num">4</span>
+            <h2>Galaxia 6 · Ingeniería y Oficio</h2>
+            <span class="who">Componentes técnicos · ingenieros</span>
+          </header>
+          <div class="sec-body">
+            <h3>Autopredictor de fichas técnicas</h3>
+            <ul class="steps">
+              <li>Escribís el nombre estandarizado (ej: <span class="mono">termocupla tipo K cerámica</span>).</li>
+              <li>El sistema autocompleta la ficha técnica oficial por patrones de catálogo.</li>
+              <li><strong>Siempre podés corregir la ficha antes de publicar</strong> — jamás se publica sola.</li>
+            </ul>
+            <p><strong>Fallback manual:</strong> piezas de autor o desarrollos exóticos usan un formulario limpio de ficha técnica manual.</p>
+            <p><strong>Catálogo precargado:</strong> pirómetros (IR / con termocupla / analógicos) · termocuplas tipo K y S · hornos de fundición · grisallas 630 / 750 / 820 °C · óxidos · esmaltes · varillas.</p>
+          </div>
+        </section>
+
+        <!-- 5 · BÓVEDA -->
+        <section class="sec" id="s-boveda" data-galaxy="boveda">
+          <header>
+            <span class="num">5</span>
+            <h2>Bóveda del Conocimiento</h2>
+            <span class="who">Archivos históricos · datos técnicos</span>
+          </header>
+          <div class="sec-body">
+            <p>Biblioteca técnica transversal con taxonomía rigurosa y <strong>curación humana</strong> antes de publicar. Contenido estrella: <strong>curvas de recocido (annealing)</strong> y <strong>fichas COE</strong> de sistemas reales (borosilicato 3.3, COE 90/96), con fuente y normativa de referencia.</p>
+            <ul class="clean">
+              <li>Control de duplicados y spam por hash de contenido.</li>
+              <li>Metadatos obligatorios por hoja; números técnicos en tipografía mono.</li>
+              <li>En conflicto entre un documento y la práctica local, manda la normativa oficial vigente.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 6 · BÚNKER -->
+        <section class="sec" id="s-bunker" data-galaxy="bunker">
+          <header>
+            <span class="num">6</span>
+            <h2>Búnker de Ingeniería y Servicio Técnico</h2>
+            <span class="who">Ingenieros matriculados · plantas</span>
+          </header>
+          <div class="sec-body">
+            <p><strong>Para el ingeniero:</strong> membresía pro <strong>USD 50/mes</strong> con fidelización por pago anticipado (3 meses −10 % · 6 meses −15 % · 12 meses −20 %). <strong>0 % de comisión</strong> por contratos de mantenimiento: el honorario aceptado en un ticket es 100 % del especialista. La cartera pública muestra solo especialistas <strong>verificados</strong> por el comando.</p>
+            <p><strong>Para el dueño de planta:</strong> abrís un ticket técnico (máquina parada, código de error o curva térmica inestable), el especialista cotiza honorarios transparentes y el ticket se asigna. Todo el contacto ocurre <strong>dentro de GWS</strong>.</p>
+          </div>
+        </section>
+
+        <!-- 7 · CARTELERAS -->
+        <section class="sec" id="s-carteleras" data-galaxy="g6">
+          <header>
+            <span class="num">7</span>
+            <h2>Carteleras Publicitarias</h2>
+            <span class="who">Pauta plana · sin subastas</span>
+          </header>
+          <div class="sec-body">
+            <p>Tarifa plana de <strong>USD 1,00 o 1 USDT por día activo</strong>. Una campaña a la vez por cartelera; si pedís una fecha ocupada, tu campaña se <strong>encola</strong> y se te informa el día exacto de salida al aire. Rango 1 a 30 días · horizonte 60 días.</p>
+            <p><strong>Soberanía del clic:</strong> el destino del anuncio es siempre una ruta interna de GWS (empieza con <span class="mono">/</span>), jamás una URL externa o canal de contacto.</p>
+          </div>
+        </section>
+
+        <!-- 8 · SETTLEMENT -->
+        <section class="sec" id="s-settlement" data-galaxy="g4">
+          <header>
+            <span class="num">8</span>
+            <h2>Settlement y Soberanía de Pago</h2>
+            <span class="who">USD + USDT · paridad 1:1</span>
+          </header>
+          <div class="sec-body">
+            <p><strong>Doble estándar soberano:</strong> todas las transacciones, suscripciones y pautas operan en <strong>Dólares (USD)</strong> y <strong>Criptomonedas Estables (USDT)</strong> (redes de bajo costo TRC-20 / Polygon), con paridad <strong>1 USDT = 1 USD</strong>.</p>
+            <p>Métodos de pago con un solo clic: <span class="mono">card_usd</span> · <span class="mono">usdt_trc20</span> · <span class="mono">usdt_polygon</span>. Nunca ingreses datos de tarjeta fuera de la pasarela alojada del procesador: el backend de GWS no maneja números de tarjeta.</p>
+          </div>
+        </section>
+
+        <!-- 9 · ESCROW -->
+        <section class="sec" id="s-escrow" data-galaxy="g5">
+          <header>
+            <span class="num">9</span>
+            <h2>Escrow y Embalaje Certificado</h2>
+            <span class="who">Liberación 24 h – 10 días</span>
+          </header>
+          <div class="sec-body">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Categoría</th><th>Liberación manual</th><th class="mono">Automática sin reclamo</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Consumibles menores</td><td>"OK / Recibido conforme" → inmediata</td><td class="mono">24 horas</td></tr>
+                  <tr><td>Vidrios artísticos, dicroicos, frágiles</td><td>ídem</td><td class="mono">72 horas (3 días)</td></tr>
+                  <tr><td>Eléctricos, repuestos, accesorios</td><td>ídem</td><td class="mono">1 semana (7 días)</td></tr>
+                  <tr><td>Maquinaria pesada, hornos (G5)</td><td>ídem</td><td class="mono">10 días</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>La liberación automática ocurre <strong>solo si no hay reclamo explícito</strong>. Un reclamo congela la liberación y la resuelve el comando con registro auditable. La transferencia real de fondos la ejecuta la <strong>Payment_Vault</strong>; el escrow es la máquina de estados.</p>
+            <h3>Embalaje Certificado GWS (obligatorio para vendedores)</h3>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Categoría</th><th>Estándar</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Frágiles / vidrio dicroico</td><td>Doble encajado de alta absorción (film + espuma + caja interior + caja exterior + "FRÁGIL / ESTE LADO ARRIBA")</td></tr>
+                  <tr><td>Maquinaria / hornos</td><td>Madera tratada (ISPM 15) + fleje metálico + plano de estiba</td></tr>
+                  <tr><td>Eléctricos / repuestos</td><td>Embolsado antiestático + desecante</td></tr>
+                  <tr><td>Consumibles</td><td>Cartón reforzado + relleno amortiguante</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="callout legal">
+              <strong>Exención expresa:</strong> GWS no asume responsabilidad física por roturas o siniestros en tránsito. El cumplimiento del estándar es requisito excluyente del vendedor; el daño derivado de su omisión libera legalmente a la plataforma de reclamos por transporte.
+            </div>
+          </div>
+        </section>
+
+        <!-- 10 · SOPORTE -->
+        <section class="sec" id="s-soporte" data-galaxy="g2">
+          <header>
+            <span class="num">10</span>
+            <h2>Soporte</h2>
+            <span class="who">Primera línea</span>
+          </header>
+          <div class="sec-body">
+            <ul class="clean">
+              <li>Primera línea: este manual + ayuda en plataforma (posibilidad de escalar a un humano).</li>
+              <li>Publicación a nombre de la marca: siempre con aprobación humana previa.</li>
+              <li>Fallos o ideas: reportarlos con el paso exacto que falla y el mensaje de error. El producto se corrige, no el manual.</li>
+            </ul>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="manual-foot gw-container">
+      <span>Glass World Studio · la vidriera del mundo del vidrio</span>
+      <a class="gw-btn gw-btn--primary glass-edge" href="#top" id="top-link">Subir al Índice ↑</a>
+      <span>v2.0 · El Código del Fuego · secciones estancas por Galaxia</span>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      var links = Array.prototype.slice.call(document.querySelectorAll('.nav-link'));
+      var sections = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+      var topLink = document.getElementById('top-link');
+
+      function activate(id) {
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        var spy = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) activate(entry.target.id);
+          });
+        }, { rootMargin: '-15% 0px -70% 0px' });
+        sections.forEach(function (s) { if (s) spy.observe(s); });
+      }
+
+      topLink.addEventListener('click', function () { activate('s-legal'); });
+    })();
+  </script>
+</body>
+</html>

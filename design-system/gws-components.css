@@ -1,0 +1,501 @@
+/*!
+ * GWS · Vetas de Luz — Librería de componentes (capa sobre los tokens)
+ * ====================================================================
+ * IMPORTAR junto con gws-design-tokens.css (fuente canónica):
+ *   <link rel="stylesheet" href="./gws-design-tokens.css">
+ *   <link rel="stylesheet" href="./gws-components.css">
+ *
+ * Esta capa NO introduce colores, tipografías ni glassmorphism nuevos:
+ * consume exclusivamente los tokens (--g1..--g6, .glass, .glass--strong,
+ * .glass-edge, .tech, .display). Un componente "bien hecho" de GWS es
+ * reconocible porque TODO dato técnico está en mono y el color solo
+ * proviene de --galaxy-core/--galaxy-glow de su Galaxia.
+ *
+ * Nomenclatura: prefijo `gw-` para no colisionar con utilidades de
+ * Tailwind/framework. Los componentes se colorean por el contenedor
+ * [data-galaxy] que los envuelve (igual que los tokens).
+ */
+
+/* ---------------------------------------------------------------
+ * Fondo "Vetas de Luz" — el circuito y el plomo del vitral son la
+ * misma forma (ver .claude/skills/gws-vetas-de-luz). ÚNICO fondo de
+ * marca permitido. No reemplazar por placas de circuito de stock.
+ * --------------------------------------------------------------- */
+.gw-app {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Capa de vetas: trazas ramificadas en ángulo (PCB + vitral). Se anima
+ * su opacidad con un pulso LENTO — el fuego corriendo dentro del vidrio. */
+.gw-app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' viewBox='0 0 900 900'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M0 400 L120 400 L220 300 L340 300 L420 220 L540 220' stroke-opacity='0.07'/%3E%3Cpath d='M220 300 L280 240 L380 240' stroke-opacity='0.05'/%3E%3Cpath d='M340 300 L400 380 L500 380 L560 440' stroke-opacity='0.05'/%3E%3Cpath d='M120 400 L200 480 L200 580 L280 660 L400 660' stroke-opacity='0.05'/%3E%3Cpath d='M200 480 L280 480 L340 540' stroke-opacity='0.04'/%3E%3Cpath d='M420 220 L420 140 L500 60' stroke-opacity='0.04'/%3E%3Cpath d='M540 220 L640 220 L720 300 L820 300' stroke-opacity='0.05'/%3E%3Cpath d='M640 220 L640 120 L720 40' stroke-opacity='0.04'/%3E%3Cpath d='M40 800 L120 720 L200 720' stroke-opacity='0.04'/%3E%3Cpath d='M500 700 L560 640 L560 560 L640 480' stroke-opacity='0.04'/%3E%3Cpath d='M700 560 L780 560 L820 500' stroke-opacity='0.04'/%3E%3C/g%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='220' cy='300' r='2.4' fill-opacity='0.10'/%3E%3Ccircle cx='420' cy='220' r='2.4' fill-opacity='0.10'/%3E%3Ccircle cx='560' cy='440' r='1.8' fill-opacity='0.08'/%3E%3Ccircle cx='640' cy='220' r='1.8' fill-opacity='0.08'/%3E%3Ccircle cx='120' cy='400' r='1.8' fill-opacity='0.08'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 900px 900px;
+  opacity: 0.06;
+  animation: gw-vein-pulse 18s ease-in-out infinite;
+}
+
+@keyframes gw-vein-pulse {
+  0%, 100% { opacity: 0.045; }
+  50% { opacity: 0.09; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gw-app::before { animation: none; opacity: 0.05; }
+}
+
+/* Contenido por encima del fondo de vetas. */
+.gw-app > * {
+  position: relative;
+  z-index: 1;
+}
+
+.gw-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Grid de tarjetas — auto-fit, mínimo de 260px por columna. */
+.gw-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.gw-grid--wide { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+
+/* ---------------------------------------------------------------
+ * Navegación
+ * --------------------------------------------------------------- */
+.gw-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(7, 8, 10, 0.7);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.gw-nav__brand {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  color: var(--text-primary);
+  margin-right: 8px;
+}
+
+.gw-nav__link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.gw-nav__link:hover { color: var(--text-primary); }
+
+/* Nav activo: el borde de refracción toma el color de la Galaxia.
+ * Nivel "Ícono" de jerarquía — se usa con moderación. */
+.gw-nav__link--active {
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--galaxy-core, transparent) 25%, transparent);
+}
+
+.gw-nav__spacer { flex: 1; }
+
+/* ---------------------------------------------------------------
+ * Botones
+ * --------------------------------------------------------------- */
+.gw-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 9px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background-color var(--fx-duration-fast) ease,
+    border-color var(--fx-duration-fast) ease,
+    box-shadow var(--fx-duration-med) var(--fx-ease-cinema),
+    transform var(--fx-duration-fast) var(--fx-ease-cinema);
+}
+
+/* Reflejo de luz interna: la luz partiéndose al cruzar el vidrio. Barre
+ * el botón en hover (catch light), sale del otro lado y vuelve a su sitio
+ * con la curva cinematográfica. */
+.gw-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--glass-catch);
+  transform: translateX(-130%);
+  transition: transform 0.7s var(--fx-ease-cinema);
+  pointer-events: none;
+}
+.gw-btn:hover::before { transform: translateX(130%); }
+
+/* Sellado térmico: al hacer click el vidrio "sella" con un anillo de luz
+ * que se expande en el color de la Galaxia activa — confirma la operación
+ * con contundencia. Usa box-shadow (no pseudo-elementos) para no colisionar
+ * con .glass-edge::after (borde de refracción) cuando conviven. */
+.gw-btn:active {
+  transform: translateY(1px);
+  animation: gw-seal 0.5s var(--fx-ease-cinema);
+}
+@keyframes gw-seal {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--galaxy-glow, #ffffff) 45%, transparent); }
+  70%  { box-shadow: 0 0 0 14px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.gw-btn:hover { background: var(--glass-strong-bg); border-color: var(--glass-strong-border); }
+
+/* CTA principal: usa el color de la Galaxia activa (--galaxy-core). */
+.gw-btn--primary {
+  background: color-mix(in srgb, var(--galaxy-core, var(--g2-core)) 22%, transparent);
+  border-color: color-mix(in srgb, var(--galaxy-core, var(--g2-core)) 55%, transparent);
+  color: var(--text-primary);
+}
+.gw-btn--primary:hover {
+  background: color-mix(in srgb, var(--galaxy-core, var(--g2-core)) 34%, transparent);
+  border-color: var(--galaxy-glow, var(--g2-glow));
+}
+
+.gw-btn--ghost { background: transparent; }
+.gw-btn--danger { border-color: var(--sat-core); color: var(--sat-glow); }
+.gw-btn--danger:hover { background: color-mix(in srgb, var(--sat-core) 14%, transparent); }
+
+.gw-btn--block { width: 100%; }
+.gw-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.gw-btn:focus-visible { outline: 2px solid var(--galaxy-glow, var(--g2-glow)); outline-offset: 2px; }
+
+/* ---------------------------------------------------------------
+ * Tarjetas — los tres niveles de peso visual (jerarquía actor_tier)
+ *   flat  = vanguardia/nivel base (superficie sobria, sin blur)
+ *   glass = maestro/nivel medio (.glass)
+ *   icon  = Ícono/nivel alto (.glass--strong + halo + glass-edge)
+ * --------------------------------------------------------------- */
+.gw-card { background: var(--bg-raised); border: 1px solid var(--glass-border); border-radius: var(--glass-radius); }
+
+.gw-card--glass { background: var(--glass-bg); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); border-radius: var(--glass-radius); }
+
+.gw-card--icon {
+  background: var(--glass-strong-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-strong-border);
+  border-radius: var(--glass-radius);
+  position: relative;
+  box-shadow: 0 0 0 1px transparent;
+}
+/* Halo de color de la Galaxia detrás del Ícono. */
+.gw-card--icon::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(120% 90% at 50% -20%, color-mix(in srgb, var(--galaxy-core, var(--g1-core)) 18%, transparent), transparent 60%);
+  z-index: -1;
+}
+.gw-card--icon.glass-edge::after { opacity: 0.5; }
+
+.gw-card__body { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+.gw-card__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.gw-card__meta { color: var(--text-muted); font-size: 0.82rem; }
+.gw-card__footer { margin-top: auto; padding-top: 4px; }
+
+/* ---------------------------------------------------------------
+ * Datos técnicos y specs (SIEMPRE en mono — regla dura)
+ * --------------------------------------------------------------- */
+.gw-spec {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: baseline;
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--glass-border);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.gw-spec:last-child { border-bottom: none; }
+.gw-spec__key { color: var(--text-muted); }
+.gw-spec__value { color: var(--text-primary); }
+
+/* Precio: siempre mono, con el color de la Galaxia como acento. */
+.gw-price {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--galaxy-glow, var(--text-primary));
+}
+
+/* ---------------------------------------------------------------
+ * Badges
+ * --------------------------------------------------------------- */
+.gw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--glass-border);
+  color: var(--text-muted);
+  background: var(--glass-bg);
+}
+
+.gw-badge--verified { color: var(--g6-glow); border-color: color-mix(in srgb, var(--g6-core) 40%, transparent); }
+.gw-badge--alert { color: var(--sat-glow); border-color: color-mix(in srgb, var(--sat-core) 45%, transparent); }
+.gw-badge--galaxy { color: var(--galaxy-glow, var(--text-primary)); border-color: color-mix(in srgb, var(--galaxy-core, var(--g2-core)) 45%, transparent); }
+.gw-badge--neutral { color: var(--text-muted); }
+
+/* ---------------------------------------------------------------
+ * Formularios
+ * --------------------------------------------------------------- */
+.gw-field { display: flex; flex-direction: column; gap: 6px; }
+.gw-field__label { font-size: 0.82rem; color: var(--text-muted); }
+.gw-field__hint { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); }
+
+.gw-input,
+.gw-select,
+.gw-textarea {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.gw-input::placeholder { color: color-mix(in srgb, var(--text-muted) 60%, transparent); }
+.gw-input:focus-visible,
+.gw-select:focus-visible,
+.gw-textarea:focus-visible {
+  outline: none;
+  border-color: var(--galaxy-core, var(--g2-core));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--galaxy-core, var(--g2-core)) 18%, transparent);
+}
+
+/* Filtros de rango técnico (COE / temperatura) — el valor vive en mono. */
+.gw-filter { display: flex; flex-direction: column; gap: 8px; }
+.gw-filter__row { display: flex; gap: 12px; align-items: center; }
+.gw-filter__label { font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); flex: 1; }
+.gw-filter__input { width: 92px; text-align: right; font-family: var(--font-mono); font-size: 0.85rem; }
+
+/* ---------------------------------------------------------------
+ * Tabla técnica (datos de inventario/lotes — todo en mono)
+ * --------------------------------------------------------------- */
+.gw-table { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: 0.82rem; }
+.gw-table th {
+  text-align: left;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--glass-strong-border);
+}
+.gw-table td { padding: 10px 12px; border-bottom: 1px solid var(--glass-border); color: var(--text-primary); }
+.gw-table tr:hover td { background: rgba(255, 255, 255, 0.03); }
+
+/* ---------------------------------------------------------------
+ * Tabs, stepper, alertas
+ * --------------------------------------------------------------- */
+.gw-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--glass-border); padding: 0 4px; }
+.gw-tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.gw-tab--active { color: var(--text-primary); border-bottom-color: var(--galaxy-core, var(--g2-core)); }
+
+/* Stepper — flujo de setup 2FA / alta de producto. */
+.gw-stepper { display: flex; align-items: center; gap: 8px; }
+.gw-step { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.85rem; }
+.gw-step__dot {
+  width: 26px; height: 26px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+.gw-step--active .gw-step__dot { border-color: var(--galaxy-core, var(--g2-core)); color: var(--galaxy-glow, var(--text-primary)); }
+.gw-step--done .gw-step__dot { border-color: var(--g6-core); color: var(--g6-glow); }
+.gw-step__line { flex: 1; height: 1px; background: var(--glass-border); max-width: 48px; }
+
+/* Alertas — usado para la notificación de elevación y advertencias. */
+.gw-alert {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  font-size: 0.88rem;
+}
+.gw-alert--info { border-color: color-mix(in srgb, var(--g2-core) 40%, transparent); }
+.gw-alert--warn { border-color: color-mix(in srgb, var(--g5-amber) 50%, transparent); color: var(--g5-amber); }
+.gw-alert--danger { border-color: color-mix(in srgb, var(--sat-core) 55%, transparent); }
+.gw-alert__icon { font-family: var(--font-mono); }
+
+/* ---------------------------------------------------------------
+ * Misceláneos (avatar, skeleton, paginación, rating)
+ * --------------------------------------------------------------- */
+.gw-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  background: color-mix(in srgb, var(--galaxy-core, var(--g1-core)) 16%, var(--bg-raised));
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-style: italic;
+}
+
+.gw-skeleton {
+  border-radius: 10px;
+  background: linear-gradient(100deg, var(--bg-raised) 40%, rgba(255,255,255,0.05) 50%, var(--bg-raised) 60%);
+  background-size: 200% 100%;
+  animation: gw-shimmer 1.6s infinite linear;
+  min-height: 14px;
+}
+@keyframes gw-shimmer { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .gw-skeleton { animation: none; } }
+
+.gw-pagination { display: flex; gap: 6px; align-items: center; }
+.gw-page {
+  min-width: 34px; height: 34px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.gw-page--current { color: var(--text-primary); border-color: var(--galaxy-core, var(--g2-core)); }
+
+.gw-rating { color: var(--g1-core); font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.08em; }
+.gw-rating__count { color: var(--text-muted); }
+
+.gw-toast {
+  position: fixed;
+  right: 24px; bottom: 24px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: var(--glass-strong-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-strong-border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  z-index: 50;
+}
+
+/* ---------------------------------------------------------------
+ * Cine de la interfaz — reveal on-scroll y contadores que se funden
+ * --------------------------------------------------------------- */
+/* Las secciones entran con peso cinematográfico al entrar al viewport
+ * (IntersectionObserver en la página; la clase is-visible la setea JS).
+ * Ante prefers-reduced-motion el contenido queda visible sin animar. */
+.gw-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity var(--fx-duration-slow) var(--fx-ease-cinema),
+    transform var(--fx-duration-slow) var(--fx-ease-cinema);
+  will-change: opacity, transform;
+}
+.gw-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.gw-reveal--d1 { transition-delay: 0.08s; }
+.gw-reveal--d2 { transition-delay: 0.16s; }
+.gw-reveal--d3 { transition-delay: 0.24s; }
+
+/* Contador "fundido": el número actualiza con un micro-pop de vidrio
+ * (escala + desenfoque que se asienta) mientras JS interpola el valor. */
+.gw-count {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  transition: filter 0.35s ease, transform 0.35s var(--fx-ease-cinema);
+}
+.gw-count.is-melting {
+  filter: blur(2px);
+  transform: scale(0.92);
+}
+
+/* Entrada del hero: cada línea "fluye" desde la profundidad (blur → nítido).
+ * Se aplica vía keyframe en la capa de página, no acá — este es el fallback
+ * de la utilidad. */
+@keyframes gw-enter {
+  from { opacity: 0; transform: translateY(22px); filter: blur(6px); }
+  to   { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gw-reveal { opacity: 1; transform: none; transition: none; }
+  .gw-count.is-melting { filter: none; transform: none; transition: none; }
+  .gw-btn::before { transition: none; transform: none; }
+  .gw-btn:hover::before { transform: none; }
+  .gw-btn:active { animation: none; }
+}
+
+/* Espaciadores tipográficos de sección. */
+.gw-section-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.6rem;
+  margin: 0 0 4px;
+}
+.gw-section-sub { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 20px; }
+.gw-divider { height: 1px; background: var(--glass-border); border: none; margin: 20px 0; }

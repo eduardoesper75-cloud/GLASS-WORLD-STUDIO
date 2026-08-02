@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glass World Studio · El umbral</title>
+  <!-- Fuente canónica + capa de componentes (única fuente visual de marca). -->
+  <link rel="stylesheet" href="./gws-design-tokens.css" />
+  <link rel="stylesheet" href="./gws-components.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ================================================================
+       Portada · Obsidiana + Fuego de soplete
+       Capa de página sobre los tokens canónicos. Los colores de cada
+       Galaxia salen SOLO de --gN-core/--gN-glow (no se inventan tonos).
+       El fuego (ámbar→cobre→oro→blanco) es el gesto de marca del soplete.
+       ================================================================ */
+    .portada {
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    /* Obsidiana: negro profundo con veladuras azul/violeta en los bordes
+       y un rescoldo ámbar abajo — la masa de vidrio caliente de fondo. */
+    .portada::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(1200px 700px at 85% -10%, rgba(46, 38, 92, 0.22), transparent 60%),
+        radial-gradient(1000px 800px at -10% 110%, rgba(120, 60, 24, 0.18), transparent 55%),
+        radial-gradient(1400px 900px at 50% 130%, rgba(14, 22, 34, 0.9), transparent 70%),
+        var(--bg-void);
+    }
+
+    /* Grano de obsidiana: turbulencia SVG a baja opacidad (la roca pulida). */
+    .portada::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* Gesto de fuego de soplete: ámbar → cobre → oro → blanco caliente. */
+    .flame-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      background: linear-gradient(180deg,
+        #fdf6e3 0%, #fef3c7 14%,
+        #fbbf24 32%, #f59e0b 52%,
+        #ea580c 74%, #b45309 90%, #78350f 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 2px 18px rgba(245, 158, 11, 0.18));
+    }
+
+    .portada-hero {
+      padding: 120px 0 64px;
+      text-align: center;
+      position: relative;
+    }
+    .portada-hero h1 {
+      margin: 0;
+      font-size: clamp(3rem, 9vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .portada-hero .tagline {
+      margin-top: 20px;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-inline: auto;
+    }
+    .portada-hero .actions {
+      margin-top: 36px;
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .portada-hero .meta-line {
+      margin-top: 28px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .portada-hero .meta-line strong { color: var(--g1-glow); font-weight: 500; }
+
+    /* ---------- Contadores de fundación ---------- */
+    .founding {
+      padding: 40px 0 90px;
+    }
+    .founding-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .founding-head h2 {
+      margin: 0;
+      font-size: 1.7rem;
+    }
+    .founding-sub {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      max-width: 640px;
+      margin: 8px 0 28px;
+    }
+    .galaxy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .galaxy-card {
+      border-radius: var(--glass-radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .galaxy-card__head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .galaxy-card__id {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      color: var(--galaxy-core);
+    }
+    .galaxy-card__name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      margin: 0;
+      color: var(--text-primary);
+    }
+    .galaxy-card__count {
+      margin-top: auto;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .galaxy-card__available {
+      font-family: var(--font-mono);
+      font-size: 2.1rem;
+      line-height: 1;
+      color: var(--text-primary);
+    }
+    .galaxy-card__total {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .progress {
+      height: 4px;
+      border-radius: 2px;
+      background: var(--glass-border);
+      overflow: hidden;
+    }
+    .progress > span {
+      display: block;
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--galaxy-core), var(--galaxy-glow));
+      transition: width 0.6s ease;
+    }
+    .galaxy-card__status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .galaxy-card__badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid;
+    }
+    .badge-open    { color: var(--g6-glow); border-color: color-mix(in srgb, var(--g6-core) 45%, transparent); }
+    .badge-low     { color: var(--g5-amber); border-color: color-mix(in srgb, var(--g5-amber) 50%, transparent); }
+    .badge-exhausted { color: var(--sat-glow); border-color: color-mix(in srgb, var(--sat-core) 50%, transparent); }
+    .badge-reserved { color: var(--g4-glow); border-color: color-mix(in srgb, var(--g4-core) 45%, transparent); }
+
+    .stream-note {
+      margin-top: 18px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .stream-note.ok { color: var(--g6-glow); }
+    .stream-note.warn { color: var(--g5-amber); }
+
+    /* ---------- Moneda local (exhibición) ---------- */
+    .currency-strip {
+      margin-top: 56px;
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .currency-strip .converted {
+      font-family: var(--font-mono);
+      font-size: 1.6rem;
+      color: var(--g1-glow);
+    }
+    .currency-strip .hint {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    /* ---------- Umbral multilingüe + tarifario ---------- */
+    .threshold { padding: 30px 0 20px; }
+    .threshold-block {
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .threshold-block .lang-tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--g2-glow);
+      border: 1px solid color-mix(in srgb, var(--g2-core) 45%, transparent);
+      border-radius: 999px;
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+    .threshold-block .quote {
+      flex: 1;
+      min-width: 260px;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--text-primary);
+      margin: 0;
+    }
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .price-card {
+      border-radius: var(--glass-radius);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .price-card__name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.05rem;
+      margin: 0;
+    }
+    .price-card__row {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .price-card__price {
+      font-family: var(--font-mono);
+      font-size: 1.7rem;
+      color: var(--text-primary);
+    }
+    .price-card__per {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .loyalty {
+      margin-top: 24px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .loyalty-chip {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--glass-strong-border);
+      color: var(--g1-glow);
+      background: var(--glass-bg);
+    }
+
+    /* ---------- Selector multilingüe + moneda (persistido en sesión) ---------- */
+    .picker-bar {
+      padding: 14px 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .picker-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .flag-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--glass-strong-border);
+      background: var(--glass-bg);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: border-color 0.15s ease, color 0.15s ease;
+    }
+    .flag-btn .flag-emoji { font-size: 1rem; line-height: 1; }
+    .flag-btn:hover { border-color: var(--g1-glow); color: var(--text-primary); }
+    .flag-btn.active {
+      border-color: var(--g1-glow);
+      color: var(--g1-glow);
+      background: color-mix(in srgb, var(--g1-glow) 8%, transparent);
+    }
+    .picker-select {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 5px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--glass-strong-border);
+      background: var(--glass-bg);
+      color: var(--text-primary);
+    }
+    .picker-hint {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+    }
+
+    /* ---------- Bóveda del Conocimiento ---------- */
+    .vault { padding: 60px 0 40px; }
+    .vault-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .vault-card {
+      border-radius: var(--glass-radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .vault-card__code {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--g6-glow);
+    }
+    .vault-card__name {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.25rem;
+      margin: 0;
+      color: var(--text-primary);
+    }
+    .vault-card__count {
+      margin-top: auto;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+    .vault-card__legal {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .vault-card__legal a { color: var(--g6-glow); }
+
+    /* Carga cinematográfica del hero: cada línea fluye desde la profundidad
+       (blur → nítido) con la curva de vidrio fundido. El keyframe gw-enter
+       vive en gws-components.css. */
+    .portada-hero h1,
+    .portada-hero .tagline,
+    .portada-hero .actions,
+    .portada-hero .meta-line,
+    .picker-bar {
+      opacity: 0;
+      animation: gw-enter var(--fx-duration-hero) var(--fx-ease-cinema) forwards;
+    }
+    .portada-hero .tagline { animation-delay: 0.12s; }
+    .portada-hero .actions { animation-delay: 0.26s; }
+    .portada-hero .meta-line { animation-delay: 0.4s; }
+    .picker-bar { animation-delay: 0.06s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .portada-hero h1,
+      .portada-hero .tagline,
+      .portada-hero .actions,
+      .portada-hero .meta-line,
+      .picker-bar { opacity: 1; animation: none; }
+    }
+
+    footer.portada-foot {
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body class="gw-app">
+  <main class="portada">
+    <!-- ================= SELECTOR MULTILINGÜE + MONEDA ================= -->
+    <div class="gw-container">
+      <div class="picker-bar">
+        <div class="picker-group" id="lang-picker">
+          <span class="picker-hint">IDIOMA</span>
+          <!-- 7 banderas renderizadas por JS (estado persistido). -->
+        </div>
+        <div class="picker-group">
+          <span class="picker-hint">MONEDA</span>
+          <select class="picker-select" id="currency-select" aria-label="Moneda de exhibición"></select>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= HERO ================= -->
+    <section class="portada-hero">
+      <div class="gw-container">
+        <h1>Glass World<br /><span class="flame-text">Studio</span></h1>
+        <p class="tagline">
+          Seis galaxias, un solo material. El universo del vidrio — oficio
+          milenario y tecnología invisible — abre sus puertas a sus fundadores.
+        </p>
+        <div class="actions">
+          <a class="gw-btn gw-btn--primary glass-edge" href="#fundacion" data-galaxy="g1">Tomar cupo de fundación</a>
+          <a class="gw-btn gw-btn--ghost" href="#galaxias">Conocer las Galaxias</a>
+        </div>
+        <div class="meta-line">
+          <span id="geo-line">Detectando ubicación…</span>
+          <span>Moneda local: <strong id="currency-line">—</strong></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VÍAS RÁPIDAS · OPERACIÓN EN ≤3 CLICS ================= -->
+    <section id="vias-rapidas" class="vias gw-reveal">
+      <style>
+        #vias-rapidas { scroll-margin-top: 24px; padding-top: 8px; }
+        .vias-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+        .vias-head h2 { margin: 0; font-size: 1.7rem; }
+        .vias-sub { color: var(--text-muted); font-size: 0.9rem; max-width: 680px; margin: 8px 0 26px; }
+        .vias-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+        .vias-card { border-radius: var(--glass-radius); padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+        .vias-card__kicker { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; }
+        .vias-card h3 { margin: 0; font-size: 1.05rem; }
+        .vias-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 7px; }
+        .vias-steps li { display: flex; gap: 9px; align-items: baseline; font-size: 0.82rem; color: var(--text-muted); }
+        .vias-steps li b { font-family: var(--font-mono); font-weight: 500; color: var(--g1-glow); font-size: 0.7rem; min-width: 14px; }
+        .vias-card .gw-btn { margin-top: auto; }
+      </style>
+      <div class="gw-container">
+        <div class="vias-head">
+          <h2 class="display">Vías rápidas</h2>
+          <span class="gw-badge gw-badge--galaxy" data-galaxy="g1">toda operación crítica en ≤3 clics</span>
+        </div>
+        <p class="vias-sub">
+          Navegación superficial, sin menús anidados: desde acá se compra, se suscribe,
+          se publica una obra, se ve una masterclass y se audita una máquina pesada.
+          Cada paso reduce la ambigüedad del anterior (CLAUDE.md §2).
+        </p>
+        <div class="vias-grid">
+          <div class="vias-card glass" data-galaxy="g2">
+            <span class="vias-card__kicker" style="color: var(--g2-glow);">G2 · Marketplace</span>
+            <h3>Comprar</h3>
+            <ul class="vias-steps">
+              <li><b>1</b><span>Elegir producto · precio, COE y video demo</span></li>
+              <li><b>2</b><span>Checkout transparente con aduana estimada</span></li>
+              <li><b>3</b><span>Confirmar</span></li>
+            </ul>
+            <a class="gw-btn gw-btn--ghost" href="#customs-demo" data-galaxy="g2">Ir al cotizador →</a>
+          </div>
+          <div class="vias-card glass" data-galaxy="g3">
+            <span class="vias-card__kicker" style="color: var(--g3-glow);">Membresía</span>
+            <h3>Suscribirse</h3>
+            <ul class="vias-steps">
+              <li><b>1</b><span>Elegir plan · fidelización 3m=10 % / 6m=15 % / 12m=20 %</span></li>
+              <li><b>2</b><span>Datos de pago · hosted checkout, sin tocar tarjetas</span></li>
+              <li><b>3</b><span>Confirmar y acceder</span></li>
+            </ul>
+            <a class="gw-btn gw-btn--ghost" href="#umbral" data-galaxy="g3">Ver tarifario →</a>
+          </div>
+          <div class="vias-card glass" data-galaxy="g1">
+            <span class="vias-card__kicker" style="color: var(--g1-glow);">G1 / G2</span>
+            <h3>Publicar obra</h3>
+            <ul class="vias-steps">
+              <li><b>1</b><span>Crear listing con specs técnicas mínimas</span></li>
+              <li><b>2</b><span>Adjuntar media · fotos + video embed sin subir</span></li>
+              <li><b>3</b><span>Publicar · el radar de proximidad la ubica</span></li>
+            </ul>
+            <a class="gw-btn gw-btn--ghost" href="#fundacion" data-galaxy="g1">Tomar cupo →</a>
+          </div>
+          <div class="vias-card glass" data-galaxy="g6">
+            <span class="vias-card__kicker" style="color: var(--g6-glow);">G1 · Bóveda</span>
+            <h3>Ver masterclass</h3>
+            <ul class="vias-steps">
+              <li><b>1</b><span>Elegir masterclass · nivel y duración</span></li>
+              <li><b>2</b><span>Acceder al visor inmersivo</span></li>
+              <li><b>3</b><span>Reproducir</span></li>
+            </ul>
+            <button type="button" class="gw-btn gw-btn--primary glass-edge gws-viewer-open" data-galaxy="g6" data-vid-demo="course">Abrir visor →</button>
+          </div>
+          <div class="vias-card glass" data-galaxy="g5">
+            <span class="vias-card__kicker" style="color: var(--g5-glow);">G5 · Gran Industria</span>
+            <h3>Auditar máquina</h3>
+            <ul class="vias-steps">
+              <li><b>1</b><span>Seleccionar máquina · voltaje/presión en mono</span></li>
+              <li><b>2</b><span>Ver demo técnica en video</span></li>
+              <li><b>3</b><span>Solicitar auditoría · dentro de la plataforma</span></li>
+            </ul>
+            <button type="button" class="gw-btn gw-btn--ghost gws-viewer-open" data-galaxy="g5" data-vid-demo="machine">Ver demo →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CUPOS DE FUNDACIÓN ================= -->
+    <section id="fundacion" class="founding gw-reveal">
+      <div class="gw-container">
+        <div class="founding-head">
+          <h2 class="display">Cupos de fundación</h2>
+          <span class="gw-badge gw-badge--galaxy" id="funding-flag" data-galaxy="satellite">contadores en vivo</span>
+        </div>
+        <p class="founding-sub">
+          Los primeros en cruzar el umbral. Cupos limitados por Galaxia; cuando se agotan,
+          el acceso a esa Galaxia pasa automáticamente al umbral de suscripción activa
+          (los fundadores conservan su cupo). Los números bajan en vivo — no hay placeholders.
+        </p>
+
+        <div id="galaxias" class="galaxy-grid">
+          <!-- Las 6 tarjetas se renderizan por JS (live o demo). -->
+        </div>
+
+        <p class="stream-note" id="stream-note">Conectando contadores…</p>
+      </div>
+    </section>
+
+    <!-- ================= UMBRAL MULTILINGÜE + TARIFARIO ================= -->
+    <section id="umbral" class="threshold gw-reveal">
+      <div class="gw-container">
+        <div class="threshold-block glass--strong" data-galaxy="g2">
+          <span class="lang-tag" id="threshold-lang">ES</span>
+          <p class="quote" id="threshold-text">Cargando mensaje del umbral…</p>
+        </div>
+
+        <div class="price-grid" id="price-grid">
+          <!-- 6 tarjetas de precio por galaxia (render por JS). -->
+        </div>
+
+        <div class="loyalty" id="loyalty">
+          <!-- chips de descuento por período (render por JS). -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= BÓVEDA DEL CONOCIMIENTO ================= -->
+    <section id="boveda" class="vault gw-reveal">
+      <div class="gw-container">
+        <div class="founding-head">
+          <h2 class="display">Bóveda del Conocimiento</h2>
+          <span class="gw-badge gw-badge--galaxy" data-galaxy="g6">biblioteca técnica de la comunidad</span>
+        </div>
+        <p class="founding-sub">
+          Documentación técnica compartida con taxonomía rigurosa: 4 raíces y subcategorías
+          con metadatos obligatorios por hoja (COE, recocido, hornos). Control de duplicados y
+          spam por hash de contenido, y curación humana antes de publicar. La plataforma es
+          hosting neutral — <a href="/vault/legal" style="color:var(--g6-glow);">cláusulas safe-harbor</a>.
+        </p>
+
+        <div id="vault-roots" class="vault-grid">
+          <!-- 4 raíces de la taxonomía (render por JS, live o demo). -->
+        </div>
+
+        <p class="stream-note" id="vault-note">Conectando a la Bóveda…</p>
+      </div>
+    </section>
+
+    <!-- ================= MONEDA LOCAL ================= -->
+    <section class="gw-container">
+      <div class="currency-strip glass--strong gw-reveal" data-galaxy="g1">
+        <div>
+          <div class="hint">CONTRIBUCIÓN DE FUNDACIÓN (DEMO DE EXHIBICIÓN)</div>
+          <div class="converted" id="converted-amount">—</div>
+        </div>
+        <div style="max-width: 460px;">
+          <div class="hint">La pasarela (USDT · TRC-20/Polygon) se integra por Payment_Vault. Esta vista solo muestra el valor en tu moneda local.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COTIZADOR ADUANERO (demo del motor) ================= -->
+    <section class="gw-container" id="customs-demo">
+      <style>
+        #customs-demo .cust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:12px;}
+        #customs-demo .cust-field{display:flex;flex-direction:column;gap:6px;font-size:12px;}
+        #customs-demo label{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--g6-glow);}
+        #customs-demo select,#customs-demo input{background:rgba(10,12,20,.8);color:#f2efe6;border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:10px 12px;font:inherit;width:100%;box-sizing:border-box;}
+        #customs-demo .cust-lines{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px;margin-top:16px;}
+        #customs-demo .cust-lines .li{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed rgba(255,255,255,.12);padding:6px 0;font-family:var(--font-mono);font-size:13px;}
+        #customs-demo .cust-lines .li.total{grid-column:1/-1;border-top:1px solid var(--g6-glow);border-bottom:none;color:var(--g6-glow);font-weight:700;font-size:15px;padding-top:10px;}
+        #customs-demo .cust-note{font-size:12px;color:rgba(242,239,230,.6);margin-top:10px;}
+        #customs-demo .cust-btn{margin-top:14px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.1em;}
+      </style>
+      <div class="currency-strip glass--strong gw-reveal" data-galaxy="g6">
+        <div>
+          <div class="hint">COTIZADOR ADUANERO · MOTOR DE IMPORTACIÓN (ESTIMADO)</div>
+          <div class="converted" id="cust-total">—</div>
+        </div>
+        <div style="min-width:0;width:100%;">
+          <div class="cust-grid">
+            <div class="cust-field"><label for="cust-product">Producto</label>
+              <select id="cust-product"></select></div>
+            <div class="cust-field"><label for="cust-value">Valor (USD)</label>
+              <input id="cust-value" type="number" min="0.01" step="0.01" value="250"></div>
+            <div class="cust-field"><label for="cust-weight">Peso (kg)</label>
+              <input id="cust-weight" type="number" min="0.01" step="0.1" value="8"></div>
+            <div class="cust-field"><label for="cust-volume">Volumen (m³, opcional)</label>
+              <input id="cust-volume" type="number" min="0.001" step="0.001" placeholder="—"></div>
+            <div class="cust-field"><label for="cust-mode">Modo</label>
+              <select id="cust-mode">
+                <option value="air" selected>Aéreo</option>
+                <option value="ocean">Marítimo (LCL)</option>
+              </select></div>
+            <div class="cust-field"><label for="cust-origin">Origen</label>
+              <select id="cust-origin"></select></div>
+            <div class="cust-field"><label for="cust-dest">Destino</label>
+              <select id="cust-dest"></select></div>
+          </div>
+          <button type="button" class="gw-btn cust-btn" id="cust-calc">Calcular estimado</button>
+          <div class="cust-lines" id="cust-lines"></div>
+          <p class="cust-note" id="cust-note">Estimación orientativa con referencias al 2026-08-02 (NCM/AEC, US HTS, EU TARIC, Freightos/Drewry). La aduana de destino determina los montos finales.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CARTELERAS · USD 1/DÍA POR GALAXIA ================= -->
+    <section id="carteleras" class="gw-container gw-reveal">
+      <style>
+        #carteleras .bb-wrap { margin-top: 14px; }
+        #carteleras .bb-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; margin-top: 8px; }
+        #carteleras .bb-card { border-radius: var(--glass-radius); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+        #carteleras .bb-card__head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+        #carteleras .bb-card__label { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--text-muted); }
+        #carteleras .bb-card__name { font-family: var(--font-display); font-style: italic; font-size: 1.05rem; margin: 0; }
+        #carteleras .bb-rate { font-family: var(--font-mono); font-size: 1.3rem; color: var(--text-primary); }
+        #carteleras .bb-rate small { color: var(--text-muted); font-size: 0.72rem; }
+        #carteleras .bb-pill { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 999px; border: 1px solid; }
+        #carteleras .bb-pill.live  { color: var(--g6-glow); border-color: color-mix(in srgb, var(--g6-core) 50%, transparent); }
+        #carteleras .bb-pill.free  { color: var(--g2-glow); border-color: color-mix(in srgb, var(--g2-core) 50%, transparent); }
+        #carteleras .bb-pill.paused{ color: var(--g5-amber); border-color: color-mix(in srgb, var(--g5-amber) 50%, transparent); }
+        #carteleras .bb-campaign { font-size: 0.82rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px; }
+        #carteleras .bb-campaign b { color: var(--text-primary); font-weight: 500; }
+        #carteleras .bb-campaign .route { font-family: var(--font-mono); font-size: 0.7rem; color: var(--g1-glow); }
+        #carteleras .bb-next { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); }
+        #carteleras .bb-note { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-top: 14px; }
+        #carteleras .bb-note.ok { color: var(--g6-glow); }
+        #carteleras .bb-note.warn { color: var(--g5-amber); }
+      </style>
+      <div class="currency-strip glass--strong" data-galaxy="g2">
+        <div>
+          <div class="hint">CARTELERAS PUBLICITARIAS · ESPACIO SOBERANO DE DEMANDA</div>
+          <div class="converted">USD 1 / día</div>
+        </div>
+        <div style="max-width: 480px;">
+          <p style="margin:0; font-size:0.88rem; line-height:1.6;">
+            Un espacio publicitario por Galaxia. Una campaña a la vez; si la fecha que
+            pedís está ocupada, se encola y te decimos el día exacto de salida al aire.
+            Tarifa plana, sin subastas: <b style="font-family:var(--font-mono);">$1/día</b>.
+          </p>
+        </div>
+      </div>
+      <div class="bb-wrap">
+        <div class="bb-grid" id="billboards-grid"><!-- render por JS --></div>
+        <p class="bb-note" id="billboards-note">Conectando carteleras…</p>
+      </div>
+    </section>
+
+    <!-- ================= BÚNKER DE INGENIERÍA ESPECIALIZADA ================= -->
+    <section id="bunker" class="gw-container gw-reveal">
+      <style>
+        #bunker .bk-wrap { margin-top: 14px; }
+        #bunker .bk-split { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 12px; }
+        #bunker .bk-card { border-radius: var(--glass-radius); padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+        #bunker .bk-card h4 { margin: 0; font-family: var(--font-display); font-style: italic; font-size: 1.15rem; }
+        #bunker .bk-pill { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; padding: 3px 8px; border-radius: 999px; border: 1px solid; color: var(--g6-glow); border-color: color-mix(in srgb, var(--g6-core) 50%, transparent); }
+        #bunker .bk-fee { font-family: var(--font-mono); font-size: 1.6rem; color: var(--text-primary); }
+        #bunker .bk-fee small { color: var(--text-muted); font-size: 0.72rem; }
+        #bunker .bk-plan { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+        #bunker .bk-plan select { background: rgba(10,12,20,.8); color: #f2efe6; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; padding: 8px 10px; font: inherit; }
+        #bunker .bk-quote { font-family: var(--font-mono); font-size: 0.86rem; color: var(--g1-glow); min-height: 20px; }
+        #bunker .bk-spec { display: flex; align-items: flex-start; gap: 10px; padding: 12px 0; border-top: 1px dashed rgba(255,255,255,.12); }
+        #bunker .bk-spec .who { flex: 1; min-width: 0; }
+        #bunker .bk-spec .who b { font-size: 0.9rem; display: block; }
+        #bunker .bk-spec .who .hl { font-size: 0.76rem; color: var(--text-muted); }
+        #bunker .bk-spec .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+        #bunker .bk-spec .tag { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.04em; color: var(--g5-glow); border: 1px solid color-mix(in srgb, var(--g5-core) 45%, transparent); border-radius: 999px; padding: 2px 8px; }
+        #bunker .bk-note { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-top: 14px; }
+        #bunker .bk-note.ok { color: var(--g6-glow); }
+        #bunker .bk-note.warn { color: var(--g5-amber); }
+        #bunker .bk-alta { margin-top: 16px; border-radius: var(--glass-radius); padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+        #bunker .bk-alta__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+        #bunker .bk-alta__title { margin: 8px 0 0; font-family: var(--font-display); font-style: italic; font-size: 1.2rem; }
+        #bunker .bk-steps { display: flex; gap: 8px; flex-wrap: wrap; }
+        #bunker .bk-step { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--glass-strong-border); color: var(--text-muted); }
+        #bunker .bk-step.is-active { color: var(--g6-glow); border-color: color-mix(in srgb, var(--g6-core) 60%, transparent); background: color-mix(in srgb, var(--g6-glow) 8%, transparent); }
+        #bunker .bk-alta__step { display: flex; flex-direction: column; gap: 14px; }
+        #bunker .bk-alta__step p { margin: 0; font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; max-width: 720px; }
+        #bunker .bk-alta__step p b { color: var(--text-primary); font-family: var(--font-mono); font-weight: 500; }
+        #bunker .bk-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+        #bunker .bk-field { display: flex; flex-direction: column; gap: 5px; font-size: 12px; }
+        #bunker .bk-field.full { grid-column: 1 / -1; }
+        #bunker .bk-field label { font-family: var(--font-mono); text-transform: uppercase; letter-spacing: .08em; color: var(--g6-glow); font-size: 0.66rem; }
+        #bunker .bk-field input, #bunker .bk-field select { background: rgba(10,12,20,.8); color: #f2efe6; border: 1px solid rgba(255,255,255,.14); border-radius: 8px; padding: 9px 11px; font: inherit; width: 100%; box-sizing: border-box; }
+        #bunker .bk-field input:invalid:not(:placeholder-shown), #bunker .bk-field select:invalid:not(:placeholder-shown) { border-color: rgba(248,113,113,.6); }
+        #bunker .bk-field input:valid:not(:placeholder-shown), #bunker .bk-field select:valid:not(:placeholder-shown) { border-color: rgba(56,189,248,.45); }
+        #bunker .bk-checks { display: flex; gap: 10px; flex-wrap: wrap; }
+        #bunker .bk-check { display: inline-flex; align-items: center; gap: 7px; font-size: 0.78rem; color: var(--text-muted); border: 1px solid var(--glass-strong-border); border-radius: 999px; padding: 6px 12px; cursor: pointer; user-select: none; }
+        #bunker .bk-check input { accent-color: var(--g6-glow); }
+        #bunker .bk-check.sel { border-color: color-mix(in srgb, var(--g6-core) 60%, transparent); color: var(--g6-glow); background: color-mix(in srgb, var(--g6-glow) 6%, transparent); }
+        #bunker .bk-alta__actions { display: flex; gap: 12px; flex-wrap: wrap; }
+      </style>
+      <div class="currency-strip glass--strong" data-galaxy="g5">
+        <div>
+          <div class="hint">BÚNKER DE INGENIERÍA ESPECIALIZADA · SERVICIO TÉCNICO GLOBAL</div>
+          <div class="converted">0 % comisión</div>
+        </div>
+        <div style="max-width: 480px;">
+          <p style="margin:0; font-size:0.88rem; line-height:1.6;">
+            Hornos, templado, PLC, borosilicato, maquinaria pesada. Tu planta parada se
+            conecta con la cartera verificada — <b style="font-family:var(--font-mono);">cero
+            comisión</b> por intermediación. Membresía pro del profesional: <b style="font-family:var(--font-mono);">USD 50/mes</b>.
+          </p>
+        </div>
+      </div>
+      <div class="bk-wrap">
+        <div class="bk-split">
+          <div class="bk-card gw-card--glass" data-galaxy="g6">
+            <span class="bk-pill">Membresía pro · acceso a la red de demanda</span>
+            <div class="bk-fee">USD 50 <small>/mes</small></div>
+            <p style="margin:0; font-size:0.82rem; color:var(--text-muted); line-height:1.6;">
+              Fidelización por pago anticipado: 3 meses −10 %, 6 meses −15 %,
+              12 meses −20 %. Los honorarios del ticket son 100 % para el especialista.
+            </p>
+            <div class="bk-plan">
+              <select id="bk-plan-months" aria-label="Plan de membresía">
+                <option value="1">1 mes</option>
+                <option value="3">3 meses</option>
+                <option value="6">6 meses</option>
+                <option value="12">12 meses</option>
+              </select>
+              <span class="bk-quote" id="bk-quote">—</span>
+            </div>
+          </div>
+          <div class="bk-card gw-card--glass" data-galaxy="g6">
+            <span class="bk-pill">Cartera élite · verificada por GWS</span>
+            <div id="bk-specialists"><!-- render por JS --></div>
+          </div>
+        </div>
+
+        <!-- ================= ALTA Y MATRICULACIÓN · 3 PASOS ================= -->
+        <div class="bk-alta gw-card--glass" data-galaxy="g6">
+          <div class="bk-alta__head">
+            <div>
+              <span class="bk-pill">Alta y matriculación · registro profesional</span>
+              <h4 class="bk-alta__title">Unirse como Ingeniero / Técnico Especializado</h4>
+            </div>
+            <div class="bk-steps">
+              <span class="bk-step is-active" data-step="1">1 · Perfil</span>
+              <span class="bk-step" data-step="2">2 · Credenciales</span>
+              <span class="bk-step" data-step="3">3 · Alta</span>
+            </div>
+          </div>
+
+          <div class="bk-alta__step" data-step="1">
+            <p>
+              La red recluta ingenieros matriculados, mecánicos de precisión y técnicos
+              especializados en hornos de alta temperatura, templado, PLC, quemadores,
+              mesas de corte y borosilicato. Elegí tu perfil de ingreso.
+            </p>
+            <div class="bk-alta__actions">
+              <button type="button" class="gw-btn gw-btn--primary glass-edge" id="bk-s1-next" data-galaxy="g6">Ingeniero / Técnico Especializado →</button>
+            </div>
+          </div>
+
+          <div class="bk-alta__step" data-step="2" hidden>
+            <div class="bk-form">
+              <div class="bk-field">
+                <label for="bk-fullname">Nombre y apellido</label>
+                <input id="bk-fullname" type="text" required minlength="3" placeholder="María Sol Escobar" />
+              </div>
+              <div class="bk-field">
+                <label for="bk-email">Correo profesional</label>
+                <input id="bk-email" type="email" required placeholder="ing@dominio.com" />
+              </div>
+              <div class="bk-field">
+                <label for="bk-phone">Teléfono directo</label>
+                <input id="bk-phone" type="tel" required pattern="\+[1-9][0-9]{6,14}" placeholder="+54911…" />
+              </div>
+              <div class="bk-field">
+                <label for="bk-nationality">Nacionalidad</label>
+                <input id="bk-nationality" type="text" required minlength="2" placeholder="Argentina" />
+              </div>
+              <div class="bk-field">
+                <label for="bk-country">País de residencia</label>
+                <select id="bk-country" required></select>
+              </div>
+              <div class="bk-field">
+                <label for="bk-region">Región (opcional)</label>
+                <input id="bk-region" type="text" placeholder="Córdoba" />
+              </div>
+              <div class="bk-field">
+                <label for="bk-title">Título habilitante</label>
+                <input id="bk-title" type="text" required minlength="3" placeholder="Ing. Mecánico" />
+              </div>
+              <div class="bk-field">
+                <label for="bk-regnum">Nº de matrícula / colegiación</label>
+                <input id="bk-regnum" type="text" required minlength="3" placeholder="M-4521" />
+              </div>
+              <div class="bk-field">
+                <label for="bk-institution">Institución expedidora</label>
+                <input id="bk-institution" type="text" required minlength="3" placeholder="UTN · Facultad Regional" />
+              </div>
+              <div class="bk-field">
+                <label for="bk-years">Años de experiencia</label>
+                <input id="bk-years" type="number" required min="0" max="60" step="1" value="5" />
+              </div>
+              <div class="bk-field full">
+                <label>Especialidades (mín. 1)</label>
+                <div class="bk-checks" id="bk-specs">
+                  <span class="bk-check"><input type="checkbox" value="hornos_industriales" /> Hornos industriales</span>
+                  <span class="bk-check"><input type="checkbox" value="templado" /> Sistemas de templado</span>
+                  <span class="bk-check"><input type="checkbox" value="plc" /> Automatización PLC</span>
+                  <span class="bk-check"><input type="checkbox" value="quemadores" /> Quemadores a gas</span>
+                  <span class="bk-check"><input type="checkbox" value="maquinaria_pesada" /> Maquinaria pesada</span>
+                  <span class="bk-check"><input type="checkbox" value="borosilicato" /> Borosilicato / crisoles</span>
+                </div>
+              </div>
+              <div class="bk-field full">
+                <label>Soporte ofertado (mín. 1)</label>
+                <div class="bk-checks" id="bk-support">
+                  <span class="bk-check"><input type="checkbox" value="remote_global" /> Remoto global</span>
+                  <span class="bk-check"><input type="checkbox" value="regional_on_site" /> Presencial regional</span>
+                  <span class="bk-check"><input type="checkbox" value="plant_emergency" /> Emergencia en planta</span>
+                </div>
+              </div>
+            </div>
+            <div class="bk-alta__actions">
+              <button type="button" class="gw-btn gw-btn--ghost" id="bk-s2-back">← Volver</button>
+              <button type="button" class="gw-btn gw-btn--primary glass-edge" id="bk-s2-next" data-galaxy="g6">Revisar y aceptar →</button>
+            </div>
+          </div>
+
+          <div class="bk-alta__step" data-step="3" hidden>
+            <p>
+              Términos: membresía plana <b>USD 50/mes</b> · <b>0 % comisión</b> por contratos
+              cerrados. Al activar, tu perfil queda <b>pendiente de verificación élite</b>:
+              el comando valida matrícula y credenciales antes de otorgar el sello público.
+              El cobro real se ejecuta por Payment_Vault (§3.1).
+            </p>
+            <div class="bk-alta__actions">
+              <button type="button" class="gw-btn gw-btn--ghost" id="bk-s3-back">← Volver</button>
+              <button type="button" class="gw-btn gw-btn--primary glass-edge" id="bk-s3-submit" data-galaxy="g6">Aceptar y activar perfil</button>
+            </div>
+            <p class="bk-note" id="bk-alta-note"></p>
+          </div>
+        </div>
+
+        <p class="bk-note" id="bunker-note">Conectando al Búnker…</p>
+      </div>
+    </section>
+
+    <footer class="portada-foot">
+      <div class="gw-container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; width:100%;">
+        <span>Glass World Studio · la vidriera del mundo del vidrio</span>
+        <span class="tech"><a href="./manual-codigo-del-fuego.html" style="color:var(--g6-glow);">El Código del Fuego · manual del usuario</a></span>
+        <span class="tech" id="foot-coverage">cobertura de moneda: —</span>
+      </div>
+    </footer>
+    <!-- ================= VISOR MULTIMEDIA INMERSIVO (demo del estándar) ================= -->
+    <div id="gws-viewer" class="gws-viewer" hidden>
+      <style>
+        .gws-viewer { position: fixed; inset: 0; z-index: 120; display: flex; align-items: center; justify-content: center; padding: 24px; }
+        .gws-viewer[hidden] { display: none; }
+        .gws-viewer::before { content: ''; position: absolute; inset: 0; background: rgba(4, 6, 12, 0.9); }
+        .gws-viewer__panel { position: relative; width: min(1040px, 100%); max-height: 92vh; display: flex; flex-direction: column; border-radius: 16px; overflow: hidden; }
+        .gws-viewer__top { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .gws-viewer__top .t { flex: 1; min-width: 0; }
+        .gws-viewer__top .t h4 { margin: 0; font-size: 1rem; }
+        .gws-viewer__top .t .kicker { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--g6-glow); }
+        .gws-viewer__close { cursor: pointer; background: transparent; border: 1px solid rgba(255, 255, 255, 0.18); color: #f2efe6; border-radius: 50%; width: 34px; height: 34px; font-size: 1rem; line-height: 1; flex: none; }
+        .gws-viewer__stage { position: relative; aspect-ratio: 16 / 9; background: #05070d; }
+        .gws-viewer__stage iframe, .gws-viewer__stage video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .gws-viewer__fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 24px; }
+        .gws-viewer__fallback .gradient { position: absolute; inset: 0; opacity: 0.5; background: radial-gradient(600px 300px at 30% 20%, rgba(245, 158, 11, 0.25), transparent 60%), radial-gradient(500px 300px at 80% 80%, rgba(56, 189, 248, 0.18), transparent 60%), #0a0d16; }
+        .gws-viewer__fallback .lbl { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--g5-glow); position: relative; }
+        .gws-viewer__fallback p { max-width: 480px; margin: 0; font-size: 0.85rem; color: rgba(242, 239, 230, 0.7); position: relative; }
+        .gws-viewer__bottom { padding: 14px 18px; border-top: 1px solid rgba(255, 255, 255, 0.1); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+        .gws-viewer__bottom input { flex: 1; min-width: 220px; background: rgba(10, 12, 20, 0.8); color: #f2efe6; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 8px; padding: 10px 12px; font: inherit; }
+        .gws-viewer__bottom .hint { font-size: 0.72rem; color: rgba(242, 239, 230, 0.55); font-family: var(--font-mono); }
+        .gws-viewer__err { color: #f87171; font-size: 0.78rem; font-family: var(--font-mono); padding: 0 18px 10px; }
+      </style>
+      <div class="gws-viewer__panel glass--strong">
+        <div class="gws-viewer__top">
+          <div class="t">
+            <span class="kicker" id="gws-v-kicker">Visor multimedia industrial</span>
+            <h4 id="gws-v-title">Sincronización de vitrina</h4>
+          </div>
+          <button type="button" class="gws-viewer__close" id="gws-v-close" aria-label="Cerrar">✕</button>
+        </div>
+        <div class="gws-viewer__stage" id="gws-v-stage">
+          <div class="gws-viewer__fallback" id="gws-v-fallback">
+            <div class="gradient"></div>
+            <span class="lbl">Sincronización con YouTube · vitrina</span>
+            <p>
+              Pegá el enlace de tu video, masterclass o canal y el visor lo reproduce
+              al instante — sin subir archivos al servidor. En producción, el maestro
+              o industrial guarda sus embeds con <span style="font-family: var(--font-mono);">POST /catalog/media</span>
+              y la vitrina los muestra con un clic.
+            </p>
+          </div>
+        </div>
+        <div class="gws-viewer__bottom">
+          <input id="gws-v-url" type="url" placeholder="https://www.youtube.com/watch?v=… · vimeo.com/… · archivo .mp4" />
+          <button type="button" class="gw-btn gw-btn--primary glass-edge" id="gws-v-play" data-galaxy="g6">Sincronizar</button>
+          <span class="hint">allowlist soberano: exhibición, nunca canales de contacto (§3.6)</span>
+        </div>
+        <div class="gws-viewer__err" id="gws-v-err" hidden></div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="./gws-fx.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      var GALAXIES = [
+        { id: 'g1', name: 'Íconos Maestros' },
+        { id: 'g2', name: 'Marketplace' },
+        { id: 'g3', name: 'Comunidad' },
+        { id: 'g4', name: 'Boro y Envases', reserved: true },
+        { id: 'g5', name: 'Gran Industria', reserved: true },
+        { id: 'g6', name: 'Ingeniería y Oficio' }
+      ];
+
+      // Datos de demostración SOLO cuando el backend no responde (file://).
+      var DEMO_SLOTS = {
+        g1: { totalSlots: 1000, claimed: 214, enabled: true },
+        g2: { totalSlots: 1000, claimed: 156, enabled: true },
+        g3: { totalSlots: 2000, claimed: 402, enabled: true },
+        g4: { totalSlots: 1000, claimed: 0, enabled: true },
+        g5: { totalSlots: 1000, claimed: 0, enabled: true },
+        g6: { totalSlots: 1000, claimed: 88, enabled: true }
+      };
+
+      var fmt = function (n) { return n.toLocaleString('en-US'); };
+      var grid = document.getElementById('galaxias');
+      var streamNote = document.getElementById('stream-note');
+
+      // ---- Estado de sesión persistido (selector de 7 idiomas + moneda) ----
+      var LANGUAGES = [
+        { code: 'es', flag: '🇪🇸', label: 'ES' },
+        { code: 'en', flag: '🇬🇧', label: 'EN' },
+        { code: 'fr', flag: '🇫🇷', label: 'FR' },
+        { code: 'de', flag: '🇩🇪', label: 'DE' },
+        { code: 'it', flag: '🇮🇹', label: 'IT' },
+        { code: 'pt', flag: '🇧🇷', label: 'PT' },
+        { code: 'zh', flag: '🇨🇳', label: '中文' }
+      ];
+      var CURRENCIES = ['USD', 'USDT', 'ARS', 'BRL', 'MXN', 'EUR', 'GBP', 'BOB', 'CLP', 'COP', 'PEN', 'PYG', 'UYU', 'VES'];
+
+      function lsGet(key) {
+        try { return localStorage.getItem(key); } catch (e) { return null; }
+      }
+      function lsSet(key, value) {
+        try { localStorage.setItem(key, value); } catch (e) { /* file:// sin storage */ }
+      }
+
+      function loadState() {
+        return {
+          lang: lsGet('gws_lang') || 'es',
+          currency: lsGet('gws_currency') || 'USD'
+        };
+      }
+      var state = loadState();
+
+      function sessionHeaders() {
+        return {
+          'x-gws-lang': state.lang,
+          'x-gws-currency': state.currency
+        };
+      }
+
+      function renderPicker() {
+        var picker = document.getElementById('lang-picker');
+        LANGUAGES.forEach(function (l) {
+          var btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'flag-btn' + (l.code === state.lang ? ' active' : '');
+          btn.setAttribute('data-lang', l.code);
+          btn.innerHTML = '<span class="flag-emoji">' + l.flag + '</span>' + l.label;
+          btn.addEventListener('click', function () {
+            if (window.GWSEffects) window.GWSEffects.click();
+            state.lang = l.code;
+            lsSet('gws_lang', state.lang);
+            document.querySelectorAll('.flag-btn').forEach(function (b) {
+              b.classList.toggle('active', b.getAttribute('data-lang') === state.lang);
+            });
+            refreshSession();
+          });
+          picker.appendChild(btn);
+        });
+
+        var select = document.getElementById('currency-select');
+        CURRENCIES.forEach(function (c) {
+          var opt = document.createElement('option');
+          opt.value = c;
+          opt.textContent = c;
+          if (c === state.currency) opt.selected = true;
+          select.appendChild(opt);
+        });
+        select.addEventListener('change', function () {
+          if (window.GWSEffects) window.GWSEffects.click();
+          state.currency = select.value;
+          lsSet('gws_currency', state.currency);
+          refreshSession();
+        });
+      }
+
+      // Re-aplica geo/umbral/tarifario/moneda con la nueva preferencia.
+      function refreshSession() {
+        applyGeo();
+        applyVault();
+      }
+
+      // Etiquetas de UI mínimas del tarifario, en los 7 idiomas del umbral.
+      var UI = {
+        en: { per: '/mo', q: 'Quarterly', s: 'Semi-annual', a: 'Annual', off: 'off' },
+        es: { per: '/mes', q: 'Trimestral', s: 'Semestral', a: 'Anual', off: 'dto.' },
+        fr: { per: '/mois', q: 'Trimestriel', s: 'Semestriel', a: 'Annuel', off: 'remise' },
+        de: { per: '/Monat', q: 'Vierteljährlich', s: 'Halbjährlich', a: 'Jährlich', off: 'Rabatt' },
+        it: { per: '/mese', q: 'Trimestrale', s: 'Semestrale', a: 'Annuale', off: 'sconto' },
+        pt: { per: '/mês', q: 'Trimestral', s: 'Semestral', a: 'Anual', off: 'desconto' },
+        zh: { per: '/月', q: '季度', s: '半年', a: '年度', off: '折扣' }
+      };
+      function ui(lang) { return UI[lang] || UI.es; }
+      var PERIOD_LABEL = { 3: 'q', 6: 's', 12: 'a' };
+
+      function badge(state, reserved) {
+        if (reserved) return '<span class="galaxy-card__badge badge-reserved">RESERVADA</span>';
+        if (!state.enabled) return '<span class="galaxy-card__badge badge-exhausted">PAUSADA</span>';
+        if (state.exhausted) return '<span class="galaxy-card__badge badge-exhausted">AGOTADA</span>';
+        if (state.available <= state.totalSlots * 0.15) return '<span class="galaxy-card__badge badge-low">ÚLTIMOS CUPOS</span>';
+        return '<span class="galaxy-card__badge badge-open">ABIERTA</span>';
+      }
+
+      var displayed = {};
+      function animateNumber(el, from, to, dur) {
+        var start = performance.now();
+        function step(now) {
+          var p = Math.min((now - start) / dur, 1);
+          var eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = fmt(Math.round(from + (to - from) * eased));
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      function render(slotsMap, live) {
+        var firstRender = Object.keys(displayed).length === 0;
+        grid.innerHTML = '';
+        GALAXIES.forEach(function (g) {
+          var s = slotsMap[g.id] || { totalSlots: 0, claimed: 0, enabled: true };
+          var available = Math.max((s.totalSlots || 0) - (s.claimed || 0), 0);
+          var pct = s.totalSlots ? Math.round((s.claimed / s.totalSlots) * 100) : 0;
+          var prev = typeof displayed[g.id] === 'number' ? displayed[g.id] : available;
+          var card = document.createElement('article');
+          card.className = 'galaxy-card gw-card--glass glass-edge';
+          card.setAttribute('data-galaxy', g.id);
+          card.innerHTML =
+            '<div class="galaxy-card__head">' +
+              '<span class="galaxy-card__id">' + g.id.toUpperCase() + '</span>' +
+              '<h3 class="galaxy-card__name">' + g.name + '</h3>' +
+            '</div>' +
+            '<div class="galaxy-card__count">' +
+              '<span class="galaxy-card__available gw-count">0</span>' +
+              '<span class="galaxy-card__total">cupos libres de ' + fmt(s.totalSlots) + '</span>' +
+            '</div>' +
+            '<div class="progress"><span style="width:' + pct + '%"></span></div>' +
+            '<div class="galaxy-card__status">' +
+              badge(s, g.reserved) +
+              '<span class="tech" style="color:var(--text-muted);font-size:0.72rem;">' + fmt(s.claimed) + ' tomados</span>' +
+            '</div>';
+          var valueEl = card.querySelector('.galaxy-card__available');
+          // Micro-interacción del contador: el número se "funde" (blur + escala)
+          // mientras JS interpola el valor — casi hipnótico, no abrupto.
+          valueEl.classList.add('is-melting');
+          setTimeout(function () { valueEl.classList.remove('is-melting'); }, 360);
+          animateNumber(valueEl, firstRender ? available : prev, available, live ? 520 : 720);
+          displayed[g.id] = available;
+          if (live && !firstRender && prev !== available && window.GWSEffects) {
+            window.GWSEffects.tick();
+          }
+          grid.appendChild(card);
+        });
+        setStreamNote(live);
+      }
+
+      function setStreamNote(live) {
+        if (live) {
+          streamNote.textContent = 'En vivo · SSE conectado al backend';
+          streamNote.className = 'stream-note ok';
+        } else {
+          streamNote.textContent = 'Datos de demostración — abre el backend (npm start) para contadores en vivo';
+          streamNote.className = 'stream-note warn';
+        }
+      }
+
+      function slotsToMap(arr) {
+        var map = {};
+        (arr || []).forEach(function (s) { map[s.galaxy] = s; });
+        return map;
+      }
+
+      function fetchSlots() {
+        return fetch('/foundation/slots')
+          .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); });
+      }
+
+      // 1) Intento real: fetch de /foundation/slots.
+      var usedLive = false;
+      fetchSlots()
+        .then(function (data) { usedLive = true; render(slotsToMap(data), true); })
+        .catch(function () { render(slotsToMap(DEMO_SLOTS), false); });
+
+      // 2) SSE: contadores en vivo sin polling. El EventSource falla en
+      //    file:// o sin backend → se ignora y quedan los del snapshot.
+      try {
+        var es = new EventSource('/foundation/slots/stream');
+        es.onmessage = function (ev) {
+          try {
+            render(slotsToMap(JSON.parse(ev.data)), true);
+            usedLive = true;
+          } catch (e) { /* payload no parseable: ignorar */ }
+        };
+        es.onerror = function () {
+          if (usedLive) streamNote.textContent = 'SSE desconectado — reintentando…';
+          es.close();
+        };
+      } catch (e) { /* sin SSE en file:// */ }
+
+      // 3) Geo + moneda local (exhibición). Envía la preferencia de sesión
+      //    (x-gws-lang / x-gws-currency) para que el backend la respete.
+      function fetchJson(url, headers) {
+        var opts = headers ? { headers: headers } : undefined;
+        return fetch(url, opts).then(function (r) { return r.json(); });
+      }
+
+      function applyGeo() {
+        fetchJson('/geo', sessionHeaders()).then(function (geo) {
+          document.getElementById('geo-line').textContent =
+            geo.countryName ? (geo.countryName + ' · idioma ' + geo.language.toUpperCase()) : 'ubicación no resuelta';
+          var localCurrency = geo.currency;
+          document.getElementById('currency-line').textContent = localCurrency;
+          // Determinismo de moneda (Orden §4): sin preferencia explícita del
+          // usuario, la geo decide la moneda de exhibición (ARS nativa para
+          // Argentina; USD para el resto). La preferencia del selector manda.
+          if (!lsGet('gws_currency')) {
+            state.currency = localCurrency;
+            var sel = document.getElementById('currency-select');
+            if (sel) sel.value = localCurrency;
+          }
+          renderThreshold(geo.language);
+          renderPrices(geo.language);
+          return fetchJson('/currencies/convert?amount=250&from=USDT&to=' + state.currency)
+            .then(function (conv) {
+              document.getElementById('converted-amount').textContent =
+                conv.converted.toLocaleString('es-AR', { maximumFractionDigits: 2, style: 'currency', currency: conv.to });
+            });
+        }).catch(function () {
+          document.getElementById('geo-line').textContent = 'backend offline · demo';
+          document.getElementById('currency-line').textContent = state.currency;
+          document.getElementById('converted-amount').textContent = 'USD 250.00';
+          renderThreshold(state.lang);
+          renderPrices(state.lang);
+        });
+      }
+
+      // 4) Bóveda del Conocimiento: 4 raíces de la taxonomía (live o demo).
+      var DEMO_VAULT = [
+        { code: 'AV', name: 'Arte y Vitrofusión', children: ['Curvas y cronogramas', 'Ciencia del vidrio', 'Técnicas', 'Esmaltado', 'Equipamiento'] },
+        { code: 'LW', name: 'Lampworking (Soplete)', children: ['Llama y torches', 'Vidrios y tensiones', 'Varilla', 'Tubo', 'Avanzadas', 'Taller'] },
+        { code: 'SB', name: 'Borosilicato y Aparatología', children: ['Materiales técnicos', 'Aparatos', 'Soplado científico', 'Estándares', 'Seguridad'] },
+        { code: 'IN', name: 'Industria Pesada y Maquinaria', children: ['Fusión', 'Quemadores', 'Refractarios', 'Recocido', 'Conformado', 'Operación'] }
+      ];
+
+      function renderVault(roots, live) {
+        var box = document.getElementById('vault-roots');
+        box.innerHTML = '';
+        roots.forEach(function (r) {
+          var kids = r.children || [];
+          var card = document.createElement('article');
+          card.className = 'vault-card gw-card--glass';
+          card.setAttribute('data-galaxy', 'g6');
+          card.innerHTML =
+            '<span class="vault-card__code">' + r.code + '</span>' +
+            '<h3 class="vault-card__name">' + r.name + '</h3>' +
+            '<div class="vault-card__count">' + kids.length + ' subcategorías · ' +
+              kids.map(function (k) { return k; }).join(' · ') + '</div>' +
+            '<div class="vault-card__legal"><a href="/vault/legal">cláusulas safe-harbor es/en</a></div>';
+          box.appendChild(card);
+        });
+        document.getElementById('vault-note').textContent = live
+          ? 'En vivo · taxonomía servida por /vault/categories'
+          : 'Datos de demostración — abre el backend (npm start) para la taxonomía en vivo';
+      }
+
+      function applyVault() {
+        fetchJson('/vault/categories').then(function (roots) {
+          renderVault(roots, true);
+        }).catch(function () {
+          renderVault(DEMO_VAULT, false);
+        });
+      }
+
+      renderPicker();
+      applyGeo();
+      applyVault();
+
+      // Paisaje auditivo (Orden §3): botones principales → cortavidrios;
+      // vínculos de acceso a la Bóveda → transición cinematográfica.
+      document.querySelectorAll('.actions a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.GWSEffects) window.GWSEffects.click();
+        });
+      });
+      document.querySelectorAll('.vault-card__legal a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (window.GWSEffects) window.GWSEffects.whoosh();
+        });
+      });
+
+      // Reveal on-scroll: las secciones fluyen como vidrio fundido al entrar
+      // al viewport. Con IntersectionObserver no disponible, todo visible.
+      function initReveal() {
+        var els = document.querySelectorAll('.gw-reveal');
+        if (!('IntersectionObserver' in window)) {
+          els.forEach(function (el) { el.classList.add('is-visible'); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+        els.forEach(function (el) { io.observe(el); });
+      }
+      initReveal();
+
+      function renderThreshold(lang) {
+        fetchJson('/threshold/message?lang=' + (lang || 'es')).then(function (msg) {
+          document.getElementById('threshold-lang').textContent = (msg.code || 'es').toUpperCase();
+          document.getElementById('threshold-text').textContent = msg.text;
+        }).catch(function () {
+          document.getElementById('threshold-text').textContent =
+            'Glass World Studio: El Ecosistema Universal del Vidrio. Asegura tu acceso fundacional ahora. ' +
+            'Al agotarse los cupos gratuitos, la Galaxia 3 cuesta $15/mes; las Galaxias 1, 2, 4 y 6, $25/mes; ' +
+            'y la Industria Pesada (Galaxia 5), $40/mes. Aprovecha hasta un 20% de descuento en planes anuales.';
+        });
+      }
+
+      function renderPrices(lang) {
+        var t = ui(lang);
+        fetchJson('/subscriptions/plans').then(function (catalog) {
+          var priceGrid = document.getElementById('price-grid');
+          priceGrid.innerHTML = '';
+          catalog.plans.forEach(function (plan) {
+            var g = GALAXIES.filter(function (x) { return x.id === plan.galaxy; })[0];
+            var card = document.createElement('article');
+            card.className = 'price-card gw-card--glass';
+            card.setAttribute('data-galaxy', plan.galaxy);
+            card.innerHTML =
+              '<h3 class="price-card__name">' + (g ? g.name : plan.galaxy.toUpperCase()) + '</h3>' +
+              '<div class="price-card__row">' +
+                '<span class="price-card__price">$' + plan.monthlyPriceUsd.toFixed(2) + '</span>' +
+                '<span class="price-card__per">USD ' + t.per + '</span>' +
+              '</div>';
+            priceGrid.appendChild(card);
+          });
+
+          var loyalty = document.getElementById('loyalty');
+          loyalty.innerHTML = '';
+          catalog.discounts.forEach(function (d) {
+            if (d.months === 1) return;
+            var key = PERIOD_LABEL[d.months];
+            var chip = document.createElement('span');
+            chip.className = 'loyalty-chip';
+            chip.textContent = t[key] + ' · −' + d.discountPercent + '% ' + t.off;
+            loyalty.appendChild(chip);
+          });
+        }).catch(function () {
+          document.getElementById('price-grid').innerHTML =
+            '<p class="tech" style="color:var(--text-muted);">tarifario offline · demo: G3 $15 · G1/G2/G4/G6 $25 · G5 $40</p>';
+        });
+      }
+
+      fetchJson('/currencies').then(function (q) {
+        document.getElementById('foot-coverage').textContent =
+          'cobertura de moneda: ' + q.coveragePercent + '%';
+      }).catch(function () {});
+    })();
+  </script>
+
+  <script>
+    (function () {
+      'use strict';
+
+      // Cotizador aduanero (demo del motor POST /customs/estimate).
+      // Intenta el backend en vivo; si está offline usa la misma lógica con
+      // tablas locales equivalentes (rotulado "estimación local").
+      function $id(id) { return document.getElementById(id); }
+
+      var HS = {
+        '7002.20': { m: 4, us: 6, eu: 3 }, '7002.32': { m: 4, us: 6, eu: 3 },
+        '7003.19': { m: 10, us: 3.3, eu: 3 }, '7004.90': { m: 10, us: 6.4, eu: 3 },
+        '7005.29': { m: 10, us: 3.9, eu: 3 }, '7006.00': { m: 12, us: 4.9, eu: 3 },
+        '7007.19': { m: 12, us: 5, eu: 3 }, '7013.91': { m: 18, us: 7.2, eu: 3 },
+        '7013.99': { m: 18, us: 5, eu: 3 }, '7016.90': { m: 14, us: 6, eu: 3 },
+        '7017.20': { m: 14, us: 6, eu: 3 }, '7018.90': { m: 14, us: 6, eu: 3 },
+        '8417.80': { m: 14, us: 2.6, eu: 2.5 }, '8514.90': { m: 14, us: 2.5, eu: 2.5 },
+        '6903.10': { m: 12, us: 3, eu: 2.5 }, '7020.00': { m: 18, us: 5, eu: 3 }
+      };
+      var PRODUCT_TO_HS = {
+        art_glassware: '7013.99', art_lampwork: '7018.90', art_mosaic: '7016.90',
+        boro_rod: '7002.20', boro_tube: '7002.32', cast_sheet: '7003.19',
+        drawn_sheet: '7004.90', float_sheet: '7005.29', worked_glass: '7006.00',
+        tempered: '7007.19', lab_glass: '7017.20', furnace: '8417.80',
+        furnace_parts: '8514.90', refractory: '6903.10', other_glass: '7020.00'
+      };
+      var COUNTRY = {
+        AR: { vat: 21, stat: 3, region: 'mercosur', name: 'Argentina' },
+        US: { vat: null, stat: 0, region: 'nafta', name: 'Estados Unidos' },
+        BR: { vat: 18, stat: 0, region: 'mercosur', name: 'Brasil' },
+        MX: { vat: 16, stat: 0, region: 'nafta', name: 'México' },
+        DE: { vat: 19, stat: 0, region: 'eu', name: 'Alemania' },
+        FR: { vat: 20, stat: 0, region: 'eu', name: 'Francia' },
+        IT: { vat: 22, stat: 0, region: 'eu', name: 'Italia' },
+        ES: { vat: 21, stat: 0, region: 'eu', name: 'España' },
+        GB: { vat: 20, stat: 0, region: 'eu', name: 'Reino Unido' },
+        NL: { vat: 21, stat: 0, region: 'eu', name: 'Países Bajos' },
+        BE: { vat: 21, stat: 0, region: 'eu', name: 'Bélgica' },
+        PT: { vat: 23, stat: 0, region: 'eu', name: 'Portugal' },
+        CL: { vat: 19, stat: 0, region: 'latam', name: 'Chile' },
+        UY: { vat: 22, stat: 0, region: 'latam', name: 'Uruguay' },
+        PY: { vat: 10, stat: 0, region: 'mercosur', name: 'Paraguay' },
+        BO: { vat: 13, stat: 0, region: 'latam', name: 'Bolivia' },
+        PE: { vat: 18, stat: 0, region: 'latam', name: 'Perú' },
+        CO: { vat: 19, stat: 0, region: 'latam', name: 'Colombia' },
+        VE: { vat: 16, stat: 0, region: 'latam', name: 'Venezuela' }
+      };
+      var REGION_FIELD = { mercosur: 'm', nafta: 'us', eu: 'eu', latam: 'us' };
+      var FREIGHT = { air: 4.5, ocean: 75 };
+      var STAT_CAP = 2000;
+
+      function r2(n) { return Math.round(n * 100) / 100; }
+      function fmt(n) { return 'USD ' + n.toLocaleString('en-US', { maximumFractionDigits: 2 }); }
+
+      function populate() {
+        var prod = $id('cust-product');
+        Object.keys(PRODUCT_TO_HS).forEach(function (p) {
+          var o = document.createElement('option');
+          o.value = p;
+          o.textContent = p + ' · ' + PRODUCT_TO_HS[p];
+          if (p === 'art_glassware') o.selected = true;
+          prod.appendChild(o);
+        });
+        var origin = $id('cust-origin'), dest = $id('cust-dest');
+        Object.keys(COUNTRY).forEach(function (c) {
+          [origin, dest].forEach(function (sel) {
+            var o = document.createElement('option');
+            o.value = c;
+            o.textContent = c + ' · ' + COUNTRY[c].name;
+            if (sel === dest && c === 'AR') o.selected = true;
+            if (sel === origin && c === 'DE') o.selected = true;
+            sel.appendChild(o);
+          });
+        });
+      }
+
+      function estimateLocal() {
+        var productType = $id('cust-product').value;
+        var value = parseFloat($id('cust-value').value) || 0;
+        var weight = parseFloat($id('cust-weight').value) || 0;
+        var volume = parseFloat($id('cust-volume').value) || 0;
+        var mode = $id('cust-mode').value;
+        var origin = $id('cust-origin').value;
+        var destCode = $id('cust-dest').value;
+        var destC = COUNTRY[destCode];
+
+        var hs = HS[PRODUCT_TO_HS[productType]];
+        var dutyRate = hs[REGION_FIELD[destC.region] || 'us'];
+        var chargeableKg = mode === 'air'
+          ? Math.max(weight, volume * 167, 1)
+          : Math.max(weight / 200, volume, 0.5);
+        var freight = mode === 'air'
+          ? r2(chargeableKg * FREIGHT.air + 25)
+          : r2(chargeableKg * FREIGHT.ocean + 40);
+        var insurance = r2(value * 0.003);
+        var cif = r2(value + freight + insurance);
+        var duty = r2(cif * dutyRate / 100);
+        var stat = r2(Math.min(cif * destC.stat / 100, STAT_CAP));
+        var vatBase = r2(cif + duty + stat);
+        var vat = destC.vat ? r2(vatBase * destC.vat / 100) : 0;
+        var wh = destCode === 'AR'
+          ? [{ label: 'Percepción IVA adicional', amount: r2(vatBase * 0.10) }, { label: 'Percepción Ganancias', amount: r2(vatBase * 0.06) }]
+          : [];
+        var whSum = wh.reduce(function (a, w) { return a + w.amount; }, 0);
+        var total = r2(cif + duty + stat + vat + whSum);
+
+        $id('cust-total').textContent = fmt(total);
+        var lines = [
+          { k: PRODUCT_TO_HS[productType] + ' · ' + productType, v: fmt(value) },
+          { k: 'Flete estimado (' + mode + ')', v: fmt(freight) },
+          { k: 'Seguro (0,3 %)', v: fmt(insurance) },
+          { k: 'CIF', v: fmt(cif) },
+          { k: 'Arancel ' + dutyRate + ' %', v: fmt(duty) },
+          { k: 'Tasa estadística ' + destC.stat + ' %', v: fmt(stat) },
+          { k: 'IVA/GST ' + (destC.vat ? destC.vat + ' %' : '—'), v: fmt(vat) }
+        ].concat(wh.map(function (w) { return { k: w.label + ' (10/6 %)', v: fmt(w.amount) }; }))
+         .concat([{ k: 'TOTAL ESTIMADO', v: fmt(total), total: true }]);
+        $id('cust-lines').innerHTML = lines.map(function (l) {
+          return '<div class="li' + (l.total ? ' total' : '') + '"><span>' + l.k + '</span><span>' + l.v + '</span></div>';
+        }).join('');
+        $id('cust-note').textContent =
+          'Estimación LOCAL equivalente a POST /customs/estimate (backend offline) · referencias 2026-08-02. La aduana de destino determina los montos finales.';
+      }
+
+      function renderLive(res) {
+        $id('cust-total').textContent = fmt(res.lines.totalEstimateUsd);
+        var lines = [
+          { k: res.hsCode + ' · ' + res.productType, v: fmt(res.lines.productValueUsd) },
+          { k: 'Flete estimado (' + res.mode + ')', v: fmt(res.lines.freightUsd) },
+          { k: 'Seguro', v: fmt(res.lines.insuranceUsd) },
+          { k: 'CIF', v: fmt(res.lines.cifUsd) },
+          { k: 'Arancel ' + res.dutyRate + ' % (' + res.dutyRateBasis + ')', v: fmt(res.lines.dutyUsd) },
+          { k: 'Tasa estadística ' + (res.statisticalFeeRate || 0) + ' %', v: fmt(res.lines.statisticalFeeUsd) },
+          { k: 'IVA/GST ' + (res.vatRate ? res.vatRate + ' %' : '—'), v: fmt(res.lines.vatUsd) }
+        ];
+        (res.lines.withholdingsUsd || []).forEach(function (w) {
+          lines.push({ k: w.label, v: fmt(w.amount) });
+        });
+        (res.lines.feesUsd || []).forEach(function (f) {
+          lines.push({ k: f.label, v: fmt(f.amount) });
+        });
+        lines.push({ k: 'TOTAL ESTIMADO', v: fmt(res.lines.totalEstimateUsd), total: true });
+        $id('cust-lines').innerHTML = lines.map(function (l) {
+          return '<div class="li' + (l.total ? ' total' : '') + '"><span>' + l.k + '</span><span>' + l.v + '</span></div>';
+        }).join('');
+        $id('cust-note').textContent = 'Estimación en vivo · ' + res.disclaimer;
+      }
+
+      function calc() {
+        if (window.GWSEffects) window.GWSEffects.click();
+        var payload = {
+          productType: $id('cust-product').value,
+          customsValueUsd: parseFloat($id('cust-value').value) || 0,
+          weightKg: parseFloat($id('cust-weight').value) || 0,
+          volumeCbm: parseFloat($id('cust-volume').value) || undefined,
+          mode: $id('cust-mode').value,
+          originCountry: $id('cust-origin').value,
+          destinationCountry: $id('cust-dest').value
+        };
+        fetch('/customs/estimate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (r) { return r.json(); }).then(function (res) {
+          if (res && res.estimated) renderLive(res);
+          else estimateLocal();
+        }).catch(function () { estimateLocal(); });
+      }
+
+      populate();
+      $id('cust-calc').addEventListener('click', calc);
+    })();
+  </script>
+  <script>
+    (function () {
+      'use strict';
+      // Visor multimedia inmersivo — demo del estándar de vitrinas de video.
+      // Espejo del resolver del backend (src/common/media): parsea YouTube/
+      // Vimeo/archivos directos y aplica el allowlist soberano (§3.6).
+      var $id = function (id) { return document.getElementById(id); };
+      var viewer = $id('gws-viewer');
+      if (!viewer) return;
+
+      var stage = $id('gws-v-stage');
+      var fallback = $id('gws-v-fallback');
+      var urlInput = $id('gws-v-url');
+      var errBox = $id('gws-v-err');
+
+      var FORBIDDEN = ['whatsapp', 'wa.me', 'telegram', 't.me', 'instagram', 'facebook', 'messenger', 'discord', 'signal', 'bit.ly', 'tinyurl', 'goo.gl', 't.co', 'shorturl', 'mailto'];
+
+      function isForbidden(hostname) {
+        var h = hostname.toLowerCase();
+        for (var i = 0; i < FORBIDDEN.length; i++) {
+          if (h === FORBIDDEN[i] || h.indexOf('.' + FORBIDDEN[i]) > -1) return true;
+        }
+        return false;
+      }
+
+      function youtubeId(u) {
+        if (u.hostname === 'youtu.be') return (u.pathname.slice(1).split('/')[0] || null);
+        var v = u.searchParams.get('v');
+        if (v) return v;
+        var m = u.pathname.match(/^\/(?:embed|live|shorts|watch)\/([^/]+)/);
+        return m ? m[1] : null;
+      }
+
+      function render(embedUrl) {
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.src = embedUrl;
+        fallback.hidden = true;
+        stage.appendChild(iframe);
+      }
+
+      function showErr(msg) { errBox.textContent = msg; errBox.hidden = false; }
+
+      function play(rawUrl) {
+        errBox.hidden = true;
+        if (!rawUrl) { showErr('Pegá una URL primero.'); return; }
+        var u;
+        try { u = new URL(rawUrl); } catch (e) { showErr('URL inválida.'); return; }
+        if (u.protocol !== 'https:') { showErr('Solo se admiten URLs HTTPS.'); return; }
+        if (isForbidden(u.hostname)) { showErr('Host bloqueado por soberanía — no se permiten canales de contacto.'); return; }
+
+        if (/youtube\.com|youtu\.be/.test(u.hostname)) {
+          var ytId = youtubeId(u);
+          if (ytId) { render('https://www.youtube-nocookie.com/embed/' + ytId); return; }
+          if (/^\/@|^\/channel\/|^\/c\//.test(u.pathname)) {
+            showErr('Canal detectado: los canales se muestran como botón "Ver en origen", no como reproductor.');
+            return;
+          }
+        }
+        if (/vimeo\.com/.test(u.hostname)) {
+          var vm = u.pathname.match(/^\/(?:video\/)?(\d+)/);
+          if (vm) { render('https://player.vimeo.com/video/' + vm[1]); return; }
+        }
+        if (/\.(mp4|webm|mov|m3u8)(\?|#|$)/i.test(u.pathname + u.search)) { render(u.href); return; }
+
+        showErr('No se reconoce el formato. Usá YouTube, Vimeo o un archivo .mp4/.webm/.mov.');
+      }
+
+      function clearStage() {
+        while (stage.firstChild) stage.removeChild(stage.firstChild);
+        stage.appendChild(fallback);
+        fallback.hidden = false;
+      }
+
+      function openViewer(preset) {
+        if (window.GWSEffects) window.GWSEffects.click();
+        clearStage();
+        errBox.hidden = true;
+        urlInput.value = '';
+        var t = $id('gws-v-title'), k = $id('gws-v-kicker');
+        if (preset === 'course') {
+          k.textContent = 'G1 · Bóveda · Masterclass magistral';
+          t.textContent = 'Masterclass — pegá el enlace de tu curso';
+        } else if (preset === 'machine') {
+          k.textContent = 'G5 · Gran Industria · Demo técnica';
+          t.textContent = 'Máquina pesada — demo de corte por agua';
+        } else {
+          k.textContent = 'Visor multimedia industrial';
+          t.textContent = 'Sincronización de vitrina';
+        }
+        viewer.hidden = false;
+        document.body.style.overflow = 'hidden';
+        urlInput.focus();
+      }
+
+      function closeViewer() {
+        viewer.hidden = true;
+        document.body.style.overflow = '';
+        clearStage();
+        errBox.hidden = true;
+      }
+
+      $id('gws-v-close').addEventListener('click', closeViewer);
+      viewer.addEventListener('click', function (e) { if (e.target === viewer) closeViewer(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeViewer(); });
+      $id('gws-v-play').addEventListener('click', function () { play(urlInput.value.trim()); });
+      urlInput.addEventListener('keydown', function (e) { if (e.key === 'Enter') play(urlInput.value.trim()); });
+
+      document.querySelectorAll('.gws-viewer-open').forEach(function (btn) {
+        btn.addEventListener('click', function () { openViewer(btn.getAttribute('data-vid-demo')); });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      'use strict';
+      // Carteleras publicitarias + Búnker de Ingeniería (Orden Suprema).
+      // Intenta el backend en vivo; si está offline usa demo rotulada.
+      function $id(id) { return document.getElementById(id); }
+
+      // ---------- CARTELERAS ----------
+      var DEMO_BILLBOARDS = [
+        { galaxy: 'g1', label: 'Íconos y Maestros', baseRatePerDayUsd: 1, active: true, occupiedNow: true, currentCampaign: { title: 'Taller de Vitrofusión — edición agosto', targetUrl: '/g1/vitrofusion-agosto' }, nextAvailableStart: '2026-08-17' },
+        { galaxy: 'g2', label: 'Marketplace', baseRatePerDayUsd: 1, active: true, occupiedNow: false, currentCampaign: null, nextAvailableStart: '2026-08-02' },
+        { galaxy: 'g4', label: 'Boro y Envases', baseRatePerDayUsd: 1, active: true, occupiedNow: true, currentCampaign: { title: 'Cristalería de laboratorio · línea técnica', targetUrl: '/g4/laboratorio' }, nextAvailableStart: '2026-09-01' },
+        { galaxy: 'g5', label: 'Gran Industria', baseRatePerDayUsd: 1, active: true, occupiedNow: false, currentCampaign: null, nextAvailableStart: '2026-08-02' },
+        { galaxy: 'g6', label: 'Ingeniería y Oficio', baseRatePerDayUsd: 1, active: true, occupiedNow: false, currentCampaign: null, nextAvailableStart: '2026-08-02' }
+      ];
+
+      function renderBillboards(rows, live) {
+        var box = $id('billboards-grid');
+        box.innerHTML = '';
+        rows.forEach(function (b) {
+          var pill, pillCls;
+          if (!b.active) { pill = 'PAUSADA'; pillCls = 'paused'; }
+          else if (b.occupiedNow) { pill = 'AL AIRE'; pillCls = 'live'; }
+          else { pill = 'LIBRE'; pillCls = 'free'; }
+          var card = document.createElement('article');
+          card.className = 'bb-card gw-card--glass';
+          card.setAttribute('data-galaxy', b.galaxy);
+          var camp = b.currentCampaign
+            ? '<div class="bb-campaign"><b>' + b.currentCampaign.title + '</b>' +
+              '<span class="route">' + b.currentCampaign.targetUrl + ' · ruta interna (§3.6)</span></div>'
+            : '<div class="bb-campaign">— sin campaña al aire</div>';
+          card.innerHTML =
+            '<div class="bb-card__head">' +
+              '<div><span class="bb-card__label">' + b.galaxy.toUpperCase() + ' · ' + b.label + '</span>' +
+              '<h4 class="bb-card__name">' + b.label + '</h4></div>' +
+              '<span class="bb-pill ' + pillCls + '">' + pill + '</span>' +
+            '</div>' +
+            '<div class="bb-rate">$' + Number(b.baseRatePerDayUsd || 1).toFixed(2) + ' <small>USD / día</small></div>' +
+            camp +
+            '<div class="bb-next">próximo hueco: ' + b.nextAvailableStart + '</div>';
+          box.appendChild(card);
+        });
+        var note = $id('billboards-note');
+        if (live) { note.textContent = 'En vivo · GET /billboards/availability'; note.className = 'bb-note ok'; }
+        else { note.textContent = 'Datos de demostración — abre el backend (npm start) para la disponibilidad en vivo'; note.className = 'bb-note warn'; }
+      }
+
+      function applyBillboards() {
+        fetch('/billboards/availability')
+          .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+          .then(function (rows) { renderBillboards(rows, true); })
+          .catch(function () { renderBillboards(DEMO_BILLBOARDS, false); });
+      }
+
+      // ---------- BÚNKER ----------
+      var DEMO_META = {
+        monthlyFeeUsd: 50,
+        commissionPct: 0,
+        fidelityDiscounts: { 1: 0, 3: 10, 6: 15, 12: 20 }
+      };
+      var DEMO_SPECIALISTS = [
+        { publicName: 'Ing. Electromecánica — Templado', headline: 'Control térmico de líneas · 18 años', countryCode: 'AR', specialties: ['templado', 'sistemas_termicos'] },
+        { publicName: 'Téc. Automatización — PLC', headline: 'Integración de mesas de corte', countryCode: 'BR', specialties: ['plc', 'automatizacion'] },
+        { publicName: 'Ing. Borosilicato — Quemadores', headline: 'Cristalería científica y hornos de laboratorio', countryCode: 'DE', specialties: ['borosilicato', 'quemadores'] }
+      ];
+
+      function computeQuote(meta, months) {
+        var d = (meta.fidelityDiscounts && meta.fidelityDiscounts[months]) || 0;
+        var fee = Math.round(meta.monthlyFeeUsd * months * (1 - d / 100) * 100) / 100;
+        return { months: months, discountPct: d, feeUsd: fee };
+      }
+
+      function renderQuote(meta) {
+        var months = parseInt($id('bk-plan-months').value, 10) || 1;
+        var q = computeQuote(meta, months);
+        $id('bk-quote').textContent =
+          q.discountPct > 0
+            ? q.months + ' meses · −' + q.discountPct + ' % = USD ' + q.feeUsd.toFixed(2) + ' (todo el período)'
+            : q.months + ' mes(es) = USD ' + q.feeUsd.toFixed(2);
+      }
+
+      function renderSpecialists(rows, live) {
+        var box = $id('bk-specialists');
+        box.innerHTML = '';
+        if (!rows.length) {
+          box.innerHTML = '<p style="margin:0; font-size:0.82rem; color:var(--text-muted);">Todavía no hay especialistas verificados. El Búnker abre la cartera élite con la primera ronda de registros.</p>';
+        } else {
+          rows.forEach(function (s) {
+            var d = document.createElement('div');
+            d.className = 'bk-spec';
+            d.innerHTML =
+              '<div class="who"><b>' + s.publicName + '</b>' +
+              '<span class="hl">' + s.headline + ' · ' + s.countryCode + (s.region ? ' · ' + s.region : '') + '</span>' +
+              '<div class="tags">' + (s.specialties || []).map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div></div>';
+            box.appendChild(d);
+          });
+        }
+        var note = $id('bunker-note');
+        if (live) { note.textContent = 'En vivo · GET /bunker/specialists (solo cartera verificada)'; note.className = 'bk-note ok'; }
+        else { note.textContent = 'Datos de demostración — abre el backend (npm start) para la cartera en vivo'; note.className = 'bk-note warn'; }
+      }
+
+      var meta = DEMO_META;
+      function applyBunker() {
+        fetch('/bunker/specialists')
+          .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+          .then(function (rows) { renderSpecialists(rows, true); })
+          .catch(function () { renderSpecialists(DEMO_SPECIALISTS, false); });
+        fetch('/bunker/meta')
+          .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+          .then(function (m) { meta = m; renderQuote(m); })
+          .catch(function () { renderQuote(DEMO_META); });
+      }
+
+      // ---------- ALTA Y MATRICULACIÓN DEL BÚNKER (3 PASOS) ----------
+      var BK_COUNTRY_CODES = ['AR', 'BR', 'MX', 'US', 'DE', 'FR', 'IT', 'ES', 'GB', 'NL', 'PT', 'CL', 'UY', 'PY', 'BO', 'PE', 'CO', 'VE', 'CN'];
+
+      function bkGo(step) {
+        document.querySelectorAll('.bk-alta__step').forEach(function (s) {
+          s.hidden = parseInt(s.getAttribute('data-step'), 10) !== step;
+        });
+        document.querySelectorAll('.bk-step').forEach(function (s) {
+          s.classList.toggle('is-active', parseInt(s.getAttribute('data-step'), 10) === step);
+        });
+        if (window.GWSEffects) window.GWSEffects.click();
+      }
+
+      function bkChecked(elId) {
+        return Array.prototype.slice.call(document.querySelectorAll('#' + elId + ' input:checked')).map(function (i) { return i.value; });
+      }
+
+      function bkValidateStep2() {
+        var req = document.querySelectorAll('.bk-alta__step[data-step="2"] input[required], .bk-alta__step[data-step="2"] select[required]');
+        for (var i = 0; i < req.length; i++) {
+          if (!req[i].checkValidity()) { req[i].reportValidity(); return false; }
+        }
+        if (bkChecked('bk-specs').length < 1) { window.alert('Elegí al menos una especialidad.'); return false; }
+        if (bkChecked('bk-support').length < 1) { window.alert('Elegí al menos un tipo de soporte.'); return false; }
+        return true;
+      }
+
+      function bkBuildPayload() {
+        var fullName = $id('bk-fullname').value.trim();
+        var years = parseInt($id('bk-years').value, 10) || 0;
+        var title = $id('bk-title').value.trim();
+        return {
+          publicName: fullName,
+          fullName: fullName,
+          professionalEmail: $id('bk-email').value.trim(),
+          phoneE164: $id('bk-phone').value.trim(),
+          nationality: $id('bk-nationality').value.trim(),
+          academicTitle: title,
+          registrationNumber: $id('bk-regnum').value.trim(),
+          issuingInstitution: $id('bk-institution').value.trim(),
+          yearsExperience: years,
+          headline: title + ' · ' + years + ' años',
+          credentials: [],
+          specialties: bkChecked('bk-specs'),
+          supportTypes: bkChecked('bk-support'),
+          countryCode: $id('bk-country').value,
+          region: $id('bk-region').value.trim() || null,
+          hourlyRateUsd: null
+        };
+      }
+
+      function bkSubmit() {
+        var note = $id('bk-alta-note');
+        var payload = bkBuildPayload();
+        fetch('/bunker/specialists', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        }).then(function (r) {
+          if (!r.ok) throw new Error('http ' + r.status);
+          return r.json();
+        }).then(function (s) {
+          note.className = 'bk-note ok';
+          note.textContent = 'Perfil creado (id ' + String(s.id).slice(0, 8) + '…) · pendiente de verificación élite por el comando.';
+        }).catch(function (e) {
+          note.className = 'bk-note warn';
+          note.textContent = (e && /401|403/.test(e.message))
+            ? 'Necesitás sesión iniciada en el backend — en esta demo el alta queda "pendiente de verificación".'
+            : 'Backend offline · demo: el alta quedó registrada localmente como "pendiente de verificación élite".';
+        });
+      }
+
+      function bkInit() {
+        var sel = $id('bk-country');
+        BK_COUNTRY_CODES.forEach(function (c) {
+          var o = document.createElement('option');
+          o.value = c; o.textContent = c;
+          sel.appendChild(o);
+        });
+        sel.value = '';
+        document.querySelectorAll('.bk-check').forEach(function (chk) {
+          chk.addEventListener('click', function (e) {
+            var inp = chk.querySelector('input');
+            if (e.target !== inp) inp.checked = !inp.checked;
+            chk.classList.toggle('sel', inp.checked);
+          });
+        });
+        $id('bk-s1-next').addEventListener('click', function () { bkGo(2); });
+        $id('bk-s2-back').addEventListener('click', function () { bkGo(1); });
+        $id('bk-s2-next').addEventListener('click', function () { if (bkValidateStep2()) bkGo(3); });
+        $id('bk-s3-back').addEventListener('click', function () { bkGo(2); });
+        $id('bk-s3-submit').addEventListener('click', function () { bkSubmit(); });
+      }
+
+      applyBillboards();
+      applyBunker();
+      bkInit();
+      $id('bk-plan-months').addEventListener('change', function () {
+        if (window.GWSEffects) window.GWSEffects.click();
+        renderQuote(meta);
+      });
+    })();
+  </script>
+</body>
+</html>

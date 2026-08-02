@@ -1,0 +1,21 @@
+# Dependencias
+node_modules/
+
+# Compilación
+dist/
+build/
+
+# Variables de entorno / secretos — NUNCA se suben al repositorio
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operativo / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
