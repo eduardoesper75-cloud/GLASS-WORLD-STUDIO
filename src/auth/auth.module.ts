@@ -20,6 +20,9 @@ import { JwtAuthGuard } from './jwt-auth.guard';
   ],
   providers: [AuthService, JwtAuthGuard],
   controllers: [AuthController],
-  exports: [AuthService, JwtAuthGuard, JwtModule],
+  // TypeOrmModule se re-exporta para que los guards (JwtAuthGuard usa
+  // UserRepository, ElevationGuard usa ElevatedSessionRepository) resuelvan
+  // sus dependencias en el contexto del módulo que los referencia.
+  exports: [AuthService, JwtAuthGuard, JwtModule, TypeOrmModule],
 })
 export class AuthModule {}

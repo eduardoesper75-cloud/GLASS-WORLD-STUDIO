@@ -51,6 +51,9 @@ import { typeOrmEntities } from './database/entities';
       migrations: [__dirname + '/database/migrations/*{.ts,.js}'],
       migrationsRun: true,
       migrationsTableName: 'gws_migrations',
+      // Una transacción POR migración (ver data-source.ts): evita 55P04 por
+      // ADD VALUE de enum usado en una migración posterior.
+      migrationsTransactionMode: 'each',
       logging: process.env.NODE_ENV === 'development',
     }),
     AuthModule,

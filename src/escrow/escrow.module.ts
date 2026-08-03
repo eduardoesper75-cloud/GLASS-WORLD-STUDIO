@@ -5,6 +5,8 @@ import { EscrowService } from './escrow.service';
 import { EscrowController } from './escrow.controller';
 import { User } from '../users/user.entity';
 import { AuditLog } from '../audit/audit-log.entity';
+import { ElevatedSession } from '../auth/elevated-session.entity';
+import { AuthModule } from '../auth/auth.module';
 
 /**
  * GWS · EscrowModule — Blindaje logístico y Escrow Inteligente
@@ -16,7 +18,10 @@ import { AuditLog } from '../audit/audit-log.entity';
  * admin + elevación ('manage_escrow_disputes').
  */
 @Module({
-  imports: [TypeOrmModule.forFeature([EscrowHold, User, AuditLog])],
+  imports: [
+    TypeOrmModule.forFeature([EscrowHold, User, AuditLog, ElevatedSession]),
+    AuthModule,
+  ],
   controllers: [EscrowController],
   providers: [EscrowService],
 })

@@ -4,6 +4,7 @@ import { G6TechSheetTemplate } from './tech-sheet-template.entity';
 import { G6TechSheet } from './tech-sheet.entity';
 import { G6TechSheetsService } from './g6-tech-sheets.service';
 import { G6TechSheetsController } from './g6-tech-sheets.controller';
+import { AuthModule } from '../../auth/auth.module';
 
 /**
  * GWS · G6TechSheetsModule — Base preconfigurada de fichas técnicas (G6)
@@ -15,7 +16,10 @@ import { G6TechSheetsController } from './g6-tech-sheets.controller';
  * corregir antes de publicar.
  */
 @Module({
-  imports: [TypeOrmModule.forFeature([G6TechSheetTemplate, G6TechSheet])],
+  imports: [
+    TypeOrmModule.forFeature([G6TechSheetTemplate, G6TechSheet]),
+    AuthModule,
+  ],
   controllers: [G6TechSheetsController],
   providers: [G6TechSheetsService],
 })

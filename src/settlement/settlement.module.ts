@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { SettlementController } from './settlement.controller';
 import { DemoBalanceAdapter } from './settlement.adapter';
+import { AuthModule } from '../auth/auth.module';
 
 /**
  * GWS · SettlementModule — Soberanía Financiera (USD + USDT)
@@ -11,6 +12,7 @@ import { DemoBalanceAdapter } from './settlement.adapter';
  * de red es del Payment_Vault (§3.1) — aquí solo el contrato + demo.
  */
 @Module({
+  imports: [AuthModule],
   controllers: [SettlementController],
   providers: [DemoBalanceAdapter],
 })

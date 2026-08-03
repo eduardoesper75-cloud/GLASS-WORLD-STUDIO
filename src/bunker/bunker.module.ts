@@ -3,6 +3,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { BunkerSpecialist } from './bunker-specialist.entity';
 import { BunkerServiceRequest } from './bunker-service-request.entity';
 import { BunkerMembership } from './bunker-membership.entity';
+import { AuditLog } from '../audit/audit-log.entity';
+import { ElevatedSession } from '../auth/elevated-session.entity';
+import { AuthModule } from '../auth/auth.module';
 import { BunkerService } from './bunker.service';
 import { BunkerController } from './bunker.controller';
 
@@ -20,7 +23,10 @@ import { BunkerController } from './bunker.controller';
       BunkerSpecialist,
       BunkerServiceRequest,
       BunkerMembership,
+      AuditLog,
+      ElevatedSession,
     ]),
+    AuthModule,
   ],
   providers: [BunkerService],
   controllers: [BunkerController],
