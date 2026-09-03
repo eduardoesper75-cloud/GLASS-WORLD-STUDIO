@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Glass World Studio — Backend (Mes 1: Cimientos + Galaxia 3)",
   "scripts": {
-    "start": "node dist/main"
+    "start": "node dist/main",
     "start:dev": "nest start --watch",
     "build": "nest build",
     "start:prod": "node dist/main",
