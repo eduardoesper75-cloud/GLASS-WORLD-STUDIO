@@ -1,0 +1,40 @@
+{
+  "plan_id": "gws-build",
+  "tasks": [
+    {
+      "id": "architecture",
+      "prompt": "Diseña el esquema de base de datos, las APIs y la arquitectura de Glass World Studio (NestJS 10 + TypeORM + PostgreSQL + Next.js 14). Lee CLAUDE.md, docs/ops/informe-go-absoluto-2026.md y docs/ops/pendientes-bloqueados-codespace.md. Produce specs en docs/database/schema.md y docs/architecture/. Aplica ADR-002 (ON DELETE RESTRICT) y ADR-004 (NUMERIC(19,4) para dinero). NO toques código.",
+      "agent": "architect"
+    },
+    {
+      "id": "backend",
+      "prompt": "Implementa los módulos NestJS del spec del arquitecto en docs/. Sigue las 42 reglas CF y CLAUDE.md §5. Escribe módulos, migraciones y tests de servicio. Nada de CASCADE en relaciones financieras. Sin secretos en código.",
+      "agent": "backend-builder",
+      "depends_on": ["architecture"]
+    },
+    {
+      "id": "tests-backend",
+      "prompt": "Escribe y corre los tests del backend (Jest). Verificación INDEPENDIENTE: no edites la lógica de negocio, solo verifica. Objetivo 80% cobertura en módulos de dinero, 100% en escrow/settlements/payments. Reporta con medidas reales de jest --coverage.",
+      "agent": "tester",
+      "depends_on": ["backend"]
+    },
+    {
+      "id": "frontend",
+      "prompt": "Construye la UI Next.js 14 + TypeScript + Tailwind en apps/web/ usando el design-system canónico (design-system/gws-design-tokens.css) y la adenda estética. Pantallas en orden: Intro, Umbral, Home (6 galaxias + 5 satélites), Dashboard, G2 Marketplace, G1 Maestros, G6 Ingeniería, G3 Comunidad, Bóveda. i18n 7 idiomas. Respondo con build + verificación de tokens.",
+      "agent": "frontend-builder",
+      "depends_on": ["architecture"]
+    },
+    {
+      "id": "tests-frontend",
+      "prompt": "Escribe y corre tests E2E del frontend (Playwright): registro→plan→home, guest→gate, compra G2 sandbox. Verificación INDEPENDIENTE. Reporta tests pasando/fallando y screenshots.",
+      "agent": "tester",
+      "depends_on": ["frontend"]
+    },
+    {
+      "id": "devops",
+      "prompt": "Prepara Docker (backend multi-stage + frontend nginx), docker-compose.yml (PostgreSQL+PostGIS, Redis, OpenSearch, backend, frontend) y GitHub Actions (test.yml, build.yml, deploy.yml). NO ejecutes deploy a producción sin aprobación. Documenta rollback.",
+      "agent": "devops",
+      "depends_on": ["tests-backend", "tests-frontend"]
+    }
+  ]
+}
