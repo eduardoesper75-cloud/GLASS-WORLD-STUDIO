@@ -1,4 +1,12 @@
-import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  MethodNotAllowedException,
+  Post,
+  Req,
+  UseGuards,
+} from '@nestjs/common';
 import { Request } from 'express';
 import { Throttle } from '@nestjs/throttler';
 import { AuthService } from './auth.service';
@@ -27,6 +35,15 @@ export class AuthController {
   @Post('login')
   login(@Body() dto: LoginDto) {
     return this.authService.login(dto);
+  }
+
+  // GET en /auth/login no está soportado (login es POST). Un handler
+  // explícito devuelve 405 Method Not Allowed en vez de 404 — la ruta
+  // existe, el método no. Evita que un scanner confunda la ruta con
+  // inexistente y fuerza usar el método correcto.
+  @Get('login')
+  loginMethodNotAllowed() {
+    throw new MethodNotAllowedException('El login se hace con POST /auth/login');
   }
 
   /**
