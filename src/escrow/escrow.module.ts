@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EscrowHold } from './escrow-hold.entity';
 import { EscrowService } from './escrow.service';
+import { EscrowScheduler } from './escrow.scheduler';
 import { EscrowController } from './escrow.controller';
 import { User } from '../users/user.entity';
 import { AuditLog } from '../audit/audit-log.entity';
@@ -23,6 +24,6 @@ import { AuthModule } from '../auth/auth.module';
     AuthModule,
   ],
   controllers: [EscrowController],
-  providers: [EscrowService],
+  providers: [EscrowService, EscrowScheduler],
 })
 export class EscrowModule {}

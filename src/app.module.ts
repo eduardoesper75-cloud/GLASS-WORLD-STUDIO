@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { ScheduleModule } from '@nestjs/schedule';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 import { APP_GUARD } from '@nestjs/core';
@@ -25,6 +26,10 @@ import { typeOrmEntities } from './database/entities';
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
+    // Cron de mantenimiento (P6): infraestructura del scheduler. Los jobs
+    // son por módulo; el sweep de escrow vive en EscrowScheduler y nace
+    // apagado (ESCROW_SWEEP_ENABLED=true para encenderlo, §3.4 CLAUDE.md).
+    ScheduleModule.forRoot(),
     // Rate limiting global (anti-DoS). 100 req/min/IP por defecto; las rutas
     // sensibles (auth/register/login, webhooks) llevan límites más estrictos
     // vía @Throttle() en el controller. Valores configurables por env.
