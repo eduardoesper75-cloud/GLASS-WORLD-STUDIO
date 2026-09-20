@@ -27,6 +27,11 @@ import { BunkerMembership } from '../bunker/bunker-membership.entity';
 import { G6TechSheetTemplate } from '../galaxies/g6-tech-sheets/tech-sheet-template.entity';
 import { G6TechSheet } from '../galaxies/g6-tech-sheets/tech-sheet.entity';
 import { EscrowHold } from '../escrow/escrow-hold.entity';
+import { Order } from '../orders/entities/order.entity';
+import { OrderItem } from '../orders/entities/order-item.entity';
+import { Payment } from '../orders/entities/payment.entity';
+import { Shipment } from '../orders/entities/shipment.entity';
+import { Address } from '../orders/entities/address.entity';
 
 /**
  * GWS · Registro único de entidades
@@ -66,4 +71,9 @@ export const typeOrmEntities = [
   G6TechSheetTemplate,
   G6TechSheet,
   EscrowHold,
+  Order,
+  OrderItem,
+  Payment,
+  Shipment,
+  Address,
 ];

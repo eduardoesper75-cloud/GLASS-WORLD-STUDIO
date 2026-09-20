@@ -21,6 +21,8 @@ import { BunkerModule } from './bunker/bunker.module';
 import { SettlementModule } from './settlement/settlement.module';
 import { G6TechSheetsModule } from './galaxies/g6-tech-sheets/g6-tech-sheets.module';
 import { EscrowModule } from './escrow/escrow.module';
+import { HealthModule } from './health/health.module';
+import { OrdersModule } from './orders/orders.module';
 import { typeOrmEntities } from './database/entities';
 
 @Module({
@@ -117,6 +119,13 @@ import { typeOrmEntities } from './database/entities';
     // reclamo. Máquina de estados + estándares de embalaje certificado;
     // el movimiento real de fondos es del Payment_Vault (§3.1).
     EscrowModule,
+    // Health check de infraestructura (A.2): monitoreo simple de proceso
+    // + DB. Expone /health y el alias /api/health. README de operaciones.
+    HealthModule,
+    // Checkout y Órdenes (P0-01): funda la brecha transaccional más grave
+    // (products → orders → escrow_holds.orderRef). Estado + snapshot de
+    // precios; el dinero real lo mueve Payment_Vault (§3.1).
+    OrdersModule,
   ],
   providers: [
     // Guard global: aplica el rate limit a TODAS las rutas automáticamente.
