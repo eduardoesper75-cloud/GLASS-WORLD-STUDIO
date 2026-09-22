@@ -218,6 +218,7 @@ export interface OrderResponse {
   payments: PaymentOutput[];
   shipmentStatus: string | null;
   createdAt: string;
+  updatedAt?: string;
 }
 
 export interface HealthDto {

@@ -1,15 +1,17 @@
 # Estado Maestro GWS + Tropa
 
-Última actualización: 2026-09-22 13:05
+Última actualización: 2026-09-22 13:20
 
 ## Frente 1 — GWS
 
-- Fase actual: 9 (checkout real)
-- Fases completadas: 0-8 (backend 20 módulos / 26 tests, PostgreSQL local OK, frontend web FASE 1-8 UI completo, 16 tests)
-- Últimos commits: `6c63fcf` (fix build Nest excluye apps/), `60567aa` (frontend FASE 1-8)
-- Backend: corriendo en http://localhost:3001 (health 200), PostgreSQL 5432 OK
+- Fase actual: 10 (OpenAPI/Swagger)
+- Fases completadas: 0-9 (backend 20 módulos / 26 tests, PostgreSQL local OK, frontend web FASE 1-9 UI completo + checkout real + órdenes, 19 tests incl. integración backend real)
+- FASE 9 (checkout real): hook `use-orders.ts` (createOrder idempotente + useOrder + useMyOrders + cancelOrder), checkout con formulario de dirección + método de pago → `POST /orders` con Idempotency-Key, páginas `/orders` (lista) y `/orders/[id]` (detalle + cancelar), bloque de traducciones `orders` en 7 idiomas, matcher de middleware protege `/orders/*`. Ejecutado contra backend real: login, crear orden (idempotente), cancelar — verificado en BD gws_dev (órdenes pending/cancelled reales).
+- Últimos commits: `0e449f8` (estado maestro), `6c63fcf` (fix build Nest), `60567aa` (frontend FASE 1-8)
+- Backend: corriendo en http://localhost:3001 (health 200, JWT_SECRET en .env local git-ignored), PostgreSQL 5432 OK
+- Seed E2E en gws_dev: `seed.seller@gwe2e.dev` / `SeedSeller2026!` (subscriber) + 2 productos activos
 - Bloqueos: ninguno (deploy FASE 18 aguarda aprobación de Jorge)
-- Próximo paso: FASE 9 — conectar checkout a `POST /orders` con Idempotency-Key (hook `useCreateOrder`), pantalla `/orders/[id]`, tests E2E con backend real
+- Próximo paso: FASE 10 — documentación OpenAPI/Swagger del backend
 
 ## Frente 2 — Tropa
 
