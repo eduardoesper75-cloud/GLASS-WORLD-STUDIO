@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================================
+ * GWS · Global base (capa de aplicación sobre el canónico)
+ * ============================================================= */
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--bg-void);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--galaxy-core, var(--g1-core)) 35%, transparent);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--galaxy-glow, var(--g2-glow));
+    outline-offset: 2px;
+  }
+
+  /* Micro / estado / fade — transiciones estándar de la app. */
+  .t-micro { transition: all var(--fx-duration-fast) ease; }
+  .t-state { transition: all var(--fx-duration-med) var(--fx-ease-cinema); }
+  .t-fade  { transition: opacity var(--fx-duration-slow) var(--fx-ease-cinema); }
+}
+
+/* =============================================================
+ * Accesibilidad — movimiento
+ * ============================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

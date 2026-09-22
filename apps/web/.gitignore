@@ -1,0 +1,14 @@
+# Next.js
+.next/
+next-env.d.ts
+*.tsbuildinfo
+
+# Tests
+coverage/
+playwright-report/
+test-results/
+
+# Env / secrets (heredados del root)
+.env
+.env.local
+.env.*.local
