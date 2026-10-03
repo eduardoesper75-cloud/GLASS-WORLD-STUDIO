@@ -64,7 +64,17 @@ const loginThrottled = new Counter('gws_login_throttled_429');
 const productsTrend = new Trend('gws_products_duration', true);
 const detailTrend = new Trend('gws_product_detail_duration', true);
 const healthTrend = new Trend('gws_health_duration', true);
-const negocioRate = new Rate('gws_tasa_error_negocio'); // 5xx y 4xx de negocio, NO 429
+// Tasa de OK de negocio (5xx y 4xx de negocio, EXCLUYENDO 429). El 429 se
+// registra aparte porque es el throttle haciendo su trabajo, no un fallo.
+// OJO con el nombre: en k6 `Rate.add(true)` cuenta como 'bien', asi que un
+// 100% aqui significa CERO errores de negocio. Antes el nombre era
+// `gws_tasa_error_negocio`, que se leia al reves y empujaba a entenderlo
+// como "100% de error".
+const negocioRate = new Rate('gws_tasa_ok_negocio');
+const orderTrend = new Trend('gws_order_create_duration', true);
+const ordersCreated = new Counter('gws_orders_created_201');
+const ordersRejected = new Counter('gws_orders_rejected');
+const ordersThrottled = new Counter('gws_orders_throttled_429');
 
 // En perfil "sin-throttle" las etapas se agrupan para no gastar 4 minutos
 // en correr etapas que sabemos que el throttler va a cortar.
@@ -73,11 +83,13 @@ const ETAPAS = PERFIL === 'sin-throttle'
       health:     [{ target: 10,  duration: '30s' }],
       login:      [{ target: 50,  duration: '30s' }, { target: 50, duration: '60s' }],
       marketplace: [{ target: 100, duration: '30s' }, { target: 100, duration: '60s' }],
+      orders:     [{ target: 20,  duration: '60s' }],
     }
   : {
       health:     [{ target: 10,  duration: '30s' }],
       login:      [{ target: 50,  duration: '30s' }, { target: 50, duration: '60s' }],
       marketplace: [{ target: 100, duration: '30s' }, { target: 100, duration: '60s' }],
+      orders:     [{ target: 20,  duration: '60s' }],
     };
 
 export const options = {
@@ -88,6 +100,7 @@ export const options = {
     http_req_failed: ['rate<0.10'],
     'http_req_duration{scenario:escenario_a_health}': ['p(95)<300'],
     'http_req_duration{scenario:escenario_c_marketplace}': ['p(95)<800'],
+    'http_req_duration{scenario:escenario_d_ordenes}': ['p(95)<1500'],
   },
   scenarios: {
     escenario_a_health: {
@@ -115,6 +128,34 @@ export const options = {
       startTime: '0s',
       tags: { escenario: 'C', nombre: 'marketplace' },
     },
+    // B14 — checkout. 20 VUs, 60s.
+    //
+    // Arranca en 100s, cuando A/B/C ya terminaron, por dos razones:
+    //
+    // 1) Aislamiento de métrica. Si D comparte ventana con B (que a propósito
+    //    satura el throttle de login) y C (100 VUs contra el global de
+    //    100/min), los 429 de D serían culpa de los otros escenarios y la
+    //    latencia de creación de órdenes quedaría sin poder atribuirse.
+    //
+    // 2) El token. D necesita JWT. Tras el fix B12 el login es 5/min por IP,
+    //    o sea 5 tokens por minuto para toda la corrida — insuficiente para
+    //    20 VUs. Por eso el token se SACO en setup() y se reparte: cada VU
+    //    mide creación de órdenes, que es lo que B14 pide medir, y no vuelve
+    //    a pagar bcrypt ni choca contra el límite de login.
+    //
+    // OJO — esto significa que D NO mide el costo de login bajo carga; eso es
+    // el escenario B. Y que POST /orders tiene su propio límite de 10/min
+    // (fix B12), así que D registra cuántos 429 genera ese límite: es un dato
+    // esperado, no un defecto.
+    escenario_d_ordenes: {
+      executor: 'ramping-vus',
+      exec: 'escenarioDOrdenes',
+      startVUs: 0,
+      stages: ETAPAS.orders,
+      gracefulRampDown: '10s',
+      startTime: '100s',
+      tags: { escenario: 'D', nombre: 'ordenes' },
+    },
   },
 };
 
@@ -135,8 +176,26 @@ export function setup() {
     } catch (_) { /* seed ausente */ }
   }
 
+  // Token para el escenario D. Un solo login consume 1 de los 5/min que deja
+  // el fix B12, y se reparte entre los 20 VUs. Ver la nota del escenario D.
+  let authToken = null;
+  let loginStatusForOrders = 'nointentado';
+  if (productIds.length > 0) {
+    const lr = http.post(
+      `${BASE_URL}/auth/login`,
+      JSON.stringify({ identifier: LOGIN_ID, password: LOGIN_PW }),
+      { headers: { 'Content-Type': 'application/json' }, tags: { endpoint: 'auth/login#setup' } },
+    );
+    loginStatusForOrders = lr.status;
+    if (lr.status === 200 || lr.status === 201) {
+      try { authToken = lr.json().accessToken || null; } catch (_) { authToken = null; }
+    }
+  }
+
   return {
     productIds,
+    authToken,
+    loginStatusForOrders,
     healthStatusAtSetup: health.status,
     perfil: PERFIL,
     baseUrl: BASE_URL,
@@ -253,6 +312,97 @@ export function escenarioCMarketplace(data) {
 }
 
 // ---------------------------------------------------------------------------
+// ESCENARIO D — Creacion de orden de compra (B14)
+// 20 VUs, 60s, POST /orders con JWT + idempotencyKey unica por VU+iteracion.
+//
+// Objetivo: medir la latencia de escritura del checkout (resolucion de
+// precios + snapshot + registro de intencion de pago), que FASE 11 no cubria.
+//
+// Lo que este escenario NO mide, a proposito:
+//   - el costo de login bajo carga (eso es el escenario B, con su bcrypt de
+//     12 rondas). El token viene de setup() para no contaminar la latencia de
+//     escritura con ~2,4 s de bcrypt por VU.
+//   - el efecto del límite de 10/min de POST /orders más allá de contarlo:
+//     los 429 se registran aparte, igual que en B y C.
+//
+// Cada VU usa una idempotencyKey DISTINTA a proposito: repetir la misma key
+// mediria el camino de cache/idempotencia (mas barato, y es lo que haria un
+// cliente que reintenta), no la creacion real.
+// ---------------------------------------------------------------------------
+
+const ORDEN_DIRECCION = {
+  fullName: 'Jorge Eduardo Esper',
+  line1: 'Av. Belgrano Sur 1234',
+  city: 'Santiago del Estero',
+  postalCode: '4200',
+  countryCode: 'AR',
+};
+
+export function escenarioDOrdenes(data) {
+  if (!data.authToken) {
+    // Sin token D no puede medir nada. Se avisa una vez y se sale: es mas
+    // honesto que medir 60 s de 401.
+    if (__ITER === 0) {
+      console.warn(
+        `[D] Sin accessToken (login en setup devolvio ${data.loginStatusForOrders}). ` +
+          'Escenario D omitido.',
+      );
+    }
+    return;
+  }
+
+  group('orders', () => {
+    const productId = data.productIds[Math.floor(Math.random() * data.productIds.length)];
+
+    // __ITER es monotono por VU dentro del escenario, asi que la dupla
+    // (__VU, __ITER) da una key unica por peticion sin necesitar un contador global.
+    const key = `chk-f11-d-${__VU}-${__ITER}`;
+
+    const body = JSON.stringify({
+      idempotencyKey: key,
+      items: [{ productId, quantity: 1 }],
+      address: ORDEN_DIRECCION,
+      paymentMethod: 'card_usd',
+    });
+
+    const r = http.post(`${data.baseUrl}/orders`, body, {
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${data.authToken}`,
+      },
+      tags: { endpoint: 'orders' },
+    });
+
+    orderTrend.add(r.timings.duration);
+
+    if (r.status === 429) {
+      ordersThrottled.add(1);
+      // El 429 es el comportamiento correcto del límite de 10/min que se
+      // acaba de activar en B12; no es un error de negocio.
+      return;
+    }
+
+    const ok = check(r, {
+      'orden creada 201': (res) => res.status === 201,
+      'orden devuelve id': (res) => {
+        if (res.status !== 201) return false;
+        try { return typeof res.json().id === 'string'; } catch (_) { return false; }
+      },
+      'orden arranca en pending': (res) => {
+        if (res.status !== 201) return false;
+        try { return res.json().status === 'pending'; } catch (_) { return false; }
+      },
+    });
+
+    if (ok) ordersCreated.add(1);
+    else ordersRejected.add(1);
+    negocioRate.add(ok);
+
+    sleep(1);
+  });
+}
+
+// ---------------------------------------------------------------------------
 // handleSummary: reporte legible en consola + JSON crudo para el analisis.
 // ---------------------------------------------------------------------------
 
@@ -270,7 +420,7 @@ export function handleSummary(data) {
 --- Throughput y errores ---
  http_reqs                 ${(m.http_reqs ? m.http_reqs.count : 0)} req  (${(m.http_reqs ? m.http_reqs.rate : 0).toFixed(1)} req/s)
  http_req_failed           ${(m.http_req_failed ? (m.http_req_failed.rate * 100).toFixed(1) : 0)}%
- gws_tasa_error_negocio    ${(m.gws_tasa_error_negocio ? (m.gws_tasa_error_negocio.rate * 100).toFixed(1) : 0)}%  (excluye 429)
+ gws_tasa_ok_negocio       ${(m.gws_tasa_ok_negocio ? (m.gws_tasa_ok_negocio.rate * 100).toFixed(1) : 0)}%  (100% = cero errores de negocio; 429 queda fuera)
 
 --- Escenario A · health ---
  ${linea('gws_health_duration')}
@@ -282,8 +432,14 @@ export function handleSummary(data) {
  logins con error     ${m.gws_login_fail ? m.gws_login_fail.count : 0}
 
 --- Escenario C · marketplace ---
- ${linea('gws_products_duration')}
- ${linea('gws_product_detail_duration')}
+  ${linea('gws_products_duration')}
+  ${linea('gws_product_detail_duration')}
+
+--- Escenario D · ordenes (B14) ---
+  ${linea('gws_order_create_duration')}
+  ordenes 201          ${m.gws_orders_created_201 ? m.gws_orders_created_201.count : 0}
+  ordenes 429 (throttle) ${m.gws_orders_throttled_429 ? m.gws_orders_throttled_429.count : 0}
+  ordenes con error   ${m.gws_orders_rejected ? m.gws_orders_rejected.count : 0}
 
 --- Checks ---
  checks: ${m.checks ? m.checks.count : 0}  (pass ${m.checks ? (m.checks.rate * 100).toFixed(1) : 0}%)
