@@ -1,3 +1,10 @@
+// B15: debe ser el PRIMER import. Setea UV_THREADPOOL_SIZE antes de que Node
+// cargue bcrypt (addon nativo que usa el thread pool de libuv). Ver el
+// archivo para el porqué del orden — no mover.
+import { UV_THREADPOOL_SIZE } from './config/threadpool';
+// eslint-disable-next-line no-console
+console.log(`[B15] thread pool de libuv configurado en ${UV_THREADPOOL_SIZE} threads`);
+
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
