@@ -8,6 +8,7 @@ import {
   Req,
   UseGuards,
 } from '@nestjs/common';
+import { Throttle } from '@nestjs/throttler';
 import { Request } from 'express';
 import { OrdersService } from './orders.service';
 import { CreateOrderDto } from './dto/create-order.dto';
@@ -35,6 +36,12 @@ export class OrdersController {
   /** Crea la orden de compra (idempotente por idempotencyKey, ADR-001). */
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Crear orden de compra', description: 'Crea la orden en estado PENDING (idempotente vía idempotencyKey). Resuelve precios contra el catálogo. Requiere JWT.' })
+  // B12 (fix 2026-10-02): 10/min. La creación de órdenes es la escritura
+  // más cara de G2 (resuelve precios, crea snapshot y prepara escrow) y es
+  // idempotente, así que un cliente legítimo nunca necesita más que eso para
+  // reintentar con seguridad. Sin este límite solo lo frenaba el global de
+  // 100/min.
+  @Throttle({ default: { ttl: 60_000, limit: 10 } })
   @Post()
   create(@Body() dto: CreateOrderDto, @Req() req: AuthedRequest) {
     return this.ordersService.create(req.user.id, dto);

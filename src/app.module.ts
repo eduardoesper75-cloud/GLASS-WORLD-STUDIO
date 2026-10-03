@@ -24,6 +24,7 @@ import { EscrowModule } from './escrow/escrow.module';
 import { HealthModule } from './health/health.module';
 import { OrdersModule } from './orders/orders.module';
 import { typeOrmEntities } from './database/entities';
+import { throttleOptions } from './config/throttle.config';
 
 @Module({
   imports: [
@@ -33,14 +34,15 @@ import { typeOrmEntities } from './database/entities';
     // apagado (ESCROW_SWEEP_ENABLED=true para encenderlo, §3.4 CLAUDE.md).
     ScheduleModule.forRoot(),
     // Rate limiting global (anti-DoS). 100 req/min/IP por defecto; las rutas
-    // sensibles (auth/register/login, webhooks) llevan límites más estrictos
-    // vía @Throttle() en el controller. Valores configurables por env.
-    ThrottlerModule.forRoot([
-      {
-        ttl: Number(process.env.THROTTLE_TTL_SECONDS ?? 60),
-        limit: Number(process.env.THROTTLE_LIMIT_PER_MINUTE ?? 100),
-      },
-    ]),
+    // sensibles (auth/register/login, orders) llevan límites más estrictos vía
+    // @Throttle() en cada controller.
+    //
+    // B12 (fix 2026-10-02): la config vive en src/config/throttle.config.ts,
+    // no inline acá, para que los tests puedan importar la MISMA función que
+    // corre en runtime. Inline, el spec tenía que reescribir los valores y
+    // daba verde mientras la app corría con `ttl: 60` (60 ms, no 60 s).
+    // Ver throttle.config.ts para el análisis completo.
+    ThrottlerModule.forRoot([throttleOptions()]),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST ?? 'localhost',

@@ -26,16 +26,23 @@ import { JwtAuthGuard } from './jwt-auth.guard';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  @ApiOperation({ summary: 'Registrar cuenta', description: 'Crea un usuario (ROLE anónimo hasta elevar). Rate limit: 5/min por IP.' })
-  // Límite estricto anti fuerza-bruta: 5 intentos por minuto por IP.
-  @Throttle({ default: { ttl: 60, limit: 5 } })
+  @ApiOperation({ summary: 'Registrar cuenta', description: 'Crea un usuario (ROLE anónimo hasta elevar). Rate limit: 3/min por IP.' })
+  // B12 (fix 2026-10-02): `ttl` va en MILISEGUNDOS (ver app.module.ts). Antes
+  // `ttl: 60` abría una ventana de 60 ms, así que la creación de cuentas era
+  // ilimitada en la práctica. Se baja además a 3/min porque cada registro
+  // cuesta un bcrypt.hash() (auth.service.ts:50): es el endpoint más caro de
+  // la superficie anónima después del login.
+  @Throttle({ default: { ttl: 60_000, limit: 3 } })
   @Post('register')
   register(@Body() dto: RegisterDto) {
     return this.authService.register(dto);
   }
 
   @ApiOperation({ summary: 'Iniciar sesión', description: 'Devuelve el par accessToken (JWT) + refreshToken y levanta la sesión HttpOnly.' })
-  @Throttle({ default: { ttl: 60, limit: 5 } })
+  // B12 (fix 2026-10-02): esto se leía "5 intentos por minuto" pero `ttl: 60`
+  // era una ventana de 60 ms, o sea ~83 intentos/segundo. La defensa contra
+  // fuerza bruta era inexistente. Ver docs/simulation/analisis-fase-11.md §3.
+  @Throttle({ default: { ttl: 60_000, limit: 5 } })
   @Post('login')
   login(@Body() dto: LoginDto) {
     return this.authService.login(dto);
@@ -58,7 +65,7 @@ export class AuthController {
    */
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Elevar sesión', description: 'Requiere JWT + rol admin. Emite ElevatedSession (elevationToken) para endpoints que exigen elevación.' })
-  @Throttle({ default: { ttl: 60, limit: 5 } })
+  @Throttle({ default: { ttl: 60_000, limit: 5 } })
   @UseGuards(JwtAuthGuard)
   @Post('elevate')
   elevate(@Body() dto: ElevateDto, @Req() req: Request & { user: { id: string } }) {
@@ -75,7 +82,7 @@ export class AuthController {
    */
   @ApiBearerAuth()
   @ApiOperation({ summary: '2FA setup (paso 1)', description: 'Genera y devuelve el secreto TOTP (base32 + otpauth URL). Requiere JWT + contraseña.' })
-  @Throttle({ default: { ttl: 60, limit: 5 } })
+  @Throttle({ default: { ttl: 60_000, limit: 5 } })
   @UseGuards(JwtAuthGuard)
   @Post('totp/setup')
   setupTotpInit(@Body() dto: SetupTotpInitDto, @Req() req: Request & { user: { id: string } }) {
@@ -89,7 +96,7 @@ export class AuthController {
    */
   @ApiBearerAuth()
   @ApiOperation({ summary: '2FA confirmación (paso 2)', description: 'Confirma el código TOTP y activa el 2FA. Requiere JWT + contraseña.' })
-  @Throttle({ default: { ttl: 60, limit: 5 } })
+  @Throttle({ default: { ttl: 60_000, limit: 5 } })
   @UseGuards(JwtAuthGuard)
   @Post('totp/confirm')
   setupTotpConfirm(@Body() dto: ConfirmTotpSetupDto, @Req() req: Request & { user: { id: string } }) {
@@ -100,7 +107,7 @@ export class AuthController {
    * seguridad, ver auth.service.ts). */
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Desactivar 2FA', description: 'Downgrade de seguridad: exige contraseña + código TOTP vigente.' })
-  @Throttle({ default: { ttl: 60, limit: 5 } })
+  @Throttle({ default: { ttl: 60_000, limit: 5 } })
   @UseGuards(JwtAuthGuard)
   @Post('totp/disable')
   setupTotpDisable(
@@ -115,7 +122,7 @@ export class AuthController {
    * token comprometido no pueda martillar la revocación de terceros. */
   @ApiBearerAuth()
   @ApiOperation({ summary: 'Revocar elevación', description: 'Corta la ElevatedSession manualmente.' })
-  @Throttle({ default: { ttl: 60, limit: 10 } })
+  @Throttle({ default: { ttl: 60_000, limit: 10 } })
   @UseGuards(JwtAuthGuard)
   @Post('elevate/revoke')
   revokeElevation(@Req() req: Request & { user: { id: string } }) {
