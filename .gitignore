@@ -19,3 +19,16 @@ npm-debug.log*
 Thumbs.db
 .idea/
 .vscode/
+
+# Credenciales y material sensible — NUNCA al repositorio
+# (CLAUDE.md §3.1: ningún agente de IA accede a credenciales de tesorería)
+*.secret
+*.secrets
+*.credentials
+*.credentials.json
+paypal.txt
+secrets.txt
+credenciales*.txt
+*.pem
+*.key
+!.env.example
