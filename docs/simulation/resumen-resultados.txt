@@ -1,0 +1,60 @@
+﻿GWS - FASE 11 - Resumen post-procesado de resultados k6
+Generado con: node tests\simulation\resumir-resultados.js <archivo.json>
+Fecha: 2026-10-02   k6 v2.2.0   8 nucleos / 7.6 GB RAM / PostgreSQL 16 local
+
+############ PASADA 1 - CON LA SEGURIDAD DEL REPO ############
+
+=== DURACION POR ESCENARIO ===
+(sin scenario)                        n=      2  avg=   35.85ms  p50=  50.57ms  p95=  50.57ms  p99=  50.57ms  max=    51ms
+escenario_a_health                    n=  50738  avg=    2.55ms  p50=   1.75ms  p95=   7.86ms  p99=  12.33ms  max=    83ms
+escenario_b_login                     n=   1647  avg= 1809.84ms  p50=2389.04ms  p95=2482.14ms  p99=2498.14ms  max=  2522ms
+escenario_c_marketplace               n=  48788  avg=    3.39ms  p50=   1.72ms  p95=   8.09ms  p99=  14.21ms  max= 15645ms
+
+=== DURACION POR ENDPOINT ===
+(sin endpoint)                        n=      2  avg=   35.85ms  p50=  50.57ms  p95=  50.57ms  p99=  50.57ms  max=    51ms
+auth/login                            n=   1647  avg= 1809.84ms  p50=2389.04ms  p95=2482.14ms  p99=2498.14ms  max=  2522ms
+health                                n=  50738  avg=    2.55ms  p50=   1.75ms  p95=   7.86ms  p99=  12.33ms  max=    83ms
+marketplace/products                  n=  24394  avg=    3.36ms  p50=   1.59ms  p95=   7.87ms  p99=  13.75ms  max= 15645ms
+marketplace/products/:id              n=  24394  avg=    3.41ms  p50=   1.90ms  p95=   8.36ms  p99=  14.54ms  max= 15565ms
+
+=== GLOBAL ===
+todas las peticiones                  n= 101175  avg=   32.38ms  p50=   1.77ms  p95=   9.05ms  p99=2325.52ms  max= 15645ms
+
+Requests > 500ms : 1336 (1.320%)
+Requests > 1000ms: 1280 (1.265%)
+Requests > 2000ms: 1068 (1.056%)
+
+Fuente: C:\Users\user\GWS\GLASS-WORLD-STUDIO\docs\simulation\resultados-raw.json
+
+
+############ PASADA 2 - SIN THROTTLING GLOBAL ############
+
+=== DURACION POR ESCENARIO ===
+(sin scenario)                        n=      2  avg=    6.36ms  p50=  10.35ms  p95=  10.35ms  p99=  10.35ms  max=    10ms
+escenario_a_health                    n=  40841  avg=    3.20ms  p50=   2.07ms  p95=   9.06ms  p99=  13.18ms  max=  4571ms
+escenario_b_login                     n=   1746  avg= 1679.58ms  p50=2315.03ms  p95=2500.89ms  p99=3981.56ms  max=  4998ms
+escenario_c_marketplace               n=  46478  avg=   11.06ms  p50=   2.12ms  p95=  10.71ms  p99=  27.56ms  max=  3489ms
+
+=== DURACION POR ENDPOINT ===
+(sin endpoint)                        n=      2  avg=    6.36ms  p50=  10.35ms  p95=  10.35ms  p99=  10.35ms  max=    10ms
+auth/login                            n=   1746  avg= 1679.58ms  p50=2315.03ms  p95=2500.89ms  p99=3981.56ms  max=  4998ms
+health                                n=  40841  avg=    3.20ms  p50=   2.07ms  p95=   9.06ms  p99=  13.18ms  max=  4571ms
+marketplace/products                  n=  23239  avg=   16.31ms  p50=   2.03ms  p95=  10.49ms  p99=  26.77ms  max=  3489ms
+marketplace/products/:id              n=  23239  avg=    5.81ms  p50=   2.26ms  p95=  11.04ms  p99=  28.10ms  max=  3387ms
+
+=== GLOBAL ===
+todas las peticiones                  n=  89067  avg=   40.16ms  p50=   2.13ms  p95=  11.21ms  p99=2359.77ms  max=  4998ms
+
+Requests > 500ms : 1466 (1.646%)
+Requests > 1000ms: 1341 (1.506%)
+Requests > 2000ms: 1085 (1.218%)
+
+Fuente: C:\Users\user\GWS\GLASS-WORLD-STUDIO\docs\simulation\resultados-sin-throttle.json
+
+############ MEDICION DE UNIDAD (control) ############
+1 VU / 10s  ->  29.273 requests  =  2.927 req/s  =  175.620 req/min
+Techo esperado si ttl=60 SEGUNDOS : 1,7 req/s   (~17 req en 10s)
+Techo esperado si ttl=60 MILIS     : 1.667 req/s (~16.600 req en 10s)
+1 VU / 65s  ->  184.340 requests  =  2.836 req/s
+CONCLUSION: ttl se interpreta en MILISEGUNDOS. El codigo pasa 60 creyendo
+que son segundos. Rate limiting 1.000x mas debil de lo documentado.

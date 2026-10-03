@@ -32,3 +32,6 @@ credenciales*.txt
 *.pem
 *.key
 !.env.example
+
+# Artefactos de simulacion k6 (500MB crudos, regenerables con --out json=)
+docs/simulation/resultados-*.json
