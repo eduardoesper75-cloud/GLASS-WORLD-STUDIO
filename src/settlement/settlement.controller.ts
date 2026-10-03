@@ -12,6 +12,7 @@ import { DemoBalanceAdapter, IBalanceVerificationAdapter } from './settlement.ad
 import { VerifyUsdtBalanceDto } from './dto/verify-usdt-balance.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { RolesGuard } from '../common/guards/roles.guard';
+import { ApiTags, ApiOperation, ApiBearerAuth } from '@nestjs/swagger';
 
 /**
  * GWS · SettlementController — Soberanía Financiera (USD + USDT)
@@ -21,6 +22,7 @@ import { RolesGuard } from '../common/guards/roles.guard';
  * red pertenece al Payment_Vault (§3.1) — aquí solo el contrato y la demo
  * sin credenciales. NINGÚN cambio de tarifa: solo la moneda de cobro.
  */
+@ApiTags('settlement')
 @Controller('settlement')
 export class SettlementController {
   private readonly adapter: IBalanceVerificationAdapter;
@@ -30,6 +32,7 @@ export class SettlementController {
   }
 
   /** Política soberana de settlement (display público). */
+  @ApiOperation({ summary: 'Metadatos de settlement', description: 'Política pública (monedas, métodos de un clic, redes USDT, paridad 1:1).' })
   @Get('meta')
   meta() {
     return {
@@ -43,6 +46,8 @@ export class SettlementController {
   }
 
   /** Verificación DEMO de saldo USDT (flujo de un clic, sin red real). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Verificar saldo USDT (DEMO)', description: 'Verificación DEMO de saldo USDT. El adaptador real vive en el Payment_Vault.' })
   @Throttle({ default: { limit: 20, ttl: 60_000 } })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post('verify-usdt-balance')

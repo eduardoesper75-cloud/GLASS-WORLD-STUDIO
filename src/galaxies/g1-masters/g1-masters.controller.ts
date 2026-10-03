@@ -23,6 +23,7 @@ import { GwsRole } from '../../common/enums/gws-role.enum';
 import { MasterCatalogItemType } from './masters.enums';
 import { SetMasterVerificationDto } from './dto/set-master-verification.dto';
 import { SetMaestroRoleDto } from './dto/set-maestro-role.dto';
+import { ApiTags, ApiOperation, ApiBearerAuth, ApiParam, ApiQuery } from '@nestjs/swagger';
 
 type AuthedRequest = Request & { user: { id: string; role?: string } };
 
@@ -34,6 +35,7 @@ type AuthedRequest = Request & { user: { id: string; role?: string } };
  * exclusivas). Modelo de catálogos independientes por cuenta con rol
  * MAESTRO. Ver CLAUDE.md tabla G1.
  */
+@ApiTags('g1-masters')
 @Controller('g1/masters')
 export class G1MastersController {
   constructor(private mastersService: G1MastersService) {}
@@ -43,6 +45,8 @@ export class G1MastersController {
   /** Alta de perfil de maestro: cualquier usuario autenticado puede
    * solicitar su frente de autor. El rol MAESTRO se asigna por separado
    * (ver gws-role.enum.ts); el perfil se cuelga de la cuenta del token. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Crear perfil de maestro', description: 'Alta del frente de autor (autenticado). El rol MAESTRO se asigna aparte.' })
   @UseGuards(JwtAuthGuard)
   @Post()
   createMaster(@Body() dto: CreateMasterDto, @Req() req: AuthedRequest) {
@@ -50,6 +54,7 @@ export class G1MastersController {
   }
 
   /** Listado público de maestros (solo activos). */
+  @ApiOperation({ summary: 'Listar maestros', description: 'Listado público de maestros activos con filtros y paginación.' })
   @Get()
   listMasters(
     @Query('tier') tier?: string,
@@ -66,6 +71,8 @@ export class G1MastersController {
   }
 
   /** Perfil propio (incluye inactivos, para reactivar). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Mi perfil de maestro', description: 'Perfil propio (incluye inactivos).' })
   @UseGuards(JwtAuthGuard)
   @Get('me')
   getMyMasterProfile(@Req() req: AuthedRequest) {
@@ -73,12 +80,17 @@ export class G1MastersController {
   }
 
   /** Detalle público de un maestro. */
+  @ApiOperation({ summary: 'Detalle de maestro', description: 'Detalle público de un maestro.' })
+  @ApiParam({ name: 'id', description: 'UUID del maestro', type: String })
   @Get(':id')
   getMasterById(@Param('id') id: string) {
     return this.mastersService.getMasterById(id);
   }
 
   /** Edición del perfil — solo el dueño. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Editar perfil de maestro', description: 'Edición del perfil (solo el dueño).' })
+  @ApiParam({ name: 'id', description: 'UUID del maestro', type: String })
   @UseGuards(JwtAuthGuard)
   @Patch(':id')
   updateMaster(@Param('id') id: string, @Body() dto: UpdateMasterDto, @Req() req: AuthedRequest) {
@@ -89,6 +101,9 @@ export class G1MastersController {
 
   /** Sello "verificado" del perfil. Solo Jorge: admin + sesión elevada
    * (TOTP reciente). No es el rol MAESTRO (ver verifyMaster en el service). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Sellar verificación', description: 'ADMIN + elevación. Sello verificado del perfil.' })
+  @ApiParam({ name: 'id', description: 'UUID del maestro', type: String })
   @Roles(GwsRole.ADMIN)
   @RequiresElevation('verify_g1_master')
   @UseGuards(JwtAuthGuard, RolesGuard, ElevationGuard)
@@ -104,6 +119,9 @@ export class G1MastersController {
 
   /** Otorga/revoca el rol MAESTRO de la cuenta del perfil. Solo Jorge:
    * admin + sesión elevada. Es lo que habilita vender en G1. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Asignar rol MAESTRO', description: 'ADMIN + elevación. Otorga/revoca el rol MAESTRO (habilita vender en G1).' })
+  @ApiParam({ name: 'id', description: 'UUID del maestro', type: String })
   @Roles(GwsRole.ADMIN)
   @RequiresElevation('grant_maestro_role')
   @UseGuards(JwtAuthGuard, RolesGuard, ElevationGuard)
@@ -120,6 +138,9 @@ export class G1MastersController {
   // ---------- Catálogo de autor ----------
 
   /** Catálogo público de un maestro (solo ítems activos). */
+  @ApiOperation({ summary: 'Catálogo de maestro', description: 'Catálogo de autor de un maestro (solo ítems activos).' })
+  @ApiParam({ name: 'id', description: 'UUID del maestro', type: String })
+  @ApiQuery({ name: 'itemType', required: false, enum: MasterCatalogItemType, description: 'Filtro por tipo de ítem' })
   @Get(':id/catalog')
   listCatalog(@Param('id') id: string, @Query('itemType') itemType?: MasterCatalogItemType) {
     return this.mastersService.listCatalog(id, itemType);
@@ -127,6 +148,9 @@ export class G1MastersController {
 
   /** Alta de ítem en el catálogo de autor — solo el maestro dueño.
    * Requiere rol MAESTRO (cuentas habilitadas para vender en G1). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Crear ítem de catálogo', description: 'Alta de ítem (obra/cursos/talleres/líneas) — requiere rol MAESTRO.' })
+  @ApiParam({ name: 'id', description: 'UUID del maestro', type: String })
   @Roles(GwsRole.MAESTRO)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post(':id/catalog')
@@ -135,6 +159,10 @@ export class G1MastersController {
   }
 
   /** Edición de ítem — solo el maestro dueño. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Editar ítem de catálogo', description: 'Edición de ítem (solo el maestro dueño).' })
+  @ApiParam({ name: 'id', description: 'UUID del maestro', type: String })
+  @ApiParam({ name: 'itemId', description: 'UUID del ítem', type: String })
   @Roles(GwsRole.MAESTRO)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Patch(':id/catalog/:itemId')
@@ -148,6 +176,10 @@ export class G1MastersController {
   }
 
   /** Soft-delete de ítem — solo el maestro dueño. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Desactivar ítem de catálogo', description: 'Soft-delete de ítem (solo el maestro dueño).' })
+  @ApiParam({ name: 'id', description: 'UUID del maestro', type: String })
+  @ApiParam({ name: 'itemId', description: 'UUID del ítem', type: String })
   @Roles(GwsRole.MAESTRO)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Delete(':id/catalog/:itemId')

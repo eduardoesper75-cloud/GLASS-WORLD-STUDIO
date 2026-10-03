@@ -1,4 +1,6 @@
-import { Body, Controller, Get, Param, Post, Query, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
+import { ApiTags, ApiOperation, ApiBearerAuth, ApiParam } from '@nestjs/swagger';
+import { Body, Param, Query, Req, UseGuards } from '@nestjs/common';
 import { Request } from 'express';
 import { IsString, MaxLength, MinLength } from 'class-validator';
 import { CommunityService } from './community.service';
@@ -21,6 +23,7 @@ class HideMessageDto {
 
 type AuthedRequest = Request & { user: { id: string; role: GwsRole } };
 
+@ApiTags('community')
 @Controller('community')
 @UseGuards(JwtAuthGuard, RolesGuard)
 export class CommunityController {
@@ -28,6 +31,9 @@ export class CommunityController {
 
   /** Cualquier suscriptor autenticado puede postear — no requiere rol
    * especial, por eso no lleva @Roles(). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Postear mensaje', description: 'Publica en un canal de la comunidad (autenticado).' })
+  @ApiParam({ name: 'channelId', description: 'UUID del canal', type: String })
   @Post('channels/:channelId/messages')
   postMessage(
     @Param('channelId') channelId: string,
@@ -38,6 +44,8 @@ export class CommunityController {
     return this.communityService.postMessage(req.user.id, channelId, dto.content, ip);
   }
 
+  @ApiOperation({ summary: 'Listar mensajes', description: 'Mensajes de un canal (público).' })
+  @ApiParam({ name: 'channelId', description: 'UUID del canal', type: String })
   @Get('channels/:channelId/messages')
   listMessages(@Param('channelId') channelId: string, @Query('limit') limit?: string) {
     return this.communityService.listChannelMessages(channelId, limit ? parseInt(limit, 10) : 50);
@@ -46,6 +54,9 @@ export class CommunityController {
   /** Moderación: requiere ser moderador de G3 o admin. Ver RolesGuard —
    * esto NO requiere ElevationGuard (moderar contenido no está en
    * ACTIONS_REQUIRING_ELEVATION, ver CLAUDE.md/gws-role.enum.ts). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Ocultar mensaje', description: 'Moderador G3 o admin: oculta un mensaje (moderación).' })
+  @ApiParam({ name: 'messageId', description: 'UUID del mensaje', type: String })
   @Roles(GwsRole.MODERATOR_G3, GwsRole.ADMIN)
   @Post('messages/:messageId/hide')
   hideMessage(

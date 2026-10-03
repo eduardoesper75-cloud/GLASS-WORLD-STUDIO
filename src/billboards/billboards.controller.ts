@@ -20,6 +20,7 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Roles, RolesGuard } from '../common/guards/roles.guard';
 import { RequiresElevation, ElevationGuard } from '../common/guards/elevation.guard';
 import { GwsRole } from '../common/enums/gws-role.enum';
+import { ApiTags, ApiOperation, ApiBearerAuth, ApiParam } from '@nestjs/swagger';
 
 type AuthedRequest = Request & { user: { id: string } };
 
@@ -32,40 +33,51 @@ type AuthedRequest = Request & { user: { id: string } };
  *
  * El cobro real es del Payment_Vault (§3.1); aquí solo display + estado.
  */
+@ApiTags('billboards')
 @Controller('billboards')
 export class BillboardsController {
   constructor(private billboardsService: BillboardsService) {}
 
   /** Carteleras por galaxia con estado en vivo (ocupada / próximo hueco). */
+  @ApiOperation({ summary: 'Listar carteleras', description: 'Carteleras por galaxia con estado en vivo (público).' })
   @Get()
   list(@Query() query: ListBillboardsQueryDto) {
     return this.billboardsService.listBillboards(query.galaxy);
   }
 
   /** Calendario de disponibilidad (60 días) con fila de espera. */
+  @ApiOperation({ summary: 'Disponibilidad', description: 'Calendario de disponibilidad (60 días) con fila de espera (público).' })
   @Get('availability')
   availability(@Query() query: ListBillboardsQueryDto) {
     return this.billboardsService.availability(query.galaxy);
   }
 
   /** Feed de lo que está al aire AHORA (lo que muestra cada cartelera). */
+  @ApiOperation({ summary: 'Ads activos', description: 'Feed de lo que está al aire ahora (público).' })
   @Get('active')
   activeAds(@Query() query: ListBillboardsQueryDto) {
     return this.billboardsService.activeAds(query.galaxy);
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Crear campaña', description: 'Crea una campaña publicitaria (anunciante autenticado).' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post('campaigns')
   createCampaign(@Body() dto: CreateAdCampaignDto, @Req() req: AuthedRequest) {
     return this.billboardsService.createCampaign(req.user.id, dto);
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Mis campañas', description: 'Campañas del anunciante autenticado.' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Get('campaigns')
   myCampaigns(@Req() req: AuthedRequest) {
     return this.billboardsService.myCampaigns(req.user.id);
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Cancelar campaña', description: 'Cancela una campaña propia.' })
+  @ApiParam({ name: 'id', description: 'UUID de la campaña', type: String })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Delete('campaigns/:id')
   cancelCampaign(@Param('id') id: string, @Req() req: AuthedRequest) {
@@ -73,6 +85,9 @@ export class BillboardsController {
   }
 
   /** Pausar/reanudar cartelera — SOLO admin + sesión elevada. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Pausar/reanudar cartelera', description: 'ADMIN + elevación. Pausa o reanuda una cartelera.' })
+  @ApiParam({ name: 'id', description: 'UUID de la cartelera', type: String })
   @Throttle({ default: { limit: 20, ttl: 60_000 } })
   @Roles(GwsRole.ADMIN)
   @RequiresElevation('manage_billboards')

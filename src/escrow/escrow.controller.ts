@@ -19,6 +19,7 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Roles, RolesGuard } from '../common/guards/roles.guard';
 import { RequiresElevation, ElevationGuard } from '../common/guards/elevation.guard';
 import { GwsRole } from '../common/enums/gws-role.enum';
+import { ApiTags, ApiOperation, ApiBearerAuth, ApiParam } from '@nestjs/swagger';
 
 type AuthedRequest = Request & { user: { id: string } };
 
@@ -33,17 +34,21 @@ type AuthedRequest = Request & { user: { id: string } };
  * El movimiento REAL de fondos es del Payment_Vault (§3.1) — este módulo es
  * la máquina de estados (retención, vencimientos, confirmación, reclamo).
  */
+@ApiTags('escrow')
 @Controller('escrow')
 export class EscrowController {
   constructor(private escrowService: EscrowService) {}
 
   /** Matriz de liberación + estándares de embalaje certificado (público). */
+  @ApiOperation({ summary: 'Matriz de liberación', description: 'Matriz pública de liberación automática + estándares de embalaje certificado.' })
   @Get('release-matrix')
   releaseMatrix() {
     return this.escrowService.releaseMatrix();
   }
 
   /** Retenciones del usuario (como comprador o vendedor). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Mis retenciones', description: 'Retenciones del usuario autenticado (como comprador o vendedor).' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Get()
   myEscrows(@Req() req: AuthedRequest) {
@@ -51,6 +56,8 @@ export class EscrowController {
   }
 
   /** Apertura de retención (el comprador retiene el pago). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Abrir retención', description: 'El comprador retiene el pago (hold). El movimiento real de fondos es del Payment_Vault.' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post()
   createHold(@Body() dto: CreateEscrowHoldDto, @Req() req: AuthedRequest) {
@@ -58,6 +65,9 @@ export class EscrowController {
   }
 
   /** Liberación manual instantánea — "OK / Recibido conforme" (comprador). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Confirmar recepción', description: 'Liberación manual instantánea ("OK / Recibido conforme") — del comprador.' })
+  @ApiParam({ name: 'id', description: 'UUID de la retención', type: String })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post(':id/confirm-receipt')
   confirmReceipt(@Param('id') id: string, @Req() req: AuthedRequest) {
@@ -65,6 +75,9 @@ export class EscrowController {
   }
 
   /** Reclamo explícito → congela la liberación automática. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Reclamar retención', description: 'Reclamo explícito del comprador → congela la liberación automática.' })
+  @ApiParam({ name: 'id', description: 'UUID de la retención', type: String })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post(':id/claim')
   claim(@Param('id') id: string, @Body() dto: ClaimEscrowDto, @Req() req: AuthedRequest) {
@@ -72,6 +85,9 @@ export class EscrowController {
   }
 
   /** Respuesta de la contraparte (vendedor) frente al reclamo — E1. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Responder reclamo', description: 'Respuesta del vendedor frente al reclamo del comprador.' })
+  @ApiParam({ name: 'id', description: 'UUID de la retención', type: String })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post(':id/respond')
   respondClaim(
@@ -83,6 +99,9 @@ export class EscrowController {
   }
 
   /** Resolución de reclamo — SOLO Jorge (admin + elevación). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Resolver reclamo', description: 'ADMIN + elevación. Resuelve la disputa (libera o devuelve).' })
+  @ApiParam({ name: 'id', description: 'UUID de la retención', type: String })
   @Throttle({ default: { limit: 20, ttl: 60_000 } })
   @Roles(GwsRole.ADMIN)
   @RequiresElevation('manage_escrow_disputes')
@@ -103,6 +122,8 @@ export class EscrowController {
   }
 
   /** READ-ONLY: retenciones vencidas sin reclamo — no muta la DB (E8). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Liberaciones pendientes', description: 'ADMIN. READ-ONLY: retenciones vencidas sin reclamo (no muta la DB).' })
   @Roles(GwsRole.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Get('pending-releases')
@@ -115,6 +136,8 @@ export class EscrowController {
    * persiste la transición HELD → RELEASED por vencimiento (E8). Corrélo en el
    * banco de pruebas de Codespace para validar el mecanismo end-to-end.
    */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Procesar liberaciones', description: 'ADMIN + elevación. SWEEP real que persiste HELD → RELEASED por vencimiento.' })
   @Throttle({ default: { limit: 10, ttl: 60_000 } })
   @Roles(GwsRole.ADMIN)
   @RequiresElevation('manage_escrow_disputes')
@@ -125,6 +148,8 @@ export class EscrowController {
   }
 
   /** Disputas (CLAIMED) con SLA de resolución vencido — marcadas escaladas. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Disputas escaladas', description: 'ADMIN. Disputas con SLA de resolución vencido (marcadas escaladas).' })
   @Roles(GwsRole.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Get('escalated-disputes')

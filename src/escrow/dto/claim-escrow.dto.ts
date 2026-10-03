@@ -1,4 +1,5 @@
 import { IsArray, IsString, MaxLength, MinLength, ArrayMaxSize } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 
 /**
  * GWS · Reclamo del comprador sobre una retención escrow
@@ -9,6 +10,7 @@ import { IsArray, IsString, MaxLength, MinLength, ArrayMaxSize } from 'class-val
  * imagen/video validadas por el allowlist soberano de multimedia).
  */
 export class ClaimEscrowDto {
+  @ApiProperty({ description: 'Motivo del reclamo (auditable)', minLength: 20, maxLength: 2000 })
   @IsString()
   @MinLength(20, {
     message: 'Explicá el motivo del reclamo (mínimo 20 caracteres)',
@@ -17,6 +19,7 @@ export class ClaimEscrowDto {
   reason: string;
 
   /** Evidencias: URL HTTPS de imagen/video (hasta 5), validadas en el service. */
+  @ApiPropertyOptional({ type: [String], description: 'URLs HTTPS de evidencia (hasta 5)', maxItems: 5 })
   @IsArray()
   @ArrayMaxSize(5)
   evidenceRefs?: string[];

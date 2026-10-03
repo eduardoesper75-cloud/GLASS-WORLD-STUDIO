@@ -1,4 +1,5 @@
 import { IsString, MaxLength, MinLength } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 /**
  * GWS · Respuesta de la contraparte (vendedor) frente a un reclamo
@@ -9,6 +10,7 @@ import { IsString, MaxLength, MinLength } from 'class-validator';
  * estado: la retención sigue CLAIMED hasta resolución admin + elevación.
  */
 export class RespondEscrowDto {
+  @ApiProperty({ description: 'Versión del vendedor sobre los hechos (auditable)', minLength: 20, maxLength: 2000 })
   @IsString()
   @MinLength(20, {
     message: 'Explicá tu versión de los hechos (mínimo 20 caracteres)',

@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import helmet from 'helmet';
 import { AppModule } from './app.module';
 
@@ -34,8 +35,28 @@ async function bootstrap() {
 
   app.enableCors({ origin: process.env.CORS_ORIGIN ?? 'http://localhost:3000' });
 
+  // GWS · OpenAPI (FASE 10) — contrato documentado-first de la API.
+  // DocumentBuilder arma el esquema OpenAPI 3.0. SwaggerUI se sirve en
+  // /api/docs (JSON en /api/docs-json). Los tags agrupan por dominio y
+  // addBearerAuth habilita "Authorize" con el JWT de /auth/login.
+  const swaggerConfig = new DocumentBuilder()
+    .setTitle('Glass World Studio API')
+    .setDescription('API del marketplace vertical del vidrio')
+    .setVersion('1.0')
+    .addBearerAuth()
+    .addTag('auth', 'Autenticación')
+    .addTag('orders', 'Órdenes y checkout')
+    .addTag('marketplace', 'Catálogo y productos')
+    .addTag('escrow', 'Sistema de retención de fondos')
+    .addTag('vault', 'Bóveda del conocimiento')
+    .addTag('subscriptions', 'Planes y suscripciones')
+    .build();
+  const document = SwaggerModule.createDocument(app, swaggerConfig);
+  SwaggerModule.setup('api/docs', app, document);
+
   const port = process.env.PORT ?? 3001;
   await app.listen(port);
   console.log(`GWS backend corriendo en http://localhost:${port}`);
+  console.log('OpenAPI disponible en /api/docs (JSON: /api/docs-json)');
 }
 bootstrap();

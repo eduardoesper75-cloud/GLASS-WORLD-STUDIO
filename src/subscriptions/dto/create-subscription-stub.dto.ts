@@ -1,4 +1,5 @@
 import { IsDateString, IsIn, IsString } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 import { GALAXY_IDS } from '../../foundation/galaxies.const';
 
 /**
@@ -10,14 +11,17 @@ import { GALAXY_IDS } from '../../foundation/galaxies.const';
  * Exige rol ADMIN (JwtAuthGuard + RolesGuard). No mueve plata.
  */
 export class CreateSubscriptionStubDto {
+  @ApiProperty({ description: 'ID de la galaxia', example: 'g1' })
   @IsString()
   @IsIn(GALAXY_IDS)
   galaxy: string;
 
+  @ApiProperty({ enum: [1, 3, 6, 12] })
   @IsIn([1, 3, 6, 12])
   months: number;
 
   /** Hasta cuándo la membresía es válida (ISO 8601). */
+  @ApiProperty({ description: 'Vencimiento de la membresía (ISO 8601)', example: '2027-03-22' })
   @IsDateString()
   paidThrough: string;
 }

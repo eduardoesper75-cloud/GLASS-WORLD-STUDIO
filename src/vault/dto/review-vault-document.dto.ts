@@ -1,4 +1,5 @@
 import { IsIn, IsOptional, IsString, MinLength } from 'class-validator';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { VAULT_REJECT_REASONS } from '../vault.enums';
 
 /**
@@ -10,13 +11,15 @@ import { VAULT_REJECT_REASONS } from '../vault.enums';
  * NUMERIC_INCONSISTENT, SPAM, UNVERIFIED_SOURCE) + nota de moderación.
  */
 export class ReviewVaultDocumentDto {
-  @IsIn(['published', 'rejected'])
+  @ApiProperty({ enum: ['published', 'rejected'] })
   decision: 'published' | 'rejected';
 
+  @ApiPropertyOptional({ enum: VAULT_REJECT_REASONS, description: 'Obligatorio si decision=rejected' })
   @IsOptional()
   @IsIn(VAULT_REJECT_REASONS as unknown as string[])
   rejectReason?: string;
 
+  @ApiPropertyOptional({ description: 'Nota de moderación' })
   @IsOptional()
   @IsString()
   @MinLength(2)

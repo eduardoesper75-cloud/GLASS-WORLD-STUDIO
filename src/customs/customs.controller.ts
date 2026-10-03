@@ -1,4 +1,6 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
+import { Body } from '@nestjs/common';
 import { CustomsService } from './customs.service';
 import { EstimateCustomsDto } from './dto/estimate-customs.dto';
 
@@ -13,25 +15,30 @@ import { EstimateCustomsDto } from './dto/estimate-customs.dto';
  *
  * El motor es ESTIMADOR, no cotización vinculante (ver custom.const.ts).
  */
+@ApiTags('customs')
 @Controller('customs')
 export class CustomsController {
   constructor(private customsService: CustomsService) {}
 
+  @ApiOperation({ summary: 'Códigos HS/NCM', description: 'Catálogo HS/NCM + aranceles de referencia (público).' })
   @Get('hs-codes')
   hsCodes() {
     return this.customsService.hsCodes();
   }
 
+  @ApiOperation({ summary: 'Parámetros por país', description: 'IVA, tasas, percepciones por país (público).' })
   @Get('countries')
   countries() {
     return this.customsService.countries();
   }
 
+  @ApiOperation({ summary: 'Meta del motor aduanero', description: 'Fuentes, bandas de flete, tipos y disclaimer (público).' })
   @Get('meta')
   meta() {
     return this.customsService.meta();
   }
 
+  @ApiOperation({ summary: 'Estimar importación', description: 'Desglose ESTIMADO de una importación (no vinculante).' })
   @Post('estimate')
   estimate(@Body() dto: EstimateCustomsDto) {
     return this.customsService.estimate(dto);

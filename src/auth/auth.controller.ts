@@ -9,6 +9,7 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 import { Throttle } from '@nestjs/throttler';
+import { ApiTags, ApiOperation, ApiBearerAuth } from '@nestjs/swagger';
 import { AuthService } from './auth.service';
 import {
   RegisterDto,
@@ -20,10 +21,12 @@ import {
 } from './dto/auth.dto';
 import { JwtAuthGuard } from './jwt-auth.guard';
 
+@ApiTags('auth')
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
 
+  @ApiOperation({ summary: 'Registrar cuenta', description: 'Crea un usuario (ROLE anónimo hasta elevar). Rate limit: 5/min por IP.' })
   // Límite estricto anti fuerza-bruta: 5 intentos por minuto por IP.
   @Throttle({ default: { ttl: 60, limit: 5 } })
   @Post('register')
@@ -31,12 +34,14 @@ export class AuthController {
     return this.authService.register(dto);
   }
 
+  @ApiOperation({ summary: 'Iniciar sesión', description: 'Devuelve el par accessToken (JWT) + refreshToken y levanta la sesión HttpOnly.' })
   @Throttle({ default: { ttl: 60, limit: 5 } })
   @Post('login')
   login(@Body() dto: LoginDto) {
     return this.authService.login(dto);
   }
 
+  @ApiOperation({ summary: 'GET no soportado', description: 'El login se hace con POST /auth/login. Devuelve 405 para no confundir a scanners.' })
   // GET en /auth/login no está soportado (login es POST). Un handler
   // explícito devuelve 405 Method Not Allowed en vez de 404 — la ruta
   // existe, el método no. Evita que un scanner confunda la ruta con
@@ -51,6 +56,8 @@ export class AuthController {
    * endpoint es el único punto de entrada para obtener una ElevatedSession
    * — ver CLAUDE.md §3.5 y ElevationGuard.
    */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Elevar sesión', description: 'Requiere JWT + rol admin. Emite ElevatedSession (elevationToken) para endpoints que exigen elevación.' })
   @Throttle({ default: { ttl: 60, limit: 5 } })
   @UseGuards(JwtAuthGuard)
   @Post('elevate')
@@ -66,6 +73,8 @@ export class AuthController {
    * /totp/confirm. Requiere sesión (JWT) + contraseña (anti-secuestro).
    * Rate limit: rotar el secreto 2FA no debe ser barato.
    */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: '2FA setup (paso 1)', description: 'Genera y devuelve el secreto TOTP (base32 + otpauth URL). Requiere JWT + contraseña.' })
   @Throttle({ default: { ttl: 60, limit: 5 } })
   @UseGuards(JwtAuthGuard)
   @Post('totp/setup')
@@ -78,6 +87,8 @@ export class AuthController {
    * Exige la contraseña de la cuenta (mismo motivo que setup) y rate limit
    * estricto: verificar códigos a ciegas no debe ser barato.
    */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: '2FA confirmación (paso 2)', description: 'Confirma el código TOTP y activa el 2FA. Requiere JWT + contraseña.' })
   @Throttle({ default: { ttl: 60, limit: 5 } })
   @UseGuards(JwtAuthGuard)
   @Post('totp/confirm')
@@ -87,6 +98,8 @@ export class AuthController {
 
   /** Desactiva el 2FA — exige contraseña + código vigente (downgrade de
    * seguridad, ver auth.service.ts). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Desactivar 2FA', description: 'Downgrade de seguridad: exige contraseña + código TOTP vigente.' })
   @Throttle({ default: { ttl: 60, limit: 5 } })
   @UseGuards(JwtAuthGuard)
   @Post('totp/disable')
@@ -100,6 +113,8 @@ export class AuthController {
 
   /** Cortar la sesión elevada de forma manual. Rate limit para que un
    * token comprometido no pueda martillar la revocación de terceros. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Revocar elevación', description: 'Corta la ElevatedSession manualmente.' })
   @Throttle({ default: { ttl: 60, limit: 10 } })
   @UseGuards(JwtAuthGuard)
   @Post('elevate/revoke')

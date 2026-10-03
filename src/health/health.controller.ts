@@ -1,4 +1,5 @@
 import { Controller, Get, Logger } from '@nestjs/common';
+import { ApiTags, ApiOperation } from '@nestjs/swagger';
 import { InjectDataSource } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 
@@ -19,17 +20,20 @@ interface HealthReport {
  * si la DB falla responde HTTP 200 con db:'error' para que el orquestador
  * decida, sin derribar el check por una transición.
  */
+@ApiTags('health')
 @Controller()
 export class HealthController {
   private readonly logger = new Logger(HealthController.name);
 
   constructor(@InjectDataSource() private readonly dataSource: DataSource) {}
 
+  @ApiOperation({ summary: 'Health check', description: 'Estado del backend y la DB. Nunca lanza: si la DB falla responde 200 con db:error.' })
   @Get('health')
   async health(): Promise<HealthReport> {
     return this.report();
   }
 
+  @ApiOperation({ summary: 'Health check (alias /api)', description: 'Alias de /health para health checks de proxys que asumen prefijo /api.' })
   @Get('api/health')
   async apiHealth(): Promise<HealthReport> {
     return this.report();

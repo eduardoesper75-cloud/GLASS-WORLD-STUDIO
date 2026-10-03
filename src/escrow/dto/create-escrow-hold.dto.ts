@@ -16,6 +16,7 @@ import {
   ESCROW_SETTLEMENT_CURRENCIES,
   EscrowCategory,
 } from '../escrow.const';
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { SETTLEMENT_PAYMENT_METHODS } from '../../settlement/settlement.const';
 
 /**
@@ -27,31 +28,37 @@ import { SETTLEMENT_PAYMENT_METHODS } from '../../settlement/settlement.const';
  * de fondos es del Payment_Vault (§3.1).
  */
 export class CreateEscrowHoldDto {
+  @ApiProperty({ description: 'UUID del vendedor (contraparte)' })
   @IsUUID()
   sellerId: string;
 
   /** Referencia interna de la orden dentro de GWS (§3.6). */
+  @ApiProperty({ description: 'Referencia interna de la orden (GWS §3.6)', minLength: 3, maxLength: 120, example: 'ORD-20260922-001' })
   @IsString()
   @MinLength(3)
   @MaxLength(120)
   orderRef: string;
 
+  @ApiProperty({ enum: ESCROW_CATEGORIES, description: 'Categoría: define horas de liberación automática (24h/72h/7d/10d)' })
   @IsIn(ESCROW_CATEGORIES, {
     message: `category debe ser uno de: ${ESCROW_CATEGORIES.join(', ')}`,
   })
   category: EscrowCategory;
 
+  @ApiProperty({ example: 250, description: `Monto retenido (mín ${ESCROW_MIN_AMOUNT}, máx ${ESCROW_MAX_AMOUNT})` })
   @IsNumber()
   @Min(ESCROW_MIN_AMOUNT)
   @Max(ESCROW_MAX_AMOUNT)
   amount: number;
 
+  @ApiPropertyOptional({ enum: ESCROW_SETTLEMENT_CURRENCIES, default: 'USD' })
   @IsOptional()
   @IsIn(ESCROW_SETTLEMENT_CURRENCIES, {
     message: `settlementCurrency debe ser uno de: ${ESCROW_SETTLEMENT_CURRENCIES.join(', ')}`,
   })
   settlementCurrency?: 'USD' | 'USDT';
 
+  @ApiPropertyOptional({ enum: SETTLEMENT_PAYMENT_METHODS, default: 'card_usd' })
   @IsOptional()
   @IsIn(SETTLEMENT_PAYMENT_METHODS, {
     message: `paymentMethod debe ser uno de: ${SETTLEMENT_PAYMENT_METHODS.join(', ')}`,

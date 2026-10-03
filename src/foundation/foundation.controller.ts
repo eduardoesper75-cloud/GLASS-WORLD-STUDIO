@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body, Req, UseGuards, Sse } from '@nestjs/common';
 import { Throttle } from '@nestjs/throttler';
+import { ApiTags, ApiOperation, ApiBearerAuth } from '@nestjs/swagger';
 import { Request } from 'express';
 import { Observable } from 'rxjs';
 import { FoundationService } from './foundation.service';
@@ -19,23 +20,28 @@ type AuthedRequest = Request & { user: { id: string } };
  * La toma está rate-limitada a 5/min/IP para evitar llenar la
  * fundación con bots (ver ThrottlerModule global en app.module).
  */
+@ApiTags('foundation')
 @Controller('foundation')
 export class FoundationController {
   constructor(private foundationService: FoundationService) {}
 
   /** Snapshot de todos los cupos (galaxia, total, tomados, libres). */
+  @ApiOperation({ summary: 'Cupos de fundación', description: 'Snapshot de todos los cupos (galaxia, total, tomados, libres) — público.' })
   @Get('slots')
   getSlots() {
     return this.foundationService.getSlots();
   }
 
   /** SSE de contadores en vivo — la Portada se suscribe acá. */
+  @ApiOperation({ summary: 'Stream de cupos (SSE)', description: 'Contadores en vivo vía Server-Sent Events (público).' })
   @Sse('slots/stream')
   streamSlots(): Observable<{ data: unknown }> {
     return this.foundationService.stream();
   }
 
   /** Toma de cupo de fundación. Autenticada + limitada. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Tomar cupo de fundación', description: 'Toma de cupo (autenticada, 5/min por IP).' })
   @Throttle({ default: { limit: 5, ttl: 60_000 } })
   @UseGuards(JwtAuthGuard)
   @Post('claims')
@@ -44,6 +50,8 @@ export class FoundationController {
   }
 
   /** "Mis cupos": los claims del usuario autenticado. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Mis cupos', description: 'Claims del usuario autenticado.' })
   @UseGuards(JwtAuthGuard)
   @Get('claims/mine')
   myClaims(@Req() req: AuthedRequest) {

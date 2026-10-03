@@ -7,6 +7,7 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Roles, RolesGuard } from '../common/guards/roles.guard';
 import { RequiresElevation, ElevationGuard } from '../common/guards/elevation.guard';
 import { GwsRole } from '../common/enums/gws-role.enum';
+import { ApiTags, ApiOperation, ApiBearerAuth } from '@nestjs/swagger';
 
 type AuthedRequest = Request & { user: { id: string } };
 
@@ -17,14 +18,19 @@ type AuthedRequest = Request & { user: { id: string } };
  * PUT /commissions/rules — edición SOLO ADMIN + elevación
  *                          ('edit_liquidation_rules', §3.1/§3.5).
  */
+@ApiTags('commissions')
 @Controller('commissions')
 export class CommissionsController {
   constructor(private commissionsService: CommissionsService) {}
 
+  @ApiOperation({ summary: 'Política de comisiones', description: 'Política pública de liquidación (display).' })
   @Get()
   list() {
     return this.commissionsService.list();
   }
+
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Editar reglas de comisión', description: 'ADMIN + elevación. Edita las reglas de liquidación.' })
 
   @Throttle({ default: { limit: 20, ttl: 60_000 } })
   @Roles(GwsRole.ADMIN)

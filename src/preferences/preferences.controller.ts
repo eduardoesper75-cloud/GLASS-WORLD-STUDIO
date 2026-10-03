@@ -5,6 +5,7 @@ import { Repository } from 'typeorm';
 import { User } from '../users/user.entity';
 import { UpdatePreferencesDto } from './dto/update-preferences.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { ApiTags, ApiOperation, ApiBearerAuth } from '@nestjs/swagger';
 import { SUPPORTED_LANGUAGES, SUPPORTED_CURRENCIES } from '../localization/currency.const';
 
 type AuthedRequest = Request & { user: { id: string } };
@@ -17,12 +18,15 @@ type AuthedRequest = Request & { user: { id: string } };
  * en cada visita (GET /preferences). Es SOLO preferencia de exhibición:
  * el dato de pago sigue en Payment_Vault (§3.1).
  */
+@ApiTags('preferences')
 @Controller('preferences')
 export class PreferencesController {
   constructor(
     @InjectRepository(User) private userRepo: Repository<User>,
   ) {}
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Obtener preferencias', description: 'Idioma y moneda del usuario autenticado (7 idiomas).' })
   @UseGuards(JwtAuthGuard)
   @Get()
   async get(@Req() req: AuthedRequest): Promise<{
@@ -40,6 +44,8 @@ export class PreferencesController {
     };
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Actualizar preferencias', description: 'Persiste idioma y/o moneda del usuario autenticado.' })
   @UseGuards(JwtAuthGuard)
   @Put()
   async update(

@@ -24,6 +24,7 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Roles, RolesGuard } from '../common/guards/roles.guard';
 import { RequiresElevation, ElevationGuard } from '../common/guards/elevation.guard';
 import { GwsRole } from '../common/enums/gws-role.enum';
+import { ApiTags, ApiOperation, ApiBearerAuth, ApiParam } from '@nestjs/swagger';
 
 type AuthedRequest = Request & { user: { id: string } };
 
@@ -37,28 +38,35 @@ type AuthedRequest = Request & { user: { id: string } };
  * ('verify_bunker_specialist') — decisión de confianza técnica de Jorge.
  * El cobro real es del Payment_Vault (§3.1); aquí display + estado.
  */
+@ApiTags('bunker')
 @Controller('bunker')
 export class BunkerController {
   constructor(private bunkerService: BunkerService) {}
 
   /** Reglas del Búnker (tarifa membresía, comisión 0%, descuentos). */
+  @ApiOperation({ summary: 'Metadatos del Búnker', description: 'Reglas: tarifa de membresía, comisión 0%, descuentos (público).' })
   @Get('meta')
   meta() {
     return this.bunkerService.meta();
   }
 
   /** Directorio público de especialistas verificados (filtros región/especialidad). */
+  @ApiOperation({ summary: 'Listar especialistas', description: 'Directorio público de especialistas verificados (público).' })
   @Get('specialists')
   listSpecialists(@Query() query: ListSpecialistsQueryDto) {
     return this.bunkerService.listSpecialists(query);
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Crear especialista', description: 'Alta en el directorio del Búnker (autenticado).' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post('specialists')
   createSpecialist(@Body() dto: CreateSpecialistDto, @Req() req: AuthedRequest) {
     return this.bunkerService.createSpecialist(req.user.id, dto);
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Editar especialista', description: 'Actualiza el perfil de especialista del usuario autenticado.' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Patch('specialists')
   updateSpecialist(@Body() dto: UpdateSpecialistDto, @Req() req: AuthedRequest) {
@@ -66,6 +74,9 @@ export class BunkerController {
   }
 
   /** Sello de cartera élite — SOLO Jorge (admin + sesión elevada). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Verificar especialista', description: 'ADMIN + elevación. Sella la cartera élite (confianza técnica).' })
+  @ApiParam({ name: 'id', description: 'UUID del especialista', type: String })
   @Throttle({ default: { limit: 20, ttl: 60_000 } })
   @Roles(GwsRole.ADMIN)
   @RequiresElevation('verify_bunker_specialist')
@@ -80,12 +91,16 @@ export class BunkerController {
   }
 
   /** Ingreso de ticket técnico (Service On-Demand). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Crear request de servicio', description: 'Ingresa un ticket técnico Service On-Demand.' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post('requests')
   createRequest(@Body() dto: CreateServiceRequestDto, @Req() req: AuthedRequest) {
     return this.bunkerService.createRequest(req.user.id, dto);
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Mis requests', description: 'Tickets del usuario autenticado.' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Get('requests')
   listRequests(@Req() req: AuthedRequest) {
@@ -93,6 +108,9 @@ export class BunkerController {
   }
 
   /** El especialista toma un ticket y fija honorarios (0% comisión). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Cotizar request', description: 'El especialista toma el ticket y fija honorarios (0% comisión).' })
+  @ApiParam({ name: 'id', description: 'UUID del request', type: String })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Put('requests/:id/quote')
   quoteRequest(
@@ -104,6 +122,7 @@ export class BunkerController {
   }
 
   /** Cotización transparente de membresía pro (público). */
+  @ApiOperation({ summary: 'Cotizar membresía', description: 'Cotización transparente de membresía pro (público).' })
   @Get('memberships/quote')
   quoteMembership(@Query() query: QuoteMembershipDto) {
     return this.bunkerService.quoteMembership(
@@ -113,6 +132,8 @@ export class BunkerController {
     );
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Suscribirse a membresía', description: 'Alta de membresía pro (el cobro real es del Payment_Vault).' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post('memberships')
   subscribeMembership(@Body() dto: QuoteMembershipDto, @Req() req: AuthedRequest) {
@@ -124,6 +145,8 @@ export class BunkerController {
     );
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Mis membresías', description: 'Membresías del usuario autenticado.' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Get('memberships')
   myMemberships(@Req() req: AuthedRequest) {

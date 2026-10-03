@@ -20,6 +20,7 @@ import { ListProductsQueryDto } from './dto/list-products-query.dto';
 import { IdParamDto } from './dto/id-param.dto';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { RolesGuard } from '../common/guards/roles.guard';
+import { ApiTags, ApiOperation, ApiBearerAuth, ApiParam, ApiQuery } from '@nestjs/swagger';
 
 type AuthedRequest = Request & { user: { id: string } };
 
@@ -32,6 +33,7 @@ type AuthedRequest = Request & { user: { id: string } };
  * class-validator — el ValidationPipe global con whitelist +
  * forbidNonWhitelisted rechaza cualquier campo desconocido.
  */
+@ApiTags('marketplace')
 @Controller('marketplace')
 export class MarketplaceController {
   constructor(private marketplaceService: MarketplaceService) {}
@@ -41,12 +43,17 @@ export class MarketplaceController {
    * adelante se decide que solo cuentas "verificadas como comerciante"
    * puedan publicar, eso se agrega como un campo en User + un guard
    * adicional, no rediseñando esto. */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Crear producto', description: 'Alta de producto (autenticado). Cualquier suscriptor puede vender.' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post('products')
   createProduct(@Body() dto: CreateProductDto, @Req() req: AuthedRequest) {
     return this.marketplaceService.createProduct(req.user.id, dto);
   }
 
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Agregar lote', description: 'Agrega un lote/inventario a un producto del vendedor autenticado.' })
+  @ApiParam({ name: 'productId', description: 'UUID del producto', type: String })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Post('products/:productId/batches')
   addBatch(
@@ -62,6 +69,7 @@ export class MarketplaceController {
    * explorar el marketplace antes de crear cuenta. Filtros validados
    * en ListProductsQueryDto (enum, ISO 3166-1, JSON de specs, paginación).
    */
+  @ApiOperation({ summary: 'Listar productos', description: 'Listado público del catálogo con filtros (tier, país, búsqueda, specs técnicas COE, temperatura de fusión) y paginación.' })
   @Get('products')
   listProducts(@Query() query: ListProductsQueryDto) {
     const page = query.page ?? 1;
@@ -86,6 +94,8 @@ export class MarketplaceController {
    * Productos del vendedor autenticado (incluye inactivos) — para el
    * panel "Mis productos" del vendedor.
    */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Mis productos', description: 'Productos del vendedor autenticado (incluye inactivos).' })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Get('products/mine')
   listMyProducts(@Req() req: AuthedRequest) {
@@ -104,6 +114,8 @@ export class MarketplaceController {
    * Declarada ANTES de /products/:id para que "radar" no sea capturado
    * como id de producto por el router de Express.
    */
+  @ApiOperation({ summary: 'Radar oferta/demanda', description: 'Agrupa el catálogo en local/regional/global respecto al país del comprador. buyerCountryCode es obligatorio.' })
+  @ApiQuery({ name: 'buyerCountryCode', required: true, type: String, description: 'ISO 3166-1 alpha-2 del comprador' })
   @Get('products/radar')
   listWithRadar(
     @Query('buyerCountryCode') buyerCountryCode: string,
@@ -127,12 +139,17 @@ export class MarketplaceController {
   }
 
   /** Detalle público de un producto individual. */
+  @ApiOperation({ summary: 'Detalle de producto', description: 'Detalle público de un producto.' })
+  @ApiParam({ name: 'id', description: 'UUID del producto', type: String })
   @Get('products/:id')
   getProductById(@Param() params: IdParamDto) {
     return this.marketplaceService.getProductById(params.id);
   }
 
   /** Edición parcial del producto (solo el vendedor propietario). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Editar producto', description: 'Edición parcial del producto (solo el vendedor propietario).' })
+  @ApiParam({ name: 'id', description: 'UUID del producto', type: String })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Patch('products/:id')
   updateProduct(
@@ -144,6 +161,9 @@ export class MarketplaceController {
   }
 
   /** Soft-delete del producto (solo el vendedor propietario). */
+  @ApiBearerAuth()
+  @ApiOperation({ summary: 'Desactivar producto', description: 'Soft-delete del producto (solo el vendedor propietario).' })
+  @ApiParam({ name: 'id', description: 'UUID del producto', type: String })
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Delete('products/:id')
   deactivateProduct(@Param() params: IdParamDto, @Req() req: AuthedRequest) {
