@@ -23,8 +23,18 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://glassworldstudio.com'),
   title: 'Glass World Studio',
-  description: 'La casa del oficio, el dato y el fuego.',
+  description: 'Una plataforma con alma de taller que se fortalece con tu crecimiento.',
+  openGraph: {
+    title: 'Glass World Studio',
+    description: 'Una plataforma con alma de taller.',
+    images: ['/opengraph-image.jpg'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/opengraph-image.jpg'],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
