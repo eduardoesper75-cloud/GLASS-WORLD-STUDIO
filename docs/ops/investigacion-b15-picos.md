@@ -1,9 +1,13 @@
 # B15 · Investigación de los picos de latencia (15,6 s en lecturas)
 
-**Fecha:** 2026-10-03 (ampliado el 2026-10-03 tras la remediación)
-**Estado:** causa raíz **probada**. Remediación A **aplicada**; B **evaluada, no implementada**.
+**Fecha:** 2026-10-03 (ampliado el 2026-10-03 tras la remediación; **cerrado** el
+2026-10-03 por decisión P1 de Jorge)
+**Estado:** **CERRADO**. Causa raíz **probada**. Mitigación efectiva = **rate limiting
+(B12)**, no `UV_THREADPOOL_SIZE`. `UV_THREADPOOL_SIZE=8` se mantiene como default
+defensivo. Remediación B (argon2id) **evaluada, no implementada**.
 **Alcance:** este documento **sí modificó código de producción**: `src/config/threadpool.ts`
 (nuevo) y `src/main.ts`. No se tocó `bcrypt` ni ningún flujo de autenticación.
+**Ver §11 para el cierre.**
 
 ---
 
@@ -456,3 +460,80 @@ tercero.
 > **Todos los bancos de §3.5 y §4 son sintéticos**: miden el hash en aislamiento,
 > sin HTTP ni base de datos, para aislar la variable. No sustituyen una prueba de
 > carga end-to-end, que B12 impide generar sobre `/auth/login` (§3.4).
+
+---
+
+## 11. CIERRE DE B15 (2026-10-03, decisión P1 de Jorge)
+
+### 11.1 Qué se decidió
+
+**`UV_THREADPOOL_SIZE=8` se mantiene como default. No se sube a 16.**
+
+Razón: la mitigación que **realmente** cierra el problema ya está aplicada y es
+**otra**. El pool se dimensionó por una hipótesis que la medición posterior
+desconfirmó como vía de mitigación efectiva.
+
+### 11.2 El rate limiting (B12) es lo que mitiga B15, no el thread pool
+
+Verificado con `gws-load-test.js` (FASE 11) sobre el backend con el fix aplicado:
+
+| Métrica | Valor |
+|---|---|
+| Requests de login rechazados por throttle (429) | **7.463 de 7.468** |
+| Requests de login que **ejecutaron bcrypt** | **5 a 9** |
+| Login throughput observado | **~0,05 req/s** |
+
+Es decir: **el 99,93% de la carga de autenticación nunca llegó a bcrypt.** El
+throttler de B12 (5/min por IP) corta la avalancha **antes** de que el thread
+pool pueda saturarse. Los picos de 15,6 s no reaparecen porque **el trabajo
+CPU-bound que los causaba ya no se ejecuta**.
+
+`/health` durante esas mismas corridas, con el pool yadimensionado:
+
+| pool | p95 `/health` |
+|---|---|
+| 4 | **2,59 ms** |
+| 8 | **2,66 ms** |
+
+**No hay mejora HTTP medible por subir el pool de 4 a 8** (2,59 → 2,66 ms es
+dentro del ruido, y va en la dirección contraria). El pool=8 **no es lo que
+resolvió B15**: es lo que resuelve la degradación *condicional*, si el tráfico de
+autenticación alguna vez llegara.
+
+### 11.3 Por qué el pool=8 no se elimina, solo se degrada a "defensivo"
+
+Although the evidence says the pool is not the fix, **no se revierte**:
+
+1. **Coste cero y riesgo cero.** El default de 8 viaja en el código, es reversible
+   con una variable de entorno, y está acotado a 16 (§9.1). Deshacerlo sería
+   cambiar código sin beneficio medido.
+2. **Es una red de seguridad, no la cura.** El throttler protege **por IP**. En
+   despliegue real, varios usuarios detrás de un mismo NAT/proxy comparten cuota
+   de IP, y el límite deja de proteger (§6). Si eso ocurre, el pool=8 es lo que
+   evita que el sistema caiga a los 15,6 s originales mientras se aplica la
+   solución de fondo.
+3. **El argumento "más threads = mejor" sigue siendo falso.** La medición de §3.5
+   no cambió: 16 no mejora el wall clock (1070 vs 1055 ms) y vuelve el event loop
+   errático (lag p99 de 27-94 ms). Forzar 16 sería empeorar el sistema a cambio de
+   nada.
+
+### 11.4 Estado final de B15
+
+| Aspecto | Estado |
+|---|---|
+| Causa raíz | **Probada** — bcrypt(12) CPU-bound compitiendo con el event loop (§2) |
+| Mitigación efectiva | **B12 rate limiting** — 99,93% de la carga cortada antes de bcrypt |
+| `UV_THREADPOOL_SIZE=8` | **Default defensivo** — se mantiene, no se sube a 16 |
+| `UV_THREADPOOL_SIZE=16` | **Descartado** — sin ganancia, event loop inestable |
+| Migración a argon2id (§4) | **Pendiente de aprobación** — sigue siendo la solución de fondo |
+| ¿Volverán los picos? | **No mientras** el tráfico de autenticación esté throttleado. **Sí** si crece por encima de 5/min/IP o hay varios usuarios tras un NAT/proxy |
+
+### 11.5 Conclusión operativa
+
+B15 **no se resolvió agrandando el thread pool**: se resolvió **dejando de hacer
+el trabajo caro**. El pool=8 es la red que está debajo, no la solución. La
+solución de fondo sigue siendo **sacar el CPU-bound del event loop** — y la vía
+medida es **argon2id** (§4.4), que además es 3,7x más rápido. Esa migración
+sigue **pendiente de decisión de Jorge** (dependencia nativa + ancho de columna).
+
+**B15 se cierra como mitigado y encauzado, no como resuelto en su raíz.**

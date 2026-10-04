@@ -44,6 +44,32 @@ Cuando esten disponibles, reemplazar esta seccion y eliminar este aviso.
 
 **PENDIENTE — no disponible.**
 
+### 3-bis · Las 10 reglas verificables derivadas de `CLAUDE.md`
+
+> **Esto NO es el texto original de la sección 3.** Ese sigue pendiente y no se
+> sustituye. Lo que sigue es una **derivación de `CLAUDE.md`**, que sí está
+> disponible y es la fuente de verdad vigente (`§4.1`). Son reglas **comprobables
+> mecánicamente**: cada una se puede auditar sin memoria ni interpretación.
+
+| # | Regla | Fuente | Cómo se verifica |
+|---|---|---|---|
+| R1 | Cero lectura de credenciales de tesorería (Mercado Pago, Stripe, banco) | `CLAUDE.md` §3.1 | El agente no puede leer ni imprimir esas claves en ninguna sesión |
+| R2 | Cero escritura en `Payment_Vault` | `CLAUDE.md` §3.1 | `git log` sin commits de IA sobre ese path |
+| R3 | Cero cambio autónomo de tarifas, comisiones o condiciones | `CLAUDE.md` §3.1 | Cada cambio de precio pasa por "agente propone → Jorge confirma → se ejecuta" |
+| R4 | Cero acceso a configuración raíz de infra (SSH, secretos de entorno) | `CLAUDE.md` §3.1 | El agente no ejecuta `ssh` ni edita `.env` en producción |
+| R5 | Prohibido el contacto automatizado en masa | `CLAUDE.md` §3.2 | Toda salida a un lead pasa por revisión humana previa |
+| R6 | Toda publicación a nombre de GWS requiere aprobación humana | `CLAUDE.md` §3.2 | Cada email/post queda como borrador hasta que Jorge lo aprueba |
+| R7 | El Código Rojo es una acción de infraestructura, no una orden al agente | `CLAUDE.md` §3.3 | Ningún diseño depende de que el agente "decida detenerse" |
+| R8 | Todo cambio pasa por staging → validación → canary → producción, **con rollback definido antes** | `CLAUDE.md` §3.4 | No se aplica un cambio sin responder "¿cómo se revierte?" |
+| R9 | Toda sesión arranca en el menor privilegio; la elevación a `admin` re-autentica y **expira sola** (20-30 min) | `CLAUDE.md` §3.5 | `elevated-session` con expiración; log inmutable por acción |
+| R10 | Toda negociación ocurre dentro de la plataforma; bloqueo **server-side** | `CLAUDE.md` §3.6 | `contact-leak-filter.ts` devuelve HTTP 400 antes de guardar |
+
+**Por qué esto no contradice el aviso de completitud:** las 42 reglas `CF-01…CF-42`
+siguen sin existir y no se inventaron. Lo que se agrega son 10 reglas que salen
+de un documento **disponible y autoritativo**, que además ya estaba citado en
+`§4.1`. Si Jorge pega el texto original de la sección 3, esta subsección se
+elimina sin pérdida.
+
 ---
 
 ## 4 · Lo que SÍ está vigente hoy

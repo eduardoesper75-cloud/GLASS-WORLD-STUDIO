@@ -35,3 +35,8 @@ credenciales*.txt
 
 # Artefactos de simulacion k6 (500MB crudos, regenerables con --out json=)
 docs/simulation/resultados-*.json
+
+# Ruflo local secrets and runtime data
+.claude-flow/data/
+.claude-flow/logs/
+.claude-flow/sessions/

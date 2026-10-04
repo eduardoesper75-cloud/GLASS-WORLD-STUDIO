@@ -1,0 +1,23 @@
+{
+  "swarms": {
+    "swarm-1791059087583-nojsui": {
+      "swarmId": "swarm-1791059087583-nojsui",
+      "topology": "hierarchical-mesh",
+      "maxAgents": 15,
+      "status": "running",
+      "agents": [],
+      "tasks": [],
+      "config": {
+        "topology": "hierarchical-mesh",
+        "maxAgents": 15,
+        "strategy": "specialized",
+        "communicationProtocol": "message-bus",
+        "autoScaling": true,
+        "consensusMechanism": "majority"
+      },
+      "createdAt": "2026-10-03T20:24:47.583Z",
+      "updatedAt": "2026-10-03T20:24:47.583Z"
+    }
+  },
+  "version": "3.0.0"
+}

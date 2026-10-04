@@ -1,0 +1,16 @@
+{
+  "provider": "openrouter",
+  "model": "z-ai/glm-4.6",
+  "apiKey": "{env:OPENROUTER_API_KEY}",
+  "agents": {
+    "providers": [
+      {
+        "name": "openrouter",
+        "enabled": true,
+        "apiKey": true,
+        "model": true,
+        "baseUrl": true
+      }
+    ]
+  }
+}
