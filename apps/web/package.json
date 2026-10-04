@@ -38,6 +38,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.4.38",
     "postcss-import": "^17.0.0",
+    "sharp": "^0.35.5",
     "tailwindcss": "^3.4.4",
     "ts-jest": "^29.1.4",
     "typescript": "^5.5.4"
