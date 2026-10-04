@@ -8,14 +8,16 @@ Sesión: OpenCode autónomo · modelo `opencode/big-pickle` (DeepSeek configurad
 ## Frente 1 — GWS
 
 ### Git
-- **Último commit: `7e96fe4`** — `[frente-1] chore(welcome): agregar placeholder del poster`
-- **`origin/main` = `7e96fe4`** (sincronizado, push clean)
+- **Último commit: `9c092a0`** — `[frente-1] feat: agregar favicon + OG image con branding GWS`
+- **`origin/main` = `9c092a0`** (sincronizado, push clean)
 - Rama `main`, remote `github.com/eduardoesper75-cloud/GLASS-WORLD-STUDIO`
 - Working tree: solo 2 state files de claude-flow sucios (ruido de runtime, no tocar)
 - La rama `backup/pre-secret-cleanup` fue **eliminada** (03/10). Verificado: **0 refs** contienen la key vieja de OpenRouter.
 
 | Hash | Commit |
 |---|---|
+| `9c092a0` | feat: agregar favicon + OG image con branding GWS |
+| `3c32dfa` | feat(welcome): poster real 1920x1080 con branding GWS |
 | `7e96fe4` | chore(welcome): agregar placeholder del poster |
 | `a24a83e` | fix: proteger claude-flow.config.json + agregar .example |
 | `7c7c4f0` | docs: guardar estado maestro 2026-10-03 |
@@ -50,20 +52,57 @@ Lint warning conocido: `@next/next/no-img-element` en `WelcomeVideo.tsx:15` — 
 
 Specs en `docs/specs/welcome-screen/`: `spec.md`, `plan.md`, `tasks.md` — **creados 03/10**, marcados `PENDIENTE DE APROBACIÓN DE JORGE` con 5 decisiones abiertas (D1–D5).
 
-### Assets de `/welcome` — INCOMPLETOS
-| Archivo | Estado | Nota |
+### Assets de `/welcome` — POSTER RESUELTO, VIDEO PENDIENTE
+| Archivo | Estado | Detalle |
 |---|---|---|
-| `apps/web/public/welcome/intro-poster.jpg` | EXISTE (70 bytes) | **NO FUNCIONAL COMO POSTER** — ver abajo |
+| `apps/web/public/welcome/intro-poster.jpg` | **OK** | **1920×1080, 48.8 KB**, JPG real (`image/jpeg`, 50.261 B servidos) |
 | `apps/web/public/welcome/intro.webm` | **FALTA** | sin fuente de video |
 | `apps/web/public/welcome/intro.mp4` | **FALTA** | sin fuente de video |
 
-**El placeholder NO sirve como poster.** El archivo generado el 03/10 es un **PNG de 1×1 píxel transparente de 70 bytes con extensión `.jpg`**. Estirado a pantalla completa es un rectángulo negro liso. Dos defectos: (a) 1×1 no es un placeholder utilizable, (b) es PNG con nombre `.jpg`, así que el content-type queda mal.
+Generado con `apps/web/scripts/generate-welcome-poster.js` (sharp, devDependency). Fondo `#030712` con radial `#1a1408`, título Georgia 110px en `#FFD700` con letter-spacing 12, submark `GWS` en `#52525b` entre dos diamantes.
 
-**Lo que sí resolvió:** eliminó el 404 del atributo `poster`. Build web ✓ Compiled successfully, `/welcome` 1.57 kB.
+**Los diamantes del submark son paths SVG, no glyphs de fuente**, a propósito: como glifo `◈` (U+25C8) depende de que exista en la fuente del sistema y sale como cuadro vacío si no. Verificado por análisis de píxeles sobre el raw: **5 runs exactos** en el submark (2 diamantes + G + W + S) y título de 1425 px centrado en 959.5 vs 960.
 
-**Estado real de `/welcome` en runtime:** renderiza fondo negro `#030712` + título dorado + CTA. Navegable y funcional, **pero sin video**. Con `prefers-reduced-motion: reduce` el branch del `<img>` tampoco muestra nada útil, porque el poster es 1×1.
+**Estado real de `/welcome`:** fondo estático + título + CTA, navegable. Sin video. Bajo `prefers-reduced-motion: reduce` el branch del `<img>` **sí** muestra el poster (antes mostraba un 1×1 negro).
 
-**Fix pendiente (D1):** generar un poster real 1920×1080, fondo `#030712`, "GLASS WORLD STUDIO" en `#FFD700`, vetas de luz según `design-system/gws-design-tokens.css`, exportado a JPG real (~50–80 KB). Alternativa: eliminar el atributo `poster` hasta tener el asset real.
+### Brand assets — RESUELTOS
+| Archivo | Estado | Detalle |
+|---|---|---|
+| `apps/web/app/icon.png` | **OK** | 256×256, 7.8 KB. 256 en vez de 32 para nitidez hi-dpi; Next escala solo |
+| `apps/web/app/opengraph-image.jpg` | **OK** | 1200×630, 30.4 KB |
+| `apps/web/public/og-image.jpg` | **OK** | 1200×630, 30.4 KB (mismo asset, servible por URL) |
+
+Generados con `apps/web/scripts/generate-brand-assets.js`. Se usan las **convenciones de metadata de Next** (`app/icon.png`, `app/opengraph-image.jpg`) para que Next los inyecte solo en `<head>`. Verificado en el HTML servido:
+
+```
+<link rel="icon" href="/icon.png" sizes="256x256" type="image/png">
+<meta property="og:image" content="http://localhost:3000/opengraph-image.jpg"  (1200x630)
+<meta name="twitter:card" content="summary_large_image">
+```
+
+**Nota:** solo `public/og-image.jpg` NO habría funcionado — queda servible por URL pero Next no lo inyecta en el head. Por eso está la copia en `app/`.
+
+### Servicios en runtime (verificado 03/10 23:50)
+| Servicio | Estado |
+|---|---|
+| PostgreSQL 16 | **OK** — PID 7828, puerto 5432 |
+| Backend NestJS `:3001` | **OK** — `GET /health` → `200 {"status":"ok","db":"ok","version":"1.0.0"}` |
+| Frontend Next.js `:3000` | **OK** |
+| `GET /welcome` | **200** — 12.073 B, contiene el título |
+| `GET /welcome/intro-poster.jpg` | **200** — 50.261 B, `image/jpeg` |
+| `GET /icon.png` | **200** — 7.949 B |
+| `GET /og-image.jpg` | **200** — 31.174 B |
+
+**Trampa importante para下次:** `Start-Process` + `-RedirectStandardOutput` **NO** funciona para servidores en este entorno — el log dice "successfully started" pero el process tree lo mata el timeout de la shell y el puerto queda cerrando. Hay que desacoplar con `Invoke-CimMethod -ClassName Win32_Process -MethodName Create`, que no hereda handles:
+
+```powershell
+$cmd = 'cmd /c cd /d "C:\ruta\del\proyecto" && npm run start:dev > "%TEMP%\x.log" 2> "%TEMP%\x.err.log"'
+Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{ CommandLine = $cmd }
+```
+
+Además: para correr `npm run build` en `apps/web` hay que **matar el dev primero** (Node bloquea `.next`).
+
+**Build de producción (verificado tras los brand assets):** ✓ Compiled successfully, **20/20 rutas** (subió de 18 por los 2 assets nuevos), `/icon.png` y `/opengraph-image.jpg` wireados · typecheck 0 errores · tests **19/19** · lint 1 warning preexistente.
 
 ### Seguridad — incidente resuelto
 - **Secreto encontrado:** API key de OpenRouter (`sk-or-v1-…`) en texto plano en `claude-flow.config.json:4`, introducida en `910e502`.
@@ -145,13 +184,14 @@ Requieren aprobación de Jorge (CLAUDE.md §3.2). Todos con datos verificados de
 
 | # | Bloqueo | Impacto | Acción |
 |---|---|---|---|
-| 1 | **Video del welcome ausente**: `apps/web/public/welcome/intro.webm` y `intro.mp4` no existen. El poster es un PNG 1×1 inservible | `/welcome` renderiza negro + título + CTA, sin video | Decisión D1 — generar poster real y/o conseguir el video |
+| 1 | **Video del welcome ausente**: `apps/web/public/welcome/intro.webm` y `intro.mp4` no existen | `/welcome` muestra fondo estático + título + CTA, sin video | Producir el video, o generar uno sintético con ffmpeg |
 | 2 | **Jobs en modo Interactive** | No corren sin sesión Windows abierta | Re-registrar desde consola admin con S4U |
 | 3 | **InboxAPI en 0** — 0 emails recibidos/enviados en todo el histórico | La tropa no recibe nada | Diagnosticar integración |
 | 4 | **3 ofertas bajo umbral** (#13 $16/h, #14 $21/h, #19 $11,5/h) | Descartar o negociar | Decisión de Jorge |
 | 5 | **5 borradores esperando aprobación** | Postulaciones paradas | Decisión de Jorge |
-| 6 | **Backend :3001 caído** | No se puede probar la integración real | `npm run start:dev` |
-| 7 | **`opencode.jsonc` sin commitear** (tiene el fix de Ruflo aplicado) | Cambio local no versionado | Commitear o dejar así |
+| 6 | **`opencode.jsonc` sin commitear** (tiene el fix de Ruflo aplicado) | Cambio local no versionado | Commitear o dejar así |
+
+**Resueltos en este ciclo:** poster del welcome (1920×1080 real), favicon, OG image, backend `:3001` caído, rama `backup` con la key vieja, `claude-flow.config.json` sin proteger.
 
 ### Fuera de alcance / pausado
 - **Ruflo**: pausado por decisión de Jorge. No invocar.
@@ -162,13 +202,12 @@ Requieren aprobación de Jorge (CLAUDE.md §3.2). Todos con datos verificados de
 
 ## Próximos pasos
 
-1. **Decidir D1** (video del welcome) — generar un poster real 1920×1080 con los tokens GWS, o borrar el atributo `poster` hasta tener el asset. Los `intro.webm`/`intro.mp4` hay que conseguirlos. *Es lo único que bloquea el Frente 1.*
+1. **Video del welcome** — único bloqueo que impide cerrar el Frente 1. Producir `intro.webm`/`intro.mp4`, o generar uno sintético con ffmpeg. Mientras tanto la pantalla ya funciona con el poster.
 2. **Aprobar o descartar los 5 borradores** de `ledger/drafts/`. Ninguno se envía sin OK.
 3. **Fijar precio** para #11, #12, #15, #16, #17, #18.
 4. **Diagnosticar InboxAPI** — 0 emails es sospechoso.
 5. **Re-registrar los 4 jobs en S4U** desde consola admin para que no dependan de la sesión abierta.
 6. **Commitear `opencode.jsonc`** con el fix de Ruflo, o decidir si se descarta.
-7. **Levantar el backend** (`:3001` caído) si hace falta probar integración real.
 
 ---
 
@@ -183,7 +222,24 @@ Trabajo completado, en orden:
 6. **Incidente de seguridad**: API key de OpenRouter en texto plano → key rotada por Jorge, historia reescrita, push conforme.
 7. Reconstrucción del scheduler: 13 tareas → 4, con wrappers `.cmd` + logs, probados end-to-end.
 8. Limpieza de `claude-flow.config.json` + `.gitignore` + `.example`.
-9. Placeholder del poster del welcome (**no funcional**, ver sección de assets).
+9. Placeholder 1×1 del poster → **reemplazado por poster real 1920×1080** + favicon + OG image (sharp).
+10. Backend `:3001` levantado y verificado; frontend `:3000` verificado. Build 20/20, tests 19/19.
+
+## Decisiones técnicas tomadas sin consultar (autorización de Jorge)
+
+| Decisión | Motivo |
+|---|---|
+| `◈` como `<path>` vectorial en vez de glifo de fuente | Un glyph U+25C8 depende de la fuente del sistema; si falta, sale cuadro vacío |
+| favicon a 256×256 en vez de 32×32 | Next escala solo; a 32 se ve borroso en hi-dpi |
+| OG image en `app/opengraph-image.jpg` además de `public/` | Solo en `public/` Next no lo inyecta en `<head>` |
+| Desacoplar servidores con `Win32_Process.Create` | `Start-Process` + redirect muere con el timeout de la shell |
+| Reescritura de historia por `reset --mixed` + recommit, en vez de `rebase -i` | El rebase interactivo no funciona sin editor y con el working tree sucio |
+
+## Convenios de verificación en este repo
+
+- **Antes de commitear en `apps/web`:** `npm run build` + `npm test` + `npm run typecheck`. El build de la raíz (`nest build`) solo cubre el backend y **no detecta** nada del frontend.
+- Un `npm run build` verde en la raíz **no** implica que el web compile. Hay que correr el de `apps/web`.
+- Regenerar assets: `node scripts/generate-welcome-poster.js` y `node scripts/generate-brand-assets.js` (requiere `sharp`, devDependency).
 
 ---
 
