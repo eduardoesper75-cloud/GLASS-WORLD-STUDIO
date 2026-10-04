@@ -40,3 +40,4 @@ docs/simulation/resultados-*.json
 .claude-flow/data/
 .claude-flow/logs/
 .claude-flow/sessions/
+claude-flow.config.json
