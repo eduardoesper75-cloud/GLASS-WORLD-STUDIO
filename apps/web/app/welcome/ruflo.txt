@@ -1,0 +1,18 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "ruflo": {
+        "command": "cmd",
+        "args": ["/c", "npx", "-y", "ruflo@latest", "mcp", "start"],
+        "type": "stdio",
+        "enabled": true
+      }
+    },
+    "permissions": {
+      "allow": ["*"],
+      "deny": []
+    }
+  },
+  "plugin": ["code-agent-auto-commit", "opencode-agent-teams"]
+}
