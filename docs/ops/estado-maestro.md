@@ -1,6 +1,6 @@
 # Estado Maestro GWS + Tropa
 
-Última actualización: **2026-10-03 22:35**
+Última actualización: **2026-10-03 23:05** (sesión compacta, lista para retomar)
 Sesión: OpenCode autónomo · modelo `opencode/big-pickle` (DeepSeek configurado pero no activo en esta sesión — requiere reinicio de la app)
 
 ---
@@ -8,18 +8,21 @@ Sesión: OpenCode autónomo · modelo `opencode/big-pickle` (DeepSeek configurad
 ## Frente 1 — GWS
 
 ### Git
-- **Último commit: `f4c03a9`** — `[frente-1] feat(welcome): agregar WelcomeVideo + WelcomeCta`
-- **`origin/main` = `f4c03a9`** (sincronizado, push clean)
+- **Último commit: `7e96fe4`** — `[frente-1] chore(welcome): agregar placeholder del poster`
+- **`origin/main` = `7e96fe4`** (sincronizado, push clean)
 - Rama `main`, remote `github.com/eduardoesper75-cloud/GLASS-WORLD-STUDIO`
-- Backup local: `backup/pre-secret-cleanup` (contiene la historia previa al rewrite de la key; se puede borrar con `git branch -D`)
 - Working tree: solo 2 state files de claude-flow sucios (ruido de runtime, no tocar)
+- La rama `backup/pre-secret-cleanup` fue **eliminada** (03/10). Verificado: **0 refs** contienen la key vieja de OpenRouter.
 
 | Hash | Commit |
 |---|---|
+| `7e96fe4` | chore(welcome): agregar placeholder del poster |
+| `a24a83e` | fix: proteger claude-flow.config.json + agregar .example |
+| `7c7c4f0` | docs: guardar estado maestro 2026-10-03 |
 | `f4c03a9` | feat(welcome): agregar WelcomeVideo + WelcomeCta |
 | `3fa4e9f` | docs: agregar specs de welcome-screen |
 | `3028888` | chore: update 47 files |
-| `f3d4502` | fix(b15): pool de libuv a 8 threads (punto de sync remoto previo) |
+| `f3d4502` | fix(b15): pool de libuv a 8 threads (último sync previo al rewrite) |
 
 ### Build
 | Target | Comando | Estado |
@@ -47,11 +50,27 @@ Lint warning conocido: `@next/next/no-img-element` en `WelcomeVideo.tsx:15` — 
 
 Specs en `docs/specs/welcome-screen/`: `spec.md`, `plan.md`, `tasks.md` — **creados 03/10**, marcados `PENDIENTE DE APROBACIÓN DE JORGE` con 5 decisiones abiertas (D1–D5).
 
+### Assets de `/welcome` — INCOMPLETOS
+| Archivo | Estado | Nota |
+|---|---|---|
+| `apps/web/public/welcome/intro-poster.jpg` | EXISTE (70 bytes) | **NO FUNCIONAL COMO POSTER** — ver abajo |
+| `apps/web/public/welcome/intro.webm` | **FALTA** | sin fuente de video |
+| `apps/web/public/welcome/intro.mp4` | **FALTA** | sin fuente de video |
+
+**El placeholder NO sirve como poster.** El archivo generado el 03/10 es un **PNG de 1×1 píxel transparente de 70 bytes con extensión `.jpg`**. Estirado a pantalla completa es un rectángulo negro liso. Dos defectos: (a) 1×1 no es un placeholder utilizable, (b) es PNG con nombre `.jpg`, así que el content-type queda mal.
+
+**Lo que sí resolvió:** eliminó el 404 del atributo `poster`. Build web ✓ Compiled successfully, `/welcome` 1.57 kB.
+
+**Estado real de `/welcome` en runtime:** renderiza fondo negro `#030712` + título dorado + CTA. Navegable y funcional, **pero sin video**. Con `prefers-reduced-motion: reduce` el branch del `<img>` tampoco muestra nada útil, porque el poster es 1×1.
+
+**Fix pendiente (D1):** generar un poster real 1920×1080, fondo `#030712`, "GLASS WORLD STUDIO" en `#FFD700`, vetas de luz según `design-system/gws-design-tokens.css`, exportado a JPG real (~50–80 KB). Alternativa: eliminar el atributo `poster` hasta tener el asset real.
+
 ### Seguridad — incidente resuelto
 - **Secreto encontrado:** API key de OpenRouter (`sk-or-v1-…`) en texto plano en `claude-flow.config.json:4`, introducida en `910e502`.
 - **Nunca llegó al remoto** (`origin/main` estaba en `f3d4502`). Expuesta solo en disco local.
 - **Resuelto:** Jorge rotó la key (03/10). Se reescribió la historia local: `git reset --mixed f3d4502` + reconstrucción de los 3 commits. `git diff 910e502 3028888` = **1 sola línea** (la key → `{env:OPENROUTER_API_KEY}`). Push conforme.
-- **Pendiente:** `claude-flow.config.json` **NO está en `.gitignore`** y se commitea. Hoy está limpio, pero cualquier tool que lo regenere puede reintroducir el secreto. Recomendado: ignorarlo + dejar un `.example`.
+- **Resuelto 03/10 (`a24a83e`):** `claude-flow.config.json` agregado a `.gitignore`, `git rm --cached` aplicado (des-trackeado, **intacto en disco**), y creado `claude-flow.config.json.example` con `{env:OPENROUTER_API_KEY}`. Git lo registró como rename (`claude-flow.config.json` → `.example`). La key vieja **no existe ya en ningún ref** del repo.
+- **Pendiente:** si algún tool regenera `claude-flow.config.json`, el `.gitignore` ahora lo cubre — pero el `.example` hay que mantenerlo en sync si cambia el schema.
 
 ### Stack / contexto heredado (verificado por última vez 2026-09-22)
 - Fases 0–9 completadas: backend 20 módulos, frontend FASE 1–9 con checkout real + órdenes.
@@ -126,14 +145,13 @@ Requieren aprobación de Jorge (CLAUDE.md §3.2). Todos con datos verificados de
 
 | # | Bloqueo | Impacto | Acción |
 |---|---|---|---|
-| 1 | **Assets del welcome ausentes**: `apps/web/public/welcome/intro.webm`, `intro.mp4`, `intro-poster.jpg` no existen | `/welcome` compila pero **roto en runtime** (video 404) | Decisión D1 del spec |
+| 1 | **Video del welcome ausente**: `apps/web/public/welcome/intro.webm` y `intro.mp4` no existen. El poster es un PNG 1×1 inservible | `/welcome` renderiza negro + título + CTA, sin video | Decisión D1 — generar poster real y/o conseguir el video |
 | 2 | **Jobs en modo Interactive** | No corren sin sesión Windows abierta | Re-registrar desde consola admin con S4U |
 | 3 | **InboxAPI en 0** — 0 emails recibidos/enviados en todo el histórico | La tropa no recibe nada | Diagnosticar integración |
 | 4 | **3 ofertas bajo umbral** (#13 $16/h, #14 $21/h, #19 $11,5/h) | Descartar o negociar | Decisión de Jorge |
 | 5 | **5 borradores esperando aprobación** | Postulaciones paradas | Decisión de Jorge |
-| 6 | **`claude-flow.config.json` no está en `.gitignore`** | Riesgo de reintroducir secretos | Ignorarlo + `.example` |
-| 7 | **Backend :3001 caído** | No se puede probar la integración real | `npm run start:dev` |
-| 8 | **`opencode.jsonc` sin commitear** (tiene el fix de Ruflo aplicado) | Cambio local no versionado | Commitear o dejar así |
+| 6 | **Backend :3001 caído** | No se puede probar la integración real | `npm run start:dev` |
+| 7 | **`opencode.jsonc` sin commitear** (tiene el fix de Ruflo aplicado) | Cambio local no versionado | Commitear o dejar así |
 
 ### Fuera de alcance / pausado
 - **Ruflo**: pausado por decisión de Jorge. No invocar.
@@ -144,13 +162,28 @@ Requieren aprobación de Jorge (CLAUDE.md §3.2). Todos con datos verificados de
 
 ## Próximos pasos
 
-1. **Decidir D1** (video del welcome) — generar un placeholder para que `/welcome` funcione, o hacer que el CTA aparezca directo sin video hasta tener el asset. *Cierra el Frente 1.*
+1. **Decidir D1** (video del welcome) — generar un poster real 1920×1080 con los tokens GWS, o borrar el atributo `poster` hasta tener el asset. Los `intro.webm`/`intro.mp4` hay que conseguirlos. *Es lo único que bloquea el Frente 1.*
 2. **Aprobar o descartar los 5 borradores** de `ledger/drafts/`. Ninguno se envía sin OK.
 3. **Fijar precio** para #11, #12, #15, #16, #17, #18.
 4. **Diagnosticar InboxAPI** — 0 emails es sospechoso.
 5. **Re-registrar los 4 jobs en S4U** desde consola admin para que no dependan de la sesión abierta.
-6. **Agregar `claude-flow.config.json` a `.gitignore`** + crear `.example`.
-7. **Decidir sobre la rama `backup/pre-secret-cleanup`** — borrarla si se quiere limpieza total.
+6. **Commitear `opencode.jsonc`** con el fix de Ruflo, o decidir si se descarta.
+7. **Levantar el backend** (`:3001` caído) si hace falta probar integración real.
+
+---
+
+## Estado de la última sesión (2026-10-03)
+
+Trabajo completado, en orden:
+1. Verificación de entorno + configuración de DeepSeek como provider (key vía variable de entorno, nunca en archivo).
+2. Diagnóstico del build web roto → 2 componentes faltantes en `app/welcome/page.tsx`.
+3. Creación de `WelcomeVideo.tsx` + `WelcomeCta.tsx` → build desbloqueado (18/18 rutas).
+4. specs de welcome-screen (`spec.md`, `plan.md`, `tasks.md`).
+5. Limpieza de Ruflo de `opencode.jsonc` (aplicado, **sin commitear**).
+6. **Incidente de seguridad**: API key de OpenRouter en texto plano → key rotada por Jorge, historia reescrita, push conforme.
+7. Reconstrucción del scheduler: 13 tareas → 4, con wrappers `.cmd` + logs, probados end-to-end.
+8. Limpieza de `claude-flow.config.json` + `.gitignore` + `.example`.
+9. Placeholder del poster del welcome (**no funcional**, ver sección de assets).
 
 ---
 
