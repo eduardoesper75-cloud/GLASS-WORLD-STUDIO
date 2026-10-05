@@ -1,170 +1,379 @@
-# Código de Fuego — Reglas de trabajo para agentes de IA
+# CÓDIGO DE FUEGO — REGLAS CF
 
-> **Estado: INCOMPLETO · 2026-10-03**
-> **Autoridad:** Jorge Eduardo Esper (Comandante en Jefe / Founder)
-> **Alcance:** reglas operativas que gobiernan cómo trabaja cualquier agente de
-> IA (Claude, Verdent, u otro) sobre este repositorio.
-
----
-
-## ⚠️ Aviso de completitud — leer antes de usar
-
-Este documento esta **incompleto a proposito**. Se planeo asi en lugar de
-inventar el contenido faltante:
-
-- **Sección 2 (las 42 reglas CF-01…CF-42): PENDIENTE.** El texto original fue
-  provisto por Jorge en una sesión anterior, cuyo contenido ya no está
-  disponible en el contexto actual. **No se transcribió de memoria ni se
-  generaron reglas plausibles:** una regla de gobernanza inventada es peor que
-  una ausente, porque da autoridad aparente a algo que nadie aprobó.
-- **Sección 1 (los 8 pasos) y la sección 3 (las 10 reglas de trabajo):
-  PENDIENTES** por la misma razón.
-
-Para completar este documento, hace falta que Jorge vuelva a pegar el texto
-original, o que se reconstruya desde la fuente que lo originó.
+## Estado: PARCIAL · 72 reglas con texto + 193 RESERVADAS
+## Fecha: 2026-10-05
+## Sesión: GWS-4
 
 ---
 
-## 1 · Las 42 reglas del Código de Fuego (CF-01 … CF-42)
+## Bloque 1 — Henney (CF-01 a CF-07) · 7 reglas
 
-**PENDIENTE — no disponible.**
+### CF-01 — Excepciones de negocio ≠ excepciones técnicas
 
-Se espera: 42 reglas numeradas `CF-01` a `CF-42`, cada una con su fundamento.
-Cuando esten disponibles, reemplazar esta seccion y eliminar este aviso.
+**Fuente:** Dan Bergh Johnsson, "Distingue excepciones de Negocio de las excepciones Técnicas"
 
----
+**Texto:** Las excepciones de negocio representan reglas del dominio (fondos insuficientes, contraseña incorrecta) y deben manejarse explícitamente. Las excepciones técnicas representan fallos del sistema (DB caída, red) y deben elevarse a un manejador global. No mezclar en la misma jerarquía.
 
-## 2 · Los 8 pasos
+### CF-02 — Estados explícitos, transiciones protegidas
 
-**PENDIENTE — no disponible.**
+**Fuente:** Niclas Nilsson, "Pensando en estados"
 
----
+**Texto:** Un objeto debe estar en uno de sus estados válidos en todo momento. Las transiciones entre estados deben ser explícitas y protegidas. No permitir estados intermedios inválidos. Modelar con máquinas de estado.
 
-## 3 · Las 10 reglas de trabajo
+### CF-03 — Decimal para dinero, float para ciencia
 
-**PENDIENTE — no disponible.**
+**Fuente:** Chuck Allison, "Los números de punto flotante no son reales"
 
-### 3-bis · Las 10 reglas verificables derivadas de `CLAUDE.md`
+**Texto:** NUNCA usar float/double para dinero. Usar Decimal (decimal.js, BigDecimal, NUMERIC en Postgres). Los floats tienen errores de redondeo acumulativos. Los decimales son exactos.
 
-> **Esto NO es el texto original de la sección 3.** Ese sigue pendiente y no se
-> sustituye. Lo que sigue es una **derivación de `CLAUDE.md`**, que sí está
-> disponible y es la fuente de verdad vigente (`§4.1`). Son reglas **comprobables
-> mecánicamente**: cada una se puede auditar sin memoria ni interpretación.
+### CF-04 — SRP: una sola razón para cambiar
 
-| # | Regla | Fuente | Cómo se verifica |
-|---|---|---|---|
-| R1 | Cero lectura de credenciales de tesorería (Mercado Pago, Stripe, banco) | `CLAUDE.md` §3.1 | El agente no puede leer ni imprimir esas claves en ninguna sesión |
-| R2 | Cero escritura en `Payment_Vault` | `CLAUDE.md` §3.1 | `git log` sin commits de IA sobre ese path |
-| R3 | Cero cambio autónomo de tarifas, comisiones o condiciones | `CLAUDE.md` §3.1 | Cada cambio de precio pasa por "agente propone → Jorge confirma → se ejecuta" |
-| R4 | Cero acceso a configuración raíz de infra (SSH, secretos de entorno) | `CLAUDE.md` §3.1 | El agente no ejecuta `ssh` ni edita `.env` en producción |
-| R5 | Prohibido el contacto automatizado en masa | `CLAUDE.md` §3.2 | Toda salida a un lead pasa por revisión humana previa |
-| R6 | Toda publicación a nombre de GWS requiere aprobación humana | `CLAUDE.md` §3.2 | Cada email/post queda como borrador hasta que Jorge lo aprueba |
-| R7 | El Código Rojo es una acción de infraestructura, no una orden al agente | `CLAUDE.md` §3.3 | Ningún diseño depende de que el agente "decida detenerse" |
-| R8 | Todo cambio pasa por staging → validación → canary → producción, **con rollback definido antes** | `CLAUDE.md` §3.4 | No se aplica un cambio sin responder "¿cómo se revierte?" |
-| R9 | Toda sesión arranca en el menor privilegio; la elevación a `admin` re-autentica y **expira sola** (20-30 min) | `CLAUDE.md` §3.5 | `elevated-session` con expiración; log inmutable por acción |
-| R10 | Toda negociación ocurre dentro de la plataforma; bloqueo **server-side** | `CLAUDE.md` §3.6 | `contact-leak-filter.ts` devuelve HTTP 400 antes de guardar |
+**Fuente:** Robert C. Martin, "El Principio de Responsabilidad Única"
 
-**Por qué esto no contradice el aviso de completitud:** las 42 reglas `CF-01…CF-42`
-siguen sin existir y no se inventaron. Lo que se agrega son 10 reglas que salen
-de un documento **disponible y autoritativo**, que además ya estaba citado en
-`§4.1`. Si Jorge pega el texto original de la sección 3, esta subsección se
-elimina sin pérdida.
+**Texto:** Una clase o módulo debe tener UNA sola razón para cambiar. Si cambia por reglas de negocio Y por formato Y por persistencia, son tres razones. Separar.
 
----
+### CF-05 — DRY: una sola representación del conocimiento
 
-## 4 · Lo que SÍ está vigente hoy
+**Fuente:** Steve Smith, "No te repitas"
 
-Mientras las 42 reglas no se incorporen, la gobernanza efectiva de este
-repositorio está en otro documento. Estas son las reglas **confirmadas y
-verificadas**, todas ya vigentes:
+**Texto:** Cada pieza de conocimiento debe tener UNA representación única, inequívoca y autorizada en el sistema. La duplicación infla el código y multiplica los bugs.
 
-### 4.1 Fuente de verdad
+### CF-06 — Tests de comportamiento, no de implementación
 
-- `CLAUDE.md` es la **única** fuente de verdad del proyecto. Se lee
-  automáticamente al iniciar sesión.
-- Si una instrucción puntual contradice `CLAUDE.md`, la sesión debe **señalar
-  el conflicto explícitamente** antes de proceder. La regla general gana
-  salvo que Jorge la modifique en el propio archivo (§6 de `CLAUDE.md`).
+**Fuente:** Kevlin Henney, "Prueba el comportamiento requerido, no el comportamiento incidental"
 
-### 4.2 Zona de exclusión — sin excepción (§3.1)
+**Texto:** Los tests deben validar QUÉ hace el código, no CÓMO lo hace. No acoplarse a la implementación. Ejemplos concretos, no descripciones vagas.
 
-- Cero acceso a credenciales de tesorería (API keys de Mercado Pago / Stripe,
-  credenciales bancarias).
-- Cero escritura en `Payment_Vault`. Solo Jorge, con elevación + 2FA.
-- Cero cambios autónomos de tarifas, comisiones o términos de suscripción.
-- Cero acceso a configuración raíz de servidor o infraestructura (llaves SSH,
-  secretos de entorno).
+### CF-07 — Interfaces fáciles de usar correctamente
 
-### 4.3 Zona de acción — autonomía parcial (§3.2)
+**Fuente:** Scott Meyers, "Haz las Interfaces fáciles de usar correctamente y difíciles de usar incorrectamente"
 
-- Identificación de leads públicos: permitido. **Contacto automatizado en masa:
-  prohibido** (riesgo legal: ToS, Ley 25.326, GDPR).
-- Marketing y contenido: el agente puede generar borradores; **toda
-  publicación a nombre de GWS requiere aprobación humana previa**.
-- Soporte de primera línea: permitido, siempre con escalamiento a humano
-  disponible.
-
-### 4.4 Código Rojo (§3.3)
-
-El kill switch **no es una instrucción que un agente obedezca**. Es una acción
-de infraestructura ejecutada por Jorge: revocar credenciales desde el lado
-humano. Un diseño que dependa de que el agente "se decida a parar" está mal
-diseñado y debe rechazarse.
-
-### 4.5 Despliegue (§3.4)
-
-Ningún cambio se aplica directo a producción:
-**desarrollo → staging → validación → canary → producción.**
-
-Antes de aplicar cualquier corrección debe estar definido el **mecanismo de
-rollback**. Si no se puede responder "¿cómo se revierte esto?", no se aplica.
-
-### 4.6 RBAC en capas (§3.5)
-
-`viewer` → `moderator_gN` → `admin`. Toda sesión arranca en el **menor
-privilegio** disponible para esa cuenta. La elevación a `admin` requiere
-**re-autenticación (contraseña + TOTP)** y expira sola (20-30 min). Toda
-acción en modo elevado queda en log inmutable y dispara notificación por un
-**canal distinto** al usado.
-
-### 4.7 Soberanía de plataforma — el chat interno es la única vía (§3.6)
-
-Todo contacto, negociación y cierre ocurre **dentro** de GWS. Bloqueo
-**server-side**, no advertencia: `src/community/anti-leak/contact-leak-filter.ts`
-rechaza con HTTP 400 antes de guardar.
-
-Prohibido integrar canales externos (WhatsApp API, email externo, redes) como
-vía de negociación.
-
-### 4.8 Convenciones de código (§5)
-
-- Comentarios explicando el **por qué** de una decisión de diseño o negocio,
-  no solo el qué.
-- Nombres de entidades y variables en **inglés**; contenido de cara al usuario
-  en **español**. Sin idiomas adicionales sin traducciones de Jorge.
-- **Nunca** API keys o secretos en texto plano bajo ninguna circunstancia.
-
-### 4.9 Blindaje jurídico y comercial
-
-Vigente y completo en **`docs/manual/codigo-del-fuego.md`** (288 líneas): comisiones
-por Galaxia, matriz de liberación de escrow, embalaje certificado, blindaje
-jurídico, settlement USD/USDT.
-
-> **Nota de nomenclatura:** ese manual y este documento comparten el nombre
-> "Código del Fuego" pero **son distintos**. El manual es un documento de
-> producto para usuarios; este es un contrato de trabajo para agentes de IA.
-> Mantenerlos separados es deliberado: mezclarlos haría que una regla de
-> gobernanza pareciera una cláusula comercial.
+**Texto:** Una buena API hace el uso correcto obvio y el uso incorrecto imposible. Guiar al usuario al éxito. Prevenir errores por diseño.
 
 ---
 
-## 5 · Trazabilidad
+## Bloque 2 — RESERVADO (CF-08 a CF-56) · 49 reglas
 
-| Sección | Estado | Fuente |
-|---|---|---|
-| 1 · 42 reglas (CF-01…CF-42) | ❌ PENDIENTE | texto no disponible |
-| 2 · 8 pasos | ❌ PENDIENTE | texto no disponible |
-| 3 · 10 reglas de trabajo | ❌ PENDIENTE | texto no disponible |
-| 4 · Gobernanza vigente | ✅ COMPLETA | `CLAUDE.md` + `docs/manual/codigo-del-fuego.md` |
+### Estado: PENDIENTE EXTRACCIÓN DE LIBROS
 
-**B16 permanece abierto** hasta que las secciones 1-3 se completen.
+### Fuentes: Hernández Yáñez, Jiménez Murillo, Moyano, Roiting/Busó, AMCHAMDR, MERCOSUR, Cuascota, Domínguez & Vera
+
+---
+
+## Bloque 3 — RESERVADO (CF-57 a CF-200) · 144 reglas
+
+### Estado: HUECO DE NUMERACIÓN
+
+### Acción: Definir si se rellenan o se renumera
+
+---
+
+## Bloque 4 — Refactoring.Guru (CF-201 a CF-223) · 23 reglas
+
+**Fuente:** "El catálogo de patrones de diseño" (Refactoring.Guru)
+
+> Nota: los 23 patrones GoF están divididos en 3 categorías. Cada uno se documenta como una regla.
+
+#### CREACIONALES (5)
+
+### CF-201 — Factory Method
+
+**Texto:** Usar Factory Method cuando una clase no puede anticipar la clase de objetos que debe crear. Delegar la creación a subclases.
+
+### CF-202 — Abstract Factory
+
+**Texto:** Usar Abstract Factory para crear familias de objetos relacionados sin especificar sus clases concretas. Útil para múltiples temas (ej: componentes por galaxia).
+
+### CF-203 — Builder
+
+**Texto:** Usar Builder para construir objetos complejos paso a paso. Separar la construcción de la representación.
+
+### CF-204 — Prototype
+
+**Texto:** Usar Prototype para clonar objetos existentes sin acoplarse a sus clases. Útil para plantillas.
+
+### CF-205 — Singleton (EVITAR)
+
+**Texto:** EVITAR Singleton salvo casos muy justificados. Dificulta tests, crea acoplamiento global, rompe inyección de dependencias. Preferir contenedor de DI.
+
+#### ESTRUCTURALES (7)
+
+### CF-206 — Adapter
+
+**Texto:** Usar Adapter para permitir que interfaces incompatibles trabajen juntas. Ej: distintas pasarelas de pago con una interfaz común.
+
+### CF-207 — Bridge
+
+**Texto:** Usar Bridge para separar una abstracción de su implementación para que ambas puedan variar independientemente.
+
+### CF-208 — Composite
+
+**Texto:** Usar Composite para componer objetos en estructuras de árbol y tratarlos como objetos individuales. Ej: categorías con subcategorías.
+
+### CF-209 — Decorator
+
+**Texto:** Usar Decorator para añadir responsabilidades a objetos dinámicamente sin modificar su clase.
+
+### CF-210 — Facade
+
+**Texto:** Usar Facade para proporcionar una interfaz simplificada a un subsistema complejo.
+
+### CF-211 — Flyweight
+
+**Texto:** Usar Flyweight para soportar grandes cantidades de objetos compartiendo estado común. Optimización de memoria.
+
+### CF-212 — Proxy
+
+**Texto:** Usar Proxy para proporcionar un sustituto o marcador de posición de otro objeto. Control de acceso.
+
+#### COMPORTAMIENTO (11)
+
+### CF-213 — Chain of Responsibility
+
+**Texto:** Usar Chain of Responsibility para pasar solicitudes a lo largo de una cadena de manejadores. Ej: validaciones en cadena.
+
+### CF-214 — Command
+
+**Texto:** Usar Command para encapsular una solicitud como un objeto. Permite deshacer, encolar, registrar.
+
+### CF-215 — Iterator
+
+**Texto:** Usar Iterator para recorrer elementos de una colección sin exponer su representación interna.
+
+### CF-216 — Mediator
+
+**Texto:** Usar Mediator para reducir dependencias entre múltiples objetos centralizando la comunicación.
+
+### CF-217 — Memento
+
+**Texto:** Usar Memento para capturar y restaurar el estado interno de un objeto sin violar encapsulamiento.
+
+### CF-218 — Observer
+
+**Texto:** Usar Observer para notificar a múltiples objetos sobre cambios en otro objeto. Ej: notificaciones de pedidos.
+
+### CF-219 — State
+
+**Texto:** Usar State para permitir que un objeto cambie su comportamiento cuando su estado interno cambia. Estados explícitos.
+
+### CF-220 — Strategy
+
+**Texto:** Usar Strategy para definir una familia de algoritmos intercambiables. Ej: diferentes estrategias de envío, pago, comisión.
+
+### CF-221 — Template Method
+
+**Texto:** Usar Template Method para definir el esqueleto de un algoritmo, dejando pasos específicos a las subclases.
+
+### CF-222 — Visitor
+
+**Texto:** Usar Visitor para añadir operaciones a una estructura de objetos sin modificar sus clases. Ej: analytics, moderación.
+
+### CF-223 — Regla general de patrones
+
+**Texto:** Preferir composición sobre herencia. Aplicar el patrón solo cuando el problema lo justifique. No aplicar patrones por "usar patrones".
+
+---
+
+## Bloque 5 — Clean Code JS (CF-224 a CF-246) · 23 reglas
+
+**Fuente:** "Clean Code JavaScript" (Ryan McDermott, traducción español)
+
+### CF-224 — Máximo 2 argumentos por función
+
+**Texto:** Ideal 0-2 argumentos. Si son 3+, consolidar en un objeto desestructurado. Más argumentos = más casos de test combinatorios.
+
+### CF-225 — Prohibido flags booleanos como parámetros
+
+**Texto:** Un flag booleano indica que la función hace más de una cosa. Dividir en dos funciones.
+
+### CF-226 — Un solo nivel de abstracción por función
+
+**Texto:** Una función debe operar en un solo nivel de abstracción. Mezclar niveles indica que hace demasiado.
+
+### CF-227 — No escribir a variables globales
+
+**Texto:** Las funciones no deben mutar variables globales. Retornar nuevos valores. Centralizar efectos secundarios.
+
+### CF-228 — Preferir funciones puras
+
+**Texto:** Funciones que toman un valor y retornan un valor, sin efectos secundarios. Fáciles de testear, fáciles de razonar.
+
+### CF-229 — Encapsular condicionales complejas
+
+**Texto:** Extraer condicionales complejos a funciones con nombre descriptivo. `if (shouldShowSpinner(fsm, node))` es mejor que `if (fsm.state === 'fetching' && isEmpty(node))`.
+
+### CF-230 — Evitar condicionales negativos
+
+**Texto:** `if (isPresent(node))` es mejor que `if (!isNotPresent(node))`.
+
+### CF-231 — Evitar switch/if sobre tipos
+
+**Texto:** Usar polimorfismo en lugar de switch/if sobre tipos de objetos.
+
+### CF-232 — No type-checking manual
+
+**Texto:** Usar TypeScript en lugar de validar tipos manualmente en runtime. El compilador lo hace mejor.
+
+### CF-233 — No sobre-optimizar
+
+**Texto:** No optimizar sin medir. Knuth: 97% del código no necesita optimización. Primero hazlo funcionar, después hazlo correcto, después hazlo rápido.
+
+### CF-234 — Remover código muerto
+
+**Texto:** Si no se llama, se borra. El historial de git lo guarda.
+
+### CF-235 — Usar getters/setters
+
+**Texto:** Encapsular acceso a propiedades. Permite validación, logging, lazy loading, cambios internos sin afectar consumidores.
+
+### CF-236 — Miembros privados vía closures
+
+**Texto:** Usar closures para encapsular estado privado en ES5. En ES6, usar campos privados con `#`.
+
+### CF-237 — Clases ES6 sobre prototipos ES5
+
+**Texto:** Usar `class` de ES6. Es más legible, mejor soportado, más claro en la intención.
+
+### CF-238 — Method chaining
+
+**Texto:** Retornar `this` al final de cada método para permitir encadenamiento. Estilo jQuery/Lodash.
+
+### CF-239 — Composición sobre herencia
+
+**Texto:** Preferir composición. Solo heredar si es relación "is-a", no "has-a".
+
+### CF-240 — Un concepto por test
+
+**Texto:** Cada test verifica UN comportamiento. Si tiene varios asserts de conceptos distintos, dividir.
+
+### CF-241 — Promesas > callbacks. async/await > Promesas
+
+**Texto:** Callbacks causan anidamiento. Promesas limpian. async/await limpian más.
+
+### CF-242 — No ignorar errores capturados
+
+**Texto:** `catch (e) { console.log(e) }` es insuficiente. Reportar, notificar, o loggear con contexto.
+
+### CF-243 — No ignorar promesas rechazadas
+
+**Texto:** Siempre manejar el `.catch()` o usar try/catch con await.
+
+### CF-244 — Caller arriba, callee abajo
+
+**Texto:** Las funciones se leen como un diario. La que llama arriba, la que es llamada abajo.
+
+### CF-245 — No dejar código comentado
+
+**Texto:** Version control existe. No dejar código comentado en el código fuente.
+
+### CF-246 — No journal comments
+
+**Texto:** No dejar comentarios con fecha ("2016-12-20: Removed X"). Usar git log.
+
+---
+
+## Bloque 6 — 24 Buenas Prácticas JS (CF-247 a CF-250) · 4 reglas
+
+**Fuente:** "24 buenas prácticas de JavaScript para principiantes" (TutsPlus, traducción español)
+
+### CF-247 — Usar "use strict"
+
+**Texto:** Al inicio del programa o función. Fuerza errores explícitos en variables no declaradas.
+
+### CF-248 — No confiar en hoisting
+
+**Texto:** Declarar funciones y variables antes de usarlas. No depender de la elevación implícita.
+
+### CF-249 — No mutar objetos pasados como parámetro
+
+**Texto:** Retornar copia con spread. Evitar efectos colaterales en quien llamó.
+
+### CF-250 — Usar getters/setters en objetos
+
+**Texto:** Acceso controlado a propiedades. Ya cubierto en CF-235 pero aplicado a objetos literales.
+
+---
+
+## Bloque 7 — Twelve-Factor App (CF-251 a CF-262) · 12 reglas
+
+**Fuente:** "The Twelve-Factor App" (Adam Wiggins)
+
+### CF-251 — Un solo codebase, múltiples deploys
+
+**Texto:** Un repositorio Git. Múltiples entornos (dev/staging/prod). Nunca múltiples repos para la misma app.
+
+### CF-252 — Dependencias declaradas explícitamente
+
+**Texto:** Toda dependencia en package.json. Instalar con `npm ci`. Nunca asumir instalación global.
+
+### CF-253 — Config en variables de entorno
+
+**Texto:** Configuración en env vars. NUNCA hardcodear secretos, URLs, credenciales. `.env.example` como plantilla.
+
+### CF-254 — Backing services como recursos conectables
+
+**Texto:** PostgreSQL, Redis, S3, Stripe = recursos conectables. Cambiar de proveedor sin tocar código.
+
+### CF-255 — Separar build/release/run
+
+**Texto:** Build (compila) → Release (combina con config) → Run (ejecuta). Nunca mezclar fases.
+
+### CF-256 — Procesos stateless
+
+**Texto:** Los procesos no guardan estado. Estado en la DB, no en memoria. Cada request es independiente.
+
+### CF-257 — Port binding
+
+**Texto:** La app se auto-conecta a un puerto. No depender de servidor web externo.
+
+### CF-258 — Escalar vía procesos
+
+**Texto:** Escalar horizontalmente (más procesos) no verticalmente (threads).
+
+### CF-259 — Startup rápido + shutdown graceful
+
+**Texto:** La app arranca en <10s. Ante SIGTERM, termina requests en curso antes de morir.
+
+### CF-260 — Dev/prod parity
+
+**Texto:** Dev, staging y prod usan el mismo stack. Mismo PostgreSQL, misma versión Node.
+
+### CF-261 — Logs a stdout
+
+**Texto:** Logs a stdout como flujo de eventos. No a archivos. La plataforma los captura.
+
+### CF-262 — Admin processes como comandos one-off
+
+**Texto:** Migraciones, seeds, consola → comandos separados. No mezclar con el runtime.
+
+---
+
+## Bloque 8 — Clean Code Neiva (CF-263 a CF-265) · 3 reglas
+
+**Fuente:** "Clean Code en JavaScript" (Fundación Escuela Tecnológica de Neiva, Colombia)
+
+### CF-263 — Nomenclatura consistente
+
+**Texto:** camelCase para variables y funciones. PascalCase para clases. MAYÚSCULAS para constantes.
+
+### CF-264 — Los 4 pilares del código limpio
+
+**Texto:** Legibilidad, simplicidad, mantenibilidad, eficiencia. En ese orden de prioridad.
+
+### CF-265 — Manejo de errores específico
+
+**Texto:** Cada error tiene su código. Manejar específicamente (ENOENT, EIO, etc). No catch genérico.
+
+---
+
+## Estadísticas
+
+- Total reglas: 265
+- Con texto verificado: 72
+- RESERVADAS: 193 (CF-08 a CF-200)
+
+## Próximos pasos para completar
+
+- Extraer CF-08 a CF-42 de los PDFs (Henney, Hernández Yáñez, Jiménez Murillo, Moyano, Roiting/Busó)
+- Extraer CF-43 a CF-56 de los PDFs del lote 1
+- Definir qué hacer con CF-57 a CF-200 (¿existen? ¿se renumera?)
