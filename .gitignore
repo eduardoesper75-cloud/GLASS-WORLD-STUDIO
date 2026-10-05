@@ -41,3 +41,6 @@ docs/simulation/resultados-*.json
 .claude-flow/logs/
 .claude-flow/sessions/
 claude-flow.config.json
+.swarm/
+.cac/
+server.err
