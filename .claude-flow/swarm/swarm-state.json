@@ -4,7 +4,7 @@
       "swarmId": "swarm-1791059087583-nojsui",
       "topology": "hierarchical-mesh",
       "maxAgents": 15,
-      "status": "running",
+      "status": "terminated",
       "agents": [],
       "tasks": [],
       "config": {
@@ -16,7 +16,8 @@
         "consensusMechanism": "majority"
       },
       "createdAt": "2026-10-03T20:24:47.583Z",
-      "updatedAt": "2026-10-03T20:24:47.583Z"
+      "updatedAt": "2026-10-05T22:35:02.241Z",
+      "terminationReason": "no pid recorded and heartbeat is 50h stale"
     }
   },
   "version": "3.0.0"
