@@ -286,10 +286,51 @@
         "policyHash": "sha256:00b63b2f746eb8b9095bbd5e1dbae4ddd74fd92a6740b72f59f4069fbfda4737"
       },
       "hash": "sha256:4a5bd10d3f94d4d3bfd46d9b63792e5eb8a7b8e7a7c1cb3df5b8cc6a6c3984b9"
+    },
+    {
+      "payload": {
+        "receiptId": "sha256:d2d6cee4a6b39a5909a50414aeb29f0eeb2170da663ee9ab858b44072584127b",
+        "previousReceiptHash": "sha256:4a5bd10d3f94d4d3bfd46d9b63792e5eb8a7b8e7a7c1cb3df5b8cc6a6c3984b9",
+        "sequence": 7,
+        "issuedAt": 1791245545144,
+        "request": {
+          "identity": {
+            "id": "legacy-cli",
+            "type": "legacy"
+          },
+          "action": {
+            "type": "memory.write",
+            "resource": "memory_store",
+            "tool": "memory_store",
+            "server": "ruflo",
+            "namespace": "pna",
+            "network": false,
+            "destructive": false
+          },
+          "context": {
+            "metadata": {
+              "inputDigest": "sha256:43e00a19fc36e246ccc7632b653d9b27a646be5391ee82faeb99bf666d699d17"
+            },
+            "now": 1791245545144
+          },
+          "requestId": "497fac29-06e7-4244-bad8-d0d049208518"
+        },
+        "decision": {
+          "requestId": "497fac29-06e7-4244-bad8-d0d049208518",
+          "outcome": "allowed",
+          "enforcedOutcome": "allowed",
+          "mode": "legacy",
+          "reason": "legacy-default-allow",
+          "matchedRules": [],
+          "obligations": []
+        },
+        "policyHash": "sha256:00b63b2f746eb8b9095bbd5e1dbae4ddd74fd92a6740b72f59f4069fbfda4737"
+      },
+      "hash": "sha256:422741e6db5fb588cca56cecce0dd69bd292fdc9eebca689826ff8174f136d0c"
     }
   ],
   "migratedAt": 1791056074622,
   "migratedFrom": "pre-ADR-324; capabilities=.swarm/memory.db",
-  "ledgerLength": 7,
-  "ledgerHead": "sha256:4a5bd10d3f94d4d3bfd46d9b63792e5eb8a7b8e7a7c1cb3df5b8cc6a6c3984b9"
+  "ledgerLength": 8,
+  "ledgerHead": "sha256:422741e6db5fb588cca56cecce0dd69bd292fdc9eebca689826ff8174f136d0c"
 }
