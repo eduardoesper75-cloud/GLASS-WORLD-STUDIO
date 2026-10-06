@@ -1,7 +1,4 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "code-agent-auto-commit",
-    "opencode-agent-teams"
-  ]
+  "plugin": []
 }

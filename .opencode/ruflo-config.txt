@@ -14,5 +14,5 @@
       "deny": []
     }
   },
-  "plugin": ["code-agent-auto-commit", "opencode-agent-teams"]
+  "plugin": ["opencode-agent-teams"]
 }

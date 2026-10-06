@@ -44,3 +44,7 @@ claude-flow.config.json
 .swarm/
 .cac/
 server.err
+
+# Contención auto-commit (orden #009): estado de ruflo que cac commiteaba en cada session idle
+.claude-flow/policy/
+.claude-flow/swarm/
