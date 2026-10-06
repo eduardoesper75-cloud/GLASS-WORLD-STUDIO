@@ -29,6 +29,12 @@ export class CreateProductDto {
   @IsEnum(ProductCategoryTier)
   categoryTier: ProductCategoryTier;
 
+  @ApiPropertyOptional({ example: 'Sintec', description: 'Marca comercial (filtro de catálogo G2)' })
+  @IsOptional()
+  @IsString()
+  @Length(1, 100)
+  brand?: string;
+
   /**
    * Validación deliberadamente laxa a nivel de tipo (Record<string,
    * unknown>) porque las claves varían por categoría — pero el

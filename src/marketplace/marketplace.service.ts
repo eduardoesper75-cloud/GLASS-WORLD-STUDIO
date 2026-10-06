@@ -39,6 +39,13 @@ export interface ProductListFilters {
   coeMax?: number;
   fusionTempMin?: number;
   fusionTempMax?: number;
+  /** Marca comercial (filtro sidebar G2, CA3 g2-listado). */
+  brand?: string;
+  /** Rango de precio unitario USD (filtro sidebar G2). Sin
+   * aritmética monetaria en JS: la comparación es en SQL sobre la
+   * columna NUMERIC(12,2) — decimal.js no aporta nada acá. */
+  priceMin?: number;
+  priceMax?: number;
 }
 
 export interface Paginated<T> {
@@ -146,10 +153,18 @@ export class MarketplaceService {
     filters: ProductListFilters,
     page: number = DEFAULT_PAGE,
     limit: number = DEFAULT_LIMIT,
+    order?: { field: 'createdAt' | 'id'; dir: 'ASC' | 'DESC' },
   ): Promise<Paginated<Product>> {
     const clampedLimit = Math.min(Math.max(limit, 1), MAX_LIMIT);
     const qb = this.buildFilteredQuery(filters);
-    qb.orderBy('product.createdAt', 'DESC');
+    const sortField = order?.field ?? 'createdAt';
+    const sortDir = order?.dir ?? 'DESC';
+    qb.orderBy(`product.${sortField}`, sortDir);
+    // Tiebreaker determinista (D4 g2-listado): createdAt del seed comparte
+    // timestamp → ORDER BY id remata el orden y el OFFSET no solapa filas.
+    if (sortField !== 'id') {
+      qb.addOrderBy('product.id', 'ASC');
+    }
     qb.skip((page - 1) * clampedLimit).take(clampedLimit);
 
     const [items, total] = await qb.getManyAndCount();
@@ -241,6 +256,22 @@ export class MarketplaceService {
     if (filters.fusionTempMax !== undefined) {
       qb.andWhere('product.fusionTemperatureC <= :fusionTempMax', {
         fusionTempMax: filters.fusionTempMax,
+      });
+    }
+    // Filtros de catálogo G2 (spec g2-listado): marca exacta y rango
+    // de precio. Igual que COE: sin precio conocido (null no aplica
+    // acá — unitPrice es NOT NULL) o fuera de rango, no se lista.
+    if (filters.brand) {
+      qb.andWhere('product.brand = :brand', { brand: filters.brand });
+    }
+    if (filters.priceMin !== undefined) {
+      qb.andWhere('product.unitPrice >= :priceMin', {
+        priceMin: filters.priceMin,
+      });
+    }
+    if (filters.priceMax !== undefined) {
+      qb.andWhere('product.unitPrice <= :priceMax', {
+        priceMax: filters.priceMax,
       });
     }
     return qb;

@@ -7,6 +7,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { AuthModule } from './auth/auth.module';
 import { CommunityModule } from './community/community.module';
 import { MarketplaceModule } from './marketplace/marketplace.module';
+import { G2ProductsModule } from './g2-products/g2-products.module';
 import { G1MastersModule } from './galaxies/g1-masters/g1-masters.module';
 import { FoundationModule } from './foundation/foundation.module';
 import { LocalizationModule } from './localization/localization.module';
@@ -68,6 +69,9 @@ import { throttleOptions } from './config/throttle.config';
     AuthModule,
     CommunityModule,
     MarketplaceModule,
+    // Listado del catalogo G2 (spec g2-listado): GET /g2/products y
+    // alias /api/g2/products. Solo lectura, delega en MarketplaceService.
+    G2ProductsModule,
     // Galaxias modulares (ver CLAUDE.md tabla de galaxias):
     // G1 = perfiles de maestro con catálogo de autor independiente.
     // G2 (marketplace) y G3 (community) viven en src/marketplace y

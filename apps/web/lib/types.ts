@@ -105,6 +105,8 @@ export interface MarketplaceProduct {
   name: string;
   description?: string;
   categoryTier: ProductCategoryTier;
+  /** G2 · marca comercial del producto (columna `brand`, nullable). */
+  brand?: string | null;
   technicalSpecs: Record<string, unknown>;
   unitPrice: number;
   unitOfMeasure: UnitOfMeasure;
@@ -134,6 +136,24 @@ export interface ProductSearchResponse {
   page: number;
   limit: number;
   hasMore: boolean;
+}
+
+/** Forma REAL de GET /g2/products (g2-products.service.ts · spec g2-listado). */
+export interface G2ProductsPage {
+  items: MarketplaceProduct[];
+  total: number;
+  page: number;
+  pageSize: number;
+}
+
+/** Params del listado G2 (query string del endpoint /g2/products). */
+export interface G2ListParams {
+  category?: ProductCategoryTier;
+  brand?: string;
+  priceMin?: number;
+  priceMax?: number;
+  page?: number;
+  limit?: number;
 }
 
 export interface MarketListParams {

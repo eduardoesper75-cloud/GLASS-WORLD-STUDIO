@@ -39,6 +39,12 @@ export class UpdateProductDto {
   @IsEnum(ProductCategoryTier)
   categoryTier?: ProductCategoryTier;
 
+  @ApiPropertyOptional({ example: 'Sintec', description: 'Marca comercial (filtro de catálogo G2)' })
+  @IsOptional()
+  @IsString()
+  @Length(1, 100)
+  brand?: string;
+
   @ApiPropertyOptional({ type: 'object', example: { coe: 76 } })
   @IsOptional()
   @IsObject()

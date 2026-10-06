@@ -94,6 +94,13 @@ export class Product {
   @Column({ nullable: true })
   categoryId: string | null;
 
+  /** Marca comercial — filtro de catálogo G2 (CA3 del spec
+   * g2-listado). Nullable: los productos pre-migración quedan sin
+   * marca antes que con una inventada; índice btree en la migración
+   * 1746000000000. */
+  @Column({ nullable: true })
+  brand: string | null;
+
   @Column({ type: 'decimal', precision: 12, scale: 2 })
   unitPrice: number;
 

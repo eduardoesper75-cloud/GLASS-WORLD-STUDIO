@@ -2,7 +2,7 @@
 
 import useSWR from 'swr';
 import { api } from '@/lib/api';
-import type { MarketplaceProduct, PlansCatalogDto, ProductSearchResponse, PublicUser } from '@/lib/types';
+import type { G2ListParams, G2ProductsPage, MarketplaceProduct, PlansCatalogDto, ProductSearchResponse, PublicUser } from '@/lib/types';
 
 export type CategoryTier = 'insumos_criticos' | 'pro_tools_machinery' | 'servicios_industriales' | 'obras_terminadas';
 
@@ -12,6 +12,36 @@ export interface MarketplaceFilters {
   countryCode?: string;
   page?: number;
   limit?: number;
+}
+
+/** Query-string para GET /g2/products (spec g2-listado): omite filtros vacíos. */
+export function g2Key(filters: G2ListParams): string {
+  const sp = new URLSearchParams();
+  if (filters.category) sp.set('category', filters.category);
+  if (filters.brand?.trim()) sp.set('brand', filters.brand.trim());
+  if (filters.priceMin !== undefined && Number.isFinite(filters.priceMin)) sp.set('price_min', String(filters.priceMin));
+  if (filters.priceMax !== undefined && Number.isFinite(filters.priceMax)) sp.set('price_max', String(filters.priceMax));
+  sp.set('page', String(filters.page ?? 1));
+  sp.set('limit', String(filters.limit ?? 12));
+  return `/g2/products?${sp.toString()}`;
+}
+
+export function useG2Products(filters: G2ListParams) {
+  const key = g2Key(filters);
+  const { data, error, isLoading } = useSWR<G2ProductsPage>(key, (k: string) => api.get<G2ProductsPage>(k), {
+    keepPreviousData: true,
+    revalidateOnFocus: false,
+  });
+  const page = data?.page ?? 1;
+  const pageSize = data?.pageSize ?? filters.limit ?? 12;
+  return {
+    products: data?.items ?? [],
+    total: data?.total ?? 0,
+    page,
+    hasMore: page * pageSize < (data?.total ?? 0),
+    loading: isLoading,
+    error,
+  };
 }
 
 function catalogKey(filters: MarketplaceFilters) {
