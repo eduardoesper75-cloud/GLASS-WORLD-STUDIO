@@ -48,3 +48,11 @@ server.err
 # Contención auto-commit (orden #009): estado de ruflo que cac commiteaba en cada session idle
 .claude-flow/policy/
 .claude-flow/swarm/
+
+# Clasificación orden #010: estado mutable, no config.
+# Se KEEP trackeado: .claude-flow/.gitignore, .claude-flow/CAPABILITIES.md, .claude-flow/config.yaml
+.claude-flow/metrics/
+.claude-flow/mods/
+.claude-flow/security/
+.claude-flow/harness-active-policy.json
+.claude-flow/memory-package.json
