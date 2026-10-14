@@ -1,0 +1,38 @@
+[
+  {
+    "id": "flame-torchworking",
+    "name": { "es": "Trabajo a la Llama", "en": "Torchworking" },
+    "pillar": "flame",
+    "parentId": null,
+    "description": "Modelado de vidrio mediante soplete y control preciso de la llama.",
+    "aliases": ["flameworking", "torchworking", "soplado a soplete"],
+    "tags": ["flame", "torch", "lampworking"]
+  },
+  {
+    "id": "flame-flame-control",
+    "name": { "es": "Control de Llama", "en": "Flame Control" },
+    "pillar": "flame",
+    "parentId": "flame-torchworking",
+    "description": "Gestión de oxidación/reducción, temperatura y tamaño de llama para cada efecto.",
+    "aliases": ["flame chemistry", "química de llama"],
+    "tags": ["flame", "oxidation", "reduction"]
+  },
+  {
+    "id": "flame-borosilicate",
+    "name": { "es": "Vidrio Borosilicato", "en": "Borosilicate Glass" },
+    "pillar": "flame",
+    "parentId": "flame-torchworking",
+    "description": "Vidrio de bajo coeficiente de expansión (COE ~33) tolerante al choque térmico.",
+    "aliases": ["boro", "pyrex", "COE 33"],
+    "tags": ["borosilicate", "coe33", "hard-glass"]
+  },
+  {
+    "id": "flame-soda-lime",
+    "name": { "es": "Vidrio Sódico-Calcáreo", "en": "Soda-Lime Glass" },
+    "pillar": "flame",
+    "parentId": "flame-torchworking",
+    "description": "Vidrio blando de mayor coeficiente de expansión (COE ~90-104), común en cuentas y vidrio artístico.",
+    "aliases": ["soft glass", "moretti", "effetre", "COE 104"],
+    "tags": ["soda-lime", "coe104", "soft-glass"]
+  }
+]

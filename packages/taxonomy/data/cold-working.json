@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cold-working-cutting",
+    "name": { "es": "Corte", "en": "Cutting" },
+    "pillar": "cold-working",
+    "parentId": null,
+    "description": "Separación de vidrio con cortadores de rueda, sierras de diamante o chorro de agua.",
+    "aliases": ["cutting", "corte", "sierra de diamante"],
+    "tags": ["cutting", "diamond", "saw"]
+  },
+  {
+    "id": "cold-working-grinding",
+    "name": { "es": "Desbastado", "en": "Grinding" },
+    "pillar": "cold-working",
+    "parentId": null,
+    "description": "Eliminación de material y perfilado de bordes con muelas y discos abrasivos.",
+    "aliases": ["grinding", "desbastado", "esmerilado"],
+    "tags": ["grinding", "abrasive", "beveling"]
+  },
+  {
+    "id": "cold-working-polishing",
+    "name": { "es": "Pulido", "en": "Polishing" },
+    "pillar": "cold-working",
+    "parentId": null,
+    "description": "Restitución del brillo óptico mediante ceras, fieltros y óxido de cerio.",
+    "aliases": ["polishing", "pulido", "cerium oxide"],
+    "tags": ["polishing", "cerium", "finish"]
+  },
+  {
+    "id": "cold-working-engraving",
+    "name": { "es": "Grabado", "en": "Engraving" },
+    "pillar": "cold-working",
+    "parentId": null,
+    "description": "Incisión decorativa con ruedas de cobre, punta de diamante o fresas.",
+    "aliases": ["engraving", "grabado", "copper wheel"],
+    "tags": ["engraving", "lathe", "decorative"]
+  },
+  {
+    "id": "cold-working-sandblasting",
+    "name": { "es": "Arenado", "en": "Sandblasting" },
+    "pillar": "cold-working",
+    "parentId": null,
+    "description": "Erosión superficial con abrasivo proyectado para acabados mate y mascarillas.",
+    "aliases": ["sandblasting", "arenado", "blast"],
+    "tags": ["sandblasting", "abrasive", "matte"]
+  },
+  {
+    "id": "cold-working-assembly",
+    "name": { "es": "Ensamblado Estructural", "en": "Structural Assembly" },
+    "pillar": "cold-working",
+    "parentId": null,
+    "description": "Unión en frío mediante adhesivos UV, estructurales o herrajes metálicos.",
+    "aliases": ["assembly", "ensamblado", "UV glue"],
+    "tags": ["assembly", "adhesive", "structural"]
+  }
+]

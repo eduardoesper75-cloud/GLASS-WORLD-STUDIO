@@ -1,0 +1,39 @@
+# Dependencias
+node_modules/
+.pnpm-store/
+
+# Build / artefactos
+dist/
+build/
+out/
+*.tsbuildinfo
+.next/
+next-env.d.ts
+coverage/
+
+# Entorno y secretos (NUNCA versionar credenciales)
+.env
+.env.*
+!.env.example
+**/service-account*.json
+**/credentials*.json
+
+# Logs y temporales
+*.log
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Editores
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Datos crudos de ingesta (pesados); las fichas curadas SÍ se versionan
+data/raw/*
+!data/raw/.gitkeep
+
+# Esquemas JSON derivados de Zod (se regeneran con `pnpm generate:schemas`)
+packages/schemas/schemas/

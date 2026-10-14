@@ -1,0 +1,30 @@
+{
+  "name": "@gws/taxonomy",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Taxonomía técnica base de GWS (Hot-Kiln, Flame, Cold-Working) y su cargador tipado.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "files": ["dist", "data"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "validate": "tsx scripts/validate.ts",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "dependencies": {
+    "@gws/schemas": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}

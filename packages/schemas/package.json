@@ -1,0 +1,31 @@
+{
+  "name": "@gws/schemas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Esquemas y tipos canónicos de GWS: Ficha de Curaduría, Taxonomía y entorno.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "generate": "tsx scripts/generate-json-schemas.ts"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3",
+    "zod-to-json-schema": "^3.23.5"
+  }
+}

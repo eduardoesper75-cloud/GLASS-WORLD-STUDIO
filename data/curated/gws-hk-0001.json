@@ -1,0 +1,39 @@
+{
+  "id": "gws-hk-0001",
+  "title": "Vitrofusión: programa de cocción y recocido para full fuse",
+  "category": "hot-kiln",
+  "subcategory": "hot-kiln-full-fuse",
+  "sourceUrl": "https://www.youtube.com/watch?v=EXAMPLE0001",
+  "sourcePlatform": "youtube",
+  "language": "es",
+  "timestamps": [
+    {
+      "label": "Preparación del horno y colocación de capas",
+      "seconds": 45,
+      "technique": "hot-kiln-firing-schedules"
+    },
+    {
+      "label": "Rampa de calentamiento (segmento 1)",
+      "seconds": 210,
+      "technique": "hot-kiln-firing-schedules"
+    },
+    {
+      "label": "Meseta de fusión completa",
+      "seconds": 480,
+      "technique": "hot-kiln-full-fuse"
+    },
+    {
+      "label": "Recocido y enfriamiento controlado",
+      "seconds": 900,
+      "technique": "hot-kiln-annealing"
+    }
+  ],
+  "metadata": {
+    "tags": ["full-fuse", "firing-schedule", "annealing", "vitrofusion"],
+    "description": "Ficha de ejemplo que demuestra el esquema canónico de curaduría de GWS: categoría Hot-Kiln, subcategoría Full Fuse y marcas temporales ligadas a nodos de la taxonomía.",
+    "cta": "Descarga la plantilla de programa de cocción y practica con tu propio horno."
+  },
+  "status": "draft",
+  "createdAt": "2026-01-15T10:00:00.000Z",
+  "updatedAt": "2026-01-15T10:00:00.000Z"
+}

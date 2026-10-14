@@ -1,0 +1,65 @@
+[
+  {
+    "id": "hot-kiln-fusing",
+    "name": { "es": "Vitrofusión", "en": "Glass Fusing" },
+    "pillar": "hot-kiln",
+    "parentId": null,
+    "description": "Unión de dos o más piezas de vidrio mediante calor controlado hasta el punto de fusión.",
+    "aliases": ["fusing", "vitrofusion"],
+    "tags": ["fusing", "thermal", "kiln"]
+  },
+  {
+    "id": "hot-kiln-full-fuse",
+    "name": { "es": "Full Fuse", "en": "Full Fuse" },
+    "pillar": "hot-kiln",
+    "parentId": "hot-kiln-fusing",
+    "description": "Cocción hasta lograr una superficie plana y unión total, sin líneas visibles entre capas.",
+    "aliases": ["full-fuse", "fusión completa"],
+    "tags": ["fusing", "full-fuse", "firing-schedule"]
+  },
+  {
+    "id": "hot-kiln-tack-fuse",
+    "name": { "es": "Tack Fuse", "en": "Tack Fuse" },
+    "pillar": "hot-kiln",
+    "parentId": "hot-kiln-fusing",
+    "description": "Fusión parcial que adhiere las capas conservando relieve y textura.",
+    "aliases": ["tack-fuse", "fusión parcial"],
+    "tags": ["fusing", "tack-fuse", "texture"]
+  },
+  {
+    "id": "hot-kiln-slumping",
+    "name": { "es": "Slumping (Conformado)", "en": "Slumping" },
+    "pillar": "hot-kiln",
+    "parentId": null,
+    "description": "Conformado de un vidrio ya fusionado sobre o dentro de un molde mediante calor.",
+    "aliases": ["slumping", "slumpado", "drape"],
+    "tags": ["slumping", "mold", "forming"]
+  },
+  {
+    "id": "hot-kiln-casting",
+    "name": { "es": "Casting (Fundición)", "en": "Casting" },
+    "pillar": "hot-kiln",
+    "parentId": null,
+    "description": "Vertido o colada de vidrio fundido en un molde refractario para obtener piezas macizas.",
+    "aliases": ["casting", "fundición", "pate de verre"],
+    "tags": ["casting", "mold", "refractory"]
+  },
+  {
+    "id": "hot-kiln-firing-schedules",
+    "name": { "es": "Programas de Cocción", "en": "Firing Schedules" },
+    "pillar": "hot-kiln",
+    "parentId": null,
+    "description": "Secuencias de rampas, mesetas y tiempos que controlan la curva térmica del horno.",
+    "aliases": ["firing schedule", "curva de cocción", "rampas"],
+    "tags": ["firing", "ramp", "soak", "segments"]
+  },
+  {
+    "id": "hot-kiln-annealing",
+    "name": { "es": "Recocido", "en": "Annealing" },
+    "pillar": "hot-kiln",
+    "parentId": null,
+    "description": "Enfriamiento lento y controlado que elimina tensiones internas y evita roturas.",
+    "aliases": ["annealing", "recocido", "templado"],
+    "tags": ["annealing", "stress", "cooling"]
+  }
+]

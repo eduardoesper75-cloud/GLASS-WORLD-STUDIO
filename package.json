@@ -1,0 +1,28 @@
+{
+  "name": "glass-world-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Glass World Studio (GWS): infraestructura de datos, curaduría técnica y ecosistema B2B/C2C para la industria global del vidrio artístico e industrial.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "clean": "pnpm -r --if-present clean",
+    "build:engine": "pnpm --filter @gws/schemas build && pnpm --filter @gws/taxonomy build",
+    "generate:schemas": "pnpm --filter @gws/schemas generate",
+    "validate:taxonomy": "pnpm build:engine && pnpm --filter @gws/taxonomy validate",
+    "validate:cards": "pnpm build:engine && pnpm --filter @gws/pipeline validate:cards",
+    "dev:web": "pnpm --filter @gws/web dev",
+    "pipeline": "pnpm --filter @gws/pipeline start"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3"
+  }
+}

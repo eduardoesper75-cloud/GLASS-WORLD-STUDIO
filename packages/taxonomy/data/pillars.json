@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "pillars": [
+    {
+      "id": "hot-kiln",
+      "name": { "es": "Trabajo en Horno", "en": "Hot-Kiln" },
+      "summary": {
+        "es": "Procesos térmicos controlados: fusión, conformado, fundición, programas de cocción y recocido.",
+        "en": "Controlled thermal processes: fusing, slumping, casting, firing schedules and annealing."
+      },
+      "tags": ["hot", "kiln", "thermal", "fusing"]
+    },
+    {
+      "id": "flame",
+      "name": { "es": "Trabajo a la Llama", "en": "Flame / Torchworking" },
+      "summary": {
+        "es": "Manipulación con soplete: control de llama, borosilicato y sódico-calcáreo.",
+        "en": "Torch manipulation: flame control, borosilicate and soda-lime."
+      },
+      "tags": ["flame", "torch", "borosilicate", "soda-lime"]
+    },
+    {
+      "id": "cold-working",
+      "name": { "es": "Trabajo en Frío", "en": "Cold-Working" },
+      "summary": {
+        "es": "Corte, desbastado, pulido, grabado, arenado y ensamblado estructural.",
+        "en": "Cutting, grinding, polishing, engraving, sandblasting and structural assembly."
+      },
+      "tags": ["cold", "cutting", "grinding", "polishing", "assembly"]
+    }
+  ]
+}

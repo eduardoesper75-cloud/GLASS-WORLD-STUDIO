@@ -1,0 +1,17 @@
+# Normaliza los finales de línea a LF en el repositorio y en el árbol de trabajo.
+# Coherente con .editorconfig (end_of_line = lf) y con el scaffold multiplataforma.
+* text=auto eol=lf
+
+# Binarios (sin conversión de finales de línea)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
+
+# Lockfiles: siempre LF, nunca normalizados por heurística
+pnpm-lock.yaml text eol=lf
