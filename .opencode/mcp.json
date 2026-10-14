@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "ruflo": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "C:/Users/eduesper/AppData/Local/gws-tools/ruflo/node_modules/ruflo/bin/ruflo.js",
+        "mcp",
+        "start"
+      ],
+      "cwd": "C:/Users/eduesper/AppData/Local/gws-tools/ruflo",
+      "enabled": true,
+      "timeout": 120000
+    }
+  }
+}
