@@ -1,7 +1,7 @@
 export const site = {
   name: 'Glass World Studio',
   shortName: 'GWS',
-  tagline: 'El umbral al conocimiento técnico del vidrio.',
+  tagline: 'Plataforma con alma de taller, que se fortalece con tu crecimiento.',
   description:
     'Infraestructura de datos, curaduría técnica y ecosistema B2B/C2C para la industria global del vidrio artístico e industrial.',
   channel: {
