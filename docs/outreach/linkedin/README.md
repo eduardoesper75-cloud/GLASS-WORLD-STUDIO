@@ -42,6 +42,7 @@ Abrí `drafts.md`, copiá y pegá cada bloque en LinkedIn, y registrá el avance
 | Columna | Descripción | Ejemplo |
 |---|---|---|
 | `flecha` | `inversores` \| `desarrolladores` \| `logistica` \| `generico` | `inversores` |
+| `perfil` | **Sub-perfil** dentro de una flecha. Hoy lo usa `inversores`: `fondo` \| `angel` \| `industrial`. Vacío = variante neutra. | `angel` |
 | `name` | Nombre completo | `María López` |
 | `company` | Empresa / fondo | `Norte Ventures` |
 | `role` | Cargo | `Socia` |
@@ -50,3 +51,16 @@ Abrí `drafts.md`, copiá y pegá cada bloque en LinkedIn, y registrá el avance
 
 > **La personalización manda.** Un `hook` concreto (un post que leíste, un dato real)
 > multiplica la tasa de aceptación y reduce el riesgo. Sin hook, el mensaje suena genérico.
+
+### Sub-perfiles de la flecha `inversores`
+
+El espectro de inversores es **amplio y sin fronteras**. La columna `perfil` adapta el registro
+de la secuencia a quién tenés enfrente, sin cambiar el mensaje de fondo:
+
+| `perfil` | Para quién | Registro |
+|---|---|---|
+| `fondo` | Fondos de VC / early-stage / tesis industrial | Institucional («la tesis de…», «les dejo») |
+| `angel` | Inversores ángel | Cercano y directo («tu recorrido», «te dejo») |
+| `industrial` | Empresarios e industriales del rubro | Respetuoso («usted conoce el rubro», «le dejo») |
+| *(vacío)* | Cualquiera del espectro | Neutro; sirve para todos |
+

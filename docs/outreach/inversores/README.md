@@ -26,9 +26,13 @@ plataforma. GWS conecta y facilita; no mueve camiones ni guarda stock.
 |---|---|---|
 | [`GWS_Pitch_Deck_Inversores.md`](./GWS_Pitch_Deck_Inversores.md) | Deck de **5 slides** con el gancho de mercado y la propuesta de alianza | En la charla |
 | [`GWS_Secuencia_Outreach_Inversores.md`](./GWS_Secuencia_Outreach_Inversores.md) | Secuencia de **3 pasos** de acercamiento, tono franco y directo | Para abrir la conversación |
+| [`GWS_Guia_Prospeccion_Inversores.md`](./GWS_Guia_Prospeccion_Inversores.md) | Cómo armar la lista (fuentes conformes) y generar los primeros borradores | Antes de prospectar |
 
 **Generador operativo** (alineado con esta secuencia, para producción en lote desde una lista):
-`docs/outreach/linkedin/generate-drafts.mjs` → secuencia `inversores`.
+`docs/outreach/linkedin/generate-drafts.mjs` → flecha `inversores`.
+
+El espectro es **amplio y sin fronteras**: fondos, ángeles e industriales. La columna `perfil`
+del CSV (`fondo` | `angel` | `industrial`, o vacío = neutro) adapta el registro automáticamente.
 
 ---
 

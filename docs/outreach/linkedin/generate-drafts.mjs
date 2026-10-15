@@ -80,6 +80,9 @@ const FALLBACK_NOTE = (p) =>
 const SEQUENCES = {
   inversores: {
     // Alineado con el Kit de Alianza: 3 pasos (gancho -> alianza -> charla).
+    // El espectro es AMPLIO Y SIN FRONTERAS: fondos early-stage, ángeles e
+    // industriales del rubro. La columna `perfil` del CSV elige la variante;
+    // sin `perfil`, se usa esta versión neutra (sirve para cualquiera).
     label: 'Flecha 1 — Inversores / Alianza estratégica',
     // Paso 1 — Primer contacto: el gancho de mercado. NO pide nada.
     note: (p) =>
@@ -101,6 +104,66 @@ const SEQUENCES = {
     follow2: (p) =>
       `Cierro sin insistir, ${firstName(p.name)}. Si te interesa, 20 minutos con tres puntos: el mercado, ` +
       `la arquitectura y qué pongo yo sobre la mesa. Te paso franjas si me decís que sí.`,
+
+    // --- Sub-perfiles (columna `perfil`) -----------------------------------
+    // Afinan el registro según quién está del otro lado. Se fusionan sobre la
+    // base: si una variante no define algo, hereda lo neutro.
+    variants: {
+      // Fondos de VC / early-stage / tesis industrial. Registro institucional.
+      fondo: {
+        note: (p) =>
+          `Hola ${p.name}, sigo la tesis de ${p.company}${p.hook ? ` en ${p.hook}` : ''}. ` +
+          `El vidrio mueve USD 450.000 millones al año y sigue sin plataforma que lo una. ` +
+          `Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`,
+        opener: (p) =>
+          `Gracias por conectar, ${firstName(p.name)}. Una pregunta antes de cualquier pitch: ` +
+          `¿qué tiene que tener un marketplace vertical para entrar en la tesis de ${p.company}?`,
+        follow1: (p) =>
+          `Sin apuro, ${firstName(p.name)}. Les dejo los tres comunicados con los que abrimos la nueva ` +
+          `etapa: ${TRILOGY.reaparicion} · ${TRILOGY.alianzas} · ${TRILOGY.modelo} ` +
+          `No buscamos capital pasivo: ponemos el mercado, la arquitectura y la plataforma, y buscamos ` +
+          `un socio que financie o ejecute el desarrollo técnico, con participación generosa.`,
+        follow2: (p) =>
+          `Cierro sin insistir, ${firstName(p.name)}. Si les interesa, 20 minutos con tres puntos: ` +
+          `el mercado, la arquitectura y qué ponemos nosotros sobre la mesa.`,
+      },
+      // Inversores ángel: individuos, trato cercano y directo.
+      angel: {
+        note: (p) =>
+          `Hola ${p.name}, sigo tu recorrido${p.hook ? ` en ${p.hook}` : ''}. ` +
+          `El vidrio mueve USD 450.000 millones al año y sigue sin plataforma que lo una. ` +
+          `Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`,
+        opener: (p) =>
+          `Gracias por conectar, ${firstName(p.name)}. Te hago una pregunta directa: ¿qué te llevaría ` +
+          `hoy a apostar personalmente por un sector milenario y fragmentado como el vidrio?`,
+        follow1: (p) =>
+          `Sin apuro, ${firstName(p.name)}. Te dejo los tres comunicados de la nueva etapa: ` +
+          `${TRILOGY.reaparicion} · ${TRILOGY.alianzas} · ${TRILOGY.modelo} ` +
+          `Y te aclaro de entrada: no busco capital pasivo. Pongo el mercado, la arquitectura y la ` +
+          `plataforma; busco un socio que financie o ejecute el desarrollo técnico.`,
+        follow2: (p) =>
+          `Cierro sin insistir, ${firstName(p.name)}. Si te interesa, 20 minutos de charla franca: ` +
+          `el mercado, la arquitectura y qué pongo yo sobre la mesa.`,
+      },
+      // Industriales, empresarios y referentes del rubro. Registro respetuoso.
+      industrial: {
+        note: (p) =>
+          `Hola ${p.name}, sigo el trabajo de ${p.company} en el rubro${p.hook ? `, sobre todo ${p.hook}` : ''}. ` +
+          `El vidrio mueve USD 450.000 millones al año y sigue fragmentado. ` +
+          `Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`,
+        opener: (p) =>
+          `Gracias por conectar, ${firstName(p.name)}. Usted conoce el rubro desde adentro mejor que ` +
+          `nadie: ¿qué es lo que más le falta hoy a la industria del vidrio?`,
+        follow1: (p) =>
+          `Sin apuro, ${firstName(p.name)}. Le dejo los tres comunicados de la nueva etapa: ` +
+          `${TRILOGY.reaparicion} · ${TRILOGY.alianzas} · ${TRILOGY.modelo} ` +
+          `No vengo a pedir dinero a ciegas: pongo el estudio de mercado, la arquitectura y la ` +
+          `plataforma. Busco un socio fundacional que financie o construya el desarrollo técnico.`,
+        follow2: (p) =>
+          `Cierro sin insistir, ${firstName(p.name)}. Si le interesa, 20 minutos con tres puntos: ` +
+          `el mercado, la arquitectura y qué pongo yo sobre la mesa.`,
+      },
+    },
   },
   desarrolladores: {
     label: 'Flecha 2 — Desarrolladores / Arquitectos',
@@ -188,12 +251,28 @@ function main() {
   for (const row of rows.slice(1)) {
     const get = (key) => (key in index ? (row[index[key]] ?? '').trim() : '');
     const flecha = (get('flecha') || 'generico').toLowerCase();
-    const seq = SEQUENCES[flecha] ?? SEQUENCES.generico;
+    const perfil = get('perfil').toLowerCase();
+    const baseSeq = SEQUENCES[flecha] ?? SEQUENCES.generico;
     const p = { name: get('name'), company: get('company'), role: get('role'), hook: get('hook') };
     const url = get('linkedin_url');
 
     if (flecha !== 'generico' && !SEQUENCES[flecha]) {
       warnings.push(`Flecha desconocida "${flecha}" para ${p.name} — se usó la secuencia genérica.`);
+    }
+
+    // Sub-perfil (columna `perfil`): afina la secuencia dentro de una misma flecha.
+    // Hoy sólo `inversores` los define; el resto de las flechas ignora la columna.
+    let seq = baseSeq;
+    let appliedPerfil = '';
+    if (baseSeq.variants) {
+      if (perfil && baseSeq.variants[perfil]) {
+        seq = { ...baseSeq, ...baseSeq.variants[perfil] };
+        appliedPerfil = perfil;
+      } else if (perfil) {
+        warnings.push(
+          `Perfil desconocido "${perfil}" para ${p.name} — se usó la variante neutra de ${flecha}.`,
+        );
+      }
     }
 
     let note = seq.note(p);
@@ -208,7 +287,7 @@ function main() {
     total += 1;
 
     lines.push(`## ${p.name}${p.role ? ` — ${p.role}` : ''}${p.company ? ` · ${p.company}` : ''}`);
-    lines.push(`*${seq.label}*`);
+    lines.push(`*${seq.label}${appliedPerfil ? ` · perfil: ${appliedPerfil}` : ''}*`);
     if (url) lines.push(`<${url}>`);
     lines.push('');
     lines.push(`**Nota de invitación (${noteLen}/${NOTE_LIMIT}):**`);

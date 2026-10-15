@@ -43,8 +43,10 @@ cualquier mensaje de advertencia de LinkedIn.
 
 ## 3. Las 3 flechas (objetivo de cada conversación)
 
-- **Flecha 1 — Inversores / Capital:** que entiendan la oportunidad y el estado (INPI, 6
-  galaxias, 5 satélites). Resultado buscado: interés en ver el detalle.
+- **Flecha 1 — Inversores / Alianza estratégica:** que entiendan la oportunidad y el estado
+  (INPI, 6 galaxias, 5 satélites) y que capten que **no pedimos capital pasivo**: traemos el
+  mercado, la arquitectura y la plataforma, y buscamos un socio que financie o ejecute el
+  desarrollo técnico. Resultado buscado: una charla de 20 minutos.
 - **Flecha 2 — Desarrolladores / Arquitectos:** que evalúen sumarse al núcleo técnico
   (multi-agente, 5 satélites).
 - **Flecha 3 — Logística / Cadena de suministro:** que imaginen integrarse a la red de
@@ -63,13 +65,28 @@ Estructura por prospecto: **Nota de invitación** (≤ 300 caracteres) → tras 
 se archiva y se sigue.
 
 El script `generate-drafts.mjs` genera las cuatro piezas ya rellenadas con `name`,
-`company` y `hook`. Abajo, el texto canónico de cada una.
+`company` y `hook`. Además, la columna opcional `perfil` afina el registro dentro de una
+flecha (hoy sólo `inversores`). Abajo, el texto canónico de cada una.
 
-### Flecha 1 — Inversores
-- **Nota:** `Hola {name}, sigo el trabajo de {company}{ y tu foco en {hook}}. Estoy construyendo Glass World Studio, el marketplace vertical de la industria global del vidrio. Me gustaría conectar. Eduardo Esper, fundador.`
-- **Apertura:** `Gracias por conectar, {nombre}. Antes de contarte nada, me interesa tu mirada: ¿qué señales te hacen prestar atención hoy a un marketplace vertical industrial?`
-- **Seguimiento 1:** `Te dejo una idea, sin compromiso: unimos arte, industria y comercio del vidrio en un solo ecosistema (6 galaxias, 5 satélites). ¿Le ves espacio en tu tesis de inversión?`
-- **Seguimiento 2:** `Sin apuro, {nombre}. Si en algún momento querés ver el detalle, con gusto te comparto un resumen. Buena semana.`
+### Flecha 1 — Inversores / Alianza estratégica
+
+El espectro es **abierto**: fondos, ángeles e industriales. La columna `perfil`
+(`fondo` | `angel` | `industrial`, o vacío = neutro) ajusta el registro. El mensaje de
+fondo es el mismo en las cuatro variantes: **el gancho de mercado** (USD 450.000 millones
+al año · +50 millones de personas), **la trilogía** como caso de valor y **el no-ask**
+(ponemos mercado + arquitectura + plataforma; buscamos socio, no capital pasivo).
+
+**Neutro (sin `perfil`) — la base:**
+- **Nota:** `Hola {name}, sigo el trabajo de {company}{ y tu foco en {hook}}. El vidrio mueve USD 450.000 millones al año y sigue sin plataforma que lo una. Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`
+- **Apertura:** `Gracias por conectar, {nombre}. Sin vueltas: medio billón de dólares moviéndose a mano. ¿Qué te haría prestar atención hoy a un marketplace vertical industrial?`
+- **Seguimiento 1 (Paso 2 — caso de valor + alianza):** `Sin apuro, {nombre}. Te dejo los tres comunicados con los que abrimos la nueva etapa: {trilogía}. Y una aclaración de entrada: no busco capital pasivo. Pongo el mercado, la arquitectura y la plataforma; busco un socio que financie o ejecute el desarrollo, con participación generosa.`
+- **Seguimiento 2 (Paso 3 — la charla):** `Cierro sin insistir, {nombre}. Si te interesa, 20 minutos con tres puntos: el mercado, la arquitectura y qué pongo yo sobre la mesa. Te paso franjas si me decís que sí.`
+
+**`fondo`** — institucional («Les dejo»): la nota abre por *la tesis de {company}*, la apertura pregunta qué necesita un marketplace vertical para entrar en su tesis, y el cierre habla de *qué ponemos nosotros*.
+
+**`angel`** — cercano («te»): *sigo tu recorrido {hook}*, apertura sobre apostar personalmente, cierre en primera persona.
+
+**`industrial`** — respetuoso (usted): *sigo el trabajo de {company} en el rubro*, apertura sobre qué le falta a la industria del vidrio, pasos en «Le dejo» y *un socio fundacional*.
 
 ### Flecha 2 — Desarrolladores
 - **Nota:** `Hola {name}, vi tu experiencia en {hook}. Estoy armando el núcleo técnico de Glass World Studio (marketplace vertical del vidrio) sobre arquitectura multi-agente. Me gustaría conectar. Eduardo, fundador.`
