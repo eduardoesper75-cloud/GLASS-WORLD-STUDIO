@@ -1,17 +1,18 @@
 export const LANGUAGES = [
-  { code: 'es', name: 'Español', flags: ['🇦🇷', '🇪🇸'] },
-  { code: 'en', name: 'English', flags: ['🇺🇸', '🇬🇧'] },
-  { code: 'fr', name: 'Français', flags: ['🇫🇷'] },
-  { code: 'it', name: 'Italiano', flags: ['🇮🇹'] },
-  { code: 'pt', name: 'Português', flags: ['🇧🇷'] },
-  { code: 'de', name: 'Deutsch', flags: ['🇩🇪'] },
-  { code: 'zh', name: '中文', flags: ['🇨🇳'] },
+  { code: 'es', name: 'Español', label: 'ES' },
+  { code: 'en', name: 'English', label: 'EN' },
+  { code: 'fr', name: 'Français', label: 'FR' },
+  { code: 'it', name: 'Italiano', label: 'IT' },
+  { code: 'pt', name: 'Português', label: 'PT' },
+  { code: 'de', name: 'Deutsch', label: 'DE' },
+  { code: 'zh', name: '中文', label: '中文' },
 ] as const;
 
 export type LanguageCode = (typeof LANGUAGES)[number]['code'];
 
 const messages = {
   es: {
+    pageTitle: 'Glass World Studio — Plataforma con alma de taller, que se fortalece con tu crecimiento.',
     artwork: 'Arte del vidrio',
     selectLanguage: 'Seleccionar idioma',
     tagline: 'Plataforma con alma de taller, que se fortalece con tu crecimiento',
@@ -29,6 +30,7 @@ const messages = {
     back: 'Volver a la portada',
   },
   en: {
+    pageTitle: 'Glass World Studio — A platform with the soul of a workshop, growing stronger with you.',
     artwork: 'Glass Art',
     selectLanguage: 'Select language',
     tagline: 'A platform with the soul of a workshop, growing stronger with you.',
@@ -45,6 +47,7 @@ const messages = {
     back: 'Return to the welcome page',
   },
   fr: {
+    pageTitle: "Glass World Studio — Une plateforme avec l'âme d'un atelier, qui grandit avec vous.",
     artwork: 'Art du verre',
     selectLanguage: 'Choisir la langue',
     tagline: "Une plateforme avec l'âme d'un atelier, qui grandit avec vous.",
@@ -62,6 +65,7 @@ const messages = {
     back: "Retour à la page d'accueil",
   },
   it: {
+    pageTitle: "Glass World Studio — Una piattaforma con l'anima di un laboratorio, che cresce con te.",
     artwork: 'Arte del vetro',
     selectLanguage: 'Seleziona la lingua',
     tagline: "Una piattaforma con l'anima di un laboratorio, che cresce con te.",
@@ -79,6 +83,7 @@ const messages = {
     back: 'Torna alla pagina iniziale',
   },
   pt: {
+    pageTitle: 'Glass World Studio — Uma plataforma com alma de oficina, que cresce junto com você.',
     artwork: 'Arte em vidro',
     selectLanguage: 'Selecionar idioma',
     tagline: 'Uma plataforma com alma de oficina, que cresce junto com você.',
@@ -96,6 +101,7 @@ const messages = {
     back: 'Voltar à página inicial',
   },
   de: {
+    pageTitle: 'Glass World Studio — Eine Plattform mit Werkstattseele, die mit Ihnen wächst.',
     artwork: 'Glaskunst',
     selectLanguage: 'Sprache auswählen',
     tagline: 'Eine Plattform mit Werkstattseele, die mit Ihnen wächst.',
@@ -113,6 +119,7 @@ const messages = {
     back: 'Zurück zur Startseite',
   },
   zh: {
+    pageTitle: 'Glass World Studio — 一个拥有工坊灵魂、与你共同成长的平台。',
     artwork: '玻璃艺术',
     selectLanguage: '选择语言',
     tagline: '一个拥有工坊灵魂、与你共同成长的平台。',

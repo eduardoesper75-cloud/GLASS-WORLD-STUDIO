@@ -1,8 +1,7 @@
 'use client';
 
-import { LANGUAGES } from '@/lib/i18n';
-import { getMessage } from '@/lib/i18n';
 import { useLanguage } from '@/components/LanguageProvider';
+import { getMessage, LANGUAGES } from '@/lib/i18n';
 
 export function LanguageSelector() {
   const { language, setLanguage } = useLanguage();
@@ -21,13 +20,10 @@ export function LanguageSelector() {
           lang={option.code}
           aria-label={option.name}
           aria-pressed={language === option.code}
+          title={option.name}
           onClick={() => setLanguage(option.code)}
         >
-          {option.flags.map((flag) => (
-            <span key={flag} aria-hidden="true">
-              {flag}
-            </span>
-          ))}
+          <span aria-hidden="true">{option.label}</span>
         </button>
       ))}
     </nav>

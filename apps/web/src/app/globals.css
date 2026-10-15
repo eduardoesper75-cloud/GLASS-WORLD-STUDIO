@@ -717,6 +717,39 @@ a {
 
 .threshold {
   padding: 7rem 1rem 1.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.language-selector__option span {
+  color: rgba(255, 248, 239, 0.9);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.threshold__lead {
+  color: rgba(255, 248, 239, 0.9);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.threshold__field-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.threshold__field-icon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
 }
 
 @media (max-width: 640px) {
@@ -990,7 +1023,7 @@ body {
   padding: clamp(2rem, 6vw, 4rem);
   border: 1px solid rgba(255, 231, 199, 0.32);
   border-radius: 0.5rem;
-  background: linear-gradient(145deg, rgba(16, 20, 24, 0.92), rgba(26, 23, 21, 0.88));
+  background: linear-gradient(145deg, rgba(16, 20, 24, 0.78), rgba(26, 23, 21, 0.74));
   box-shadow: 0 1.5rem 6rem rgba(0, 0, 0, 0.44), inset 0 0 3rem rgba(255, 189, 117, 0.04);
   text-align: center;
   backdrop-filter: blur(1rem);
@@ -1087,5 +1120,86 @@ body {
 
   .landing__continue:hover .landing__indicator {
     transform: none;
+  }
+}
+
+.threshold {
+  padding: 7rem 1rem 1.5rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.threshold__lead {
+  color: rgba(255, 248, 239, 0.9);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-transform: none;
+}
+
+.threshold__glass {
+  position: absolute;
+  z-index: 0;
+  top: 12%;
+  left: 50%;
+  width: min(108vw, 68rem);
+  height: min(78vh, 48rem);
+  border: 1px solid rgba(255, 230, 198, 0.7);
+  border-radius: 48% 52% 46% 54% / 45% 43% 57% 55%;
+  background:
+    radial-gradient(ellipse at 23% 35%, rgba(255, 207, 133, 0.72), transparent 16%),
+    radial-gradient(ellipse at 82% 60%, rgba(39, 190, 235, 0.7), transparent 20%),
+    radial-gradient(ellipse at 50% 50%, rgba(4, 9, 13, 0.12) 0 37%, rgba(4, 9, 13, 0.7) 73%, rgba(255, 201, 127, 0.24) 82%, transparent 86%);
+  box-shadow:
+    inset 1.5rem 0 2.5rem rgba(255, 213, 160, 0.48),
+    inset -1.5rem 0 2.5rem rgba(63, 202, 255, 0.48),
+    0 0 4rem rgba(255, 176, 88, 0.24);
+  transform: translateX(-50%);
+}
+
+.threshold__glass::before,
+.threshold__glass::after {
+  position: absolute;
+  inset: -4% 12%;
+  border: 3px solid rgba(255, 210, 153, 0.7);
+  border-radius: 48% 52% 46% 54%;
+  box-shadow: inset 0 0 1rem rgba(255, 232, 197, 0.24), 0 0 1.2rem rgba(255, 189, 117, 0.24);
+  content: '';
+  transform: rotate(-7deg);
+}
+
+.threshold__glass::after {
+  inset: 2% 6%;
+  border-width: 2px;
+  border-color: rgba(93, 215, 255, 0.64);
+  transform: rotate(8deg);
+}
+
+.threshold__rock {
+  position: absolute;
+  z-index: 0;
+  right: -10%;
+  bottom: -5%;
+  left: -10%;
+  height: 21%;
+  border-top: 1px solid rgba(255, 197, 128, 0.66);
+  border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+  background:
+    radial-gradient(ellipse at 50% 0, rgba(227, 153, 88, 0.28), transparent 36%),
+    linear-gradient(180deg, rgba(69, 43, 30, 0.92), #100f10 48%, #03070b);
+  box-shadow: 0 -0.75rem 2.5rem rgba(255, 164, 83, 0.14);
+  transform: perspective(28rem) rotateX(28deg);
+}
+
+.threshold__panel,
+.threshold__footer {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .threshold {
+    padding-top: 5.5rem;
   }
 }

@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useState, type ReactNode } from 'react';
 
-import { isLanguageCode, type LanguageCode } from '@/lib/i18n';
+import { getMessage, isLanguageCode, type LanguageCode } from '@/lib/i18n';
 
 const STORAGE_KEY = 'gws-language';
 
@@ -25,6 +25,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = language;
+    document.title = getMessage(language, 'pageTitle');
   }, [language]);
 
   useEffect(() => {

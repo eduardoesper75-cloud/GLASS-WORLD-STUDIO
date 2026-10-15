@@ -6,7 +6,7 @@ Capa 1 — **Presentación / UI** de GWS (Next.js App Router + React + TypeScrip
 
 La portada se compone con HTML semántico y CSS responsive siguiendo la imagen maestra `public/arte-del-vidrio-en-el-cosmos.png` como blueprint visual. El cielo, la esfera de vidrio, la placa, los títulos y el indicador son elementos de interfaz, no una imagen a pantalla completa.
 
-El enlace «TOCA PARA CONTINUAR» navega a `/umbral`, la entrada de Layer 2. Incluye el formulario visual del prototipo y siete idiomas. La selección se conserva en `localStorage`, sincroniza el atributo de idioma del documento y permanece al navegar entre rutas y recargar.
+El enlace «TOCA PARA CONTINUAR» navega a `/umbral`, la entrada de Layer 2. Incluye el formulario visual del prototipo y selector persistente en español, inglés, francés, italiano, portugués, alemán y chino. La selección se conserva en `localStorage`, sincroniza el idioma y el título del documento, y permanece al navegar entre rutas y recargar. Las páginas legales y el modal global de privacidad conservan por ahora su texto original en español.
 
 El formulario aún no se conecta a autenticación ni envía o almacena los datos introducidos. Al enviarlo, informa explícitamente de que esa integración está pendiente.
 
