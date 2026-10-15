@@ -15,10 +15,14 @@ coverage/
 .env
 .env.*
 !.env.example
+!.env.production.example
 **/service-account*.json
 **/*credentials*.json
 **/client_secret*.json
 **/token*.json
+
+# Vercel (ids/UUIDs de proyecto: se recrea con `vercel link`)
+.vercel/
 
 # Logs y temporales
 *.log
