@@ -8,5 +8,7 @@
     "**/dist": true,
     "**/.next": true,
     "**/node_modules": true
-  }
+  },
+  "keyboard.layout": "es",
+  "files.encoding": "utf8"
 }
