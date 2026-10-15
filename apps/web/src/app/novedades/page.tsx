@@ -1,58 +1,37 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
-import { reaparicion } from '@/lib/announcements';
+import { announcements } from '@/lib/announcements';
 import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: `${reaparicion.title} · ${site.shortName}`,
+  title: `Novedades · ${site.shortName}`,
   description:
-    'Comunicado oficial de reaparición de Glass World Studio: la nueva etapa del Marketplace Vertical integral para la industria global del vidrio.',
+    'Comunicados oficiales de Glass World Studio: reaparición en la plataforma y convocatoria abierta de alianzas estratégicas.',
 };
 
-export default function AnnouncementPage() {
-  const [greeting, ...manifesto] = reaparicion.lead;
-
+export default function AnnouncementsIndexPage() {
   return (
     <main className="announcement">
       <article className="announcement__hero">
         <header className="announcement__header">
-          <p className="announcement__eyebrow">{reaparicion.eyebrow}</p>
-          <h1 className="announcement__title">{reaparicion.title}</h1>
-          <p className="announcement__effective">{reaparicion.effective}</p>
+          <p className="announcement__eyebrow">Sala de prensa · Glass World Studio</p>
+          <h1 className="announcement__title">Novedades</h1>
+          <p className="announcement__effective">Comunicados oficiales de Glass World Studio.</p>
         </header>
 
-        <div className="announcement__lead">
-          <p>{greeting}</p>
-          {manifesto.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+        <div className="announcement__list">
+          {announcements.map((item) => (
+            <Link className="announcement-card" href={`/novedades/${item.slug}`} key={item.slug}>
+              <span className="announcement-card__eyebrow">{item.eyebrow}</span>
+              <strong className="announcement-card__title">{item.title}</strong>
+              <span className="announcement-card__excerpt">{item.lead[0]}</span>
+              <span className="announcement-card__meta">
+                <span>{item.publishedAt}</span>
+                <span className="announcement-card__cta">Leer comunicado →</span>
+              </span>
+            </Link>
           ))}
-        </div>
-
-        <div className="announcement__body">
-          {reaparicion.sections.map((section) => (
-            <section className="announcement__section" key={section.id} aria-labelledby={section.id}>
-              <h2 id={section.id}>{section.heading}</h2>
-              {section.paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-              ))}
-              {section.bullets ? (
-                <ul>
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet.slice(0, 32)}>{bullet}</li>
-                  ))}
-                </ul>
-              ) : null}
-            </section>
-          ))}
-        </div>
-
-        <blockquote className="announcement__closing">{reaparicion.closing}</blockquote>
-
-        <div className="announcement__signature">
-          <span>{reaparicion.farewell}</span>
-          <strong>{reaparicion.author.name}</strong>
-          <span>{reaparicion.author.role}</span>
-          <a href={`mailto:${reaparicion.author.contact}`}>{reaparicion.author.contact}</a>
         </div>
 
         <footer className="announcement__footer">
