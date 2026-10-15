@@ -8,7 +8,7 @@ La portada se compone con HTML semántico y CSS responsive siguiendo la imagen m
 
 El enlace «TOCA PARA CONTINUAR» navega a `/umbral`, la entrada de Layer 2. Incluye el formulario visual del prototipo y selector persistente en los siete idiomas de `src/locales/*.json`: español, inglés, portugués, italiano, francés, alemán y chino. La selección se conserva en `localStorage`, sincroniza el idioma y el título del documento, y permanece al navegar entre rutas y recargar. Las páginas legales y el modal global de privacidad conservan por ahora su texto original en español.
 
-El formulario aún no se conecta a autenticación ni envía o almacena los datos introducidos. Al enviarlo, informa explícitamente de que esa integración está pendiente.
+El Umbral abre directamente la selección múltiple de las galaxias de pertenencia y perfiles profesionales. Una credencial estelar conceptual muestra en vivo la órbita elegida antes de confirmar. Las preferencias se guardan únicamente en `localStorage` (`gws-membership-preferences`). La confirmación aclara que no crea una cuenta ni activa una suscripción: la autenticación y persistencia de servidor siguen pendientes.
 
 La interfaz principal del marketplace está en `/inicio`, con seis galaxias, cinco satélites, traducciones en los siete idiomas y modales de funciones. El acceso desde `/umbral` está marcado como vista previa. Los datos de Ruflo MCP aún no están conectados; no se muestran métricas ficticias.
 

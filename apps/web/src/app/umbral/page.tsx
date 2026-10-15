@@ -1,48 +1,117 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, type FormEvent } from 'react';
+import { useEffect, useState, type FormEvent } from 'react';
 
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { useLanguage } from '@/components/LanguageProvider';
-import { dashboardLabels } from '@/lib/dashboard';
+import { dashboardLabels, dashboardModules } from '@/lib/dashboard';
 import { getMessage } from '@/lib/i18n';
+
+const MEMBERSHIP_STORAGE_KEY = 'gws-membership-preferences';
+const galaxyModules = dashboardModules.filter((module) => module.category === 'galaxy');
+const professionalModule = dashboardModules.find((module) => module.id === 'professionals');
+
+if (!professionalModule) {
+  throw new Error('The professional profile definitions are missing.');
+}
+
+const professionalProfileIds = ['engineers', 'process-technicians', 'scientists-specialists'];
+const professionalProfiles = professionalModule.modules.map((label, index) => ({
+  id: professionalProfileIds[index],
+  label,
+}));
+
+function isStringArray(value: unknown, allowedValues: string[]): value is string[] {
+  return (
+    Array.isArray(value) &&
+    new Set(value).size === value.length &&
+    value.every((item): item is string => typeof item === 'string' && allowedValues.includes(item))
+  );
+}
 
 export default function AccessThresholdPage() {
   const { language } = useLanguage();
-  const [showAuthNotice, setShowAuthNotice] = useState(false);
+  const [step, setStep] = useState<2 | 3>(2);
+  const [selectedGalaxies, setSelectedGalaxies] = useState<string[]>([]);
+  const [selectedProfiles, setSelectedProfiles] = useState<string[]>([]);
+  const [notice, setNotice] = useState('');
+  const [storageError, setStorageError] = useState(false);
 
-  function renderFieldIcon(kind: 'person' | 'email' | 'password') {
-    if (kind === 'person') {
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <circle cx="12" cy="7.5" r="3.25" />
-          <path d="M5.5 20v-1.8a6.5 6.5 0 0 1 13 0V20z" />
-        </svg>
-      );
+  useEffect(() => {
+    try {
+      const storedPreferences = window.localStorage.getItem(MEMBERSHIP_STORAGE_KEY);
+      if (!storedPreferences) {
+        return;
+      }
+
+      const preferences: unknown = JSON.parse(storedPreferences);
+      if (
+        typeof preferences !== 'object' ||
+        preferences === null ||
+        !('galaxies' in preferences) ||
+        !('professionalProfiles' in preferences) ||
+        !isStringArray(
+          preferences.galaxies,
+          galaxyModules.map((module) => module.id),
+        ) ||
+        !isStringArray(
+          preferences.professionalProfiles,
+          professionalProfileIds,
+        )
+      ) {
+        throw new Error('Stored membership preferences have an invalid format.');
+      }
+
+      setSelectedGalaxies(preferences.galaxies);
+      setSelectedProfiles(preferences.professionalProfiles);
+    } catch (error) {
+      console.error('Unable to load saved membership preferences.', error);
+      setStorageError(true);
     }
+  }, []);
 
-    if (kind === 'email') {
-      return (
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <rect x="3" y="5.5" width="18" height="13" rx="1.5" />
-          <path d="m4 7 8 6 8-6" />
-        </svg>
-      );
-    }
-
-    return (
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="5" y="10" width="14" height="11" rx="2" />
-        <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3" />
-      </svg>
-    );
+  function toggleSelection(
+    current: string[],
+    setCurrent: (value: string[]) => void,
+    id: string,
+    selected: boolean,
+  ) {
+    setCurrent(selected ? [...current, id] : current.filter((item) => item !== id));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  function saveMembership(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setShowAuthNotice(true);
+    if (selectedGalaxies.length === 0) {
+      setNotice(getMessage(language, 'membershipRequired'));
+      return;
+    }
+
+    try {
+      window.localStorage.setItem(
+        MEMBERSHIP_STORAGE_KEY,
+        JSON.stringify({
+          galaxies: selectedGalaxies,
+          professionalProfiles: selectedProfiles,
+        }),
+      );
+      setNotice('');
+      setStorageError(false);
+      setStep(3);
+    } catch (error) {
+      console.error('Unable to save membership preferences.', error);
+      setNotice(getMessage(language, 'membershipStorageError'));
+    }
   }
+
+  function t(key: Parameters<typeof getMessage>[1]) {
+    return getMessage(language, key);
+  }
+
+  const selectedGalaxyModules = galaxyModules.filter((module) => selectedGalaxies.includes(module.id));
+  const selectedProfessionalProfiles = professionalProfiles.filter((profile) =>
+    selectedProfiles.includes(profile.id),
+  );
 
   return (
     <main className="threshold" lang={language}>
@@ -51,63 +120,162 @@ export default function AccessThresholdPage() {
       <div className="threshold__rock" aria-hidden="true" />
       <LanguageSelector />
 
-      <section className="threshold__panel" aria-labelledby="threshold-title">
-        <p className="landing__eyebrow">{getMessage(language, 'threshold')}</p>
-        <h1 id="threshold-title">{getMessage(language, 'welcome')}</h1>
-        <p className="threshold__lead">{getMessage(language, 'subtitle')}</p>
+      <section className="threshold__panel membership-panel" aria-labelledby="threshold-title">
+        <p className="landing__eyebrow">{t('membershipStep')}</p>
 
-        <form className="threshold__form" onSubmit={handleSubmit}>
-          <label className="threshold__field">
-            <span className="threshold__field-icon">{renderFieldIcon('person')}</span>
-            <span className="visually-hidden">{getMessage(language, 'name')}</span>
-            <input
-              autoComplete="name"
-              name="name"
-              placeholder={getMessage(language, 'name')}
-              required
-              type="text"
-            />
-          </label>
+        {step === 2 && (
+          <>
+            <h1 id="threshold-title">{t('membershipTitle')}</h1>
+            <p className="threshold__lead">{t('membershipIntro')}</p>
 
-          <label className="threshold__field">
-            <span className="threshold__field-icon">{renderFieldIcon('email')}</span>
-            <span className="visually-hidden">{getMessage(language, 'email')}</span>
-            <input
-              autoComplete="email"
-              name="email"
-              placeholder={getMessage(language, 'email')}
-              required
-              type="email"
-            />
-          </label>
+            <form className="membership-form" onSubmit={saveMembership}>
+              <fieldset className="membership-group">
+                <legend>{t('galaxiesTitle')}</legend>
+                <p className="membership-group__hint">{t('galaxiesHint')}</p>
+                <div className="membership-options">
+                  {galaxyModules.map((module) => (
+                    <label className="membership-option" key={module.id}>
+                      <input
+                        checked={selectedGalaxies.includes(module.id)}
+                        onChange={(event) =>
+                          toggleSelection(
+                            selectedGalaxies,
+                            setSelectedGalaxies,
+                            module.id,
+                            event.target.checked,
+                          )
+                        }
+                        type="checkbox"
+                        value={module.id}
+                      />
+                      <span className="membership-option__icon" aria-hidden="true">
+                        {module.icon}
+                      </span>
+                      <span className="membership-option__copy">
+                        <strong>{module.title[language]}</strong>
+                        <span>{module.description[language]}</span>
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
 
-          <label className="threshold__field">
-            <span className="threshold__field-icon">{renderFieldIcon('password')}</span>
-            <span className="visually-hidden">{getMessage(language, 'password')}</span>
-            <input
-              autoComplete="new-password"
-              name="password"
-              placeholder={getMessage(language, 'password')}
-              required
-              type="password"
-            />
-          </label>
+              <fieldset className="membership-group">
+                <legend>{t('professionalsTitle')}</legend>
+                <p className="membership-group__hint">{t('professionalsHint')}</p>
+                <div className="membership-options membership-options--profiles">
+                  {professionalProfiles.map((profile) => (
+                    <label className="membership-option membership-option--profile" key={profile.id}>
+                      <input
+                        checked={selectedProfiles.includes(profile.id)}
+                        onChange={(event) =>
+                          toggleSelection(
+                            selectedProfiles,
+                            setSelectedProfiles,
+                            profile.id,
+                            event.target.checked,
+                          )
+                        }
+                        type="checkbox"
+                        value={profile.id}
+                      />
+                      <span className="membership-option__copy">
+                        <strong>{profile.label[language]}</strong>
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
 
-          <button className="threshold__submit" type="submit">
-            {getMessage(language, 'submit')}
-            <span aria-hidden="true">→</span>
-          </button>
-        </form>
+              <section className="stellar-credential" aria-labelledby="credential-title" aria-live="polite">
+                <div className="stellar-credential__header">
+                  <span className="stellar-credential__sigil" aria-hidden="true">✦</span>
+                  <div>
+                    <p className="stellar-credential__caption">{t('credentialCaption')}</p>
+                    <h2 id="credential-title">{t('credentialTitle')}</h2>
+                  </div>
+                  <span className="stellar-credential__live">{t('credentialLive')}</span>
+                </div>
+                <p className="stellar-credential__status">{t('credentialNotIssued')}</p>
+                {selectedGalaxyModules.length === 0 && selectedProfessionalProfiles.length === 0 ? (
+                  <p className="stellar-credential__empty">{t('credentialEmpty')}</p>
+                ) : (
+                  <div className="stellar-credential__selections">
+                    {selectedGalaxyModules.length > 0 && (
+                      <div>
+                        <h3>{t('credentialGalaxies')}</h3>
+                        <ul>
+                          {selectedGalaxyModules.map((module) => (
+                            <li key={module.id}>
+                              <span aria-hidden="true">{module.icon}</span>
+                              {module.title[language]}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                    {selectedProfessionalProfiles.length > 0 && (
+                      <div>
+                        <h3>{t('credentialProfiles')}</h3>
+                        <ul>
+                          {selectedProfessionalProfiles.map((profile) => (
+                            <li key={profile.id}>{profile.label[language]}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </section>
 
-        <p className="threshold__notice" role="status" aria-live="polite">
-          {showAuthNotice ? getMessage(language, 'pending') : ''}
+              <p className="membership-panel__notice">{t('membershipPreviewNotice')}</p>
+              <div className="membership-actions">
+                <button className="threshold__submit" type="submit">
+                  {t('saveMembership')}
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </form>
+          </>
+        )}
+
+        {step === 3 && (
+          <section className="membership-confirmation" aria-live="polite">
+            <p className="membership-panel__step">{t('selectionSummary')}</p>
+            <h1 id="threshold-title">{t('membershipTitle')}</h1>
+            <p className="membership-confirmation__status">{t('membershipSaved')}</p>
+            <h2>{t('galaxiesTitle')}</h2>
+            <ul>
+              {galaxyModules
+                .filter((module) => selectedGalaxies.includes(module.id))
+                .map((module) => (
+                  <li key={module.id}>{module.title[language]}</li>
+                ))}
+            </ul>
+            {selectedProfiles.length > 0 && (
+              <>
+                <h2>{t('professionalsTitle')}</h2>
+                <ul>
+                  {professionalProfiles.map((profile) =>
+                    selectedProfiles.includes(profile.id) ? (
+                      <li key={profile.id}>{profile.label[language]}</li>
+                    ) : null,
+                  )}
+                </ul>
+              </>
+            )}
+            <button className="membership-actions__back" onClick={() => setStep(2)} type="button">
+              {t('editMembership')}
+            </button>
+          </section>
+        )}
+
+        <p className="membership-panel__status" role="status" aria-live="polite">
+          {notice || (storageError ? t('membershipStorageError') : '')}
         </p>
 
         <Link className="threshold__back" href="/">
-          {getMessage(language, 'back')}
-        </Link>
-        <Link className="threshold__back" href="/novedades">
-          {getMessage(language, 'news')}
+          {t('back')}
         </Link>
         <Link className="threshold__explore-preview" href="/inicio">
           {dashboardLabels.explore[language]}
@@ -116,7 +284,7 @@ export default function AccessThresholdPage() {
 
       <footer className="threshold__footer" aria-label="Glass World Studio">
         <span>GWS</span>
-        <p>{getMessage(language, 'tagline')}</p>
+        <p>{t('tagline')}</p>
       </footer>
     </main>
   );
