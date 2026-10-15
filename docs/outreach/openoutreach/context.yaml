@@ -1,0 +1,66 @@
+# Glass World Studio — contexto de prospección para OpenOutreach
+#
+# Este archivo es un espejo legible para humanos. OpenOutreach NO lo lee:
+# la herramienta toma el contexto de la fila SiteConfig (data/db.sqlite3) y lo
+# exporta como OPENOUTFIND_* / OUTSEND_* en cada ejecución.
+# La fuente de verdad son product.md, target.md y signature.txt, aplicados por
+# apply_context.py. Editar aquí y volver a aplicar por script.
+
+project:
+  name: Glass World Studio
+  short_name: GWS
+  description: >-
+    Marketplace Vertical integral para la industria global del vidrio.
+  value_proposition: >-
+    Una plataforma con alma de taller, que se fortalece con tu crecimiento.
+  status: >-
+    Proyecto formalizado; trámite de propiedad intelectual y marca en curso ante el INPI.
+  architecture:
+    galaxies:
+      - Maestros (Creadores/Escuelas)
+      - Comercio (Marketplace/B2B)
+      - Comunidad
+      - Bono Silicato & Envases (Sostenibilidad)
+      - Industria
+      - Materiales/Componentes
+    satellites:
+      - Radar de Oferta y Demanda
+      - Radar de Ingeniería Predictiva (Termia/COE)
+      - Portal de Profesionales (Técnicos/Científicos)
+      - Rincón del Usado GWS
+      - Bóveda del Conocimiento
+
+leader:
+  name: Eduardo Esper
+  role: Fundador
+  email: esper.eduardo@gmail.com
+  phone: "+54 9 385 6 22 84 00"
+  country_code: ar
+
+targets:
+  - id: flecha-1-inversores
+    label: Inversores / Capital semilla y riesgo
+    profiles:
+      - Inversores ángel
+      - Fondos VC con foco en B2B / marketplaces / sostenibilidad / industria
+      - Directivos del sector industrial y vidriero
+    goal: Presentar la oportunidad de inversión y escala regional/internacional.
+  - id: flecha-2-desarrolladores
+    label: Desarrolladores y arquitectos de software
+    profiles:
+      - Desarrolladores full-stack
+      - Ingenieros Node.js / Python
+      - Especialistas en sistemas multi-agente
+      - Arquitectos MCP / IA
+    goal: Sumarse a la construcción de la infraestructura y los enjambres de software.
+  - id: flecha-3-logistica
+    label: Logística y cadena de suministro
+    profiles:
+      - Operadores logísticos
+      - Transporte especializado en carga frágil / insumos industriales
+      - Distribuidores de materia prima y refractarios
+    goal: Alianzas estratégicas para la red de distribución real.
+
+contact_block:
+  email: esper.eduardo@gmail.com
+  whatsapp: "+54 9 385 6 22 84 00"
