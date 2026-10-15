@@ -1,0 +1,136 @@
+{
+  "messages": {
+    "pageTitle": "Glass World Studio — Uma plataforma com alma de oficina, que cresce junto com você.",
+    "artwork": "Arte em vidro",
+    "selectLanguage": "Selecionar idioma",
+    "tagline": "Uma plataforma com alma de oficina, que cresce junto com você.",
+    "continue": "Toque para continuar",
+    "continueLabel": "Toque para acessar o Limiar da Oficina de Cristal",
+    "threshold": "Limiar de acesso",
+    "welcome": "Bem-vindo à Oficina.",
+    "subtitle": "Seu acesso abre a porta para o ecossistema Glass World Studio.",
+    "name": "Nome completo",
+    "email": "Endereço de e-mail",
+    "password": "Senha",
+    "submit": "Cadastrar-se / acessar a oficina",
+    "pending": "A autenticação ainda não está conectada. Seus dados não foram enviados nem salvos.",
+    "back": "Voltar à página inicial",
+    "news": "Novidades"
+  },
+  "dashboard": {
+    "labels": {
+      "title": "O universo do vidro em um só lugar.",
+      "intro": "Explore as galáxias operacionais e os serviços especializados da Glass World Studio.",
+      "galaxySection": "Seis galáxias · núcleo operacional",
+      "satelliteSection": "Cinco satélites · serviços e radares",
+      "openModule": "Explorar módulo",
+      "close": "Fechar",
+      "functions": "Funções principais",
+      "dataStatus": "Dados em tempo real não conectados",
+      "dataExplanation": "A integração de dados MCP do Ruflo ainda não está disponível neste aplicativo. Nenhuma métrica simulada é exibida.",
+      "preview": "Prévia · navegação dos módulos",
+      "explore": "Explorar a interface principal (prévia)",
+      "back": "Voltar ao limiar"
+    },
+    "modules": {
+      "masters": {
+        "title": "Mestres",
+        "description": "O ponto de encontro de quem cria, ensina e preserva o ofício.",
+        "functions": [
+          "Criadores e artistas",
+          "Escolas e ateliês",
+          "Sopradores e vitralistas"
+        ]
+      },
+      "marketplace": {
+        "title": "Marketplace / Comércio",
+        "description": "Uma plataforma comercial vertical que conecta oferta, demanda e produtos.",
+        "functions": [
+          "Lojas e catálogo B2B/B2C",
+          "Licitações",
+          "Produtos artísticos e industriais"
+        ]
+      },
+      "community": {
+        "title": "Comunidade",
+        "description": "Um espaço de encontro para compartilhar conhecimento e experiência técnica.",
+        "functions": [
+          "Rede social do vidro",
+          "Fórum de vidreiros",
+          "Grupos por técnica"
+        ]
+      },
+      "silicate-bonus": {
+        "title": "Bônus Silicato e Embalagens",
+        "description": "Iniciativas para promover circularidade, recuperação e responsabilidade ambiental.",
+        "functions": [
+          "Sustentabilidade e reciclagem",
+          "Pegada de carbono",
+          "Tokenização de incentivos"
+        ]
+      },
+      "industry": {
+        "title": "Indústria",
+        "description": "Ferramentas e conhecimento para operações de vidro em escala industrial.",
+        "functions": [
+          "Produção",
+          "Fornos industriais",
+          "Controle térmico e segurança"
+        ]
+      },
+      "materials": {
+        "title": "Materiais e componentes",
+        "description": "Matérias-primas, insumos e ferramentas para cada processo vidreiro.",
+        "functions": [
+          "Insumos e matérias-primas",
+          "Refratários",
+          "Ferramentas e componentes"
+        ]
+      },
+      "supply-demand-radar": {
+        "title": "Radar de oferta e demanda",
+        "description": "Um ponto de observação de oportunidades, necessidades e pedidos do mercado.",
+        "functions": [
+          "Monitoramento de mercado",
+          "Pedidos e solicitações"
+        ]
+      },
+      "predictive-engineering": {
+        "title": "Radar de engenharia preditiva",
+        "description": "Recursos técnicos para estimar compatibilidade, ciclos térmicos e comportamento do vidro.",
+        "functions": [
+          "Calculadoras COE",
+          "Curvas de recozimento",
+          "IA térmica"
+        ]
+      },
+      "professionals": {
+        "title": "Portal de profissionais",
+        "description": "Um diretório especializado para encontrar profissionais técnicos verificados.",
+        "functions": [
+          "Engenheiros",
+          "Técnicos de processo",
+          "Cientistas e especialistas"
+        ]
+      },
+      "used-gws": {
+        "title": "Cantinho do Usado GWS",
+        "description": "Um espaço para dar nova vida a equipamentos e materiais de trabalho.",
+        "functions": [
+          "Maquinário",
+          "Fornos",
+          "Insumos recondicionados"
+        ]
+      },
+      "knowledge-vault": {
+        "title": "Cofre do conhecimento",
+        "description": "Um arquivo de referência para preservar e compartilhar o conhecimento vidreiro.",
+        "functions": [
+          "Biblioteca técnica",
+          "Patentes e fórmulas",
+          "Históricos e documentação"
+        ]
+      }
+    }
+  }
+}

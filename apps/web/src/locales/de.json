@@ -1,0 +1,136 @@
+{
+  "messages": {
+    "pageTitle": "Glass World Studio — Eine Plattform mit Werkstattseele, die mit Ihnen wächst.",
+    "artwork": "Glaskunst",
+    "selectLanguage": "Sprache auswählen",
+    "tagline": "Eine Plattform mit Werkstattseele, die mit Ihnen wächst.",
+    "continue": "Zum Fortfahren tippen",
+    "continueLabel": "Zum Zugang zur Glaswerkstatt tippen",
+    "threshold": "Zugangsschwelle",
+    "welcome": "Willkommen in der Werkstatt.",
+    "subtitle": "Ihr Zugang öffnet die Tür zum Glass World Studio Ökosystem.",
+    "name": "Vollständiger Name",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "submit": "Registrieren / Werkstatt betreten",
+    "pending": "Die Authentifizierung ist noch nicht verbunden. Ihre Daten wurden weder gesendet noch gespeichert.",
+    "back": "Zurück zur Startseite",
+    "news": "Neuigkeiten"
+  },
+  "dashboard": {
+    "labels": {
+      "title": "Die Welt des Glases an einem Ort.",
+      "intro": "Entdecken Sie die operativen Galaxien und Spezialdienste von Glass World Studio.",
+      "galaxySection": "Sechs Galaxien · operativer Kern",
+      "satelliteSection": "Fünf Satelliten · Dienste und Radare",
+      "openModule": "Modul erkunden",
+      "close": "Schließen",
+      "functions": "Kernfunktionen",
+      "dataStatus": "Live-Daten nicht verbunden",
+      "dataExplanation": "Die Ruflo-MCP-Datenintegration ist in dieser App noch nicht verfügbar. Es werden keine simulierten Kennzahlen angezeigt.",
+      "preview": "Vorschau · Modulnavigation",
+      "explore": "Hauptoberfläche erkunden (Vorschau)",
+      "back": "Zurück zur Zugangsschwelle"
+    },
+    "modules": {
+      "masters": {
+        "title": "Meister",
+        "description": "Der Treffpunkt für Menschen, die das Handwerk gestalten, lehren und bewahren.",
+        "functions": [
+          "Kreative und Künstler",
+          "Schulen und Werkstätten",
+          "Glasbläser und Glasmaler"
+        ]
+      },
+      "marketplace": {
+        "title": "Marketplace / Handel",
+        "description": "Eine vertikale Handelsplattform, die Angebot, Nachfrage und Produkte verbindet.",
+        "functions": [
+          "Shops und B2B/B2C-Katalog",
+          "Ausschreibungen",
+          "Künstlerische und industrielle Produkte"
+        ]
+      },
+      "community": {
+        "title": "Community",
+        "description": "Ein Ort zum Austausch von Wissen und technischer Erfahrung.",
+        "functions": [
+          "Glas-Community-Netzwerk",
+          "Glasmacher-Forum",
+          "Gruppen nach Technik"
+        ]
+      },
+      "silicate-bonus": {
+        "title": "Silikat-Bonus und Verpackungen",
+        "description": "Initiativen für Kreislaufwirtschaft, Rückgewinnung und Umweltverantwortung.",
+        "functions": [
+          "Nachhaltigkeit und Recycling",
+          "CO₂-Bilanz",
+          "Tokenisierung von Anreizen"
+        ]
+      },
+      "industry": {
+        "title": "Industrie",
+        "description": "Werkzeuge und Wissen für die Glasproduktion im industriellen Maßstab.",
+        "functions": [
+          "Produktion",
+          "Industrieöfen",
+          "Temperaturregelung und Sicherheit"
+        ]
+      },
+      "materials": {
+        "title": "Materialien und Komponenten",
+        "description": "Rohstoffe, Verbrauchsmaterialien und Werkzeuge für jeden Glasprozess.",
+        "functions": [
+          "Betriebsstoffe und Rohmaterialien",
+          "Feuerfestmaterialien",
+          "Werkzeuge und Komponenten"
+        ]
+      },
+      "supply-demand-radar": {
+        "title": "Angebots- und Nachfrageradar",
+        "description": "Ein Überblick über Marktchancen, Bedarf und Anfragen.",
+        "functions": [
+          "Marktbeobachtung",
+          "Bestellungen und Anfragen"
+        ]
+      },
+      "predictive-engineering": {
+        "title": "Radar für Predictive Engineering",
+        "description": "Technische Ressourcen zur Einschätzung von Kompatibilität, Temperaturzyklen und Glasverhalten.",
+        "functions": [
+          "COE-Rechner",
+          "Kühlkurven",
+          "Thermische KI"
+        ]
+      },
+      "professionals": {
+        "title": "Fachkräfteportal",
+        "description": "Ein Fachverzeichnis für verifizierte technische Profile.",
+        "functions": [
+          "Ingenieure",
+          "Prozesstechniker",
+          "Wissenschaftler und Spezialisten"
+        ]
+      },
+      "used-gws": {
+        "title": "GWS Gebraucht-Ecke",
+        "description": "Ein Ort, um Geräten und Werkstattmaterialien ein zweites Leben zu geben.",
+        "functions": [
+          "Maschinen",
+          "Öfen",
+          "Aufbereitete Materialien"
+        ]
+      },
+      "knowledge-vault": {
+        "title": "Wissensarchiv",
+        "description": "Ein Referenzarchiv zur Bewahrung und Weitergabe des Glaswissens.",
+        "functions": [
+          "Technische Bibliothek",
+          "Patente und Rezepturen",
+          "Historische Aufzeichnungen und Dokumentation"
+        ]
+      }
+    }
+  }
+}

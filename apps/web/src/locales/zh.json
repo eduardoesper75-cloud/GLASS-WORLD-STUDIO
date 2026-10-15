@@ -1,0 +1,136 @@
+{
+  "messages": {
+    "pageTitle": "Glass World Studio — 一个拥有工坊灵魂、与你共同成长的平台。",
+    "artwork": "玻璃艺术",
+    "selectLanguage": "选择语言",
+    "tagline": "一个拥有工坊灵魂、与你共同成长的平台。",
+    "continue": "轻触以继续",
+    "continueLabel": "轻触进入玻璃工坊入口",
+    "threshold": "访问入口",
+    "welcome": "欢迎来到工坊。",
+    "subtitle": "登录后即可进入 Glass World Studio 生态系统。",
+    "name": "姓名",
+    "email": "电子邮箱",
+    "password": "密码",
+    "submit": "注册 / 进入工坊",
+    "pending": "身份验证尚未接入。您的信息尚未发送或保存。",
+    "back": "返回欢迎页",
+    "news": "新闻"
+  },
+  "dashboard": {
+    "labels": {
+      "title": "玻璃世界，尽在一处。",
+      "intro": "探索 Glass World Studio 的核心星系与专业服务。",
+      "galaxySection": "六大星系 · 核心运营",
+      "satelliteSection": "五大卫星 · 服务与雷达",
+      "openModule": "探索模块",
+      "close": "关闭",
+      "functions": "核心功能",
+      "dataStatus": "实时数据尚未连接",
+      "dataExplanation": "此应用尚未接入 Ruflo MCP 数据，当前不显示模拟指标。",
+      "preview": "预览 · 模块导航",
+      "explore": "浏览主界面（预览）",
+      "back": "返回入口"
+    },
+    "modules": {
+      "masters": {
+        "title": "大师",
+        "description": "汇聚创作、教学与传承玻璃工艺的人们。",
+        "functions": [
+          "创作者与艺术家",
+          "学校与工作室",
+          "吹制玻璃与彩绘玻璃艺术家"
+        ]
+      },
+      "marketplace": {
+        "title": "市场 / 贸易",
+        "description": "连接供需与产品的垂直行业交易平台。",
+        "functions": [
+          "商店与 B2B/B2C 产品目录",
+          "招标",
+          "艺术与工业产品"
+        ]
+      },
+      "community": {
+        "title": "社区",
+        "description": "交流专业知识与技术经验的社区空间。",
+        "functions": [
+          "玻璃行业社交网络",
+          "玻璃工匠论坛",
+          "按工艺划分的兴趣组"
+        ]
+      },
+      "silicate-bonus": {
+        "title": "硅酸盐激励与包装",
+        "description": "推动循环利用、回收与环境责任的计划。",
+        "functions": [
+          "可持续发展与回收",
+          "碳足迹",
+          "激励机制代币化"
+        ]
+      },
+      "industry": {
+        "title": "工业",
+        "description": "面向工业规模玻璃生产的工具与知识。",
+        "functions": [
+          "生产",
+          "工业窑炉",
+          "热工控制与安全"
+        ]
+      },
+      "materials": {
+        "title": "材料与组件",
+        "description": "覆盖各类玻璃工艺的原材料、耗材与工具。",
+        "functions": [
+          "耗材与原材料",
+          "耐火材料",
+          "工具与组件"
+        ]
+      },
+      "supply-demand-radar": {
+        "title": "供需雷达",
+        "description": "观察市场机会、需求与采购请求。",
+        "functions": [
+          "市场监测",
+          "订单与需求"
+        ]
+      },
+      "predictive-engineering": {
+        "title": "预测工程雷达",
+        "description": "用于评估兼容性、热循环与玻璃性能的技术资源。",
+        "functions": [
+          "COE 计算器",
+          "退火曲线",
+          "热工 AI"
+        ]
+      },
+      "professionals": {
+        "title": "专业人士门户",
+        "description": "查找经过验证的技术专业人才。",
+        "functions": [
+          "工程师",
+          "工艺技术人员",
+          "科学家与专家"
+        ]
+      },
+      "used-gws": {
+        "title": "GWS 二手专区",
+        "description": "让设备与工作材料获得新的使用机会。",
+        "functions": [
+          "机械设备",
+          "窑炉",
+          "翻新耗材"
+        ]
+      },
+      "knowledge-vault": {
+        "title": "知识宝库",
+        "description": "保存与分享玻璃工艺知识的参考档案库。",
+        "functions": [
+          "技术资料库",
+          "专利与配方",
+          "历史记录与文档"
+        ]
+      }
+    }
+  }
+}

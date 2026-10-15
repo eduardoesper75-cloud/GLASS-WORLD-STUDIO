@@ -1,0 +1,136 @@
+{
+  "messages": {
+    "pageTitle": "Glass World Studio — Plataforma con alma de taller, que se fortalece con tu crecimiento.",
+    "artwork": "Arte del vidrio",
+    "selectLanguage": "Seleccionar idioma",
+    "tagline": "Plataforma con alma de taller, que se fortalece con tu crecimiento",
+    "continue": "Toca para continuar",
+    "continueLabel": "Toca para continuar al Umbral de acceso al Taller de Cristal",
+    "threshold": "Umbral de acceso",
+    "welcome": "Bienvenido al Taller.",
+    "subtitle": "Tu acceso abre la puerta al ecosistema de Glass World Studio.",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "submit": "Registrarse / acceder al taller",
+    "pending": "La autenticación todavía no está conectada. Tus datos no se han enviado ni guardado.",
+    "back": "Volver a la portada",
+    "news": "Novedades"
+  },
+  "dashboard": {
+    "labels": {
+      "title": "El universo del vidrio, en un solo lugar.",
+      "intro": "Explora las galaxias operativas y los servicios especializados de Glass World Studio.",
+      "galaxySection": "Seis galaxias · núcleo operativo",
+      "satelliteSection": "Cinco satélites · servicios y radares",
+      "openModule": "Explorar módulo",
+      "close": "Cerrar",
+      "functions": "Funciones clave",
+      "dataStatus": "Datos en tiempo real no conectados",
+      "dataExplanation": "La integración de datos MCP de Ruflo aún no está disponible en esta aplicación. No se muestran métricas simuladas.",
+      "preview": "Vista previa · navegación de módulos",
+      "explore": "Explorar la interfaz principal (vista previa)",
+      "back": "Volver al Umbral"
+    },
+    "modules": {
+      "masters": {
+        "title": "Maestros",
+        "description": "El punto de encuentro para quienes crean, enseñan y preservan el oficio.",
+        "functions": [
+          "Creadores y artistas",
+          "Escuelas y talleres",
+          "Sopladores y vitralistas"
+        ]
+      },
+      "marketplace": {
+        "title": "Marketplace / Comercio",
+        "description": "Una infraestructura comercial vertical para conectar oferta, demanda y producto.",
+        "functions": [
+          "Tiendas y catálogo B2B/B2C",
+          "Licitaciones",
+          "Productos artísticos e industriales"
+        ]
+      },
+      "community": {
+        "title": "Comunidad",
+        "description": "Un espacio de encuentro para compartir conocimiento y experiencia técnica.",
+        "functions": [
+          "Red social del vidrio",
+          "Foro de cristaleros",
+          "Grupos por técnica"
+        ]
+      },
+      "silicate-bonus": {
+        "title": "Bono Silicato y Envases",
+        "description": "Iniciativas para impulsar circularidad, recuperación y responsabilidad ambiental.",
+        "functions": [
+          "Sostenibilidad y reciclaje",
+          "Huella de carbono",
+          "Tokenización de incentivos"
+        ]
+      },
+      "industry": {
+        "title": "Industria",
+        "description": "Herramientas y conocimiento para operaciones de vidrio a escala industrial.",
+        "functions": [
+          "Producción",
+          "Hornos industriales",
+          "Control térmico y seguridad"
+        ]
+      },
+      "materials": {
+        "title": "Materiales y Componentes",
+        "description": "El universo de materias primas, insumos y herramientas para cada proceso.",
+        "functions": [
+          "Insumos y materia prima",
+          "Refractarios",
+          "Herramientas y componentes"
+        ]
+      },
+      "supply-demand-radar": {
+        "title": "Radar de Oferta y Demanda",
+        "description": "Un punto de observación para oportunidades, necesidades y solicitudes del mercado.",
+        "functions": [
+          "Monitoreo de mercado",
+          "Pedidos y solicitudes"
+        ]
+      },
+      "predictive-engineering": {
+        "title": "Radar de Ingeniería Predictiva",
+        "description": "Recursos técnicos para estimar compatibilidad, ciclos térmicos y comportamiento del vidrio.",
+        "functions": [
+          "Calculadoras COE",
+          "Curvas de recocido",
+          "IA Térmica"
+        ]
+      },
+      "professionals": {
+        "title": "Portal de Profesionales",
+        "description": "Directorio especializado para encontrar perfiles técnicos verificados.",
+        "functions": [
+          "Ingenieros",
+          "Técnicos de proceso",
+          "Científicos y especialistas"
+        ]
+      },
+      "used-gws": {
+        "title": "Rincón del Usado GWS",
+        "description": "Un espacio para dar nueva vida a equipos y materiales de trabajo.",
+        "functions": [
+          "Maquinaria",
+          "Hornos",
+          "Insumos reacondicionados"
+        ]
+      },
+      "knowledge-vault": {
+        "title": "Bóveda del Conocimiento",
+        "description": "Un archivo de referencia para preservar y compartir el saber del vidrio.",
+        "functions": [
+          "Biblioteca técnica",
+          "Patentes y fórmulas",
+          "Históricos y documentación"
+        ]
+      }
+    }
+  }
+}

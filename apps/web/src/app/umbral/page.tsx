@@ -5,6 +5,7 @@ import { useState, type FormEvent } from 'react';
 
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { useLanguage } from '@/components/LanguageProvider';
+import { dashboardLabels } from '@/lib/dashboard';
 import { getMessage } from '@/lib/i18n';
 
 export default function AccessThresholdPage() {
@@ -104,6 +105,12 @@ export default function AccessThresholdPage() {
 
         <Link className="threshold__back" href="/">
           {getMessage(language, 'back')}
+        </Link>
+        <Link className="threshold__back" href="/novedades">
+          {getMessage(language, 'news')}
+        </Link>
+        <Link className="threshold__explore-preview" href="/inicio">
+          {dashboardLabels.explore[language]}
         </Link>
       </section>
 

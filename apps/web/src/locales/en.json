@@ -1,0 +1,136 @@
+{
+  "messages": {
+    "pageTitle": "Glass World Studio — A platform with the soul of a workshop, growing stronger with you.",
+    "artwork": "Glass Art",
+    "selectLanguage": "Select language",
+    "tagline": "A platform with the soul of a workshop, growing stronger with you.",
+    "continue": "Touch to continue",
+    "continueLabel": "Touch to continue to the Glass Workshop Access Threshold",
+    "threshold": "Access Threshold",
+    "welcome": "Welcome to the Workshop.",
+    "subtitle": "Your access opens the door to the Glass World Studio ecosystem.",
+    "name": "Full name",
+    "email": "Email address",
+    "password": "Password",
+    "submit": "Register / enter the workshop",
+    "pending": "Authentication is not connected yet. Your information has not been sent or saved.",
+    "back": "Return to the welcome page",
+    "news": "News"
+  },
+  "dashboard": {
+    "labels": {
+      "title": "The world of glass, all in one place.",
+      "intro": "Explore the operational galaxies and specialized services of Glass World Studio.",
+      "galaxySection": "Six galaxies · operational core",
+      "satelliteSection": "Five satellites · services and radars",
+      "openModule": "Explore module",
+      "close": "Close",
+      "functions": "Key functions",
+      "dataStatus": "Live data not connected",
+      "dataExplanation": "Ruflo MCP data integration is not available in this app yet. No simulated metrics are shown.",
+      "preview": "Preview · module navigation",
+      "explore": "Explore the main interface (preview)",
+      "back": "Back to the Threshold"
+    },
+    "modules": {
+      "masters": {
+        "title": "Masters",
+        "description": "A meeting place for the people who create, teach, and preserve the craft.",
+        "functions": [
+          "Creators and artists",
+          "Schools and studios",
+          "Glassblowers and stained-glass artists"
+        ]
+      },
+      "marketplace": {
+        "title": "Marketplace / Trade",
+        "description": "A vertical commerce platform connecting supply, demand, and products.",
+        "functions": [
+          "Stores and B2B/B2C catalog",
+          "Tenders",
+          "Artistic and industrial products"
+        ]
+      },
+      "community": {
+        "title": "Community",
+        "description": "A place to connect and share knowledge and technical experience.",
+        "functions": [
+          "Glass social network",
+          "Glassmakers’ forum",
+          "Technique-based groups"
+        ]
+      },
+      "silicate-bonus": {
+        "title": "Silicate Bond and Packaging",
+        "description": "Initiatives that advance circularity, recovery, and environmental responsibility.",
+        "functions": [
+          "Sustainability and recycling",
+          "Carbon footprint",
+          "Incentive tokenization"
+        ]
+      },
+      "industry": {
+        "title": "Industry",
+        "description": "Tools and knowledge for industrial-scale glass operations.",
+        "functions": [
+          "Production",
+          "Industrial furnaces",
+          "Thermal control and safety"
+        ]
+      },
+      "materials": {
+        "title": "Materials and Components",
+        "description": "Materials, supplies, and tools for every glassmaking process.",
+        "functions": [
+          "Supplies and raw materials",
+          "Refractories",
+          "Tools and components"
+        ]
+      },
+      "supply-demand-radar": {
+        "title": "Supply and Demand Radar",
+        "description": "A vantage point for market opportunities, needs, and requests.",
+        "functions": [
+          "Market monitoring",
+          "Orders and requests"
+        ]
+      },
+      "predictive-engineering": {
+        "title": "Predictive Engineering Radar",
+        "description": "Technical resources for estimating compatibility, thermal cycles, and glass behavior.",
+        "functions": [
+          "COE calculators",
+          "Annealing schedules",
+          "Thermal AI"
+        ]
+      },
+      "professionals": {
+        "title": "Professional Portal",
+        "description": "A specialist directory for finding verified technical professionals.",
+        "functions": [
+          "Engineers",
+          "Process technicians",
+          "Scientists and specialists"
+        ]
+      },
+      "used-gws": {
+        "title": "GWS Pre-Owned Corner",
+        "description": "A place to give equipment and workshop materials a second life.",
+        "functions": [
+          "Machinery",
+          "Furnaces",
+          "Refurbished supplies"
+        ]
+      },
+      "knowledge-vault": {
+        "title": "Knowledge Vault",
+        "description": "A reference archive for preserving and sharing glassmaking knowledge.",
+        "functions": [
+          "Technical library",
+          "Patents and formulas",
+          "Archives and documentation"
+        ]
+      }
+    }
+  }
+}

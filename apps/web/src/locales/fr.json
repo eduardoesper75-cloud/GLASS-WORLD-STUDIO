@@ -1,0 +1,136 @@
+{
+  "messages": {
+    "pageTitle": "Glass World Studio — Une plateforme avec l'âme d'un atelier, qui grandit avec vous.",
+    "artwork": "Art du verre",
+    "selectLanguage": "Choisir la langue",
+    "tagline": "Une plateforme avec l'âme d'un atelier, qui grandit avec vous.",
+    "continue": "Touchez pour continuer",
+    "continueLabel": "Touchez pour accéder au seuil de l'Atelier de Cristal",
+    "threshold": "Seuil d'accès",
+    "welcome": "Bienvenue à l'Atelier.",
+    "subtitle": "Votre accès ouvre la porte à l'écosystème Glass World Studio.",
+    "name": "Nom complet",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "submit": "S'inscrire / accéder à l'atelier",
+    "pending": "L'authentification n'est pas encore connectée. Vos informations n'ont pas été envoyées ni enregistrées.",
+    "back": "Retour à la page d'accueil",
+    "news": "Actualités"
+  },
+  "dashboard": {
+    "labels": {
+      "title": "Le monde du verre, réuni en un seul lieu.",
+      "intro": "Explorez les galaxies opérationnelles et les services spécialisés de Glass World Studio.",
+      "galaxySection": "Six galaxies · noyau opérationnel",
+      "satelliteSection": "Cinq satellites · services et radars",
+      "openModule": "Explorer le module",
+      "close": "Fermer",
+      "functions": "Fonctions clés",
+      "dataStatus": "Données en direct non connectées",
+      "dataExplanation": "L'intégration des données MCP Ruflo n'est pas encore disponible dans cette application. Aucune métrique simulée n'est affichée.",
+      "preview": "Aperçu · navigation des modules",
+      "explore": "Explorer l'interface principale (aperçu)",
+      "back": "Retour au seuil d'accès"
+    },
+    "modules": {
+      "masters": {
+        "title": "Maîtres",
+        "description": "Le lieu de rencontre de ceux qui créent, enseignent et préservent le métier.",
+        "functions": [
+          "Créateurs et artistes",
+          "Écoles et ateliers",
+          "Souffleurs et maîtres verriers"
+        ]
+      },
+      "marketplace": {
+        "title": "Marketplace / Commerce",
+        "description": "Une plateforme commerciale verticale reliant offre, demande et produits.",
+        "functions": [
+          "Boutiques et catalogue B2B/B2C",
+          "Appels d’offres",
+          "Produits artistiques et industriels"
+        ]
+      },
+      "community": {
+        "title": "Communauté",
+        "description": "Un espace de rencontre pour partager savoir et expérience technique.",
+        "functions": [
+          "Réseau social du verre",
+          "Forum des verriers",
+          "Groupes par technique"
+        ]
+      },
+      "silicate-bonus": {
+        "title": "Obligation Silicate et Emballages",
+        "description": "Des initiatives pour promouvoir circularité, récupération et responsabilité environnementale.",
+        "functions": [
+          "Durabilité et recyclage",
+          "Empreinte carbone",
+          "Tokenisation des incitations"
+        ]
+      },
+      "industry": {
+        "title": "Industrie",
+        "description": "Outils et savoir-faire pour les opérations verrières à l’échelle industrielle.",
+        "functions": [
+          "Production",
+          "Fours industriels",
+          "Contrôle thermique et sécurité"
+        ]
+      },
+      "materials": {
+        "title": "Matériaux et composants",
+        "description": "Matières premières, fournitures et outils pour chaque procédé verrier.",
+        "functions": [
+          "Fournitures et matières premières",
+          "Réfractaires",
+          "Outils et composants"
+        ]
+      },
+      "supply-demand-radar": {
+        "title": "Radar de l’offre et de la demande",
+        "description": "Un poste d’observation des opportunités, besoins et demandes du marché.",
+        "functions": [
+          "Veille du marché",
+          "Commandes et demandes"
+        ]
+      },
+      "predictive-engineering": {
+        "title": "Radar d’ingénierie prédictive",
+        "description": "Ressources techniques pour estimer compatibilité, cycles thermiques et comportement du verre.",
+        "functions": [
+          "Calculateurs COE",
+          "Courbes de recuisson",
+          "IA thermique"
+        ]
+      },
+      "professionals": {
+        "title": "Portail des professionnels",
+        "description": "Un répertoire spécialisé de professionnels techniques vérifiés.",
+        "functions": [
+          "Ingénieurs",
+          "Techniciens de procédés",
+          "Scientifiques et spécialistes"
+        ]
+      },
+      "used-gws": {
+        "title": "Le coin de l’occasion GWS",
+        "description": "Un espace pour offrir une nouvelle vie aux équipements et matériaux d’atelier.",
+        "functions": [
+          "Machines",
+          "Fours",
+          "Fournitures reconditionnées"
+        ]
+      },
+      "knowledge-vault": {
+        "title": "Coffre du savoir",
+        "description": "Une archive de référence pour préserver et partager le savoir verrier.",
+        "functions": [
+          "Bibliothèque technique",
+          "Brevets et formules",
+          "Archives et documentation"
+        ]
+      }
+    }
+  }
+}

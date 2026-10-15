@@ -1,0 +1,136 @@
+{
+  "messages": {
+    "pageTitle": "Glass World Studio — Una piattaforma con l'anima di un laboratorio, che cresce con te.",
+    "artwork": "Arte del vetro",
+    "selectLanguage": "Seleziona la lingua",
+    "tagline": "Una piattaforma con l'anima di un laboratorio, che cresce con te.",
+    "continue": "Tocca per continuare",
+    "continueLabel": "Tocca per accedere alla soglia dell'Officina del Vetro",
+    "threshold": "Soglia di accesso",
+    "welcome": "Benvenuto nell'Officina.",
+    "subtitle": "Il tuo accesso apre le porte all'ecosistema Glass World Studio.",
+    "name": "Nome completo",
+    "email": "Indirizzo e-mail",
+    "password": "Password",
+    "submit": "Registrati / accedi all'officina",
+    "pending": "L'autenticazione non è ancora collegata. I tuoi dati non sono stati inviati né salvati.",
+    "back": "Torna alla pagina iniziale",
+    "news": "Novità"
+  },
+  "dashboard": {
+    "labels": {
+      "title": "Il mondo del vetro, tutto in un unico luogo.",
+      "intro": "Esplora le galassie operative e i servizi specializzati di Glass World Studio.",
+      "galaxySection": "Sei galassie · nucleo operativo",
+      "satelliteSection": "Cinque satelliti · servizi e radar",
+      "openModule": "Esplora modulo",
+      "close": "Chiudi",
+      "functions": "Funzioni principali",
+      "dataStatus": "Dati in tempo reale non collegati",
+      "dataExplanation": "L'integrazione dei dati MCP Ruflo non è ancora disponibile in questa app. Non vengono mostrate metriche simulate.",
+      "preview": "Anteprima · navigazione dei moduli",
+      "explore": "Esplora l’interfaccia principale (anteprima)",
+      "back": "Torna alla soglia"
+    },
+    "modules": {
+      "masters": {
+        "title": "Maestri",
+        "description": "Il punto di incontro per chi crea, insegna e custodisce il mestiere.",
+        "functions": [
+          "Creatori e artisti",
+          "Scuole e laboratori",
+          "Soffiatori e maestri vetrai"
+        ]
+      },
+      "marketplace": {
+        "title": "Marketplace / Commercio",
+        "description": "Una piattaforma commerciale verticale che collega offerta, domanda e prodotti.",
+        "functions": [
+          "Negozi e catalogo B2B/B2C",
+          "Gare d’appalto",
+          "Prodotti artistici e industriali"
+        ]
+      },
+      "community": {
+        "title": "Comunità",
+        "description": "Uno spazio di incontro per condividere conoscenze ed esperienza tecnica.",
+        "functions": [
+          "Social network del vetro",
+          "Forum dei vetrai",
+          "Gruppi per tecnica"
+        ]
+      },
+      "silicate-bonus": {
+        "title": "Bono Silicato e Imballaggi",
+        "description": "Iniziative per promuovere circolarità, recupero e responsabilità ambientale.",
+        "functions": [
+          "Sostenibilità e riciclo",
+          "Impronta di carbonio",
+          "Tokenizzazione degli incentivi"
+        ]
+      },
+      "industry": {
+        "title": "Industria",
+        "description": "Strumenti e conoscenze per le lavorazioni del vetro su scala industriale.",
+        "functions": [
+          "Produzione",
+          "Forni industriali",
+          "Controllo termico e sicurezza"
+        ]
+      },
+      "materials": {
+        "title": "Materiali e componenti",
+        "description": "Materie prime, forniture e strumenti per ogni processo vetrario.",
+        "functions": [
+          "Forniture e materie prime",
+          "Refrattari",
+          "Strumenti e componenti"
+        ]
+      },
+      "supply-demand-radar": {
+        "title": "Radar di offerta e domanda",
+        "description": "Un punto di osservazione per opportunità, esigenze e richieste del mercato.",
+        "functions": [
+          "Monitoraggio del mercato",
+          "Ordini e richieste"
+        ]
+      },
+      "predictive-engineering": {
+        "title": "Radar di ingegneria predittiva",
+        "description": "Risorse tecniche per stimare compatibilità, cicli termici e comportamento del vetro.",
+        "functions": [
+          "Calcolatori COE",
+          "Curve di ricottura",
+          "IA termica"
+        ]
+      },
+      "professionals": {
+        "title": "Portale dei professionisti",
+        "description": "Un elenco specializzato di professionisti tecnici verificati.",
+        "functions": [
+          "Ingegneri",
+          "Tecnici di processo",
+          "Scienziati e specialisti"
+        ]
+      },
+      "used-gws": {
+        "title": "Angolo dell’usato GWS",
+        "description": "Uno spazio per dare nuova vita ad attrezzature e materiali di laboratorio.",
+        "functions": [
+          "Macchinari",
+          "Forni",
+          "Forniture ricondizionate"
+        ]
+      },
+      "knowledge-vault": {
+        "title": "Scrigno della conoscenza",
+        "description": "Un archivio di riferimento per conservare e condividere il sapere vetrario.",
+        "functions": [
+          "Biblioteca tecnica",
+          "Brevetti e formule",
+          "Archivi e documentazione"
+        ]
+      }
+    }
+  }
+}
