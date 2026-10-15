@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 
 import { AnnouncementView } from '@/components/AnnouncementView';
 import { announcements, getAnnouncement } from '@/lib/announcements';
-import { site } from '@/lib/site';
 
 type AnnouncementPageProps = {
   params: Promise<{ slug: string }>;
@@ -18,11 +17,11 @@ export async function generateMetadata({ params }: AnnouncementPageProps): Promi
   const item = getAnnouncement(slug);
 
   if (!item) {
-    return { title: `Novedades · ${site.shortName}` };
+    return { title: 'Novedades' };
   }
 
   return {
-    title: `${item.title} · ${site.shortName}`,
+    title: item.title,
     description: item.lead[0],
   };
 }
