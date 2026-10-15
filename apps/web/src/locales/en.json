@@ -15,7 +15,12 @@
     "submit": "Register / enter the workshop",
     "pending": "Authentication is not connected yet. Your information has not been sent or saved.",
     "back": "Return to the welcome page",
-    "news": "News"
+    "news": "News",
+    "newsEyebrow": "Press room · Glass World Studio",
+    "newsIntro": "Glass World Studio communication trilogy: relaunch, strategic alliances, and the alliance model.",
+    "newsRead": "Read announcement",
+    "newsAll": "All news",
+    "newsBack": "Back to home"
   },
   "dashboard": {
     "labels": {

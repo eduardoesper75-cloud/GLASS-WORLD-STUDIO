@@ -15,7 +15,12 @@
     "submit": "Registrieren / Werkstatt betreten",
     "pending": "Die Authentifizierung ist noch nicht verbunden. Ihre Daten wurden weder gesendet noch gespeichert.",
     "back": "Zurück zur Startseite",
-    "news": "Neuigkeiten"
+    "news": "Neuigkeiten",
+    "newsEyebrow": "Presseraum · Glass World Studio",
+    "newsIntro": "Mitteilungs-Trilogie von Glass World Studio: Rückkehr, strategische Allianzen und Allianzmodell.",
+    "newsRead": "Mitteilung lesen",
+    "newsAll": "Alle Neuigkeiten",
+    "newsBack": "Zurück zur Startseite"
   },
   "dashboard": {
     "labels": {

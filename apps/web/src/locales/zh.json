@@ -15,7 +15,12 @@
     "submit": "注册 / 进入工坊",
     "pending": "身份验证尚未接入。您的信息尚未发送或保存。",
     "back": "返回欢迎页",
-    "news": "新闻"
+    "news": "新闻",
+    "newsEyebrow": "新闻中心 · Glass World Studio",
+    "newsIntro": "Glass World Studio 三部曲公告：回归、战略联盟与联盟模式。",
+    "newsRead": "阅读公告",
+    "newsAll": "全部新闻",
+    "newsBack": "返回首页"
   },
   "dashboard": {
     "labels": {

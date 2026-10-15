@@ -15,7 +15,12 @@
     "submit": "Registrati / accedi all'officina",
     "pending": "L'autenticazione non è ancora collegata. I tuoi dati non sono stati inviati né salvati.",
     "back": "Torna alla pagina iniziale",
-    "news": "Novità"
+    "news": "Novità",
+    "newsEyebrow": "Sala stampa · Glass World Studio",
+    "newsIntro": "Trilogia di comunicati di Glass World Studio: ritorno, alleanze strategiche e modello di alleanza.",
+    "newsRead": "Leggi il comunicato",
+    "newsAll": "Tutte le novità",
+    "newsBack": "Torna alla home"
   },
   "dashboard": {
     "labels": {

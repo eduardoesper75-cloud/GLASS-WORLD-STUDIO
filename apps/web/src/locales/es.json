@@ -15,7 +15,12 @@
     "submit": "Registrarse / acceder al taller",
     "pending": "La autenticación todavía no está conectada. Tus datos no se han enviado ni guardado.",
     "back": "Volver a la portada",
-    "news": "Novedades"
+    "news": "Novedades",
+    "newsEyebrow": "Sala de prensa · Glass World Studio",
+    "newsIntro": "Trilogía comunicacional de Glass World Studio: reaparición, alianzas estratégicas y modelo de alianza.",
+    "newsRead": "Leer comunicado",
+    "newsAll": "Todas las novedades",
+    "newsBack": "Volver al inicio"
   },
   "dashboard": {
     "labels": {

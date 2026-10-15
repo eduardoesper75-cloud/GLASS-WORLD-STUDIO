@@ -138,7 +138,65 @@ export const alianzas: Announcement = {
   farewell: 'Un saludo cordial,',
 };
 
-export const announcements: Announcement[] = [alianzas, reaparicion];
+export const modeloDeAlianza: Announcement = {
+  slug: 'modelo-de-alianza',
+  eyebrow: 'Comunicado Oficial · Glass World Studio',
+  title: 'Qué necesitamos y cómo funciona nuestra alianza estratégica',
+  publishedAt: '2026-10-15',
+  effective: 'Fecha de publicación: 15 de octubre de 2026',
+  author: {
+    name: 'Eduardo Esper',
+    role: 'Fundador · Glass World Studio',
+    contact: 'esper.eduardo@gmail.com',
+  },
+  lead: [
+    'Hola a todos, soy Eduardo Esper.',
+    'Ante el entusiasmo y el interés generado por la reaparición de Glass World Studio, quiero ser 100% concreto y transparente sobre cuál es mi objetivo y qué necesitamos exactamente para materializar esta plataforma histórica.',
+    'Glass World Studio no busca donaciones, financiamiento pasivo ni validaciones a medias. Proponemos alianzas estratégicas genuinas donde cada actor cumple un rol vital en la materialización del proyecto:',
+  ],
+  sections: [
+    {
+      id: 'desarrolladores',
+      heading: 'Para los Desarrolladores y Arquitectos de Software',
+      bullets: [
+        'Lo que necesitamos: tu talento, conocimiento y capacidad técnica para desarrollar e integrar íntegramente la plataforma, los 5 Satélites predictivos y la arquitectura multi-agente.',
+        'La propuesta: formar parte del equipo fundador del núcleo tecnológico de la plataforma vertical más grande de la industria del vidrio.',
+      ],
+      paragraphs: [],
+    },
+    {
+      id: 'inversores',
+      heading: 'Para los Inversores y Capital de Riesgo',
+      bullets: [
+        'Lo que necesitamos: tu capacidad financiera para financiar directamente el desarrollo técnico. No buscamos que nos transfieras fondos a ciegas; buscamos inversores que respalden y liquiden el trabajo de los desarrolladores para construir la infraestructura física y digital.',
+        'La propuesta: participación estratégica y equity en un modelo de negocio B2B de alcance global con mercado cautivo.',
+      ],
+      paragraphs: [],
+    },
+    {
+      id: 'logistica',
+      heading: 'Para las Empresas de Logística y Cadena de Suministro',
+      bullets: [
+        'Lo que necesitamos: tu infraestructura y capacidad operativa para el transporte de insumos, materiales y maquinaria.',
+        'La propuesta: una vez conformada la plataforma y con la adhesión activa de comercios, maestros e industrias, la red logística será la encargada exclusiva de mover los paquetes, insumos y cargas a nivel global.',
+      ],
+      paragraphs: [],
+    },
+    {
+      id: 'modelo',
+      heading: 'El modelo, en una frase',
+      paragraphs: [
+        'El modelo es claro: los desarrolladores construyen, los inversores financian ese desarrollo y la logística mueve la industria. Nadie reemplaza a nadie; las tres piezas se potencian mutuamente.',
+        'Estamos construyendo una solución definitiva para un sector milenario.',
+      ],
+    },
+  ],
+  closing: 'Glass World Studio. Una plataforma con alma de taller, que se fortalece con tu crecimiento.',
+  farewell: 'Un saludo cordial,',
+};
+
+// La trilogía comunicacional, en su orden de lectura: reaparición, alianzas y modelo de alianza.
+export const announcements: Announcement[] = [reaparicion, alianzas, modeloDeAlianza];
 
 export function getAnnouncement(slug: string): Announcement | undefined {
   return announcements.find((item) => item.slug === slug);

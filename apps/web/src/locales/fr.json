@@ -15,7 +15,12 @@
     "submit": "S'inscrire / accéder à l'atelier",
     "pending": "L'authentification n'est pas encore connectée. Vos informations n'ont pas été envoyées ni enregistrées.",
     "back": "Retour à la page d'accueil",
-    "news": "Actualités"
+    "news": "Actualités",
+    "newsEyebrow": "Salle de presse · Glass World Studio",
+    "newsIntro": "Trilogie de communiqués de Glass World Studio : réapparition, alliances stratégiques et modèle d'alliance.",
+    "newsRead": "Lire le communiqué",
+    "newsAll": "Toutes les actualités",
+    "newsBack": "Retour à l'accueil"
   },
   "dashboard": {
     "labels": {
