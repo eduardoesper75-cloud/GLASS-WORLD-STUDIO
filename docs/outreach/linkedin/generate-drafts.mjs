@@ -15,6 +15,15 @@ import { fileURLToPath } from 'node:url';
 
 const NOTE_LIMIT = 300; // límite de caracteres de la nota de invitación de LinkedIn
 
+// Trilogía comunicacional publicada: es la base del "caso de valor" (Paso 2) del
+// Kit de Inversores. Los comunicados viven en el sitio público de GWS.
+const SITE = 'https://glass-world-studio.vercel.app';
+const TRILOGY = {
+  reaparicion: `${SITE}/novedades/reaparicion`,
+  alianzas: `${SITE}/novedades/alianzas-estrategicas`,
+  modelo: `${SITE}/novedades/modelo-de-alianza`,
+};
+
 const here = dirname(fileURLToPath(import.meta.url));
 const inputPath = resolve(process.argv[2] ?? resolve(here, 'prospects.csv'));
 const outputPath = resolve(process.argv[3] ?? resolve(here, 'drafts.md'));
@@ -70,7 +79,9 @@ const FALLBACK_NOTE = (p) =>
 
 const SEQUENCES = {
   inversores: {
+    // Alineado con el Kit de Inversores: 3 pasos (contacto -> valor -> reunión).
     label: 'Flecha 1 — Inversores / Capital',
+    // Paso 1 — Primer contacto: abre la puerta, NO vende.
     note: (p) =>
       `Hola ${p.name}, sigo el trabajo de ${p.company}${p.hook ? ` y tu foco en ${p.hook}` : ''}. ` +
       `Estoy construyendo Glass World Studio, el marketplace vertical de la industria global del vidrio. ` +
@@ -78,12 +89,17 @@ const SEQUENCES = {
     opener: (p) =>
       `Gracias por conectar, ${firstName(p.name)}. Antes de contarte nada, me interesa tu mirada: ` +
       `¿qué señales te hacen prestar atención hoy a un marketplace vertical industrial?`,
-    follow1: () =>
-      `Te dejo una idea, sin compromiso: unimos arte, industria y comercio del vidrio en un solo ` +
-      `ecosistema (6 galaxias, 5 satélites). ¿Le ves espacio en tu tesis de inversión?`,
+    follow1Label: 'Paso 2 — Caso de valor con la Trilogía (+3–4 días)',
+    follow2Label: 'Paso 3 — Llamado a la reunión ejecutiva (+5–7 días)',
+    // Paso 2 — Se regala contenido, no se pide nada.
+    follow1: (p) =>
+      `Sin apuro, ${firstName(p.name)}. Te dejo los tres comunicados con los que abrimos la nueva ` +
+      `etapa, se leen en 6 minutos: ${TRILOGY.reaparicion} · ${TRILOGY.alianzas} · ${TRILOGY.modelo} ` +
+      `La arquitectura (6 galaxias + 5 satélites) es lo que miro con ojo de inversor.`,
+    // Paso 3 — Pedido concreto con agenda y salida elegante.
     follow2: (p) =>
-      `Sin apuro, ${firstName(p.name)}. Si en algún momento querés ver el detalle, con gusto te ` +
-      `comparto un resumen. Buena semana.`,
+      `Cierro sin insistir, ${firstName(p.name)}. Si te interesa, 20 minutos con agenda de tres puntos: ` +
+      `el problema, el modelo de galaxias y el Ask. Te paso franjas si me decís que sí.`,
   },
   desarrolladores: {
     label: 'Flecha 2 — Desarrolladores / Arquitectos',
@@ -200,10 +216,10 @@ function main() {
     lines.push('**Mensaje de apertura (tras aceptar):**');
     lines.push(`> ${seq.opener(p)}`);
     lines.push('');
-    lines.push('**Seguimiento 1 (+3–4 días si no responde):**');
+    lines.push(`**${seq.follow1Label ?? 'Seguimiento 1 (+3–4 días si no responde)'}:**`);
     lines.push(`> ${seq.follow1(p)}`);
     lines.push('');
-    lines.push('**Seguimiento 2 (cierre amable, +5–6 días):**');
+    lines.push(`**${seq.follow2Label ?? 'Seguimiento 2 (cierre amable, +5–6 días)'}:**`);
     lines.push(`> ${seq.follow2(p)}`);
     lines.push('');
     lines.push('---');
