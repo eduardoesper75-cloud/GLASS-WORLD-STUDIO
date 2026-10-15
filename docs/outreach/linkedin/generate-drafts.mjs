@@ -79,27 +79,28 @@ const FALLBACK_NOTE = (p) =>
 
 const SEQUENCES = {
   inversores: {
-    // Alineado con el Kit de Inversores: 3 pasos (contacto -> valor -> reunión).
-    label: 'Flecha 1 — Inversores / Capital',
-    // Paso 1 — Primer contacto: abre la puerta, NO vende.
+    // Alineado con el Kit de Alianza: 3 pasos (gancho -> alianza -> charla).
+    label: 'Flecha 1 — Inversores / Alianza estratégica',
+    // Paso 1 — Primer contacto: el gancho de mercado. NO pide nada.
     note: (p) =>
       `Hola ${p.name}, sigo el trabajo de ${p.company}${p.hook ? ` y tu foco en ${p.hook}` : ''}. ` +
-      `Estoy construyendo Glass World Studio, el marketplace vertical de la industria global del vidrio. ` +
-      `Me gustaría conectar. Eduardo Esper, fundador.`,
+      `El vidrio mueve USD 450.000 millones al año y sigue sin plataforma que lo una. ` +
+      `Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`,
     opener: (p) =>
-      `Gracias por conectar, ${firstName(p.name)}. Antes de contarte nada, me interesa tu mirada: ` +
-      `¿qué señales te hacen prestar atención hoy a un marketplace vertical industrial?`,
-    follow1Label: 'Paso 2 — Caso de valor con la Trilogía (+3–4 días)',
-    follow2Label: 'Paso 3 — Llamado a la reunión ejecutiva (+5–7 días)',
-    // Paso 2 — Se regala contenido, no se pide nada.
+      `Gracias por conectar, ${firstName(p.name)}. Sin vueltas: medio billón de dólares moviéndose a ` +
+      `mano. ¿Qué te haría prestar atención hoy a un marketplace vertical industrial?`,
+    follow1Label: 'Paso 2 — Caso de valor + propuesta de alianza (+3–4 días)',
+    follow2Label: 'Paso 3 — La charla (+5–7 días)',
+    // Paso 2 — Se regala contenido y se planta la diferencia: no es capital pasivo.
     follow1: (p) =>
       `Sin apuro, ${firstName(p.name)}. Te dejo los tres comunicados con los que abrimos la nueva ` +
-      `etapa, se leen en 6 minutos: ${TRILOGY.reaparicion} · ${TRILOGY.alianzas} · ${TRILOGY.modelo} ` +
-      `La arquitectura (6 galaxias + 5 satélites) es lo que miro con ojo de inversor.`,
-    // Paso 3 — Pedido concreto con agenda y salida elegante.
+      `etapa: ${TRILOGY.reaparicion} · ${TRILOGY.alianzas} · ${TRILOGY.modelo} ` +
+      `Y una aclaración de entrada: no busco capital pasivo. Pongo el mercado, la arquitectura y la ` +
+      `plataforma; busco un socio que financie o ejecute el desarrollo, con participación generosa.`,
+    // Paso 3 — La charla, con agenda y salida elegante.
     follow2: (p) =>
-      `Cierro sin insistir, ${firstName(p.name)}. Si te interesa, 20 minutos con agenda de tres puntos: ` +
-      `el problema, el modelo de galaxias y el Ask. Te paso franjas si me decís que sí.`,
+      `Cierro sin insistir, ${firstName(p.name)}. Si te interesa, 20 minutos con tres puntos: el mercado, ` +
+      `la arquitectura y qué pongo yo sobre la mesa. Te paso franjas si me decís que sí.`,
   },
   desarrolladores: {
     label: 'Flecha 2 — Desarrolladores / Arquitectos',

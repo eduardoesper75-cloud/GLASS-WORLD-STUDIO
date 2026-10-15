@@ -1,59 +1,64 @@
-# Pitch Deck — Inversores (5 slides)
+# Pitch Deck — Inversores y Desarrolladores Estratégicos (5 slides)
 
-> **Glass World Studio (GWS)** · Ronda semilla · Flecha 1 — Inversores / Capital de riesgo
+> **Glass World Studio (GWS)** · Propuesta de **alianza**, no de capital pasivo.
 > Documento **confidencial**. No publicar en el sitio.
 >
-> Cómo leerlo: cada slide tiene **Mensaje clave** (lo único que el inversor debe recordar),
-> **Contenido** (lo que se muestra) y **Notas del orador** (lo que decís vos).
-> Todo lo marcado `[COMPLETAR: ...]` son datos que **solo vos podés aportar** y que son
-> obligatorios antes de una reunión real.
+> **El giro de este deck:** no venimos a pedir plata a ciegas. Venimos a poner sobre la mesa el
+> mercado, la arquitectura y la plataforma, y a buscar quién financie o ejecute el desarrollo técnico.
+> A cambio: **participación generosa, con plazos y condiciones pactados de común acuerdo.**
+>
+> Cómo leerlo: cada slide tiene **Mensaje clave** (lo único que tu interlocutor debe recordar),
+> **Contenido** (lo que se muestra) y **Notas del orador** (cómo lo contás vos).
 
 ---
 
-## Slide 1 — Portada y tesis
+## Slide 1 — Portada: el gancho
 
 **Mensaje clave**
-> Existe una industria milenaria, global y fragmentada que todavía no tiene su infraestructura digital.
+> El vidrio mueve **USD 450.000 millones al año** y da trabajo a **más de 50 millones de personas**.
+> Y todavía no tiene casa.
 
 **Contenido**
 
-- **Glass World Studio** — El primer ecosistema vertical integral de la industria global del vidrio.
-- Una plataforma donde el arte, la industria, el comercio y el conocimiento del vidrio operan por primera vez en un mismo lugar.
-- Banda inferior de datos: **6 galaxias · 5 satélites · 3 flechas estratégicas · plataforma en producción**
+- El mercado global del vidrio mueve aproximadamente **USD 450.000 millones por año**.
+- Más de **50 millones de personas** viven de este oficio y esta industria en todo el mundo.
+- Es **milenario, global y profundamente fragmentado**.
+- **Glass World Studio** es la primera arquitectura pensada para unificarlo de punta a punta.
+- Banda inferior: **6 galaxias · 5 satélites · 3 flechas estratégicas · plataforma en producción**
 
 **Notas del orador**
 
-- Abrir con la frase, no con la historia personal. El gancho es el vacío de mercado, no la pasión.
-- "Vertical" es la palabra que quiero que quede: no competimos con marketplaces horizontales; ocupamos una industria entera que nadie digitalizó.
-- Si preguntan "¿ya está construido?", la respuesta honesta es: **el sitio público está en producción; el producto es un MVP en expansión**. Ver Slide 5.
+- Arrancar por el **tamaño y el vacío**, no por la historia personal. La frase que abre: *"Hay un mercado de medio billón de dólares que se mueve a mano."*
+- "Fragmentado" es la palabra clave: no es un mercado chico, es un mercado **sin casa**.
+- Tené a mano la **fuente** de las cifras (450.000 millones / 50 millones): en cuanto el número es el gancho, la primera pregunta va a ser *"¿de dónde sale?"*. Ver el cierre de este documento.
 
 ---
 
 ## Slide 2 — El problema
 
 **Mensaje clave**
-> La industria del vidrio está dispersa y sin infraestructura digital común.
+> Medio billón de dólares moviéndose a mano, en silos que no se hablan.
 
 **Contenido**
 
-- El **arte**, la **industria**, el **comercio de insumos** y el **conocimiento técnico** viven en silos que no se hablan entre sí.
-- No existe un puente entre los **grandes maestros del arte en vidrio** y los **ingenieros y científicos** más técnicos del rubro.
-- Oferta y demanda, licitaciones y trazabilidad se gestionan de forma **manual, fragmentada y sin canal común**.
-- Una actividad milenaria, rica y compleja, **sin un hogar integral**. Hoy no existe en el mundo una plataforma con este alcance.
-- Costo de la fragmentación: `[COMPLETAR: 2–3 consecuencias medibles — ej. tiempos de búsqueda de proveedores, mermas, licitaciones perdidas]`
+- El **arte**, la **industria**, el **comercio de insumos** y el **conocimiento técnico** viven separados.
+- Los **grandes maestros del vidrio** y los **ingenieros y científicos** más técnicos del rubro no tienen un puente.
+- Licitaciones, oferta, demanda y trazabilidad: **manual, fragmentado, sin canal común**.
+- **USD 450.000 millones al año** sin una capa digital compartida. Nadie lo resolvió todavía.
+- El costo de esto es concreto: `[COMPLETAR: 2–3 consecuencias medibles — tiempos de búsqueda de proveedores, mermas, licitaciones perdidas]`
 
 **Notas del orador**
 
-- No vender "una web". El problema es **estructural**: un sector global sin capa digital común.
-- Mantener el foco en la dispersión, no en la falta de tecnología. La tecnología es el remedio, no el diagnóstico.
-- **Guardarraíl:** no afirmar tamaños de mercado hasta tener la Slide 2 completada con fuentes.
+- No vendas "una web". El problema es **estructural**: un sector global sin infraestructura común.
+- El contraste que quiebra la cabeza: industria milenaria + 450.000 millones + cero plataforma que la una.
+- Evitá la queja. Contá un vacío de mercado, no una injusticia.
 
 ---
 
 ## Slide 3 — La solución: el modelo de galaxias
 
 **Mensaje clave**
-> No es un marketplace plano: es una arquitectura viva donde las galaxias aportan masa y los satélites, servicios.
+> No es un marketplace plano: es una arquitectura viva. Las galaxias aportan masa, los satélites, servicios.
 
 **Contenido**
 
@@ -70,87 +75,93 @@
   3. Portal de Profesionales (Técnicos / Científicos)
   4. Rincón del Usado GWS
   5. Bóveda del Conocimiento
-- **La mecánica:** cada galaxia atrae actores reales; cada satélite genera valor recurrente sobre esa masa. Cuanta más masa, más órbitas posibles.
+- **La mecánica:** cada galaxia atrae actores reales; cada satélite genera valor sobre esa masa. Más masa, más órbitas posibles.
 
 **Notas del orador**
 
-- Este es el corazón de la defensa: **por qué nuestro marketplace no es copiable como una lista de productos**.
-- Usar la metáfora de gravedad sólo una vez; el inversor técnico quiere oír "efecto de red por segmento".
-- El satélite de **Ingeniería Predictiva (Termia/COE)** es el activo más defendible y el más difícil de replicar: mencionarlo como foso técnico.
+- Este es el corazón de la defensa: **por qué esto no se copia con una lista de productos**.
+- La metáfora de gravedad, **una sola vez**. Después hablá de "efecto de red por segmento".
+- El satélite de **Ingeniería Predictiva (Termia / COE)** es el activo más difícil de replicar: es el foso técnico.
 
 ---
 
-## Slide 4 — Escalabilidad y modelo de negocio
+## Slide 4 — Así funciona el negocio: limpio y escalable
 
 **Mensaje clave**
-> Un marketplace B2B vertical de alcance global, con mercado cautivo y tres motores que se potencian.
+> No cargamos inventario ni costos ocultos. El que vende mueve, el que compra paga su entrega, y nosotros facilitamos la operación.
 
 **Contenido**
 
-- **Los tres motores** (nadie reemplaza a nadie):
+- **La logística y el costo de entrega final corren siempre por cuenta del usuario / de la transacción.** Nosotros no movemos camiones ni guardamos stock.
+- Somos el **facilitador**: conectamos oferta y demanda, ordenamos la operación y cobramos por habilitarla.
+- **Software, no inventario:** crecer no nos cuesta una flota ni un depósito.
+- **Sin costos ocultos:** el modelo es transparente de punta a punta, para las tres partes.
+- **Los tres motores que se potencian:**
   - **Desarrolladores** construyen los motores y la arquitectura multi-agente.
-  - **Inversores** financian ese desarrollo técnico: capital que **liquida trabajo**, no subsidio pasivo.
-  - **Logística** mueve la industria: la red operativa real que conecta oferta, demanda e insumos.
-- **Por qué escala:**
-  - Es **software, no inventario**: el crecimiento no exige capital físico proporcional.
-  - **Efecto de red por galaxia**: cada segmento se refuerza con los otros.
-  - El vidrio es **global y transfronterizo**: el mercado no está atado a una geografía.
-- **Modelo de ingresos:** `[COMPLETAR: comisión por transacción / suscripción B2B / datos y servicios]`
-- **Métricas del modelo:** `[COMPLETAR: take rate %, ticket medio, margen bruto objetivo, CAC/LTV estimados]`
+  - **Inversores** financian ese desarrollo técnico.
+  - **Logística** mueve la industria, como red operativa real.
+- **De dónde entra el dinero:** `[COMPLETAR: comisión por transacción / suscripción B2B / datos y servicios]`
 
 **Notas del orador**
 
-- Decir "mercado cautivo" con cuidado: hoy significa **comunidad validada en la primera etapa**, no usuarios pagos. Ver guardarraíles.
-- La secuencia de negocio es explícita y simple. Los inversores valoran que el modelo no dependa de magia.
-- **Guardarraíl:** no proyectar revenue sin supuestos escritos. Si no hay números, decir "estamos definiendo el modelo de monetización" en lugar de inventarlos.
+- Este slide responde la pregunta que todo inversor industrial hace: *"¿y la logística?"*. La respuesta deja a GWS **liviano**: el volumen mueve el negocio, pero el costo de mover no es nuestro.
+- Remarcá "sin costos ocultos": en este rubro la opacidad es la norma, y la transparencia es parte de la propuesta.
+- Si preguntan por márgenes: decí que estás definiendo el modelo de monetización antes que inventar un número. La honestidad vende más que una proyección falsa.
 
 ---
 
-## Slide 5 — La oportunidad y el Ask
+## Slide 5 — La alianza (acá está el "no-ask")
 
 **Mensaje clave**
-> Buscamos capital para escalar la infraestructura de un ecosistema que ya está en marcha.
+> No pedimos plata a ciegas. Ponemos el estudio de mercado, la arquitectura y la plataforma. Buscamos quién financie —o ejecute— el desarrollo técnico. Y ofrecemos sociedad, no préstamo.
 
 **Contenido**
 
-- **Estado real hoy:**
-  - Plataforma **en producción** (sitio público activo: `https://glass-world-studio.vercel.app`).
-  - **6 galaxias y 5 satélites** definidos y modelados en la arquitectura del producto.
-  - **Trilogía comunicacional** publicada (reaparición, alianzas, modelo de alianza).
-  - **Propiedad intelectual y marca**: trámite en curso ante el **INPI**.
-  - Comunidad del vidrio que acompañó la primera etapa y validó la visión.
-- **El Ask:**
-  - Buscamos `[COMPLETAR: monto en USD]` para `[COMPLETAR: horizonte, ej. 18 meses]`.
-  - **Uso de fondos:** `[COMPLETAR: % núcleo técnico / % datos e infraestructura / % expansión comercial]`
-  - **Instrumento:** `[COMPLETAR: SAFE / nota convertible / equity]` · **Valuación:** `[COMPLETAR]`
-- **Tracción a mostrar:** `[COMPLETAR: lista de espera, cartas de intención, alianzas firmadas, usuarios registrados]`
-- **Próximo paso:** reunión ejecutiva de **20–30 minutos**.
+- **Lo que ya ponemos nosotros:**
+  - El **estudio de mercado** y la tesis de negocio.
+  - La **arquitectura completa**: 6 galaxias + 5 satélites.
+  - La **plataforma**, hoy en producción.
+- **Lo que buscamos:**
+  - Quien **financie** el desarrollo técnico.
+  - O quien lo **ejecute** con su propio equipo.
+- **Lo que ofrecemos:**
+  - **Porcentajes generosos de participación**, con **plazos y condiciones pactados de común acuerdo**.
+  - Un **negocio de socios** (win-win), no un financiamiento a ciegas.
+- **El estado, sin maquillaje:** plataforma en producción · PI y marca en trámite ante el **INPI** · comunidad que validó la visión en la primera etapa.
+- **Próximo paso:** una charla franca, sin guion. **20–30 minutos.**
 - **Contacto:** Eduardo Esper · Fundador · esper.eduardo@gmail.com · WhatsApp +54 9 385 6 22 84 00
 
 **Notas del orador**
 
-- El Ask debe ser **una sola cifra y un solo uso**. Si dudás, el inversor duda.
-- Cerrar pidiendo la reunión, nunca pidiendo el cheque en el primer contacto.
-- Si el inversor pide métricas que no existen: reconocerlo y mostrar el **plan de instrumentación**. La honestidad sobre el estadio es un activo en pre-semilla.
+- Este es el slide que da vuelta la conversación. Ya no sos el que pide: sos el que **trae el mercado y pone sobre la mesa**. El otro lado elige cómo entrar.
+- **No pongas un porcentaje por escrito en el deck.** "Generoso y pactado de común acuerdo" te da margen de negociación por perfil de socio. La cifra se conversa, no se imprime.
+- Cerrá pidiendo **la charla**, nunca el cheque. El primer contacto busca una reunión, no una firma.
+- Si te piden métricas que todavía no existen (usuarios pagos, transacciones, ingresos): decilo de frente y mostrá que el estadio es "arquitectura lista, plataforma en producción". En esta etapa, la franqueza es el argumento más fuerte que tenés.
 
 ---
 
-## ⚠️ Antes de enviar — datos que solo vos podés completar
+## Antes de sentarte — tres cosas
 
-Un deck con números inventados destruye la confianza y es un riesgo legal. Estos campos son
-**bloqueantes** para una reunión con un inversor:
+### 1. La fuente de las cifras (tenela a mano)
 
-| Slide | Dato faltante | Por qué importa |
-|---|---|---|
-| 2 | Costo de la fragmentación (2–3 consecuencias medibles) | Convierte el problema en dolor cuantificable |
-| 2 | Tamaño de mercado (TAM/SAM/SOM) con fuente | Todo VC lo pregunta primero |
-| 4 | Modelo de ingresos y take rate | Define si el negocio cierra |
-| 5 | Monto, uso de fondos, instrumento, valuación | Sin esto no hay ronda |
-| 5 | Tracción concreta | Es lo que justifica el estadio pre-semilla |
+Las cifras que abren el deck son el gancho, y también la primera pregunta:
 
-**Guardarraíles de honestidad (leer antes de cada reunión):**
+- **USD 450.000 millones al año** — mercado global del vidrio.
+- **Más de 50 millones de personas** — quienes viven del rubro en el mundo.
 
-1. **Sin usuarios pagos todavía.** No afirmar tracción comercial inexistente.
-2. **"Próximo unicornio vertical"** es la **ambición** de la trilogía, no un dato. Presentarlo como visión, y separarlo de los hechos.
-3. **El producto es un MVP en expansión**, no un marketplace con transacciones. Decirlo primero.
-4. **Toda cifra que se muestre debe tener fuente o supuesto escrito.** Si no, se omite.
+Son órdenes de magnitud reales del sector, pero **en una reunión alguien va a preguntar de dónde salen**.
+Tené el informe, el estudio o el dato citable listo para nombrar. No improvises la fuente: el
+gancho que no se puede respaldar se convierte en el punto débil de toda la presentación.
+
+### 2. Lo que todavía no existe (y no se afirma)
+
+- ❌ Usuarios pagos · ❌ Transacciones · ❌ Ingresos · ❌ Alianzas firmadas
+
+Decilo antes de que lo pregunten. El estadio real es: **arquitectura definida, plataforma en
+producción, mercado dimensionado, PI en trámite**. Eso ya es mucho para una etapa de alianza.
+
+### 3. El tono
+
+Hablamos **de socio a socio**. Sin jerga, sin promesas infladas, sin pedir permiso.
+Traemos un mercado de medio billón de dólares y una arquitectura lista. Eso se cuenta mirando
+a los ojos, no leyendo un papel.
