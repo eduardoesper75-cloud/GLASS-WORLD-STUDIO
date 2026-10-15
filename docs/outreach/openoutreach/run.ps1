@@ -1,19 +1,22 @@
-# Runs a BOUNDED OpenOutreach batch, loading gws-context/.env if present.
+# Runs a BOUNDED OpenOutreach batch, loading the checkout .env if present.
 #
 #   powershell -File gws-context/run.ps1 status
-#   powershell -File gws-context/run.ps1 find  25
+#   powershell -File gws-context/run.ps1 find  25            # free discovery only
+#   powershell -File gws-context/run.ps1 find  25 -Emails    # + paid email lookup
 #   powershell -File gws-context/run.ps1 send  10
 #   powershell -File gws-context/run.ps1 run   25
 #
 # Notes:
 #  - A "batch" is finite on purpose: this tool is not a continuous daemon.
 #  - find discovers and qualifies; send mails what is stored; run does both.
+#  - -Emails spends BetterContact credits on address resolution. Off by default.
 #  - Campaign context is applied separately: python gws-context/apply_context.py
 
 param(
   [ValidateSet('status', 'find', 'send', 'run')]
   [string]$Action = 'status',
-  [int]$Count = 25
+  [int]$Count = 25,
+  [switch]$Emails
 )
 
 $ErrorActionPreference = 'Stop'
@@ -48,7 +51,10 @@ Set-Location -LiteralPath $root
 
 switch ($Action) {
   'status' { & $uv run openoutreach status }
-  'find'   { & $uv run openoutreach find $Count --emails }
-  'send'   { & $uv run openoutreach send $Count }
-  'run'    { & $uv run openoutreach run $Count }
+  'find' {
+    if ($Emails) { & $uv run openoutreach find $Count --emails }
+    else { & $uv run openoutreach find $Count }
+  }
+  'send' { & $uv run openoutreach send $Count }
+  'run'  { & $uv run openoutreach run $Count }
 }
