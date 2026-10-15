@@ -1,5 +1,17 @@
 # De regreso en la plataforma: la nueva etapa de Glass World Studio
 
+> **Siento que Glass World Studio no es solo un proyecto: es el sueño y la necesidad postergada de muchos de nosotros.** Esta plataforma tiene un profundo deseo de ver la luz para unificar, conectar y digitalizar de punta a punta todo el vasto universo del vidrio. 
+> 
+> Una actividad tan milenaria, rica y compleja como la nuestra merece un hogar integral. Un espacio donde quepamos todos: desde el artista y el artesano que dan forma al alma del material, pasando por la gran industria y el comercio diario, hasta quienes nos proveen los materiales y componentes esenciales. 
+> 
+> Imagínate el poder de un entorno donde sea posible gestionar licitaciones en tiempo real, interactuar dinámicamente y tender puentes reales entre los grandes maestros del arte en vidrio y los ingenieros y científicos más técnicos del rubro. No tengo ninguna duda de que esto viene a solucionar una carencia histórica y a acercar a todas las partes, porque simplemente no existe en el mundo una plataforma con este alcance. Somos pioneros en esto.
+> 
+> Esto nace para unir lo que siempre estuvo disperso, para darle escala y futuro a nuestra pasión. 
+> 
+> **Glass World Studio. Una plataforma con alma de taller, que se fortalece con tu crecimiento.**
+
+---
+
 Hola a todos, soy **Eduardo Esper**.
 
 Quería tomarme este momento para dirigirme directamente a la comunidad y retomar la actividad en la plataforma. Lo primero que quiero hacer es **reconocer y agradecer profundamente el valor de toda la comunidad del vidrio**: gracias a la increíble repercusión, el apoyo y la lectura de miles de profesionales que nos acompañaron en la primera etapa, pudimos validar la visión y comprender exactamente lo que el sector necesita.
