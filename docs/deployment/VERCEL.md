@@ -1,47 +1,95 @@
 # Despliegue público — Glass World Studio (Vercel)
 
-> Última verificación: 15-10-2026 · `main` @ `be6f612` · Next.js 15.5.27 · pnpm 9 workspace
+> **Estado: DESPLEGADO Y VERIFICADO** · 15-10-2026
+> **URL pública: <https://glass-world-studio.vercel.app>**
+> Proyecto: `eduardoesper75-4497/glass-world-studio` · `main` · Next.js 15.5.27 · pnpm 9 workspace
 
 ---
 
-## 1. Configuración de proyecto en Vercel
+## 0. Resultado verificado (sobre la URL pública)
 
-| Parámetro | Valor | Por qué |
-|---|---|---|
-| **Root Directory** | `apps/web` | Es donde vive el proyecto Next.js. Vercel detecta el `pnpm-workspace.yaml` de la raíz y enlaza `@gws/schemas` y `@gws/taxonomy`. |
-| **Framework** | Next.js (auto / `apps/web/vercel.json`) | Detectado por `next.config.mjs`. |
-| **Package Manager** | `pnpm` (por el `packageManager` de la raíz) | `pnpm install --frozen-lockfile`. |
-| **Node** | ≥ 20 (declarado en `engines`) | Vercel lo respeta. |
-| **Install Command** | `pnpm install --frozen-lockfile` | Explícito en `apps/web/vercel.json`. |
-| **Build Command** | `pnpm --filter @gws/schemas build && pnpm --filter @gws/taxonomy build && next build` | **Obligatorio.** Ver §2. |
+| Verificación | Resultado |
+|---|---|
+| 11 rutas principales | **11/11 en `200`** (anónimo, sin login) |
+| Páginas generadas | **14 estáticas** (`/`, `/_not-found`, `+3` slugs, `+` legales) |
+| Cabeceras de seguridad | CSP, HSTS, XFO, nosniff, Referrer-Policy, Permissions-Policy ✅ |
+| Edge cache | `x-vercel-cache: HIT` · `server: Vercel` |
+| Build remoto | `Build Completed in /vercel/output [39s]` |
 
-### ⚠️ Por qué el build no es solo `next build`
+---
 
-`apps/web/next.config.mjs` declara `serverExternalPackages: ['@gws/schemas', '@gws/taxonomy']`.
-Esos paquetes exportan `./dist/index.js` y `dist/` está en `.gitignore`, así que **no existen en el
-repo**. Si `next build` corre sin compilarlos, la recopilación de datos de páginas falla al
-resolver el motor. Por eso el build compila primero el motor (en orden topológico: `schemas`
-antes que `taxonomy`, porque `taxonomy` depende de `schemas`).
+## 1. Configuración del proyecto (estado real en servidor)
 
-Localmente el equivalente exacto del build de Vercel es:
+Obtenida vía API de Vercel (no deducida):
 
-```powershell
-pnpm --filter @gws/schemas build
-pnpm --filter @gws/taxonomy build
-pnpm --filter @gws/web build
+| Parámetro | Valor |
+|---|---|
+| **Root Directory** | `apps/web` |
+| **Framework** | `nextjs` |
+| **Install Command** | `pnpm install --frozen-lockfile` |
+| **Build Command** | `pnpm --filter @gws/schemas build && pnpm --filter @gws/taxonomy build && next build` |
+| **Output Directory** | `.next` (relativo al Root Directory) |
+| **Node** | `24.x` (la raíz declara `engines.node >= 20`) |
+
+> **`outputDirectory` es relativo al Root Directory.** Con `apps/web` + `.next` la salida es
+> `apps/web/.next`. Poner `apps/web/.next` ahí apuntaría a `apps/web/apps/web/.next` (error).
+
+---
+
+## 2. ⚠️ Las dos trampas del primer intento (y su solución)
+
+Este despliegue **falló dos veces** antes de quedar verde. Ambas causas son contraintuitivas y
+conviene tenerlas escritas:
+
+### Trampa 1 — La CLI sube los archivos desde el **directorio actual**, no desde la raíz del repo
+
+Corrí `vercel` desde `apps/web` → Vercel subió **44 archivos** (42 del subárbol + config) y
+**nunca llegó `pnpm-lock.yaml`** ni `packages/*`:
+
+```
+ERROR  Headless installation requires a pnpm-lock.yaml file
 ```
 
+**Solución:** desplegar **desde la raíz del monorepo**. Así se subieron **141 archivos** y el
+install encontró el workspace (`Scope: all 5 workspace projects` · `Lockfile is up to date`).
+
+### Trampa 2 — `Root Directory` debe estar **seteado en el servidor**, no lo pone el `cwd`
+
+Con el repo completo subido pero `rootDirectory` vacío, el build corrió en la raíz del repo,
+donde el `package.json` **no** tiene `next`:
+
+```
+"No Next.js version detected. Make sure your package.json has \"next\" ... 
+ Also check your Root Directory setting matches the directory of your package.json file."
+```
+
+**Solución:** fijar `rootDirectory = "apps/web"` en el proyecto (vía API/dashboard). Recién
+entonces el detector encuentra `next` en `apps/web/package.json`.
+
+### Regla resultante
+
+> **`rootDirectory = apps/web` en el proyecto  +  `vercel --prod` ejecutado desde la raíz del repo.**
+> El primero le dice *dónde construir*; el segundo determina *qué archivos se suben*. Hacen falta los dos.
+
 ---
 
-## 2. Variables de entorno (auditoría antes de desplegar)
+## 3. Por qué el build no es un simple `next build`
 
-### Hallazgo: el frontend no lee NINGUNA variable
+`apps/web/next.config.mjs` declara `serverExternalPackages: ['@gws/schemas', '@gws/taxonomy']`.
+Esos paquetes exportan `./dist/index.js` y **`dist/` está en `.gitignore`** (no existe en el repo).
+Sin compilarlos antes, la recopilación de datos de páginas falla al resolver el motor. Por eso el
+build compila primero el motor en orden topológico (`schemas` antes que `taxonomy`, que depende de
+`schemas`) y recién después `next build`.
 
-- No existe **ningún** `process.env.*` en `apps/web`.
-- No hay rutas de API (`src/app/**/route.ts` no existe) → la app es 100 % estática.
-- Por lo tanto **no se requiere ninguna clave en Vercel hoy.**
+---
 
-Verificado con: `grep -r "process\.env" apps/` → sin coincidencias.
+## 4. Variables de entorno (auditoría)
+
+### El frontend no lee ninguna variable
+
+- **0** coincidencias de `process.env.*` en `apps/web`.
+- **0** rutas de API (`src/app/**/route.ts` no existe) → app 100% estática.
+- Por lo tanto **no se cargó ninguna clave en Vercel**, y no se necesita.
 
 ### 🔒 Las claves de OpenOutreach NO van al hosting
 
@@ -52,87 +100,64 @@ Verificado con: `grep -r "process\.env" apps/` → sin coincidencias.
 | `OPENOUTFIND_APOLLO_API_KEY` | ídem |
 | `OUTSEND_MAILBOX_PASSWORD` | ídem |
 | `OUTSEND_SMTP_*` / `OUTSEND_IMAP_*` | ídem |
-| `GOOGLE_SERVICE_ACCOUNT_EMAIL`, `GOOGLE_PRIVATE_KEY`, `YOUTUBE_API_KEY` | `.env` local en la raíz |
+| `GOOGLE_*`, `YOUTUBE_API_KEY` | `.env` local en la raíz |
 
-Motivos para mantenerlas **fuera** de Vercel:
-
-1. **Nadie las leería.** OpenOutreach es una CLI de Python que corre en esta máquina; el sitio
-   no tiene servidor que las consuma.
-2. **Exposición de secretos.** El panel del hosting tiene un ámbito de acceso mucho más amplio
-   que este equipo, y cualquier `NEXT_PUBLIC_*` viaja al navegador.
-3. **Regla propia del proyecto:** *secretos sólo en `.env`, nunca en cliente y nunca en reposo.*
+**Motivos:** (1) nadie las leería — el sitio no tiene servidor que las consuma; (2) el panel del
+hosting tiene un ámbito de acceso mucho más amplio que este equipo, y cualquier `NEXT_PUBLIC_*`
+viaja al navegador; (3) violaría la regla propia del proyecto: *secretos sólo en `.env`*.
 
 Plantilla auditable versionada: [`.env.production.example`](../../.env.production.example).
-`.env.production` y `.vercel/` están ignorados por git.
 
 ---
 
-## 3. Cabeceras de seguridad y caché
+## 5. Cabeceras de seguridad y caché
 
-Se definen en **`apps/web/next.config.mjs` → `headers()`**, no en `vercel.json`, porque así se
-aplican en cualquier hosting y son verificables localmente con `next start`:
+Definidas en **`apps/web/next.config.mjs` → `headers()`** (no en `vercel.json`), para que apliquen
+en cualquier hosting y sean verificables con `next start`:
 
 | Cabecera | Valor |
 |---|---|
-| `Content-Security-Policy` | `default-src 'self'` + `script-src`/`style-src` con `'unsafe-inline'` (requerido por App Router), `object-src 'none'`, `frame-ancestors 'none'` |
+| `Content-Security-Policy` | `default-src 'self'` + `'unsafe-inline'` en script/style (requerido por App Router), `object-src 'none'`, `frame-ancestors 'none'` |
 | `X-Frame-Options` | `DENY` |
 | `X-Content-Type-Options` | `nosniff` |
 | `Referrer-Policy` | `strict-origin-when-cross-origin` |
 | `Permissions-Policy` | `camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()` |
 | `Strict-Transport-Security` | `max-age=31536000; includeSubDomains` (sólo producción) |
-| `Cache-Control` | `/_next/static/*` → `immutable, 1 año`; imágenes → `1 día` con `stale-while-revalidate` |
-
-Vercel ya sirve `/_next/static` como inmutable; `headers()` lo hace explícito y portable.
+| `Cache-Control` | `/_next/static/*` → `immutable, 1 año`; imágenes → `1 día` + `stale-while-revalidate` |
 
 ---
 
-## 4. Redirecciones de idioma — NO APLICA (y por qué)
+## 6. Redirecciones de idioma — NO APLICA
 
-**No hay redirecciones de idioma que configurar.** El sitio no segmenta el idioma por URL:
-no existen `/es/...`, `/en/...`, etc. El idioma se aplica **en cliente** con un selector en
-`localStorage` que sincroniza el `lang` y el título del documento, y persiste al navegar.
-
-Configurar redirects de idioma (p. ej. `/` → `/es/`) rompería este modelo y duplicaría
-contenido en buscidores sin `hreflang`. Si algún día se migra a locales por ruta, ese bloque
-va en `redirects:` de `apps/web/vercel.json` junto con `hreflang`/`x-default`.
-
-Lo único normalizable hoy (`trailingSlash: false`) ya está declarado en `vercel.json`.
+No hay redirecciones que configurar: el idioma **no** va en la URL (no existen `/es/...`,
+`/en/...`). Se aplica en cliente con un selector en `localStorage` que sincroniza el `lang` y el
+título del documento y persiste al navegar. Configurar redirects de idioma rompería ese modelo y
+duplicaría contenido sin `hreflang`. Si algún día se migra a locales por ruta, ese bloque va en
+`redirects:` de `apps/web/vercel.json` junto con `hreflang`/`x-default`.
 
 ---
 
-## 5. Pasos de vinculación (acción manual de tu parte)
-
-Todo lo que corre en local ya está preparado. Falta la autenticación, que es interactiva:
+## 7. Cómo volver a desplegar
 
 ```powershell
-# 1) Login (abre el navegador; elegí la cuenta y confirmá)
-pnpm dlx vercel login
-
-# 2) Vincular el directorio apps/web a un proyecto de Vercel
-cd apps\web
-pnpm dlx vercel link
-
-# 3) Desplegar a producción
-pnpm dlx vercel --prod
+# Requisito: CLI autenticada (vercel login)
+cd "C:\Users\eduesper\Documents\Proyecto predeterminado"   # SIEMPRE desde la raíz del repo
+pnpm dlx vercel@latest --prod
 ```
 
-Opcionales:
+`vercel --prod` re-promociona la producción y actualiza el alias
+`https://glass-world-studio.vercel.app`.
 
-```powershell
-pnpm dlx vercel env add NEXT_PUBLIC_API_BASE_URL   # sólo si algún día hace falta
-pnpm dlx vercel domains add gws.com                # dominio propio
-```
-
-`.vercel/` queda ignorado por git (sólo contiene UUIDs de proyecto, no secretos).
+> El proyecto **no** tiene integración Git (el repo todavía no tiene remoto), así que el deploy es
+> **manual**. Cuando exista remoto en GitHub, conviene conectar el repo para despliegues automáticos
+> (Vercel respeta el Root Directory ya configurado).
 
 ---
 
-## 6. Checklist de verificación post-despliegue
-
-Sobre la **URL pública** que arroje `vercel --prod`:
+## 8. Checklist de verificación (reutilizable)
 
 ```powershell
-$u = "https://TU-DOMINIO.vercel.app"
+$u = "https://glass-world-studio.vercel.app"
 foreach ($p in @('/','/novedades','/novedades/reaparicion','/novedades/alianzas-estrategicas','/novedades/modelo-de-alianza','/umbral','/inicio','/privacy','/terms','/cookies','/refunds')) {
   $r = Invoke-WebRequest -UseBasicParsing -Uri ($u + $p)
   "{0,-38} {1}" -f $p, $r.StatusCode
@@ -140,7 +165,4 @@ foreach ($p in @('/','/novedades','/novedades/reaparicion','/novedades/alianzas-
 Invoke-WebRequest -UseBasicParsing -Uri $u -Method Head | Select-Object -ExpandProperty Headers
 ```
 
-Esperado: **11 rutas en `200`** y las cabeceras de §3 presentes.
-
-Estado local de referencia (verificado el 15-10-2026): `tsc --noEmit` y `next build` sin
-advertencias, **14 páginas estáticas** generadas.
+Esperado: **11 rutas en `200`** y las cabeceras de §5.
