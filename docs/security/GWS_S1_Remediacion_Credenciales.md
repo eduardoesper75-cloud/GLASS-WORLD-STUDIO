@@ -5,8 +5,9 @@
 > contraseñas de cuenta) y estaba **versionado en Git**. Este documento es el procedimiento de
 > remediación: saneamiento de archivos, **rotación**, saneamiento de historial y verificación.
 >
-> **Estado:** archivos ya saneados (`37c3fd8`) + placeholder estandarizado. **Rotación e historial:
-> pendientes de ejecución** por el titular.
+> **Estado:** archivos saneados (`37c3fd8`) + placeholder estandarizado · **historial reescrito y
+> adoptado ✅** (escáner limpio sobre 52 commits) · **rotación: pendiente** a cargo del titular, con
+> helper listo (`tools/security/rotate-app-password.ps1`).
 
 ---
 
@@ -14,9 +15,9 @@
 
 | Qué | Dónde | Estado |
 |---|---|---|
-| 2 contraseñas de aplicación (casillas `eduardoesper75` y `esper.eduardo`) | `GWS_Parte_Tecnico_IMAP_MCP.md` §1.2 | Redactadas en HEAD; **siguen en commits** `52fe67b`, `32c5ff3`, `815e7bb` |
-| 2 contraseñas de cuenta (Google) | ídem | ídem |
-| Riesgo de propagación | **Repo sin remoto** (`git remote -v` vacío) → la fuga es **local** hoy | Mitigado parcialmente |
+| 2 contraseñas de aplicación (casillas `eduardoesper75` y `esper.eduardo`) | `GWS_Parte_Tecnico_IMAP_MCP.md` §1.2 | Redactadas en HEAD · **purgadas del historial ✅** |
+| 2 contraseñas de cuenta (Google) | ídem | Ídem · **rotación pendiente** (titular) |
+| Riesgo de propagación | **Repo sin remoto** (`git remote -v` vacío) → la fuga es **local** | Mitigado (historial saneado; rotación pendiente) |
 
 > Las casillas están ligadas a servicios financieros (banca, billeteras, cripto) → el impacto
 > potencial es **alto**. Prioridad: **rotar ya**.
@@ -73,6 +74,15 @@ Para **cada** casilla (`eduardoesper75@gmail.com` y `esper.eduardo@gmail.com`):
 
 > El runner OpenOutreach y el CLI `@gws/mail-cleanup` leen de estos `.env` externos. Tras rotar,
 > **revalidar** (ver §4).
+
+> **Helper (recomendado, lo corre el titular):** tras crear la nueva app password, en vez de editar a
+> mano ejecutá:
+> ```powershell
+> powershell -ExecutionPolicy Bypass -File tools/security/rotate-app-password.ps1 -Account esper.eduardo -Validate
+> ```
+> Pide la nueva app password por **entrada segura** (nunca se muestra ni se versiona), actualiza
+> `.env.local` y el `.env` del runner, y (con `-Validate`) prueba la autenticación IMAP. El agente
+> nunca ve el valor. Ver también la regla §8.2.
 
 ---
 

@@ -1,18 +1,19 @@
 #!/usr/bin/env node
-// Envío automatizado del Lote 1 de logística (P1+P2) — Glass World Studio.
+// Envío automatizado de correos de outreach (logística / institucionales) — Glass World Studio.
 //
-// Compone cada correo con el copy CANÓNICO (GWS_Correos_Logistica.md) y lo envía por
-// SMTP de Gmail usando curl, con *throttling* entre envíos y registro JSONL por correo.
-// Sólo envía a destinatarios con correo real (los de "**Para:**"); los que quedaron en
-// formulario web NO se tocan.
+// Compone cada correo con el copy CANÓNICO del archivo indicado y lo envía por SMTP de
+// Gmail usando curl, con *throttling* entre envíos y registro JSONL por correo.
+// Sólo envía a destinatarios con correo real (`**Para:**`); los de formulario web NO se tocan.
+// Es IDEMPOTENTE: omite los correos ya enviados OK (usar --force para reenviar).
 //
-// Autorización: el dueño pidió expresamente automatizar el envío (16-10-2026), reemplazando
-// el envío manual. Las credenciales se leen de `.env.local` (nunca se versionan ni se imprimen).
+// Autorización: el dueño pidió expresamente automatizar el envío (16-10-2026).
+// Las credenciales se leen de `.env.local` (nunca se versionan ni se imprimen).
 //
 // Uso:
-//   node tools/outreach/send-lote1.mjs                          (dry-run: muestra el plan)
-//   node tools/outreach/send-lote1.mjs --execute
-//   node tools/outreach/send-lote1.mjs --execute --throttle=60000 --only=user@dominio.com
+//   node tools/outreach/send-batch.mjs                                   (dry-run, Lote 1)
+//   node tools/outreach/send-batch.mjs --execute
+//   node tools/outreach/send-batch.mjs --execute --tag=lote2 --source=docs/logistica/GWS_Correos_Forwarders.md
+//   node tools/outreach/send-batch.mjs --execute --throttle=60000 --only=user@dominio.com
 
 import { readFileSync, appendFileSync, existsSync, writeFileSync, unlinkSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
@@ -22,7 +23,6 @@ import { fileURLToPath } from 'node:url';
 import { tmpdir } from 'node:os';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
-const CORREOS = resolve(ROOT, 'docs/logistica/GWS_Correos_Logistica.md');
 const ENV_LOCAL = resolve(ROOT, '.env.local');
 const LOG = resolve(ROOT, 'docs/logistica/send-log.jsonl');
 const SMTP = { host: 'smtp.gmail.com', port: 587 };
@@ -36,6 +36,8 @@ const flag = (k) => args.includes(`--${k}`);
 const EXECUTE = flag('execute');
 const THROTTLE = Number(opt('throttle', '60000'));
 const ONLY = opt('only', '');
+const TAG = opt('tag', 'lote1');
+const SOURCE = resolve(ROOT, opt('source', 'docs/logistica/GWS_Correos_Logistica.md'));
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -55,10 +57,10 @@ function parseCorreos(md) {
     const company = (b.match(/^([^\n·]+)/) || [])[1];
     const to = (b.match(/\*\*Para:\*\*\s*([^\s\n]+)/) || [])[1];
     const asunto = (b.match(/\*\*Asunto:\*\*\s*([^\n]+)/) || [])[1];
-    const categoria = (b.match(/\*\*Categoría:\*\*\s*([^\s·]+)/) || [])[1] || '';
+    const perfil = (b.match(/\*\*Perfil:\*\*\s*([^\s·]+)/) || [])[1] || (b.match(/\*\*Categoría:\*\*\s*([^\s·]+)/) || [])[1] || '';
     const bodyM = b.match(/```\n([\s\S]*?)\n```/);
     if (company && to && to.includes('@') && asunto && bodyM) {
-      out.push({ company: company.trim(), to: to.trim(), asunto: asunto.trim(), categoria, body: bodyM[1] });
+      out.push({ company: company.trim(), to: to.trim(), asunto: asunto.trim(), perfil, body: bodyM[1] });
     }
   }
   return out;
@@ -68,7 +70,7 @@ const b64hdr = (s) => `=?UTF-8?B?${Buffer.from(s, 'utf8').toString('base64')}?=`
 const wrap76 = (s) => s.replace(/(.{76})/g, '$1\r\n');
 
 const OPTOUT =
-  '\n\n—\nRecibís este mensaje porque tu organización figura como operador logístico del sector del vidrio.\n' +
+  '\n\n—\nRecibís este mensaje porque tu organización figura en el ecosistema del vidrio.\n' +
   'Si preferís no recibir más, respondé "BAJA" y te damos de baja de inmediato.';
 
 function buildMessage({ from, to, subject, body }) {
@@ -124,12 +126,13 @@ async function main() {
   if (existsSync(LOG)) {
     for (const line of readFileSync(LOG, 'utf8').split(/\r?\n/)) {
       if (!line.trim()) continue;
-      try { const r = JSON.parse(line); if (r.ok) done.add(r.company); } catch { /* noop */ }
+      try { const r = JSON.parse(line); if (r.ok) done.add(r.to?.toLowerCase()); } catch { /* noop */ }
     }
   }
-  const targets = parseCorreos(readFileSync(CORREOS, 'utf8'))
+  const targets = parseCorreos(readFileSync(SOURCE, 'utf8'))
     .filter((t) => !ONLY || t.to === ONLY)
-    .filter((t) => flag('force') || !done.has(t.company));
+    .filter((t) => flag('force') || !done.has(t.to.toLowerCase()));
+  console.log(`Lote: ${TAG} · fuente: ${SOURCE}`);
   console.log(`Modo: ${EXECUTE ? 'ENVÍO REAL' : 'DRY-RUN'} · destinatarios con email: ${targets.length} · ya enviados (se omiten): ${done.size} · throttle ${THROTTLE}ms`);
   targets.forEach((t, i) => console.log(`  ${i + 1}. ${t.company} <${t.to}> — ${t.asunto}`));
   if (!EXECUTE) {
@@ -148,9 +151,10 @@ async function main() {
     }
     const rec = {
       ts: new Date().toISOString(),
+      tag: TAG,
       company: t.company,
       to: t.to,
-      categoria: t.categoria,
+      perfil: t.perfil,
       ok: r.ok,
       err: r.err || '',
     };
