@@ -292,9 +292,11 @@ function main() {
     flecha: ['flecha', 'arrow'],
     perfil: ['perfil', 'profile'],
     name: ['name', 'nombre'],
-    company: ['company', 'empresa', 'organizacion', 'organización'],
+    company: ['company', 'empresa', 'empresa_o_fondo', 'organizacion', 'organización'],
     role: ['role', 'cargo', 'puesto'],
     linkedin_url: ['linkedin_url', 'url', 'linkedin', 'perfil_url'],
+    email: ['email', 'email_contacto', 'correo', 'mail'],
+    website: ['website', 'web', 'sitio', 'sitio_web'],
     hook: ['hook', 'gancho'],
     estado: ['estado', 'status'],
   };
@@ -339,6 +341,8 @@ function main() {
     const baseSeq = SEQUENCES[flecha] ?? SEQUENCES.generico;
     const p = { name: get('name'), company: get('company'), role: get('role'), hook: get('hook') };
     const url = get('linkedin_url');
+    const email = get('email');
+    const website = get('website');
     const estado = get('estado');
 
     if (flecha !== 'generico' && !SEQUENCES[flecha]) {
@@ -374,6 +378,8 @@ function main() {
     lines.push(`## ${p.name}${p.role ? ` — ${p.role}` : ''}${p.company ? ` · ${p.company}` : ''}`);
     lines.push(`*${seq.label}${appliedPerfil ? ` · perfil: ${appliedPerfil}` : ''}${estado ? ` · estado: ${estado}` : ''}*`);
     if (url) lines.push(`<${url}>`);
+    if (email) lines.push(`Correo: ${email}`);
+    if (website) lines.push(`Web: <${website}>`);
     lines.push('');
     lines.push(`**Nota de invitación (${noteLen}/${NOTE_LIMIT}):**`);
     lines.push(`> ${noteLen > NOTE_LIMIT ? FALLBACK_NOTE(p) : note}`);
