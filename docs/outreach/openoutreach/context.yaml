@@ -33,7 +33,7 @@ project:
 leader:
   name: Eduardo Esper
   role: Fundador
-  email: eduesper@gmail.com
+  email: esper.eduardo@gmail.com
   phone: "+54 9 385 582-6289"
   country_code: ar
 
@@ -62,5 +62,5 @@ targets:
     goal: Alianzas estratégicas para la red de distribución real.
 
 contact_block:
-  email: eduesper@gmail.com
+  email: esper.eduardo@gmail.com
   whatsapp: "+54 9 385 582-6289"

@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 const SIGNATURE = [
   'Eduardo Esper',
   'Fundador — Glass World Studio',
-  'eduesper@gmail.com · +54 9 385 582-6289',
+  'esper.eduardo@gmail.com · +54 9 385 582-6289',
 ];
 
 // Marco del Manifiesto de Convocatoria (párrafo central, común a todo envío).
@@ -169,7 +169,7 @@ function main() {
   lines.push('> Marco: **Manifiesto de Convocatoria**. Firma obligatoria al pie.');
   lines.push('> Canal: **GitHub** (perfil público). Si el perfil expone correo, usarlo; si no, contactar por el perfil.');
   lines.push('> **Envío manual**, ritmo humano, máximo 3 toques. No automatizar cuentas.');
-  lines.push('> Firma: Eduardo Esper · eduesper@gmail.com · +54 9 385 582-6289');
+  lines.push('> Firma: Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289');
   lines.push('');
   lines.push('---');
   lines.push('');

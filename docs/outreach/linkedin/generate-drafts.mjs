@@ -31,7 +31,7 @@ const TRILOGY = {
 // (La nota de invitación de LinkedIn no la lleva: el tope es 300 caracteres.)
 const SIGNATURE = [
   'Eduardo Esper — Fundador, Glass World Studio',
-  'eduesper@gmail.com · +54 9 385 582-6289',
+  'esper.eduardo@gmail.com · +54 9 385 582-6289',
 ];
 
 const here = dirname(fileURLToPath(import.meta.url));

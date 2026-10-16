@@ -31,7 +31,7 @@ export const reaparicion: Announcement = {
   author: {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
-    contact: 'eduesper@gmail.com',
+    contact: 'esper.eduardo@gmail.com',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',
@@ -92,7 +92,7 @@ export const alianzas: Announcement = {
   author: {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
-    contact: 'eduesper@gmail.com',
+    contact: 'esper.eduardo@gmail.com',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',
@@ -147,7 +147,7 @@ export const modeloDeAlianza: Announcement = {
   author: {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
-    contact: 'eduesper@gmail.com',
+    contact: 'esper.eduardo@gmail.com',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',

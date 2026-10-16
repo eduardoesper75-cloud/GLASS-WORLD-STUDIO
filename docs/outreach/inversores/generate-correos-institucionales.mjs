@@ -16,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 const SIGNATURE = [
   'Eduardo Esper',
   'Fundador — Glass World Studio',
-  'E-mail: eduesper@gmail.com',
+  'E-mail: esper.eduardo@gmail.com',
   'Teléfono / WhatsApp: +54 9 385 582-6289',
   'Santiago del Estero, República Argentina',
 ];
