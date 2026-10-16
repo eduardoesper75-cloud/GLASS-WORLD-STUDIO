@@ -60,13 +60,17 @@ Fuente: `%USERPROFILE%\.imap-mcp\accounts.json` (credenciales resueltas por ento
 
 | Casilla | Credencial de aplicación (16 car.) | Resultado |
 |---|---|---|
-| eduardoesper75 | `<REDACTED>` | ✅ login IMAP OK |
-| esper.eduardo | `<REDACTED>` | ✅ login IMAP OK |
+| eduardoesper75 | `[REDACTADO]` (en `.env.local`) | ✅ login IMAP OK |
+| esper.eduardo | `[REDACTADO]` (en `.env.local`) | ✅ login IMAP OK |
 
-Antecedentes (contraseñas de **cuenta**, no de aplicación): `Esperglass75` es válida
+> 🔒 **Credenciales redactadas el 2026-10-16.** Los valores estaban en texto plano en este documento
+> versionado (fuga detectada en el relevamiento). **Rotar** las contraseñas de aplicación y de cuenta:
+> quedaron en el historial de Git. Regla: los secretos viven **sólo** en `.env` (ignorado por git).
+
+Antecedentes (contraseñas de **cuenta**, no de aplicación): la contraseña de cuenta es válida
 en ambas casillas pero Gmail la rechaza por IMAP (*Application-specific password
-required*); `Esperglass.75` es inválida. **Las contraseñas de aplicación son por
-cuenta** y ambas quedaron cargadas en `.env.local` (no versionado).
+required*). **Las contraseñas de aplicación son por cuenta** y ambas quedaron cargadas en
+`.env.local` (no versionado).
 
 ### 1.3 Flags de seguridad vigentes
 
