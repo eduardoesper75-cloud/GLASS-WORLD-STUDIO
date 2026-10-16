@@ -4,7 +4,7 @@ Capa de datos de GWS. Separa el material **crudo** del material **curado**.
 
 ```text
 data/
-├── raw/        # Descargas y volcados de ingesta (Drive, YouTube). NO se versiona.
+├── raw/        # Descargas y volcados de ingesta. NO se versiona.
 └── curated/    # Fichas de Curaduría normalizadas (*.json). SÍ se versiona.
 ```
 
@@ -12,8 +12,7 @@ data/
 
 ```text
 Google Drive / Docs ─┐
-YouTube Data API ────┼─▶ pipeline (ingesta) ─▶ data/raw ─▶ formateo ─▶ data/curated ─▶ UI / distribución
-Datos manuales ──────┘
+Datos manuales ──────┴─▶ pipeline (ingesta) ─▶ data/raw ─▶ formateo ─▶ data/curated ─▶ UI / distribución
 ```
 
 ## Fichas curadas

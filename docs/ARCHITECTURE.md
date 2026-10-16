@@ -9,7 +9,6 @@ GWS es una plataforma de **infraestructura de datos, curaduría técnica y ecosi
 ```text
 ┌─────────────────────────────────────────────────────────┐
 │              1. CAPA DE PRESENTACIÓN / UI               │
-│  • YouTube Channel (@Glass-World-Studio)                │
 │  • Web Client / Dashboard (Next.js / React)             │
 │                    apps/web                             │
 └────────────────────────────┬────────────────────────────┘
@@ -84,6 +83,6 @@ pipeline ──┘            └───────────────�
 ## Roadmap por capa
 
 - **Motor:** versionado de fichas, relaciones entre fichas, búsqueda/facetado por taxonomía.
-- **Pipeline:** `ingest:drive`, `ingest:youtube`, `sync:web`; reintentos e idempotencia.
+- **Pipeline:** `ingest:drive`, `sync:web`; reintentos e idempotencia.
 - **Datos:** integración de service account, convención de carpetas en Drive.
 - **UI:** rutas `/taxonomia`, `/ficha/[id]`, `/dashboard`; SSR de fichas publicadas.

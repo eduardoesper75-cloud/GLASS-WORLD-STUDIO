@@ -7,7 +7,7 @@ Fuente de verdad **tipada** de Glass World Studio. Define, en Zod + TypeScript:
 | `pillars` | Los 3 pilares técnicos: `hot-kiln`, `flame`, `cold-working`. |
 | `taxonomy` | Nodo de taxonomía, pilar y documento de taxonomía. |
 | `curation-card` | Esquema estandarizado de la **Ficha de Curatoría** (`ID · Title · Category · Source_URL · Timestamps · Metadata`). |
-| `env` | Validación tipada de variables de entorno (Google Drive, YouTube, web). |
+| `env` | Validación tipada de variables de entorno (Google Drive y web). |
 
 ## Uso
 

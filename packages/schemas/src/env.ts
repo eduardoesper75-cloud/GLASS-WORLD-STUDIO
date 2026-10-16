@@ -21,10 +21,6 @@ export const serverEnvSchema = z.object({
   GOOGLE_PRIVATE_KEY: optionalSecret,
   GOOGLE_APPLICATION_CREDENTIALS: optionalSecret,
 
-  // YouTube Data API v3
-  YOUTUBE_API_KEY: optionalSecret,
-  YOUTUBE_CHANNEL_ID: optionalSecret,
-
   // Capa de presentación
   NEXT_PUBLIC_API_BASE_URL: optionalSecret,
 });
@@ -75,17 +71,4 @@ export function requireGoogleDrive(env: ServerEnv): GoogleDriveCredentials {
         }
       : {}),
   };
-}
-
-export interface YouTubeCredentials {
-  apiKey: string;
-  channelId: string;
-}
-
-/** Extrae credenciales de YouTube Data API v3 y exige que existan. */
-export function requireYouTube(env: ServerEnv): YouTubeCredentials {
-  if (!env.YOUTUBE_API_KEY || !env.YOUTUBE_CHANNEL_ID) {
-    throw new Error('Faltan YOUTUBE_API_KEY y/o YOUTUBE_CHANNEL_ID en el entorno.');
-  }
-  return { apiKey: env.YOUTUBE_API_KEY, channelId: env.YOUTUBE_CHANNEL_ID };
 }

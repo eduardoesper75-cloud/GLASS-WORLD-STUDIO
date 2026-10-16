@@ -20,7 +20,6 @@ Comandos:
 
 Pendiente (roadmap de la capa 3):
   ingest:drive     Ingesta desde Google Drive / Docs REST API.
-  ingest:youtube   Ingesta de metadatos/capítulos desde YouTube Data API v3.
   sync:web         Sincronización de fichas publicadas hacia la capa de presentación.
 `;
 

@@ -9,6 +9,15 @@
     "tags": ["flame", "torch", "lampworking"]
   },
   {
+    "id": "flame-glassblowing",
+    "name": { "es": "Soplado de Vidrio", "en": "Glassblowing" },
+    "pillar": "flame",
+    "parentId": null,
+    "description": "Formado de piezas huecas mediante una caña de soplado y vidrio fundido.",
+    "aliases": ["glassblowing", "soplado", "blown glass"],
+    "tags": ["flame", "blowing", "glassblowing"]
+  },
+  {
     "id": "flame-flame-control",
     "name": { "es": "Control de Llama", "en": "Flame Control" },
     "pillar": "flame",

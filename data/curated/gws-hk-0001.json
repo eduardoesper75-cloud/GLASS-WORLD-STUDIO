@@ -3,8 +3,7 @@
   "title": "Vitrofusión: programa de cocción y recocido para full fuse",
   "category": "hot-kiln",
   "subcategory": "hot-kiln-full-fuse",
-  "sourceUrl": "https://www.youtube.com/watch?v=EXAMPLE0001",
-  "sourcePlatform": "youtube",
+  "resourcePath": "/inicio",
   "language": "es",
   "timestamps": [
     {

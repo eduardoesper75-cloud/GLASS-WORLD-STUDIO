@@ -84,8 +84,7 @@ Esquema estandarizado que **toda** unidad de contenido procesada debe respetar:
   "title": "…",                        // Título SEO/curatorial normalizado
   "category": "hot-kiln",              // Pilar técnico
   "subcategory": "hot-kiln-full-fuse", // Nodo de taxonomía (opcional)
-  "sourceUrl": "https://…",            // Enlace canónico
-  "sourcePlatform": "youtube",         // youtube | google-drive | google-docs | web
+  "resourcePath": "/recursos/gws-hk-0001", // Ruta interna del contenido en GWS
   "language": "es",
   "timestamps": [                      // Marcas temporales de procesos clave
     { "label": "…", "seconds": 480, "technique": "hot-kiln-full-fuse" }
@@ -108,7 +107,6 @@ Definición canónica: `packages/schemas/src/curation-card.ts`. Ejemplo real: `d
 Todas las claves se declaran y validan en `packages/schemas/src/env.ts` (vía Zod) y se documentan en `.env.example`:
 
 - **Google Cloud / Drive & Docs REST API** — `GOOGLE_DRIVE_FOLDER_ID`, credenciales de service account.
-- **YouTube Data API v3** — `YOUTUBE_API_KEY`, `YOUTUBE_CHANNEL_ID`.
 - **Web** — `NEXT_PUBLIC_API_BASE_URL`.
 
 `.env` está en `.gitignore`. **Nunca** versiones credenciales.

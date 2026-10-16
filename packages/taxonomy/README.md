@@ -12,6 +12,8 @@ data/
 └── cold-working.json   # Nodos del pilar Cold-Working
 ```
 
+La versión inicial contiene 20 nodos. Incluye especialidades de soplado de vidrio, vitralismo y escultura en vidrio para el selector de pertenencia del Umbral.
+
 Un nodo:
 
 ```jsonc

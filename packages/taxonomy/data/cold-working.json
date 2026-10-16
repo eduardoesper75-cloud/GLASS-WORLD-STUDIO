@@ -52,5 +52,23 @@
     "description": "Unión en frío mediante adhesivos UV, estructurales o herrajes metálicos.",
     "aliases": ["assembly", "ensamblado", "UV glue"],
     "tags": ["assembly", "adhesive", "structural"]
+  },
+  {
+    "id": "cold-working-stained-glass",
+    "name": { "es": "Vitralismo", "en": "Stained Glass" },
+    "pillar": "cold-working",
+    "parentId": null,
+    "description": "Diseño y ensamblado de vidrio coloreado mediante perfiles de plomo, cobre u otros materiales.",
+    "aliases": ["stained glass", "vitral", "vidriera"],
+    "tags": ["stained-glass", "lead came", "copper foil"]
+  },
+  {
+    "id": "cold-working-glass-sculpture",
+    "name": { "es": "Escultura en Vidrio", "en": "Glass Sculpture" },
+    "pillar": "cold-working",
+    "parentId": null,
+    "description": "Creación y acabado de formas escultóricas en vidrio mediante técnicas de corte, unión y pulido.",
+    "aliases": ["glass sculpture", "escultura de vidrio"],
+    "tags": ["sculpture", "art", "cold-working"]
   }
 ]

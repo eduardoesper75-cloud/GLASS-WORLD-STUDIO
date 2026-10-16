@@ -100,7 +100,7 @@ build compila primero el motor en orden topológico (`schemas` antes que `taxono
 | `OPENOUTFIND_APOLLO_API_KEY` | ídem |
 | `OUTSEND_MAILBOX_PASSWORD` | ídem |
 | `OUTSEND_SMTP_*` / `OUTSEND_IMAP_*` | ídem |
-| `GOOGLE_*`, `YOUTUBE_API_KEY` | `.env` local en la raíz |
+| `GOOGLE_*` | `.env` local en la raíz |
 
 **Motivos:** (1) nadie las leería — el sitio no tiene servidor que las consuma; (2) el panel del
 hosting tiene un ámbito de acceso mucho más amplio que este equipo, y cualquier `NEXT_PUBLIC_*`

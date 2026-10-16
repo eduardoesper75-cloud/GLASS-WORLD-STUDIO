@@ -22,13 +22,6 @@ export const CURATION_CARD_ID_PATTERN = /^gws-(hk|fl|cw)-\d{4}$/;
 
 export const curationStatusSchema = z.enum(['draft', 'review', 'published', 'archived']);
 
-export const sourcePlatformSchema = z.enum([
-  'youtube',
-  'google-drive',
-  'google-docs',
-  'web',
-]);
-
 /** Marca temporal estructurada de un proceso clave dentro del recurso. */
 export const timestampSchema = z.object({
   /** Etiqueta legible del hito. Ej.: "Meseta de fusión completa". */
@@ -59,9 +52,8 @@ export const curationCardSchema = z.object({
   category: pillarIdSchema,
   /** Nodo de taxonomía más específico (opcional). */
   subcategory: z.string().regex(ID_PATTERN).optional(),
-  /** Enlace canónico al recurso original. */
-  sourceUrl: z.string().url(),
-  sourcePlatform: sourcePlatformSchema,
+  /** Ruta interna del recurso publicado dentro de Glass World Studio. */
+  resourcePath: z.string().regex(/^\/[a-z0-9][a-z0-9/_-]*$/),
   language: z.string().min(2).max(5).default('es'),
   timestamps: z.array(timestampSchema).default([]),
   metadata: curationMetadataSchema,
@@ -71,7 +63,6 @@ export const curationCardSchema = z.object({
 });
 
 export type CurationStatus = z.infer<typeof curationStatusSchema>;
-export type SourcePlatform = z.infer<typeof sourcePlatformSchema>;
 export type CurationTimestamp = z.infer<typeof timestampSchema>;
 export type CurationMetadata = z.infer<typeof curationMetadataSchema>;
 export type CurationCard = z.infer<typeof curationCardSchema>;

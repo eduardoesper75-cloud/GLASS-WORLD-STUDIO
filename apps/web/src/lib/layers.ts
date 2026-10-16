@@ -13,7 +13,7 @@ export const SYSTEM_LAYERS: readonly SystemLayer[] = [
     order: 1,
     id: 'ui',
     name: 'Presentación / UI',
-    detail: 'Canal de YouTube y cliente web / dashboard.',
+    detail: 'Cliente web / dashboard de Glass World Studio.',
     location: 'apps/web',
   },
   {
@@ -27,7 +27,7 @@ export const SYSTEM_LAYERS: readonly SystemLayer[] = [
     order: 3,
     id: 'pipeline',
     name: 'Pipeline de Automatización',
-    detail: 'Ingesta, formateo y sincronización desde Google Drive / Docs y YouTube.',
+    detail: 'Ingesta, formateo y sincronización de contenido propio desde Google Drive / Docs.',
     location: 'pipeline',
   },
   {
