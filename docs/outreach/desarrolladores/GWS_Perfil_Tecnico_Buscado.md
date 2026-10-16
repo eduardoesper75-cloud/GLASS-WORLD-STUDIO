@@ -103,7 +103,7 @@ posibilidad de **dejar huella** en algo global.
 2. Si hay match: acceso al repositorio y una **primera tarea concreta** (a modo de prueba mutua).
 3. Si funciona para los dos: se define el rol y **se pactan las condiciones**.
 
-**Contacto:** Eduardo Esper · Fundador · esper.eduardo@gmail.com · WhatsApp +54 9 385 6 22 84 00
+**Contacto:** Eduardo Esper · Fundador · eduesper@gmail.com · WhatsApp +54 9 385 582-6289
 
 ---
 

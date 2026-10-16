@@ -30,5 +30,5 @@ Estamos construyendo una solución definitiva para un sector milenario.
 
 Un saludo cordial,
 **Eduardo Esper**
-`esper.eduardo@gmail.com`
-WhatsApp / Tel: `+54 9 385 6 22 84 00`
+`eduesper@gmail.com`
+WhatsApp / Tel: `+54 9 385 582-6289`

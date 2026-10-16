@@ -95,8 +95,8 @@ La firma que se agrega a todos los mensajes incluye:
 ```
 Eduardo Esper
 Fundador · Glass World Studio
-esper.eduardo@gmail.com
-WhatsApp / Tel: +54 9 385 6 22 84 00
+eduesper@gmail.com
+WhatsApp / Tel: +54 9 385 582-6289
 Una plataforma con alma de taller, que se fortalece con tu crecimiento.
 ```
 

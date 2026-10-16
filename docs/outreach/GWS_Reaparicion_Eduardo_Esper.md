@@ -43,4 +43,4 @@ Las puertas están abiertas para conversar.
 
 Un saludo cordial,  
 **Eduardo Esper**  
-`esper.eduardo@gmail.com`
+`eduesper@gmail.com`
