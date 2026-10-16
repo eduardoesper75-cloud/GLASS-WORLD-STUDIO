@@ -101,28 +101,25 @@ El script:
 6. **verifica** que no quede ninguno;
 7. empaqueta el clon saneado (`gws-scrubbed-*.bundle`).
 
-### 3.2 Adoptar el historial saneado (paso manual, con árbol limpio)
+### 3.2 Adoptar el historial saneado (`adopt-scrubbed-history.ps1`)
 
-> Hacerlo **solo** con el trabajo pendiente **commiteado o stasheado**.
+> El script hace **todo** con respaldo y **preservación de tu trabajo pendiente** (stash automático).
+> Por defecto corre en **preflight** (no toca nada); con `-Execute` aplica.
 
 ```powershell
-# a) Respaldo adicional y guardar el trabajo pendiente
-git add -A ; git stash push -u -m "pre-scrub"
-# b) Traer el historial saneado desde el bundle
-git fetch "<OutDir>\gws-scrubbed-<stamp>.bundle" "refs/heads/main:refs/heads/main-scrubbed"
-# c) Mover main al historial saneado
-git checkout main-scrubbed ; git branch -M main
-# d) Restaurar el trabajo pendiente
-git stash pop
+# 1) Preflight: muestra el plan y los refs del bundle (NO modifica nada)
+powershell -ExecutionPolicy Bypass -File tools/security/adopt-scrubbed-history.ps1
+
+# 2) Aplicar: respaldo -> stash -u -> swap de `main` -> stash pop -> reflog+gc -> verificación
+powershell -ExecutionPolicy Bypass -File tools/security/adopt-scrubbed-history.ps1 -Execute
 ```
 
-Alternativa directa (si preferís correr `git filter-repo` sobre el repo en vivo, con árbol limpio):
-```powershell
-python .\gws-scrub\git-filter-repo.py --force --replace-text .\gws-scrub\replacements-<stamp>.txt
-```
+En orden: 1) bundle de seguridad del repo en vivo; 2) `git stash push -u` del trabajo pendiente;
+3) `git fetch` del bundle + **swap** de `main` (aborta si el árbol no coincide); 4) `git stash pop`;
+5) `reflog expire --expire=now` + `gc --prune=now` (purga los objetos con secretos); 6) verificación.
 
 > **Restaurar respaldo** (si algo saliera mal):
-> `git clone <backup-antes-de-scrub-*.bundle> repo-restaurado`
+> `git clone <backup-antes-de-adopt-*.bundle> repo-restaurado`
 
 ---
 
