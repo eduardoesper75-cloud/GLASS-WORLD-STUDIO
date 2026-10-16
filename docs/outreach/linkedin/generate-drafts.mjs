@@ -227,6 +227,23 @@ const SEQUENCES = {
           `Sin apuro, ${firstName(p.name)}. Si le ves encaje, te cuento el rol y las condiciones. ` +
           `Buena semana.`,
       },
+      // Arquitectos de software: APIs, microservicios y diseño de sistemas.
+      arquitecto: {
+        note: (p) =>
+          `Hola ${p.name}, vi tu perfil de arquitectura${p.hook ? ` (${p.hook})` : ''}. Estoy armando el ` +
+          `núcleo técnico de Glass World Studio, un marketplace vertical del vidrio, y busco arquitectos. ` +
+          `Me gustaría conectar. Eduardo, fundador.`,
+        opener: (p) =>
+          `Gracias por conectar, ${firstName(p.name)}. Pregunta de arquitecto a arquitecto: para un ` +
+          `marketplace B2B con oferta/demanda en tiempo real y licitaciones, ¿qué construirías primero: ` +
+          `el dominio, las APIs o la capa de agentes?`,
+        follow1: () =>
+          `Te comparto el desafío: 6 galaxias y 5 satélites de ingeniería predictiva sobre APIs y ` +
+          `microservicios, con orquestación de agentes. ¿Cómo lo diseñarías vos?`,
+        follow2: (p) =>
+          `Sin apuro, ${firstName(p.name)}. Si te interesa el rol de arquitectura, te cuento alcance y ` +
+          `condiciones. Buena semana.`,
+      },
       // Arquitectura multi-agente / MCP / IA.
       multiagente: {
         note: (p) =>

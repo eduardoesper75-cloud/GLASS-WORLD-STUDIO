@@ -44,21 +44,23 @@ fuentes abiertas rara vez hay un contacto nominal de un fondo. Por eso el CSV tr
 su sitio y su canal público; **la persona la agregás vos** (introducción cálida o el formulario del
 sitio). Los borradores de esta línea son plantilla: reemplazá el saludo por tu contacto.
 
-### Línea 2 — Talento técnico (13 perfiles reales)
+### Línea 2 — Talento técnico (38 perfiles reales: 13 Fase 1 + 25 Fase 2)
 
 Archivo de trabajo: `docs/outreach/desarrolladores/prospects_devs.csv` · borradores en
-`docs/outreach/desarrolladores/drafts_devs.md` (ambos ignorados por git).
+`docs/outreach/desarrolladores/drafts_devs.md` y envíos en `GWS_Envio_Devs.md` (ignorados por git).
 
-- Se cosecharon **30 perfiles reales** de la API de GitHub; se filtraron a **13** con stack afín
-  (multi-agente/IA, full-stack, B2B/marketplace).
+- **Fase 1:** 30 perfiles cosechados de la API de GitHub, filtrados a **13** con stack afín.
+- **Fase 2:** 39 candidatos nuevos, curados a **25** (marketplace/B2B, Next.js/React/TS y
+  arquitectos/microservicios).
 - Datos **verificables**: cada fila cita el perfil público de GitHub como fuente.
-- **Emails:** ninguno personal (no se inventaron; GitHub devolvió `null` en casi todos).
+- **Emails:** ninguno personal (no se inventaron; GitHub no los expone). Canal = perfil público.
 
 | Sub-perfil | Cantidad | Ejemplos |
 |---|---|---|
 | `multiagente` | 3 | Facundo Uferer · Juan Olié (Marvik AI) · Gustavo Juantorena (PhD) |
-| `fullstack` | 7 | Laura Beatris (Resend) · Ramiro Olivencia (Taller) · Cecilia Perdomo · … |
-| `b2b` | 3 | Vitor Freitas (CTO Eskolare) · Avelino (CTO Buser) · Ignacio Buioli (CTO Exemax) |
+| `fullstack` | 15 | Laura Beatris (Resend) · Cristiano Feitosa (Accenture) · Cecilia Perdomo · … |
+| `b2b` | 8 | Vitor Freitas · Avelino (Buser) · Ignacio Buioli · Ikdemm (marketplace) · … |
+| `arquitecto` | 12 | Ahsan Ayaz (Scania) · Andres Chavez (Citibank) · Ralf Biedert (Microsoft) · … |
 
 ### Línea 3 — Logística y cadena de suministro (28 organizaciones, 7 categorías)
 
@@ -127,3 +129,39 @@ La ruta correcta sigue siendo **introducción cálida** o el **canal corporativo
 4. **Enviar a mano** los borradores de devs (ya son individuos reales) respetando el ritmo humano.
 
 > Regla que no se rompe: **es mejor poco dato real que mucho dato inventado.**
+
+---
+
+## 7. Fase 2 — profundización y contacto directo (16-10-2026)
+
+### 7.1 Devs — segunda tanda (GitHub)
+- 6 consultas a la API de búsqueda de GitHub → **39 candidatos** → enriquecidos leyendo su
+  **perfil público** → curados a **25**. Total de la línea: **38**.
+- Nuevo sub-perfil **`arquitecto`** sumado al motor (APIs, microservicios, diseño de sistemas).
+- **Envíos listos** para manual: `docs/outreach/desarrolladores/GWS_Envio_Devs.md`, cada uno con el
+  marco del Manifiesto y la firma obligatoria (`eduesper@gmail.com` · `+54 9 385 582-6289`).
+- Generador de envíos: `docs/outreach/desarrolladores/generate-envios.mjs`.
+
+### 7.2 Inversores e industria — canal institucional
+- Se leyó el **sitio oficial** de cada organización y se extrajo el **correo general** publicado.
+- Nuevos correos reales: `info@alaya-capital.com` · `admin@angelesinversionistas.com` ·
+  `businessangels@iese.edu` · `caviplan@caviplan.org.ar` · `marketing@vidrala.com` ·
+  `info@adduntia.com`.
+- Sin correo general público (solo formulario, o TLS inválido): Kibo · Caixa · Fondo de Fondos ·
+  54 Ventures · Business Angels Club · AEBAN · Verallia · CAFAVI · Rigolleau · MdF → `[COMPLETAR]`.
+- **Carta corporativa** de convocatoria creada:
+  `docs/outreach/inversores/GWS_Carta_Convocatoria_Institucional.md` (con tabla de rutas).
+
+### 7.3 Logística — priorización
+- Las 28 organizaciones se clasificaron en **6 niveles de prioridad** (columna `prioridad` del CSV).
+- **Prioridad 1 (arte frágil, 6)** y **Prioridad 2 (empaque/crating, 4)** al frente.
+- Nuevos correos: `info@universalcargo.com.ar` · `sales@masterpieceintl.com` ·
+  `info@palletco.com.ar` · `contacto@integralproject.cl` · `info@embamat.com` ·
+  `contacto@lumberandpallets.com`.
+- Documento: `docs/logistica/GWS_Priorizacion_Logistica.md`.
+
+### 7.4 Límites de la Fase 2
+- El **core de la API de GitHub** quedó agotado (~60/hora); se usó el endpoint de búsqueda (10/min)
+  y la lectura de perfiles públicos.
+- Varios sitios institucionales no respondieron (TLS inválido) o sólo ofrecen formulario.
+- **Sigue sin enviarse nada:** el envío es humano y las credenciales del buzón están pendientes.
