@@ -21,7 +21,14 @@ const SIGNATURE = [
   'Santiago del Estero, República Argentina',
 ];
 
-const ASUNTO = 'Alianza logística — Glass World Studio, el ecosistema global del vidrio';
+// Framing central (post-16-10-2026): GWS busca ALIANZAS ESTRATÉGICAS en 3 ejes, en este orden:
+// 1) Inversores y capital · 2) Desarrolladores/tecnología · 3) Logística (pilar operativo).
+// La logística NO es una búsqueda aislada: es el pilar operativo de esa red.
+const CANON =
+  'Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.';
+
+const ASUNTO =
+  'Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio';
 
 // Qué se busca y por qué, según la categoría del aliado.
 const CATEGORIA = {
@@ -135,6 +142,11 @@ function cuerpo(p) {
     '',
     'Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).',
     '',
+    CANON.replace('\n', ' '),
+    '',
+    'La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. ' +
+      'Por eso los buscamos a ustedes.',
+    '',
     intro,
     '',
     'Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y ' +
@@ -145,9 +157,10 @@ function cuerpo(p) {
     `Por eso buscamos ${rol} que se integren como aliados logísticos oficiales de la plataforma, ` +
       'para envíos nacionales e internacionales.',
     '',
-    'No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ' +
-      'ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy ' +
-      'no tiene un lugar común donde encontrarse.',
+    'No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a ' +
+      'integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector ' +
+      '—artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde ' +
+      'encontrarse.',
     '',
     'Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.',
     '',
@@ -180,10 +193,11 @@ function main() {
   });
 
   const lines = [];
-  lines.push('# Correos de logística prioritaria listos — Glass World Studio');
+  lines.push('# Correos de logística listos — Glass World Studio');
   lines.push('');
+  lines.push(`> **${CANON}** La logística es el **pilar operativo** de esa red.`);
   lines.push(`> Prioridades incluidas: **${[...PRIORIDADES].join(', ')}**.`);
-  lines.push('> **Firma oficial al pie en todos.** Envío **manual**; verificar el canal antes de enviar.');
+  lines.push('> **Firma oficial al pie en todos.** Envío con *throttling*; verificar el canal antes de enviar.');
   lines.push('> Donde no hay correo, el canal es el formulario web (no se inventaron direcciones).');
   lines.push('');
   lines.push('---');

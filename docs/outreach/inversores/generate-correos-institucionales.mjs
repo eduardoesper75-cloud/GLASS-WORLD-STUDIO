@@ -22,7 +22,12 @@ const SIGNATURE = [
 ];
 
 const ASUNTO =
-  'Convocatoria a co-construir el ecosistema digital de la industria del vidrio';
+  'Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio';
+
+// Framing central (post-16-10-2026): GWS busca ALIANZAS ESTRATÉGICAS en 3 ejes, en este orden:
+// 1) Inversores y capital · 2) Desarrolladores/tecnología · 3) Logística (pilar operativo).
+const CANON =
+  'Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.';
 
 // Vía de participación según el perfil del destinatario (texto plano: es un correo).
 const VIAS = {
@@ -106,6 +111,10 @@ function cuerpo(p) {
       'el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que ' +
       'congregue a todos sus actores globales.',
     '',
+    CANON,
+    'Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. ' +
+      'Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).',
+    '',
     'Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 ' +
       'millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores ' +
       'y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller ' +
@@ -154,9 +163,10 @@ function main() {
   const lines = [];
   lines.push('# Correos institucionales listos — Glass World Studio');
   lines.push('');
+  lines.push(`> **${CANON}** Esta pieza corresponde al **eje 1 — Inversores y capital**.`);
   lines.push('> Derivados de `GWS_Carta_Convocatoria_Institucional.md`. **Firma oficial al pie en todos.**');
   lines.push('> Sólo se generan correos para organizaciones con **correo real** (los `[COMPLETAR]` se omiten).');
-  lines.push('> Envío **manual**. Verificar el correo antes de enviar.');
+  lines.push('> Envío con *throttling*; verificar el correo antes de enviar.');
   lines.push('');
   lines.push('---');
   lines.push('');

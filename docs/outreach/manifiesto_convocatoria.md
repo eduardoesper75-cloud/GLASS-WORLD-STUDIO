@@ -2,6 +2,8 @@
 
 > Documento fundacional y de convocatoria global.
 > Industria del vidrio · Arte · Tecnología · Logística
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) Logística (pilar operativo).
 > **Idioma original: español.** Versión en inglés al final del documento.
 
 ---

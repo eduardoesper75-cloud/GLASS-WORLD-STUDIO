@@ -1,4 +1,5 @@
-A quién vamos: buscamos tres perfiles de aliado para la nueva etapa de Glass World
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y
+Logística. A quién vamos: buscamos tres perfiles de aliado para la nueva etapa de Glass World
 Studio. El resultado que quiero de cada conversación es entender su mundo y abrir una
 relación real, no cerrar una venta en el primer correo.
 

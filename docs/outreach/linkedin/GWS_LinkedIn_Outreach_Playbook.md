@@ -43,6 +43,10 @@ cualquier mensaje de advertencia de LinkedIn.
 
 ## 3. Las 3 flechas (objetivo de cada conversación)
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Las tres "flechas" **son** los tres ejes de esa red, en orden de prioridad:
+> **Flecha 1 = Inversores y capital** · **Flecha 2 = Desarrolladores** · **Flecha 3 = Logística (pilar operativo)**.
+
 - **Flecha 1 — Inversores / Alianza estratégica:** que entiendan la oportunidad y el estado
   (INPI, 6 galaxias, 5 satélites) y que capten que **no pedimos capital pasivo**: traemos el
   mercado, la arquitectura y la plataforma, y buscamos un socio que financie o ejecute el

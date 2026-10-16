@@ -1,11 +1,13 @@
 # Log de envíos — Frente 2 (Outreach)
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Orden de prioridad: 1) **Inversores y capital** · 2) **Desarrolladores** · 3) **Logística** (pilar operativo).
 > **Archivo generado automáticamente** por `tools/outreach/build-envios-log.mjs`. No editar a mano.
 > **Estado real, sin inventar.** Nada se marca «enviado» sin registro en `send-log.jsonl`.
 > Los correos viven en los CSV **ignorados por git**: acá solo van organización/nombre, canal y estado.
 > Contacto al pie: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289**
 
-Actualizado: 2026-10-16 05:40 (hora local)
+Actualizado: 2026-10-16 10:46 (hora local)
 
 ---
 

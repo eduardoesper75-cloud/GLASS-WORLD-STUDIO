@@ -1,7 +1,8 @@
-# Correos de logística prioritaria listos — Glass World Studio
+# Correos de logística listos — Glass World Studio
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.** La logística es el **pilar operativo** de esa red.
 > Prioridades incluidas: **1, 2**.
-> **Firma oficial al pie en todos.** Envío **manual**; verificar el canal antes de enviar.
+> **Firma oficial al pie en todos.** Envío con *throttling*; verificar el canal antes de enviar.
 > Donde no hay correo, el canal es el formulario web (no se inventaron direcciones).
 
 ---
@@ -11,7 +12,7 @@
 **Para:** info@universalcargo.com.ar
 **Web:** https://esp.universalcargo.com.ar/categoria.asp?id=434
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -20,13 +21,17 @@ Estimado equipo de Universal Cargo Argentina:
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El traslado de obras y piezas de vidrio exige manejo especializado: embalaje museístico, control de clima, seguros y trazabilidad. Es exactamente el tipo de operación donde su experiencia marca la diferencia.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos operadores de arte frágil que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -46,7 +51,7 @@ Santiago del Estero, República Argentina
 **Canal:** formulario web → https://group-esi.com/es/servicios/embalaje-almacenaje-transporte-arte/ (sin correo público)
 **Web:** https://group-esi.com/es/servicios/embalaje-almacenaje-transporte-arte/
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -55,13 +60,17 @@ Estimado equipo de ESI Fine Art (Group ESI):
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El traslado de obras y piezas de vidrio exige manejo especializado: embalaje museístico, control de clima, seguros y trazabilidad. Es exactamente el tipo de operación donde su experiencia marca la diferencia.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos operadores de arte frágil que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -81,7 +90,7 @@ Santiago del Estero, República Argentina
 **Canal:** formulario web → https://europe.xpo.com/es/resource-center/logistica-de-museos-y-arte/ (sin correo público)
 **Web:** https://europe.xpo.com/es/resource-center/logistica-de-museos-y-arte/
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -90,13 +99,17 @@ Estimado equipo de XPO (Museums & Art):
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El traslado de obras y piezas de vidrio exige manejo especializado: embalaje museístico, control de clima, seguros y trazabilidad. Es exactamente el tipo de operación donde su experiencia marca la diferencia.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos operadores de arte frágil que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -116,7 +129,7 @@ Santiago del Estero, República Argentina
 **Para:** sales@masterpieceintl.com
 **Web:** https://masterpieceintl.com/
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -125,13 +138,17 @@ Estimado equipo de Masterpiece International:
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El traslado de obras y piezas de vidrio exige manejo especializado: embalaje museístico, control de clima, seguros y trazabilidad. Es exactamente el tipo de operación donde su experiencia marca la diferencia.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos operadores de arte frágil que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -151,7 +168,7 @@ Santiago del Estero, República Argentina
 **Canal:** formulario web → https://www.emotrans-global.com/industries/art-logistics/ (sin correo público)
 **Web:** https://www.emotrans-global.com/industries/art-logistics/
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -160,13 +177,17 @@ Estimado equipo de EMO Trans:
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El traslado de obras y piezas de vidrio exige manejo especializado: embalaje museístico, control de clima, seguros y trazabilidad. Es exactamente el tipo de operación donde su experiencia marca la diferencia.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos operadores de arte frágil que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -186,7 +207,7 @@ Santiago del Estero, República Argentina
 **Para:** c.arellano@movart.com.mx
 **Web:** https://www.movart.com.mx/
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -195,13 +216,17 @@ Estimado equipo de Movart:
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El traslado de obras y piezas de vidrio exige manejo especializado: embalaje museístico, control de clima, seguros y trazabilidad. Es exactamente el tipo de operación donde su experiencia marca la diferencia.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos operadores de arte frágil que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -221,7 +246,7 @@ Santiago del Estero, República Argentina
 **Para:** info@palletco.com.ar
 **Web:** https://palletco.com.ar/pallets-exportacion-nimf-15/
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -230,13 +255,17 @@ Estimado equipo de PalletCo:
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El embalaje técnico —crating de madera, caballetes A-frame, pallets NIMF-15— es lo que hace viable exportar una pieza sin quebrarla. Es la base de toda la cadena y el punto donde una pieza se salva o se pierde.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos fabricantes de empaque técnico y crating que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -256,7 +285,7 @@ Santiago del Estero, República Argentina
 **Para:** contacto@integralproject.cl
 **Web:** https://integralproject.cl/tipos-de-embalajes/
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -265,13 +294,17 @@ Estimado equipo de Integral Project:
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El embalaje técnico —crating de madera, caballetes A-frame, pallets NIMF-15— es lo que hace viable exportar una pieza sin quebrarla. Es la base de toda la cadena y el punto donde una pieza se salva o se pierde.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos fabricantes de empaque técnico y crating que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -292,7 +325,7 @@ Santiago del Estero, República Argentina
 **Web:** https://embamat.eu/
 **Teléfono:** 937 360 660
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -301,13 +334,17 @@ Estimado equipo de Embamat:
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El embalaje técnico —crating de madera, caballetes A-frame, pallets NIMF-15— es lo que hace viable exportar una pieza sin quebrarla. Es la base de toda la cadena y el punto donde una pieza se salva o se pierde.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos fabricantes de empaque técnico y crating que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
@@ -327,7 +364,7 @@ Santiago del Estero, República Argentina
 **Para:** contacto@lumberandpallets.com
 **Web:** https://www.lumberandpallets.com/
 
-**Asunto:** Alianza logística — Glass World Studio, el ecosistema global del vidrio
+**Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
 
 **Cuerpo:**
 
@@ -336,13 +373,17 @@ Estimado equipo de Lumber & Pallets:
 
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+
+La logística es el pilar operativo de esa red: es lo que conecta la oferta con la demanda global. Por eso los buscamos a ustedes.
+
 El embalaje técnico —crating de madera, caballetes A-frame, pallets NIMF-15— es lo que hace viable exportar una pieza sin quebrarla. Es la base de toda la cadena y el punto donde una pieza se salva o se pierde.
 
 Glass World Studio es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma (6 galaxias y 5 satélites). Miles de artistas, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y ese es el eslabón que no queremos improvisar.
 
 Por eso buscamos fabricantes de empaque técnico y crating que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Integrarse como operador oficial significa aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
+No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales pasarían a integrar la red de Alianzas Estratégicas de GWS y a aparecer ante la demanda global del sector —artistas, galerías, fabricantes y distribuidores— que hoy no tiene un lugar común donde encontrarse.
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 

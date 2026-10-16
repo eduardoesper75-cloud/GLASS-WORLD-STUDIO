@@ -1,6 +1,8 @@
 # Kit de Reclutamiento Técnico — Glass World Studio
 
-> **Flecha 2** del motor de crecimiento: Desarrolladores y Arquitectos.
+> **Eje 2** de las Alianzas Estratégicas: **Desarrolladores y Arquitectos de Software**.
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) Logística (pilar operativo).
 > Objetivo: sumar **pocas personas, muy buenas**, al núcleo técnico.
 > Última actualización: 16-10-2026
 

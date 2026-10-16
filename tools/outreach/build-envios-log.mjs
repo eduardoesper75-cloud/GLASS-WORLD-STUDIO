@@ -103,6 +103,8 @@ const p2 = (n) => String(n).padStart(2, '0');
 const L = [];
 L.push('# Log de envíos — Frente 2 (Outreach)');
 L.push('');
+L.push('> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**');
+L.push('> Orden de prioridad: 1) **Inversores y capital** · 2) **Desarrolladores** · 3) **Logística** (pilar operativo).');
 L.push('> **Archivo generado automáticamente** por `tools/outreach/build-envios-log.mjs`. No editar a mano.');
 L.push('> **Estado real, sin inventar.** Nada se marca «enviado» sin registro en `send-log.jsonl`.');
 L.push('> Los correos viven en los CSV **ignorados por git**: acá solo van organización/nombre, canal y estado.');

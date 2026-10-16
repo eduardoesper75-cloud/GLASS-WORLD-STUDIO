@@ -156,20 +156,20 @@ export const modeloDeAlianza: Announcement = {
   ],
   sections: [
     {
-      id: 'desarrolladores',
-      heading: 'Para los Desarrolladores y Arquitectos de Software',
-      bullets: [
-        'Lo que necesitamos: tu talento, conocimiento y capacidad técnica para desarrollar e integrar íntegramente la plataforma, los 5 Satélites predictivos y la arquitectura multi-agente.',
-        'La propuesta: formar parte del equipo fundador del núcleo tecnológico de la plataforma vertical más grande de la industria del vidrio.',
-      ],
-      paragraphs: [],
-    },
-    {
       id: 'inversores',
       heading: 'Para los Inversores y Capital de Riesgo',
       bullets: [
         'Lo que necesitamos: tu capacidad financiera para financiar directamente el desarrollo técnico. No buscamos que nos transfieras fondos a ciegas; buscamos inversores que respalden y liquiden el trabajo de los desarrolladores para construir la infraestructura física y digital.',
         'La propuesta: participación estratégica y equity en un modelo de negocio B2B de alcance global con mercado cautivo.',
+      ],
+      paragraphs: [],
+    },
+    {
+      id: 'desarrolladores',
+      heading: 'Para los Desarrolladores y Arquitectos de Software',
+      bullets: [
+        'Lo que necesitamos: tu talento, conocimiento y capacidad técnica para desarrollar e integrar íntegramente la plataforma, los 5 Satélites predictivos y la arquitectura multi-agente.',
+        'La propuesta: formar parte del equipo fundador del núcleo tecnológico de la plataforma vertical más grande de la industria del vidrio.',
       ],
       paragraphs: [],
     },

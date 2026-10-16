@@ -1,8 +1,10 @@
 # Kit de Alianza Estratégica — Glass World Studio
 
-> **Flecha 1** del motor de crecimiento: Inversores y desarrolladores estratégicos.
+> **Eje 1** de las Alianzas Estratégicas: **Inversores y capital de escala**.
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) Logística (pilar operativo).
 > **No es una ronda de capital pasivo.** Es una propuesta de co-creación.
-> Última actualización: 15-10-2026
+> Última actualización: 16-10-2026
 
 Este Kit convierte la visión de GWS en **material accionable** para cerrar una alianza:
 qué traemos a la mesa, qué buscamos y cómo lo contamos.

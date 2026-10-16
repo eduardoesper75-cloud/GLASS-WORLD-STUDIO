@@ -1,5 +1,8 @@
 # MANIFIESTO CONDENSADO DE LOGÍSTICA — PARA FORMULARIOS WEB
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> La logística es el **pilar operativo** de esa red. Este es el material de ese eje.
+>
 > Versión corta de la propuesta logística para pegar en el campo *"mensaje"* de los formularios
 > de contacto de las empresas de **arte frágil que no exponen correo directo**.
 > **Firma obligatoria al pie de cada envío.**
@@ -8,12 +11,12 @@ Contacto oficial: **Eduardo Esper · esper.eduardo@gmail.com · WhatsApp +54 9 3
 
 ---
 
-## Versión A — recomendada (~780 caracteres)
+## Versión A — recomendada (~900 caracteres)
 
 ```
-Glass World Studio nace en un banco de trabajo en Santiago del Estero, Argentina. Es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma. Miles de artistas, galerías, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y buscamos operadores de arte frágil que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
+Glass World Studio busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística. La logística es el pilar operativo de esa red. Nace en un banco de trabajo en Santiago del Estero, Argentina, y es el ecosistema digital global dedicado al vidrio: arte, industria y tecnología en una sola plataforma. Miles de artistas, galerías, talleres y fabricantes de todo el mundo van a necesitar mover obras y piezas frágiles, y buscamos operadores de arte frágil que se integren como aliados logísticos oficiales de la plataforma, para envíos nacionales e internacionales.
 
-No pedimos dinero: proponemos una alianza. Si les interesa, quedo a disposición para una reunión breve.
+No pedimos dinero: proponemos una alianza estratégica. Si les interesa, quedo a disposición para una reunión breve.
 
 Eduardo Esper — Fundador, Glass World Studio
 esper.eduardo@gmail.com · +54 9 385 582-6289
@@ -27,8 +30,8 @@ Glass World Studio (Santiago del Estero, Argentina) es el ecosistema digital glo
 Eduardo Esper, Fundador — esper.eduardo@gmail.com · +54 9 385 582-6289
 ```
 
-> Si el formulario tiene campo *"asunto"*: **Alianza logística — Glass World Studio, el ecosistema
-> global del vidrio**. Si limita la longitud, usar la Versión B.
+> Si el formulario tiene campo *"asunto"*: **Alianzas estratégicas · Logística — Glass World Studio,
+> el ecosistema global del vidrio**. Si limita la longitud, usar la Versión B.
 
 ---
 

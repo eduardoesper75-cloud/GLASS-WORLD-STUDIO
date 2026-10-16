@@ -1,6 +1,8 @@
 # Parte de Situación Estratégica — Frente 2
 
-> **Inversores · Desarrolladores · Logística** — estado de situación del motor de alianzas.
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) Logística (pilar operativo).
+> Estado de situación del motor de alianzas.
 > **Fecha:** 16-10-2026 · **Elaborado por:** Agente Principal GWS (relevamiento del repositorio).
 > **Alcance:** inspección de `docs/outreach`, `docs/logistica`, generadores, `packages/mail-cleanup`,
 > `tools/` y estado en Git. **Método:** lectura directa de fuentes internas; **cero datos inventados**.

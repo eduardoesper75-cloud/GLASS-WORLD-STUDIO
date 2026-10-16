@@ -1,5 +1,8 @@
 # Plantilla de respuestas — Glass World Studio (voz de Eduardo Esper)
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Las secciones "Flecha N" son los tres ejes de esa red, en orden de prioridad.
+
 OpenOutreach **genera cada respuesta con el modelo** a partir de `product_docs` +
 `campaign_target` (el marco `frame.j2` lo instruye como: "You are Eduardo Esper, writing
 email to one person, as yourself") y **añade la firma** (`signature.txt`) al final de

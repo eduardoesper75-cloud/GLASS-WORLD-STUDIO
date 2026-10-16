@@ -1,6 +1,8 @@
 # Logística Operativa — Glass World Studio
 
-> **Flecha 3**: cómo se mueve el vidrio cuando hay una transacción.
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) **Logística — pilar operativo**.
+> La logística **no** es una búsqueda aislada: es el **pilar operativo** de la red de Alianzas Estratégicas.
 > Última actualización: 16-10-2026
 
 Aquí vive el **diseño operativo** de la logística del marketplace. Para el **outreach** a

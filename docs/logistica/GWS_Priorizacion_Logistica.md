@@ -1,5 +1,8 @@
 # PRIORIZACIÓN LOGÍSTICA — GLASS WORLD STUDIO
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) **Logística — pilar operativo**.
+>
 > Clasificación de las **28 organizaciones** mapeadas en `logistica_aliados.csv`, ordenadas por
 > prioridad de contacto. La columna `prioridad` del CSV refleja esta escala (1 = máxima).
 >
@@ -12,7 +15,7 @@
 ## Prioridad 1 — Arte frágil (6)
 
 Especialistas en embalaje, almacenaje y transporte de obras de arte y piezas de vidrio. **El núcleo
-de la alianza logística de GWS.**
+del pilar logístico de las Alianzas Estratégicas de GWS.**
 
 | # | Organización | Cobertura | Canal |
 | --- | --- | --- | --- |

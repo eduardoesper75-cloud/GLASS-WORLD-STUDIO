@@ -21,7 +21,14 @@ const SIGNATURE = [
 ];
 
 // Marco del Manifiesto de Convocatoria (párrafo central, común a todo envío).
+// Framing central (post-16-10-2026): GWS busca ALIANZAS ESTRATÉGICAS en 3 ejes, en este orden:
+// 1) Inversores y capital · 2) Desarrolladores/tecnología · 3) Logística (pilar operativo).
+const CANON =
+  'Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.';
+
 const MANIFESTO =
+  CANON +
+  ' Este es el eje de Desarrolladores: el núcleo técnico que motoriza la plataforma. ' +
   'Glass World Studio nace en un banco de trabajo en Santiago del Estero, Argentina. Tras 20 años ' +
   'en el oficio —artista, docente y discípulo del maestro Miguel Diez— detecté una vacante histórica: ' +
   'el arte, la industria y la tecnología del vidrio (USD 323.200 M en 2025 → USD 450.200 M en 2033; y ' +
@@ -53,7 +60,8 @@ const PERFIL = {
     'Para el núcleo buscamos gente con oficio para construir una plataforma B2B real de alcance global.',
 };
 
-const ASUNTO = 'Glass World Studio — convocatoria al núcleo técnico (Tech Partner)';
+const ASUNTO =
+  'Alianzas estratégicas · Desarrolladores — Glass World Studio busca núcleo técnico (Tech Partner)';
 
 const ALIASES = {
   flecha: ['flecha', 'arrow'],

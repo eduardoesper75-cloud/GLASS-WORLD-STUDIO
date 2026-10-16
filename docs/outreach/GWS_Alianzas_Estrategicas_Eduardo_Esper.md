@@ -6,7 +6,7 @@ Regresamos a la plataforma con objetivos perfectamente definidos y una decisión
 
 Sabemos con absoluta certeza la magnitud del proyecto que tenemos entre manos y la oportunidad histórica que representa. Estamos frente a la construcción del próximo unicornio vertical de la industria: la primera arquitectura digital capaz de unificar, digitalizar y potenciar el universo del vidrio en un solo ecosistema integrado.
 
-En el marco de esta expansión, no salimos a pedir ni a buscar; **abrimos la convocatoria para consolidar Alianzas Estratégicas clave** en tres ejes fundamentales:
+En el marco de esta expansión, no salimos a pedir ni a buscar; **abrimos la convocatoria para consolidar Alianzas Estratégicas clave** en tres ejes fundamentales. En una línea: **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística**, en ese orden de prioridad:
 
 ---
 

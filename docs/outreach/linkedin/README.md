@@ -1,5 +1,8 @@
 # Copiloto de outreach para LinkedIn — Glass World Studio
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) Logística (pilar operativo).
+
 **Humano en el bucle. Cero automatización de tu cuenta. Cero riesgo de ban.**
 
 Este kit hace el trabajo pesado *sin tocar LinkedIn*: convierte tu lista de prospectos en

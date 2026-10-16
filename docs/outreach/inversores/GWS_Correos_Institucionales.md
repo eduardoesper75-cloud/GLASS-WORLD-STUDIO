@@ -1,8 +1,9 @@
 # Correos institucionales listos — Glass World Studio
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.** Esta pieza corresponde al **eje 1 — Inversores y capital**.
 > Derivados de `GWS_Carta_Convocatoria_Institucional.md`. **Firma oficial al pie en todos.**
 > Sólo se generan correos para organizaciones con **correo real** (los `[COMPLETAR]` se omiten).
-> Envío **manual**. Verificar el correo antes de enviar.
+> Envío con *throttling*; verificar el correo antes de enviar.
 
 ---
 
@@ -10,7 +11,7 @@
 **Para:** info@alaya-capital.com
 **Perfil:** fondo · **Web:** https://alaya-capital.com/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -20,6 +21,9 @@ Estimado equipo de Alaya Capital Partners:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -46,7 +50,7 @@ Santiago del Estero, República Argentina
 **Para:** admin@angelesinversionistas.com
 **Perfil:** angel · **Web:** https://www.angelesinversionistas.com/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -56,6 +60,9 @@ Estimado equipo de Red Sudamericana de Inversiones:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -82,7 +89,7 @@ Santiago del Estero, República Argentina
 **Para:** businessangels@iese.edu
 **Perfil:** angel · **Web:** https://www.iese.edu/es/emprendedores/business-angels/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -92,6 +99,9 @@ Estimado equipo de IESE BAN:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -118,7 +128,7 @@ Santiago del Estero, República Argentina
 **Para:** asociacion@anfevi.com
 **Perfil:** industrial · **Web:** https://www.anfevi.com/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -128,6 +138,9 @@ Estimado equipo de ANFEVI:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -154,7 +167,7 @@ Santiago del Estero, República Argentina
 **Para:** caviplan@caviplan.org.ar
 **Perfil:** industrial · **Web:** https://www.caviplan.org.ar/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -164,6 +177,9 @@ Estimado equipo de CAVIPLAN:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -190,7 +206,7 @@ Santiago del Estero, República Argentina
 **Para:** contacto@amevec.mx
 **Perfil:** industrial · **Web:** https://amevec.mx/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -200,6 +216,9 @@ Estimado equipo de AMEVEC:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -226,7 +245,7 @@ Santiago del Estero, República Argentina
 **Para:** marketing@vidrala.com
 **Perfil:** industrial · **Web:** https://www.vidrala.com/es/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -236,6 +255,9 @@ Estimado equipo de Vidrala:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -262,7 +284,7 @@ Santiago del Estero, República Argentina
 **Para:** info@envasesdelsur.com
 **Perfil:** industrial · **Web:** http://www.envasesdelsur.com/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -272,6 +294,9 @@ Estimado equipo de Envases del Sur:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -298,7 +323,7 @@ Santiago del Estero, República Argentina
 **Para:** contacto@familycapital.com.ar
 **Perfil:** fondo · **Web:** https://familycapital.com.ar/en/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -308,6 +333,9 @@ Estimado equipo de Family Capital:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -334,7 +362,7 @@ Santiago del Estero, República Argentina
 **Para:** info@adduntia.com
 **Perfil:** fondo · **Web:** https://adduntia.com/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -344,6 +372,9 @@ Estimado equipo de Adduntia:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -370,7 +401,7 @@ Santiago del Estero, República Argentina
 **Para:** info@glassallianceeurope.eu
 **Perfil:** industrial · **Web:** https://glassallianceeurope.eu/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -380,6 +411,9 @@ Estimado equipo de Glass Alliance Europe:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -406,7 +440,7 @@ Santiago del Estero, República Argentina
 **Para:** info@glassforeurope.com
 **Perfil:** industrial · **Web:** https://glassforeurope.com/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -416,6 +450,9 @@ Estimado equipo de Glass for Europe:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -442,7 +479,7 @@ Santiago del Estero, República Argentina
 **Para:** sdefife@gpi.org
 **Perfil:** industrial · **Web:** https://www.gpi.org/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -452,6 +489,9 @@ Estimado equipo de Glass Packaging Institute:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -478,7 +518,7 @@ Santiago del Estero, República Argentina
 **Para:** assovetro@assovetro.it
 **Perfil:** industrial · **Web:** https://www.assovetro.it/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -488,6 +528,9 @@ Estimado equipo de Assovetro:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -514,7 +557,7 @@ Santiago del Estero, República Argentina
 **Para:** info@bvglas.de
 **Perfil:** industrial · **Web:** https://www.bvglas.de/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -524,6 +567,9 @@ Estimado equipo de Bundesverband Glasindustrie e.V.:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -550,7 +596,7 @@ Santiago del Estero, República Argentina
 **Para:** contato@abividro.org.br
 **Perfil:** industrial · **Web:** https://abividro.org.br/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -560,6 +606,9 @@ Estimado equipo de Associação Brasileira das Indústrias de Vidro:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -586,7 +635,7 @@ Santiago del Estero, República Argentina
 **Para:** info@inveready.com
 **Perfil:** fondo · **Web:** https://inveready.com/
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -596,6 +645,9 @@ Estimado equipo de Inveready:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
@@ -622,7 +674,7 @@ Santiago del Estero, República Argentina
 **Para:** info@forumgruppe.de
 **Perfil:** fondo · **Web:** https://www.forumgruppe.de/es
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 **Cuerpo:**
 
@@ -632,6 +684,9 @@ Estimado equipo de FORUM GmbH:
 Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass World Studio (GWS).
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
+
+Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.
+Esta es la convocatoria del eje de inversores y capital de escala —el primero de los tres—. Los otros dos ejes son Desarrolladores (núcleo técnico) y Logística (pilar operativo).
 
 Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 

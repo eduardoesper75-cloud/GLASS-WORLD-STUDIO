@@ -1,5 +1,8 @@
 # CHECKLIST DE SALIDA OPERATIVA — Glass World Studio
 
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) Logística (pilar operativo).
+>
 > Pendientes técnicos para dejar la máquina de outreach **lista para enviar** y el sitio
 > **publicando el contacto oficial**. Ejecutar en orden.
 > Contacto oficial: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289**.

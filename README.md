@@ -111,6 +111,15 @@ Todas las claves se declaran y validan en `packages/schemas/src/env.ts` (vía Zo
 
 `.env` está en `.gitignore`. **Nunca** versiones credenciales.
 
+## Alianzas Estratégicas (Frente 2)
+
+> **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+> En ese orden de prioridad: 1) **Inversores y capital** · 2) **Desarrolladores** (núcleo técnico) ·
+> 3) **Logística** (pilar operativo de la red — no una búsqueda aislada).
+
+Material, secuencias y generadores de la convocatoria: [`docs/outreach/`](docs/outreach).
+Logística operativa: [`docs/logistica/`](docs/logistica).
+
 ## Estado
 
 Scaffold inicial (v0.1.0): esquemas, taxonomía y estructura de capas listos; sin lógica de negocio ni integraciones de API todavía. Ver el roadmap en `docs/ARCHITECTURE.md`.
