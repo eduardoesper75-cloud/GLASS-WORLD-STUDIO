@@ -5,7 +5,7 @@
 > Los correos viven en los CSV **ignorados por git**: acá solo van organización/nombre, canal y estado.
 > Contacto al pie: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289**
 
-Actualizado: 2026-10-16 04:59 (hora local)
+Actualizado: 2026-10-16 05:40 (hora local)
 
 ---
 
@@ -52,39 +52,39 @@ node tools/outreach/send-batch.mjs --execute --tag=lote2 --source=docs/outreach/
 
 | # | Organización | Canal | Estado |
 |---|---|---|---|
-| 1 | Oceanic Logística | email | Pendiente de envío |
-| 2 | BAIFF Freight | email | Pendiente de envío |
-| 3 | Atlantic Cargo SRL / Transmodal | email | Pendiente de envío |
+| 1 | Oceanic Logística | email | ✅ ENVIADO (16/10 05:18) |
+| 2 | BAIFF Freight | email | ✅ ENVIADO (16/10 05:19) |
+| 3 | Atlantic Cargo SRL / Transmodal | email | ✅ ENVIADO (16/10 05:20) |
 
 ### Logística P4–P6 (cierre) · 2 destinatarios
 
 | # | Organización | Canal | Estado |
 |---|---|---|---|
-| 1 | Chubb Chile | email | Pendiente de envío |
-| 2 | International Cargo | email | Pendiente de envío |
+| 1 | Chubb Chile | email | ✅ ENVIADO (16/10 05:20) |
+| 2 | International Cargo | email | ✅ ENVIADO (16/10 05:21) |
 
 ### Institucionales / inversores · 18 destinatarios
 
 | # | Organización | Canal | Estado |
 |---|---|---|---|
-| 1 | Alaya Capital Partners | email | Pendiente de envío |
-| 2 | Red Sudamericana de Inversiones | email | Pendiente de envío |
-| 3 | IESE BAN | email | Pendiente de envío |
-| 4 | ANFEVI | email | Pendiente de envío |
-| 5 | CAVIPLAN | email | Pendiente de envío |
-| 6 | AMEVEC | email | Pendiente de envío |
-| 7 | Vidrala | email | Pendiente de envío |
-| 8 | Envases del Sur | email | Pendiente de envío |
-| 9 | Family Capital | email | Pendiente de envío |
-| 10 | Adduntia | email | Pendiente de envío |
-| 11 | Glass Alliance Europe | email | Pendiente de envío |
-| 12 | Glass for Europe | email | Pendiente de envío |
-| 13 | Glass Packaging Institute | email | Pendiente de envío |
-| 14 | Assovetro | email | Pendiente de envío |
-| 15 | Bundesverband Glasindustrie e.V. | email | Pendiente de envío |
-| 16 | Associação Brasileira das Indústrias de Vidro | email | Pendiente de envío |
-| 17 | Inveready | email | Pendiente de envío |
-| 18 | FORUM GmbH | email | Pendiente de envío |
+| 1 | Alaya Capital Partners | email | ✅ ENVIADO (16/10 05:21) |
+| 2 | Red Sudamericana de Inversiones | email | ✅ ENVIADO (16/10 05:22) |
+| 3 | IESE BAN | email | ✅ ENVIADO (16/10 05:23) |
+| 4 | ANFEVI | email | ✅ ENVIADO (16/10 05:24) |
+| 5 | CAVIPLAN | email | ✅ ENVIADO (16/10 05:26) |
+| 6 | AMEVEC | email | ✅ ENVIADO (16/10 05:27) |
+| 7 | Vidrala | email | ✅ ENVIADO (16/10 05:28) |
+| 8 | Envases del Sur | email | ✅ ENVIADO (16/10 05:29) |
+| 9 | Family Capital | email | ✅ ENVIADO (16/10 05:30) |
+| 10 | Adduntia | email | ✅ ENVIADO (16/10 05:31) |
+| 11 | Glass Alliance Europe | email | ✅ ENVIADO (16/10 05:32) |
+| 12 | Glass for Europe | email | ✅ ENVIADO (16/10 05:33) |
+| 13 | Glass Packaging Institute | email | ✅ ENVIADO (16/10 05:34) |
+| 14 | Assovetro | email | ✅ ENVIADO (16/10 05:35) |
+| 15 | Bundesverband Glasindustrie e.V. | email | ✅ ENVIADO (16/10 05:36) |
+| 16 | Associação Brasileira das Indústrias de Vidro | email | ✅ ENVIADO (16/10 05:37) |
+| 17 | Inveready | email | ✅ ENVIADO (16/10 05:39) |
+| 18 | FORUM GmbH | email | ✅ ENVIADO (16/10 05:40) |
 
 > **Lote 2 total: 23 con correo.** Además, hay organizaciones **sin correo** (sólo formulario web):
 > ESI Fine Art (Group ESI) · XPO (Museums & Art) · EMO Trans · Speed Transport Argentina · Transaltic · Clippers Argentina S.A. · Geodis Argentina · Kuehne + Nagel · Maersk · ONE (Ocean Network Express) · DHL Express · FedEx · UPS · Zurich Argentina · MAPFRE Chile · ADS Group International
@@ -142,6 +142,29 @@ node tools/outreach/send-batch.mjs --execute --tag=lote2 --source=docs/outreach/
 | 16/10 04:47 | lote1 | Integral Project | ✅ enviado |
 | 16/10 04:48 | lote1 | Embamat | ✅ enviado |
 | 16/10 04:50 | lote1 | Lumber & Pallets | ✅ enviado |
+| 16/10 05:18 | lote2 | Oceanic Logística | ✅ enviado |
+| 16/10 05:19 | lote2 | BAIFF Freight | ✅ enviado |
+| 16/10 05:20 | lote2 | Atlantic Cargo SRL / Transmodal | ✅ enviado |
+| 16/10 05:20 | lote2 | Chubb Chile | ✅ enviado |
+| 16/10 05:21 | lote2 | International Cargo | ✅ enviado |
+| 16/10 05:21 | lote2 | Alaya Capital Partners | ✅ enviado |
+| 16/10 05:22 | lote2 | Red Sudamericana de Inversiones | ✅ enviado |
+| 16/10 05:23 | lote2 | IESE BAN | ✅ enviado |
+| 16/10 05:24 | lote2 | ANFEVI | ✅ enviado |
+| 16/10 05:26 | lote2 | CAVIPLAN | ✅ enviado |
+| 16/10 05:27 | lote2 | AMEVEC | ✅ enviado |
+| 16/10 05:28 | lote2 | Vidrala | ✅ enviado |
+| 16/10 05:29 | lote2 | Envases del Sur | ✅ enviado |
+| 16/10 05:30 | lote2 | Family Capital | ✅ enviado |
+| 16/10 05:31 | lote2 | Adduntia | ✅ enviado |
+| 16/10 05:32 | lote2 | Glass Alliance Europe | ✅ enviado |
+| 16/10 05:33 | lote2 | Glass for Europe | ✅ enviado |
+| 16/10 05:34 | lote2 | Glass Packaging Institute | ✅ enviado |
+| 16/10 05:35 | lote2 | Assovetro | ✅ enviado |
+| 16/10 05:36 | lote2 | Bundesverband Glasindustrie e.V. | ✅ enviado |
+| 16/10 05:37 | lote2 | Associação Brasileira das Indústrias de Vidro | ✅ enviado |
+| 16/10 05:39 | lote2 | Inveready | ✅ enviado |
+| 16/10 05:40 | lote2 | FORUM GmbH | ✅ enviado |
 
 ---
 
@@ -149,7 +172,7 @@ node tools/outreach/send-batch.mjs --execute --tag=lote2 --source=docs/outreach/
 
 | Métrica | Valor |
 |---|---|
-| **Enviados** | **7** (logística Lote 1) |
+| **Enviados** | **30** (logística Lote 1) |
 | Fallidos (reintentar) | **0** |
 | Lote 2 preparado (con correo) | **23** |
 | Devs en pool | **98** |
