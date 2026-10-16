@@ -1,9 +1,11 @@
 # Parte técnico — Auditoría y purga de correo (IMAP / MCP)
 
-> **Estado:** ✅ **AUDITORÍA COMPLETA (modo solo lectura) — 2/2 casillas.**
-> **No se ejecutó ninguna baja ni se movió ningún correo a `Trash`**
-> (0 bajas · 0 movidos · 0 eliminados). Todo queda a la espera de tu
-> aprobación explícita (§4).
+> **Estado:** ✅ **EJECUTADO — bajas + purga a `Trash` (orden del 2026-10-16).**
+> **23 bajas aplicadas** (22 *one-click* RFC 8058 + 1 `mailto`) y **392 correos
+> movidos a `Trash`** (145 + 247). **13 remitentes sin cabecera de baja** quedaron
+> como *manual* (sin acción). **Borrado permanente: 0** (solo `Trash`, recuperable).
+> Se respetó la **lista blanca** (crypto/financiero, hosting, Facebook, cuentas
+> Google): ningún dominio protegido fue tocado. Detalle y evidencia en §4.
 >
 > **Generado:** 2026-10-16 (UTC). **Sistema:** Glass World Studio (GWS).
 > **Fuente de datos:** `data/mail-cleanup/audit-2026-10-16T06-12-15.json`.
@@ -23,8 +25,9 @@
 | Remitentes con baja *one-click* (RFC 8058) | **77** |
 | Remitentes sin cabecera de baja | **98** (565 correos) |
 | Coincidencias de `chatex.ai` | **1** (aviso de Google; ver §2.6) |
-| Bajas ejecutadas (`List-Unsubscribe` / RFC 8058) | **0** |
-| Correos movidos a `Trash` | **0** |
+| Bajas ejecutadas (`List-Unsubscribe` / RFC 8058) | **22** *one-click* + **1** `mailto` |
+| Bajas pendientes (sin cabecera → manual) | **13** |
+| Correos movidos a `Trash` | **392** (145 + 247) |
 | Correos eliminados | **0** (borrado permanente no implementado) |
 | Bloqueos pendientes | **0** |
 
@@ -283,13 +286,15 @@ $ pnpm --filter @gws/mail-cleanup start audit --days 365 --top 50
 | Acción | Cantidad |
 |---|---:|
 | Sesiones IMAP autenticadas (auditoría) | 2 |
-| Bajas vía `List-Unsubscribe` / RFC 8058 | **0** |
-| Bajas vía `mailto:` | **0** |
-| Correos movidos a `Trash` | **0** |
+| Bajas vía `List-Unsubscribe` / RFC 8058 | **22** |
+| Bajas vía `mailto:` | **1** |
+| Bajas omitidas (sin cabecera de baja) | **13** |
+| Correos movidos a `Trash` | **392** (145 + 247) |
 | Correos eliminados | **0** |
 
-> **Ninguna suscripción fue dada de baja y ningún correo fue movido a la Papelera.**
-> No se activó `--apply`. Sin aprobación previa no habrá ninguna acción destructiva.
+> Ejecutado el **2026-10-16** con autorización explícita del titular y lista blanca
+> (§4). La purga mueve **solo a `Trash`** (recuperable 30 días en Gmail); no existe
+> borrado permanente en la herramienta.
 
 ### 3.4 Excepciones / errores
 
@@ -299,29 +304,93 @@ credenciales validan correctamente. La lista interna de dominios de spam del MCP
 
 ---
 
-## 4. Revisión y convalidación (Aprobar / Cancelar)
+## 4. Ejecución autorizada (2026-10-16) — bajas + purga a `Trash`
 
-**Nada se ejecutará sin tu aprobación explícita.** Grupos propuestos:
+El titular autorizó la limpieza con **lista blanca**. La selección se hizo **por
+inclusión explícita** de dominios (el CLI no dispone de exclusión), verificando
+que **ningún dominio protegido** entrara en el objetivo.
 
-| Grupo | Criterio | Remitentes propuestos |
-|---|---|---|
-| **A — Boletines/promos** | Ruido informativo, baja *one-click* limpia | `support@cinko.io` (32), `info@arcap.org` (18), `promociones@brubank.com` (15), `newsletter@mailing.sporting.com.ar` (4) |
-| **B — Marketing masivo con one-click** | Altísimo volumen no esencial | `email@market.temuemail.com` (130), `list@wordfence.com` (54), `talleres@mkt.donweb.com` (23), Binance (59: `smailer1/2`, `ses`), `info@subscribe.bcgame.ad` (13), `nvidia.com` (13), `facebookmail.com` (16), `linkedin.com` (13), `team@info.sololearn.com` (10), `novedades.uala.com.ar` (9), `brubank.com` (invertir/newsletter, 22) |
-| **C — Cobros/financiero (revisar caso por caso)** | Muchos son transaccionales/legítimos | `info.naranjax.com` (84), `mailing.bna.com.ar` (46), `paypal.com.ar` (9), `stripe.com` (11), `mercadopago.com`, `googleplay/cloud/google payments`, `coinbase`, `pagostad.gob.ar` |
-| **D — Conservar** | Cuenta propia y servicios activos | `wordpress@glassworldstudio.com.ar` (31), `noreply@github.com` (17), `noreply-accounts@google.com` (45), `no-reply@accounts.google.com` (33) |
+### 4.1 Lista blanca respetada (NO tocada)
 
-Comandos (se ejecutan **solo** tras tu "Permitir"):
+| Ámbito | Dominios/cuentas preservados |
+|---|---|
+| Crypto / financiero | Binance (`smailer1/2`, `ses`), Coinbase, PayPal, Stripe, Mercado Pago, Naranja X, Banco Nación (`mailing.bna.com.ar`), Ualá, AstroPay, Brubank, Lemon, Ripio, Modo, Airtm, Pionex, 3Commas, TradingView y avisos de tarjeta/banco |
+| Hosting / infraestructura | DonWeb (todos sus dominios), Glass World Studio (`glassworldstudio.com.ar`), GitHub, NVIDIA, Railway, Vercel, Neon, Docker |
+| Redes | Facebook (`facebookmail.com`) |
+| Grupo D — cuentas/seguridad | Google Accounts (`noreply-accounts@google.com`, `no-reply@accounts.google.com`), alertas de seguridad, pagos Google, Google Workspace, YouTube |
 
-```powershell
-# Fase 3 · Bajas (dry-run; añadir --apply tras aprobar)
-pnpm --filter @gws/mail-cleanup start unsubscribe --senders dominio1.com,dominio2.com
+### 4.2 Objetivo seleccionado y ejecutado (por dominio)
 
-# Fase 4 · Purga a Trash (nunca permanente; exige --apply --yes)
-pnpm --filter @gws/mail-cleanup start purge --senders dominio1.com,dominio2.com --apply --yes
+| Dominio | Correos | e75 | esper.eduardo |
+|---|---:|---:|---:|
+| market.temuemail.com | 130 | | 130 |
+| wordfence.com | 54 | 54 | |
+| email.openai.com | 34 | 15 | 19 |
+| cinko.io | 32 | | 32 |
+| arcap.org | 18 | 9 | 9 |
+| linkedin.com | 13 | 13 | |
+| subscribe.bcgame.ad | 13 | | 13 |
+| ollama.com | 10 | 10 | |
+| info.sololearn.com | 10 | | 10 |
+| simonsquibb.com | 9 | 9 | |
+| lovable.dev | 8 | | 8 |
+| sales.temuemail.com | 8 | | 8 |
+| updates.langfuse.com | 7 | 7 | |
+| discuss.ai.google.dev | 7 | 7 | |
+| openrouter.ai | 6 | 6 | |
+| mailing.sporting.com.ar | 4 | 4 | |
+| verdent.ai | 4 | | 4 |
+| moonshot.ai | 3 | 3 | |
+| email.claude.com | 3 | 2 | 1 |
+| mail.perplexity.ai | 3 | | 3 |
+| email.lummi.ai | 2 | 2 | |
+| tm.openai.com | 2 | | 2 |
+| info.n8n.io | 2 | | 2 |
+| mailing.contactogarantido.com | 1 | 1 | |
+| chatboxapp.ai | 1 | 1 | |
+| notice.kimi.ai | 1 | 1 | |
+| notifications.langfuse.com | 1 | 1 | |
+| notice.skywork.ai | 1 | | 1 |
+| promo.apuestashouse.com | 1 | | 1 |
+| ship.emergent.sh | 1 | | 1 |
+| 39df03.inboxapi.ai | 1 | | 1 |
+| n8n.discoursemail.com | 1 | | 1 |
+| utoppia.com | 1 | | 1 |
+| **TOTAL (33 dominios)** | **392** | **145** | **247** |
+
+### 4.3 Resultado de las bajas
+
+- **22 bajas *one-click* (RFC 8058)** vía `POST` → respuestas HTTP 200/201/202.
+- **1 baja por `mailto:`** (`ship.emergent.sh` → `unsubscribe-DC04@moengage.co`).
+- **13 remitentes sin cabecera de baja** → clasificados *manual* (sin acción):
+  `market.temuemail.com`, `email.openai.com`, `subscribe.bcgame.ad`,
+  `info.sololearn.com`, `verdent.ai`, `tm.openai.com`, `email.lummi.ai`,
+  `notifications.langfuse.com`, `chatboxapp.ai`, `notice.skywork.ai`,
+  `39df03.inboxapi.ai`, `n8n.discoursemail.com`, `promo.apuestashouse.com`.
+- **0 errores.**
+
+### 4.4 Resultado de la purga (a `Trash`, nunca permanente)
+
+```
+$ pnpm --filter @gws/mail-cleanup start unsubscribe --senders … --apply
+✔ Bajas: 22 ok · 13 omitidas · 0 con error
+  → data/mail-cleanup/unsubscribe-2026-10-16T06-34-53.json
+
+$ pnpm --filter @gws/mail-cleanup start purge --senders … --apply --yes
+  eduardoesper75@gmail.com: 145 mensajes → Trash
+  esper.eduardo@gmail.com:   247 mensajes → Trash
+✔ Purga: 392 mensajes a Trash
+  → data/mail-cleanup/purge-2026-10-16T06-35-44.json
 ```
 
-> Nota: `hello@notify.railway.app` (62) y `workspace@…donweb` son notificaciones
-> técnicas; conviene decidir explícitamente si entran en A/B o en D.
+| Casilla | Movidos a `Trash` |
+|---|---:|
+| eduardoesper75@gmail.com | 145 |
+| esper.eduardo@gmail.com | 247 |
+| **Total** | **392** |
+
+> Los correos permanecen **recuperables en `Trash`** durante el ciclo de retención
+> de Gmail (30 días). No se ejecutó borrado permanente en ningún caso.
 
 ---
 
@@ -330,6 +399,8 @@ pnpm --filter @gws/mail-cleanup start purge --senders dominio1.com,dominio2.com 
 | Archivo | Rol |
 |---|---|
 | `data/mail-cleanup/audit-2026-10-16T06-12-15.json` | Datos crudos del escaneo (PII; en `.gitignore`) |
+| `data/mail-cleanup/unsubscribe-2026-10-16T06-34-53.json` | Evidencia de bajas aplicadas (22 ok · 13 manual) |
+| `data/mail-cleanup/purge-2026-10-16T06-35-44.json` | Evidencia de la purga (392 a `Trash`; PII) |
 | `docs/outreach/herramientas/GWS_Reporte_Ranking_Correo.md` | Ranking auto-generado (Top 50) |
 | `tools/imap-mcp/launch.mjs` | Launcher MCP (env + READ-ONLY + TLS del sistema) |
 | `.opencode/opencode.json` | Registro del MCP `imap` |
