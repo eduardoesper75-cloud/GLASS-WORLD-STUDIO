@@ -128,10 +128,12 @@ costos confirmados. La prioridad 1 (arte frágil) es el núcleo y está sin vali
 - **Versionado:** kits, manifiesto, secuencias, playbook, pitch deck, generadores, `prospects.template.csv`, reportes, CLI/partes de correo.
 - **Ignorado (PII, correcto):** `prospects.csv`, `prospects_devs.csv`, `github-tanda*.csv`, `drafts*.md`,
   `GWS_Envio_Devs.md`, `logistica_aliados.csv`, `agencias_tech.csv`, `data/mail-cleanup/`, `.env.local`.
-- 🔴 **Fuga de secretos (S1):** `docs/outreach/herramientas/GWS_Parte_Tecnico_IMAP_MCP.md` (§1.2) **está
-  trackeado** y contiene **4 credenciales en texto plano**. Ver §4 y §7.
-- **Checklist de salida** (`GWS_Checklist_Salida_Operativa.md`): pendiente **redeploy** del sitio
-  (publicar el contacto oficial `esper.eduardo@gmail.com` y quitar el correo viejo).
+- ✅ **Fuga de secretos (S1) — RESUELTO (16-10-2026):** credenciales redactadas (`<REDACTADO>`) e
+  **historial saneado y adoptado**; escáner limpio (árbol + 48 commits). Falta solo la **rotación
+  manual** de las 4 credenciales (usuario). Ver `docs/security/GWS_S1_Remediacion_Credenciales.md`.
+- ✅ **Checklist de salida** (`GWS_Checklist_Salida_Operativa.md`): **redeploy hecho (16-10-2026)**.
+  Contacto oficial publicado en `/novedades` (`esper.eduardo@gmail.com`), sin correo viejo. Brecha
+  menor: el **teléfono** `+54 9 385 582-6289` **no está en la web** (nunca estuvo).
 
 ---
 
@@ -140,14 +142,14 @@ costos confirmados. La prioridad 1 (arte frágil) es el núcleo y está sin vali
 | # | Brecha | Impacto | Pilar |
 |---|---|---|---|
 | **S1** | **Credenciales en texto plano commiteadas** (2 contraseñas de app + 2 de cuenta) en `GWS_Parte_Tecnico_IMAP_MCP.md`. | 🔴 **Crítico (seguridad)** | Transversal |
-| **B1** | **Cifras de mercado sin fuente citable** (USD 450.000 M / +50 M). Es el gancho del deck y la 1.ª pregunta. | 🔴 Crítico | Transversal |
+| **B1** | ~~Cifras de mercado sin fuente citable~~ **✅ RESUELTO** (`GWS_B1_Fuentes_Cifras_Mercado.md`): vidrio plano USD 323.200 M (2025) → USD 450.200 M (2033); se retira “+50 M”. | ✅ Cerrado | Transversal |
 | **B2** | **Esquema de participación/compensación** sin definir (inversores y devs). | 🔴 Crítico | Inv + Dev |
 | **B3** | **Stack de orquestación multi-agente y de persistencia** sin definir. | 🟠 Alto | Dev (+ pitch) |
 | **B4** | **Modelo de ingresos/monetización** sin definir (comisión/suscripción/datos). | 🟠 Alto | Inv |
 | **B5** | **Inversores a nivel organización**: falta la persona (socio/analista). | 🟠 Alto | Inv |
 | **B6** | **Logística sin validar en la realidad**: 0 operadores contactados, matriz preliminar. | 🟠 Alto | Log |
 | **O1** | **Envío del runner**: IMAP ya validado; faltan **API keys de LLM** y **BetterContact**. | 🟠 Parcial | Transversal |
-| **O2** | **Sitio sin redeploy**: contacto oficial puede no estar publicado. | 🟠 Bloqueante | Transversal |
+| **O2** | ~~Sitio sin redeploy~~ **✅ RESUELTO (16-10-2026)**: contacto oficial en vivo en `/novedades`; sin correo viejo. Pendiente menor: sumar el **teléfono** a la web. | ✅ Cerrado (salvo tel.) | Transversal |
 | **B7** | **Tanda 5 de devs** definida, no ejecutada. | 🟡 Medio | Dev |
 | **B8** | **Formularios web** (10 inversores + 10 logística) sin completar. | 🟡 Medio | Inv + Log |
 | **B9** | **Agencias tech** casi sin correo (`[COMPLETAR]`). | 🟡 Medio | Dev |

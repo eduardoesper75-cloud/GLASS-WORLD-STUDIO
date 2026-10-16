@@ -4,7 +4,8 @@
 > Copy listo para copiar y pegar. **Humano en el bucle:** la envía Eduardo, a mano.
 >
 > **El giro de esta secuencia:** no salimos a pedir plata. Salimos a **proponer una sociedad**.
-> Ponemos el mercado (USD 450.000 millones), la arquitectura y la plataforma. Buscamos quién
+> Ponemos el mercado (vidrio plano **USD 323.200 M en 2025 → USD 450.200 M en 2033**, más el mercado
+> real de taller **~60% que nadie mide**), la arquitectura y la plataforma. Buscamos quién
 > financie o ejecute el desarrollo técnico, con **participación generosa y condiciones pactadas**.
 >
 > **Objetivo:** una **charla franca de 20 minutos**. Nada más. Nada menos.
@@ -36,13 +37,13 @@ mercado, propone.**
 
 ### Email
 
-**Asunto:** `450.000 millones al año, sin una sola plataforma`
+**Asunto:** `El mercado del vidrio: USD 323.200 M y un 60% que nadie mide`
 
 > Hola [Nombre],
 >
 > Te escribo corto y directo.
 >
-> El mercado global del vidrio mueve unos **USD 450.000 millones al año** y da trabajo a más de **50 millones de personas**. Es milenario, es global… y está completamente fragmentado. Todavía nadie lo unificó.
+> El mercado global del vidrio plano mueve **USD 323.200 millones (2025)**, camino a **USD 450.200 millones (2033)**. Es milenario, es global… y está completamente fragmentado. Y hay algo mayor: la **mayor parte del mercado real de taller** (talleres, distribuidores, insumos, usado) es **invisible a las consultoras: nadie lo mide**. Todavía nadie lo unificó.
 >
 > Estoy construyendo **Glass World Studio** para ser esa primera arquitectura. No te pido tiempo todavía. Solo quería saber si un mercado de ese tamaño, sin dueño digital, entra en tu radar.
 >
@@ -53,11 +54,11 @@ mercado, propone.**
 
 **Nota de invitación (≤ 300 caracteres):**
 
-> Hola [Nombre], sigo el trabajo de [Empresa] y tu foco en [tesis]. El mercado global del vidrio mueve USD 450.000 millones al año y sigue sin una plataforma que lo una. Estoy construyendo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.
+> Hola [Nombre], sigo el trabajo de [Empresa] y tu foco en [tesis]. El vidrio plano mueve USD 323.200 M (2025) → USD 450.200 M (2033), y el ~60% de su mercado real (taller) que nadie mide sigue sin plataforma. Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper.
 
 **Apertura (tras aceptar):**
 
-> Gracias por conectar, [Nombre]. Sin vueltas: medio billón de dólares moviéndose a mano. ¿Qué te haría prestar atención hoy a un **marketplace vertical industrial**?
+> Gracias por conectar, [Nombre]. Sin vueltas: medio billón en vidrio plano, y un ~60% de mercado real que nadie mide, moviéndose a mano. ¿Qué te haría prestar atención hoy a un **marketplace vertical industrial**?
 
 ---
 
@@ -119,7 +120,7 @@ mercado, propone.**
 >
 > Si el proyecto te interesa, te propongo **20 minutos** con tres puntos:
 >
-> 1. El mercado: por qué medio billón de dólares sigue sin plataforma.
+> 1. El mercado: medio billón en vidrio plano + el ~60% invisible que nadie mide, y sigue sin plataforma.
 > 2. La arquitectura: 6 galaxias, 5 satélites y por qué escala liviana.
 > 3. La alianza: qué pongo yo y qué buscamos.
 >
@@ -151,7 +152,7 @@ mercado, propone.**
 ## Qué NO hacer
 
 1. **No adjuntar el deck en el primer mensaje.** Quema el activo.
-2. **No sonar necesitado.** Traés un mercado de medio billón de dólares: proponés, no rogás.
+2. **No sonar necesitado.** Traés un mercado de medio billón + el 60% invisible que nadie mide: proponés, no rogás.
 3. **No imprimir un porcentaje.** La participación es generosa y se **pacta**, no se anuncia por escrito.
 4. **No afirmar tracción que no existe.** Sin usuarios pagos, sin transacciones, sin ingresos. Decilo primero.
 5. **No prometer métricas sin supuesto escrito.** Ver los guardarraíles del deck.

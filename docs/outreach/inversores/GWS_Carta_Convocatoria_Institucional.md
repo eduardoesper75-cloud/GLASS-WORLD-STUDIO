@@ -19,9 +19,11 @@ docente y discípulo del maestro Miguel Diez**, y tras años de investigación, 
 histórica**: el arte, la industria y la tecnología del vidrio **carecen de una plataforma digital
 integral que congregue a todos sus actores globales**.
 
-Una industria milenaria —**USD 450.000 millones al año, más de 50 millones de personas**— sigue
-operando a mano, fragmentada en miles de talleres, plantas, distribuidores y artistas que no se
-conocen entre sí. **Ese lugar no existe. Lo estamos construyendo.**
+Una industria milenaria —el vidrio plano mueve **USD 323.200 millones (2025)**, camino a **USD 450.200
+millones (2033)** (Grand View Research)— sigue operando a mano, fragmentada en miles de talleres,
+plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo mayor: la **mayor parte del
+mercado real de taller** (insumos, maquinaria usada, fletes locales) es **invisible a las consultoras:
+nadie lo mide**. **Ese lugar no existe. Lo estamos construyendo.**
 
 **Glass World Studio no pide dinero.** Ofrece la oportunidad de **co-construir el ecosistema
 definitivo de una industria milenaria**. Quien decida sumarse lo hace por una de estas vías:

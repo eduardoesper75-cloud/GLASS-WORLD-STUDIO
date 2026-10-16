@@ -9,6 +9,20 @@ El motor (`generate-drafts.mjs`) ya está listo y acepta **todo el espectro**: f
 
 ---
 
+## 0. El anzuelo (hook) — la tesis de mercado
+
+> **GWS es la red de Big Data que visibiliza el ~60% del mercado del vidrio que las consultoras
+> no pueden medir.** El piso registrado —vidrio plano: **USD 323.200 M (2025) → USD 450.200 M (2033)**,
+> Grand View Research— es solo la **punta del iceberg**: la mayor parte del movimiento real
+> (talleres, distribuidores, insumos, maquinaria usada, fletes) ocurre **fuera del radar**. GWS nace
+> en el **banco del taller** y nace para **cartografiarlo y ser dueño de ese dato**.
+
+Usá este anzuelo en el **primer párrafo** de todo copy a inversores. Detalle: Slide 2 del
+[pitch deck](GWS_Pitch_Deck_Inversores.md) y `docs/outreach/GWS_B1_Fuentes_Cifras_Mercado.md`
+(§4, tesis TAM/SAM/SOM).
+
+---
+
 ## 1. El espectro: sin fronteras, pero con perfil
 
 No acotamos la búsqueda a un solo tipo de inversor. Entra **cualquiera que pueda financiar,

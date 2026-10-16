@@ -67,5 +67,7 @@ Santiago del Estero, República Argentina
 - **Sin invenciones:** donde no hubo correo público, se dejó `[COMPLETAR]` y se indica el formulario.
 - Envío **manual**, máximo 3 toques, ritmo humano.
 
-> **Nota:** las cifras de mercado (USD 450.000 millones / +50 millones de personas) siguen
-> pendientes de cita fuente; no incluirlas como dato duro hasta tener el respaldo.
+> **Nota:** las cifras de mercado quedaron **resueltas** (`GWS_B1_Fuentes_Cifras_Mercado.md`):
+> vidrio plano **USD 323.200 M (2025) → USD 450.200 M (2033)** (Grand View Research). El “+50 M de
+> personas” **se retiró** (sin fuente sostenible). El “~60% invisible” es **tesis de territorio**, no
+> dato publicado: se presenta como estimación a instrumentar por la plataforma.

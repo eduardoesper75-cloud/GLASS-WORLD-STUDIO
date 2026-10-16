@@ -97,7 +97,7 @@ const SEQUENCES = {
     // Paso 1 — Primer contacto: el gancho de mercado. NO pide nada.
     note: (p) =>
       `Hola ${p.name}, sigo el trabajo de ${p.company}${p.hook ? ` y tu foco en ${p.hook}` : ''}. ` +
-      `El vidrio mueve USD 450.000 millones al año y sigue sin plataforma que lo una. ` +
+      `El vidrio plano mueve USD 323.200 M (2025) → USD 450.200 M (2033), y su mercado real de taller (el ~60% que las consultoras no miden) sigue sin plataforma que lo una. ` +
       `Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`,
     opener: (p) =>
       `Gracias por conectar, ${firstName(p.name)}. Sin vueltas: medio billón de dólares moviéndose a ` +
@@ -123,7 +123,7 @@ const SEQUENCES = {
       fondo: {
         note: (p) =>
           `Hola ${p.name}, sigo la tesis de ${p.company}${p.hook ? ` en ${p.hook}` : ''}. ` +
-          `El vidrio mueve USD 450.000 millones al año y sigue sin plataforma que lo una. ` +
+          `El vidrio plano mueve USD 323.200 M (2025) → USD 450.200 M (2033), y su mercado real de taller (el ~60% que las consultoras no miden) sigue sin plataforma que lo una. ` +
           `Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`,
         opener: (p) =>
           `Gracias por conectar, ${firstName(p.name)}. Una pregunta antes de cualquier pitch: ` +
@@ -141,7 +141,7 @@ const SEQUENCES = {
       angel: {
         note: (p) =>
           `Hola ${p.name}, sigo tu recorrido${p.hook ? ` en ${p.hook}` : ''}. ` +
-          `El vidrio mueve USD 450.000 millones al año y sigue sin plataforma que lo una. ` +
+          `El vidrio plano mueve USD 323.200 M (2025) → USD 450.200 M (2033), y su mercado real de taller (el ~60% que las consultoras no miden) sigue sin plataforma que lo una. ` +
           `Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`,
         opener: (p) =>
           `Gracias por conectar, ${firstName(p.name)}. Te hago una pregunta directa: ¿qué te llevaría ` +
@@ -159,7 +159,7 @@ const SEQUENCES = {
       industrial: {
         note: (p) =>
           `Hola ${p.name}, sigo el trabajo de ${p.company} en el rubro${p.hook ? `, sobre todo ${p.hook}` : ''}. ` +
-          `El vidrio mueve USD 450.000 millones al año y sigue fragmentado. ` +
+          `El vidrio plano mueve USD 323.200 M (2025) → USD 450.200 M (2033), y su mercado real de taller sigue fragmentado. ` +
           `Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`,
         opener: (p) =>
           `Gracias por conectar, ${firstName(p.name)}. Usted conoce el rubro desde adentro mejor que ` +

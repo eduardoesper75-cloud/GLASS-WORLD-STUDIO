@@ -9,7 +9,7 @@
 ## Versión A — recomendada (~750 caracteres)
 
 ```
-Glass World Studio nace en un banco de trabajo en Santiago del Estero, Argentina. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio (USD 450.000 millones al año, más de 50 millones de personas) carecen de una plataforma digital integral que congregue a todos sus actores globales.
+Glass World Studio nace en un banco de trabajo en Santiago del Estero, Argentina. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio (vidrio plano: USD 323.200 M en 2025 → USD 450.200 M en 2033, más un mercado real de taller que nadie mide) carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
 Eso estamos construyendo: 6 galaxias y 5 satélites sobre una arquitectura de agentes. No pedimos dinero: ofrecemos co-construir el ecosistema definitivo de una industria milenaria. Ponemos el estudio de mercado, la arquitectura completa y la plataforma en producción.
 
@@ -22,7 +22,7 @@ esper.eduardo@gmail.com · +54 9 385 582-6289
 ## Versión B — micro (~330 caracteres)
 
 ```
-Glass World Studio (Santiago del Estero, Argentina) construye la plataforma digital integral que la industria del vidrio —USD 450.000 millones al año— nunca tuvo. No pedimos dinero: ofrecemos co-construir. Ponemos mercado, arquitectura y plataforma en producción.
+Glass World Studio (Santiago del Estero, Argentina) construye la plataforma digital integral que la industria del vidrio —USD 323.200 M (2025) → USD 450.200 M (2033), y un mercado de taller que nadie mide— nunca tuvo. No pedimos dinero: ofrecemos co-construir. Ponemos mercado, arquitectura y plataforma en producción.
 
 Eduardo Esper, Fundador — esper.eduardo@gmail.com · +54 9 385 582-6289
 ```

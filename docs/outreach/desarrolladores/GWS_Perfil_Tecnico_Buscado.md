@@ -11,8 +11,10 @@ vertical a escala global. Esto no es un puesto corporativo: es una **etapa funda
 
 ## 1. Qué es Glass World Studio (en 30 segundos)
 
-Un marketplace vertical integral para la **industria global del vidrio** — un sector milenario,
-de ~USD 450.000 millones al año, hoy completamente fragmentado y sin infraestructura digital común.
+Un marketplace vertical integral para la **industria global del vidrio** — un sector milenario
+(vidrio plano: **USD 323.200 M en 2025 → USD 450.200 M en 2033**), hoy completamente fragmentado y
+sin infraestructura digital común. Y con un **mercado real de taller (~60%) que las consultoras no
+miden**: nace para **cartografiarlo** y ser dueño de ese dato.
 
 Se apoya en una arquitectura viva:
 

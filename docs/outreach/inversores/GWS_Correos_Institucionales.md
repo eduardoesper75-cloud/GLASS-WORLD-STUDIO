@@ -21,7 +21,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -57,7 +57,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -93,7 +93,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -129,7 +129,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -165,7 +165,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -201,7 +201,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -237,7 +237,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -273,7 +273,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -309,7 +309,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -345,7 +345,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -381,7 +381,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -417,7 +417,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -453,7 +453,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -489,7 +489,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -525,7 +525,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -561,7 +561,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -597,7 +597,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 
@@ -633,7 +633,7 @@ Me dirijo a ustedes desde Santiago del Estero, Argentina, donde nació Glass Wor
 
 Glass World Studio surge en un banco de trabajo. Tras 20 años como artista plástico, docente y discípulo del maestro Miguel Diez, y tras años de investigación, detecté una vacante histórica: el arte, la industria y la tecnología del vidrio carecen de una plataforma digital integral que congregue a todos sus actores globales.
 
-Una industria milenaria —USD 450.000 millones al año, más de 50 millones de personas— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Ese lugar no existe. Lo estamos construyendo.
+Una industria milenaria —el vidrio plano mueve USD 323.200 millones (2025), camino a USD 450.200 millones (2033)— sigue operando a mano y fragmentada en miles de talleres, plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo más: la mayor parte del mercado real de taller (insumos, maquinaria usada, fletes locales) es invisible a las consultoras: nadie lo mide. Ese lugar no existe. Lo estamos construyendo.
 
 Glass World Studio no pide dinero: ofrece co-construir el ecosistema definitivo de una industria milenaria.
 

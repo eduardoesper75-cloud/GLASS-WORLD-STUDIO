@@ -24,9 +24,10 @@ const SIGNATURE = [
 const MANIFESTO =
   'Glass World Studio nace en un banco de trabajo en Santiago del Estero, Argentina. Tras 20 años ' +
   'en el oficio —artista, docente y discípulo del maestro Miguel Diez— detecté una vacante histórica: ' +
-  'el arte, la industria y la tecnología del vidrio (USD 450.000 millones al año) siguen sin una ' +
-  'plataforma que los una. Eso estamos construyendo: 6 galaxias y 5 satélites sobre una arquitectura ' +
-  'de agentes. No pedimos dinero: invitamos a co-construir.';
+  'el arte, la industria y la tecnología del vidrio (USD 323.200 M en 2025 → USD 450.200 M en 2033; y ' +
+  'un mercado real de taller que nadie mide) siguen sin una plataforma que los una. Eso estamos ' +
+  'construyendo: 6 galaxias y 5 satélites sobre una arquitectura de agentes. No pedimos dinero: ' +
+  'invitamos a co-construir.';
 
 // Párrafo específico según el sub-perfil técnico.
 const PERFIL = {

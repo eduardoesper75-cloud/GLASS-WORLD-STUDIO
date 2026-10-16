@@ -72,13 +72,14 @@ flecha (hoy sólo `inversores`). Abajo, el texto canónico de cada una.
 
 El espectro es **abierto**: fondos, ángeles e industriales. La columna `perfil`
 (`fondo` | `angel` | `industrial`, o vacío = neutro) ajusta el registro. El mensaje de
-fondo es el mismo en las cuatro variantes: **el gancho de mercado** (USD 450.000 millones
-al año · +50 millones de personas), **la trilogía** como caso de valor y **el no-ask**
-(ponemos mercado + arquitectura + plataforma; buscamos socio, no capital pasivo).
+fondo es el mismo en las cuatro variantes: **el gancho de mercado** (vidrio plano **USD 323.200 M
+en 2025 → USD 450.200 M en 2033**, más el **~60% de mercado real invisible** que nadie mide), **la
+trilogía** como caso de valor y **el no-ask** (ponemos mercado + arquitectura + plataforma; buscamos
+socio, no capital pasivo).
 
 **Neutro (sin `perfil`) — la base:**
-- **Nota:** `Hola {name}, sigo el trabajo de {company}{ y tu foco en {hook}}. El vidrio mueve USD 450.000 millones al año y sigue sin plataforma que lo una. Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper, fundador.`
-- **Apertura:** `Gracias por conectar, {nombre}. Sin vueltas: medio billón de dólares moviéndose a mano. ¿Qué te haría prestar atención hoy a un marketplace vertical industrial?`
+- **Nota:** `Hola {name}, sigo el trabajo de {company}{ y tu foco en {hook}}. El vidrio plano mueve USD 323.200 M (2025) → USD 450.200 M (2033), y el ~60% de su mercado real (taller) que nadie mide sigue sin plataforma. Construyo Glass World Studio. Me gustaría conectar. Eduardo Esper.`
+- **Apertura:** `Gracias por conectar, {nombre}. Sin vueltas: medio billón en vidrio plano, y un ~60% de mercado real que nadie mide, moviéndose a mano. ¿Qué te haría prestar atención hoy a un marketplace vertical industrial?`
 - **Seguimiento 1 (Paso 2 — caso de valor + alianza):** `Sin apuro, {nombre}. Te dejo los tres comunicados con los que abrimos la nueva etapa: {trilogía}. Y una aclaración de entrada: no busco capital pasivo. Pongo el mercado, la arquitectura y la plataforma; busco un socio que financie o ejecute el desarrollo, con participación generosa.`
 - **Seguimiento 2 (Paso 3 — la charla):** `Cierro sin insistir, {nombre}. Si te interesa, 20 minutos con tres puntos: el mercado, la arquitectura y qué pongo yo sobre la mesa. Te paso franjas si me decís que sí.`
 

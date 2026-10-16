@@ -73,7 +73,31 @@ viene de **otro sector** (construcción) o de un dato mal atribuido.
 
 ---
 
-## 4. Reglas de honestidad (guardarraíles)
+## 4. Tesis de mercado real — piso registrado vs. mercado invisible (TAM / SAM / SOM)
+
+> **La distinción central del discurso GWS:** lo que las consultoras miden es la **punta del
+> iceberg**. El mercado real del vidrio se mueve, en gran parte, **fuera de su radar**.
+
+| Capa | Qué es | Cifra / estado |
+|---|---|---|
+| **TAM — piso registrado** | Mercado global de **vidrio plano** (multinacionales, automotriz, maquinaria pesada formal) | **USD 323.200 M (2025) → USD 450.200 M (2033)**, CAGR 4,3% *(Grand View Research)* |
+| **Base invisible** | **Mercado real de taller**: profesionales, artesanos, distribuidores regionales, insumos, perfilería de aluminio, maquinaria usada, fletes locales | **Tesis de territorio: >50–60%** del movimiento real, **fuera del radar fiscal y de las consultoras**. **A cuantificar por la plataforma** |
+| **SAM — mercado servible** | Comunidad **hispanohablante** del vidrio (artístico + industrial) y su cadena de insumos/servicios | Presencia y lengua ya existentes |
+| **SOM — alcanzable** | Talleres, profesionales, distribuidores y escuelas que se onboardean primero (nicho → red) | Logística como red operativa |
+| **Moat — el foso** | **Monopolio de información de campo**: precios reales, patrones de consumo, cuellos de botella logísticos, demanda de capacitación | Se construye operando la red; no se copia con un listado |
+
+**El argumento (honesto y fuerte):** el **piso** es dato duro y citable; la **base** es tesis de
+territorio — y **es precisamente el activo que GWS viene a instrumentar**. No afirmamos el 60%:
+**lo vamos a medir y a ser sus dueños.**
+
+> **Origen que lo valida:** GWS **no nace en una oficina corporativa; nace en el banco del taller**.
+
+**Regla de honestidad específica:** el “50–60%” **nunca** se presenta como estadística publicada.
+Se presenta como **estimación de territorio a instrumentar** (la medición *es* la propuesta de valor).
+
+---
+
+## 5. Reglas de honestidad (guardarraíles)
 
 1. **Sin fuente, no se afirma el número.** Mejor poco dato real que mucho inventado.
 2. Toda cifra va con **fuente + año + alcance** (global / Europa / segmento).

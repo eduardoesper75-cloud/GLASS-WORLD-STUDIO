@@ -20,9 +20,11 @@ Ahí nace GWS.
 
 ## II. LA VACANTE HISTÓRICA
 
-Una industria milenaria —**USD 450.000 millones al año, más de 50 millones de personas**— sigue
-operando a mano, fragmentada en miles de talleres, plantas, distribuidores y artistas que no se
-conocen entre sí. No existe un lugar donde el maestro, la fábrica, el proveedor de refractarios, el
+Una industria milenaria —el vidrio plano mueve **USD 323.200 millones (2025)**, camino a **USD 450.200
+millones (2033)** (Grand View Research)— sigue operando a mano, fragmentada en miles de talleres,
+plantas, distribuidores y artistas que no se conocen entre sí. Y hay algo mayor: la **mayor parte del
+mercado real de taller** (insumos, maquinaria usada, fletes locales) es **invisible a las consultoras:
+nadie lo mide**. No existe un lugar donde el maestro, la fábrica, el proveedor de refractarios, el
 transportista de carga frágil y el comprador internacional hablen el mismo idioma.
 
 **Ese lugar no existe. Lo estamos construyendo.**

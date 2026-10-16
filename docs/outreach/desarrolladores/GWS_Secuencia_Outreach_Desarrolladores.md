@@ -10,6 +10,17 @@
 
 ---
 
+## El anzuelo (hook) — el Big Data de taller
+
+> Lo que vamos a construir **no es "una web de vidrio"**: es la **infraestructura que cartografía en
+> tiempo real un mercado que hoy es invisible** —el ~60% del vidrio que las consultoras no miden—.
+> Eso significa **ingesta de datos de campo, matching, orquestación de agentes (MCP) y un motor de
+> ingeniería predictiva (termia / COE)**. Para un dev, es el raro caso de un producto **con datos
+> propios y difíciles de replicar**. Usalo como `hook` cuando el perfil sea de **datos / IA /
+> arquitectura**.
+
+---
+
 ## Reglas de la campaña
 
 | Regla | Detalle |

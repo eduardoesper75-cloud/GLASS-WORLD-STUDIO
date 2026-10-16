@@ -1,4 +1,4 @@
-# Pitch Deck — Inversores y Desarrolladores Estratégicos (5 slides)
+# Pitch Deck — Inversores y Desarrolladores Estratégicos (6 slides)
 
 > **Glass World Studio (GWS)** · Propuesta de **alianza**, no de capital pasivo.
 > Documento **confidencial**. No publicar en el sitio.
@@ -15,47 +15,94 @@
 ## Slide 1 — Portada: el gancho
 
 **Mensaje clave**
-> El vidrio mueve **USD 450.000 millones al año** y da trabajo a **más de 50 millones de personas**.
-> Y todavía no tiene casa.
+> El vidrio plano mueve **USD 323.200 millones (2025)**, camino a **USD 450.200 millones (2033)**.
+> Pero las consultoras solo ven la **punta del iceberg**: la mayor parte del mercado real se mueve
+> **a mano, en el taller**, y **nadie lo mide**. **GWS viene a medirlo y a conectarlo.**
 
 **Contenido**
 
-- El mercado global del vidrio mueve aproximadamente **USD 450.000 millones por año**.
-- Más de **50 millones de personas** viven de este oficio y esta industria en todo el mundo.
+- Mercado global de **vidrio plano**: **USD 323.200 M (2025)** → **USD 450.200 M (2033)**, CAGR 4,3%
+  *(Grand View Research, Flat Glass Market, 2026–2033)*.
+- Y una **base invisible**: el **mercado real de taller** (artesanos, distribuidores, insumos,
+  maquinaria usada, fletes) que **escapa a las mediciones corporativas**.
 - Es **milenario, global y profundamente fragmentado**.
-- **Glass World Studio** es la primera arquitectura pensada para unificarlo de punta a punta.
+- **Glass World Studio** es la primera arquitectura pensada para unificarlo —y para **medir lo que
+  nadie mide**.
 - Banda inferior: **6 galaxias · 5 satélites · 3 flechas estratégicas · plataforma en producción**
 
 **Notas del orador**
 
-- Arrancar por el **tamaño y el vacío**, no por la historia personal. La frase que abre: *"Hay un mercado de medio billón de dólares que se mueve a mano."*
-- "Fragmentado" es la palabra clave: no es un mercado chico, es un mercado **sin casa**.
-- Tené a mano la **fuente** de las cifras (450.000 millones / 50 millones): en cuanto el número es el gancho, la primera pregunta va a ser *"¿de dónde sale?"*. Ver el cierre de este documento.
+- Arrancar por el **tamaño y el vacío**, no por la historia personal. La frase que abre:
+  *"El mercado del vidrio no es chico: es invisible. Y lo invisible no se mide desde una oficina."*
+- ⚠️ **No decir "USD 450.000 millones al año"** como si fuera el presente: es la **proyección a 2033**.
+  El tamaño actual es **USD 323.200 M (2025)**.
+- "Fragmentado" es la palabra clave: no es un mercado chico, es un mercado **sin casa y sin espejo**.
+- Tené a mano la **fuente** (ver cierre de este documento): en cuanto el número es el gancho, la
+  primera pregunta va a ser *"¿de dónde sale?"*.
 
 ---
 
-## Slide 2 — El problema
+## Slide 2 — Tamaño de mercado (TAM / SAM / SOM): el piso registrado y la base invisible
 
 **Mensaje clave**
-> Medio billón de dólares moviéndose a mano, en silos que no se hablan.
+> Las consultoras miden solo la **punta del iceberg**. El mercado real del vidrio se mueve —en gran
+> parte— **fuera de su radar**: en el **banco del taller**. GWS nace ahí, y por eso puede medir lo que
+> nadie mide.
+
+**Contenido**
+
+- **TAM — el piso registrado (lo que ven las consultoras):** mercado global de **vidrio plano**:
+  **USD 323.200 M (2025)** → **USD 450.200 M (2033)**, CAGR 4,3% *(Grand View Research, 2026–2033)*.
+  Solo registra multinacionales de vidrio plano, automotriz y maquinaria pesada de facturación formal.
+- **La base invisible (lo que no ven):** el **mercado real de taller** —profesionales, artesanos,
+  distribuidores regionales e industrias afines— mueve vidrio, perfilería de aluminio, insumos,
+  maquinaria usada y fletes locales **en buena parte fuera del radar fiscal y de las consultoras**
+  (compras directas, talleres de barrio, vitrofusión, arte en vidrio, capacitaciones).
+  **Tesis GWS:** ese volumen **subestimado** (estimación de territorio: **>50–60%** del movimiento
+  real; **a cuantificar por la propia plataforma**) **duplica** la capacidad del mercado medido.
+- **SAM — nuestro mercado servible:** la **comunidad hispanohablante del vidrio** (artístico +
+  industrial) y su cadena de insumos/servicios, donde GWS ya tiene presencia y lengua.
+- **SOM — lo alcanzable a corto plazo:** talleres, profesionales, distribuidores y escuelas que
+  onboardeamos primero (nicho → red), con la **logística como red operativa**.
+- **El foso (moat):** quien primero cartografía el mercado invisible **es dueño del dato**:
+  patrones de consumo de insumos, cuellos de botella logísticos regionales, demanda de capacitación
+  y **precios reales de mercado**. Un monopolio de información de campo —no copiable con un listado.
+
+**Notas del orador**
+
+- La frase que abre: *"El mercado del vidrio no es chico: es invisible."*
+- **Honestidad primero:** el **piso** (USD 323.200 M) es **dato duro y citable**; la **base** es
+  **tesis de territorio** y **es precisamente el activo que GWS viene a instrumentar**. Ese es el
+  argumento: **no afirmamos el 60% — lo vamos a medir y a ser sus dueños.**
+- No mezclar metodologías: **un dato, una fuente, un alcance.**
+- El **origen** lo dice todo: GWS **no nace en una oficina corporativa, nace en el banco del taller**.
+
+---
+
+## Slide 3 — El problema
+
+**Mensaje clave**
+> El mercado real se mueve a mano, en silos que no se hablan — y **nadie lo mide**.
 
 **Contenido**
 
 - El **arte**, la **industria**, el **comercio de insumos** y el **conocimiento técnico** viven separados.
 - Los **grandes maestros del vidrio** y los **ingenieros y científicos** más técnicos del rubro no tienen un puente.
 - Licitaciones, oferta, demanda y trazabilidad: **manual, fragmentado, sin canal común**.
-- **USD 450.000 millones al año** sin una capa digital compartida. Nadie lo resolvió todavía.
+- Y un agravante: **lo que no se mide, no se ve**. El **mercado invisible** (talleres, distribuidores,
+  insumos, usado) es enorme y **no tiene espejo digital** — por eso las consultoras no lo cuentan.
 - El costo de esto es concreto: `[COMPLETAR: 2–3 consecuencias medibles — tiempos de búsqueda de proveedores, mermas, licitaciones perdidas]`
 
 **Notas del orador**
 
 - No vendas "una web". El problema es **estructural**: un sector global sin infraestructura común.
-- El contraste que quiebra la cabeza: industria milenaria + 450.000 millones + cero plataforma que la una.
+- El contraste que quiebra la cabeza: industria milenaria + mercado medido de medio billón + **un
+  mercado invisible que nadie mide** + cero plataforma que los una.
 - Evitá la queja. Contá un vacío de mercado, no una injusticia.
 
 ---
 
-## Slide 3 — La solución: el modelo de galaxias
+## Slide 4 — La solución: el modelo de galaxias
 
 **Mensaje clave**
 > No es un marketplace plano: es una arquitectura viva. Las galaxias aportan masa, los satélites, servicios.
@@ -76,16 +123,19 @@
   4. Rincón del Usado GWS
   5. Bóveda del Conocimiento
 - **La mecánica:** cada galaxia atrae actores reales; cada satélite genera valor sobre esa masa. Más masa, más órbitas posibles.
+- **El dato como subproducto:** cada operación que pasa por la plataforma **deja registro** del
+  mercado invisible (precios reales, demanda, logística). La red **genera el Big Data del sector**.
 
 **Notas del orador**
 
 - Este es el corazón de la defensa: **por qué esto no se copia con una lista de productos**.
 - La metáfora de gravedad, **una sola vez**. Después hablá de "efecto de red por segmento".
 - El satélite de **Ingeniería Predictiva (Termia / COE)** es el activo más difícil de replicar: es el foso técnico.
+- Y el **foso de datos**: la red no solo conecta, **cartografía**. Eso es lo que no se compra.
 
 ---
 
-## Slide 4 — Así funciona el negocio: limpio y escalable
+## Slide 5 — Así funciona el negocio: limpio y escalable
 
 **Mensaje clave**
 > No cargamos inventario ni costos ocultos. El que vende mueve, el que compra paga su entrega, y nosotros facilitamos la operación.
@@ -110,7 +160,7 @@
 
 ---
 
-## Slide 5 — La alianza (acá está el "no-ask")
+## Slide 6 — La alianza (acá está el "no-ask")
 
 **Mensaje clave**
 > No pedimos plata a ciegas. Ponemos el estudio de mercado, la arquitectura y la plataforma. Buscamos quién financie —o ejecute— el desarrollo técnico. Y ofrecemos sociedad, no préstamo.
@@ -118,7 +168,7 @@
 **Contenido**
 
 - **Lo que ya ponemos nosotros:**
-  - El **estudio de mercado** y la tesis de negocio.
+  - La **tesis de mercado** (piso registrado + **mercado invisible** a instrumentar).
   - La **arquitectura completa**: 6 galaxias + 5 satélites.
   - La **plataforma**, hoy en producción.
 - **Lo que buscamos:**
@@ -142,16 +192,17 @@
 
 ## Antes de sentarte — tres cosas
 
-### 1. La fuente de las cifras (tenela a mano)
+### 1. Las cifras y sus fuentes (tenelas a mano)
 
-Las cifras que abren el deck son el gancho, y también la primera pregunta:
-
-- **USD 450.000 millones al año** — mercado global del vidrio.
-- **Más de 50 millones de personas** — quienes viven del rubro en el mundo.
-
-Son órdenes de magnitud reales del sector, pero **en una reunión alguien va a preguntar de dónde salen**.
-Tené el informe, el estudio o el dato citable listo para nombrar. No improvises la fuente: el
-gancho que no se puede respaldar se convierte en el punto débil de toda la presentación.
+- **USD 323.200 M (2025) → USD 450.200 M (2033)** — mercado global de **vidrio plano**.
+  Fuente: **Grand View Research, *Flat Glass Market*, 2026–2033** (CAGR 4,3%; Asia-Pacífico 59%).
+  ⚠️ El número grande es **proyección 2033**, no el tamaño actual.
+- **Empleo:** ❌ **no usar “+50 M de personas”** (no sostenible). Si hace falta, citar acotado:
+  *Europa, empleo directo ~128.500 (Glass Alliance Europe, 2025)*, o *OIT/ILO: el vidrio no es una
+  industria intensiva en mano de obra*.
+- **El 50–60% invisible:** es **tesis de territorio de GWS**, no un dato publicado. Se presenta como
+  estimación **a cuantificar por la plataforma** — y ese es el valor.
+- Detalle completo de fuentes: `docs/outreach/GWS_B1_Fuentes_Cifras_Mercado.md`.
 
 ### 2. Lo que todavía no existe (y no se afirma)
 
@@ -163,5 +214,12 @@ producción, mercado dimensionado, PI en trámite**. Eso ya es mucho para una et
 ### 3. El tono
 
 Hablamos **de socio a socio**. Sin jerga, sin promesas infladas, sin pedir permiso.
-Traemos un mercado de medio billón de dólares y una arquitectura lista. Eso se cuenta mirando
-a los ojos, no leyendo un papel.
+Traemos **un mercado medido de medio billón + el mercado invisible que nadie mide** y una
+arquitectura lista. Eso se cuenta mirando a los ojos, no leyendo un papel.
+
+---
+
+**Contacto oficial**
+Eduardo Esper — Fundador, Glass World Studio
+E-mail: esper.eduardo@gmail.com · WhatsApp / Tel: +54 9 385 582-6289
+Santiago del Estero, República Argentina
