@@ -1,7 +1,9 @@
-flecha,perfil,name,company,role,linkedin_url,hook
-inversores,fondo,María López,Norte Ventures,Socia,"https://www.linkedin.com/in/example-fondo",marketplaces B2B y sostenibilidad
-inversores,angel,Juan Pérez,,Business angel,"https://www.linkedin.com/in/example-angel",inversión de impacto
-inversores,industrial,Carlos Gómez,Vidriería del Norte S.A.,Director general,"https://www.linkedin.com/in/example-industrial",vidrio templado y expansión
-inversores,,Ana Ruiz,Fondo Horizonte,Analista,"https://www.linkedin.com/in/example-neutro",infraestructura de mercado
-desarrolladores,,Tomás Ruiz,Indie Studio,Full-stack engineer,"https://www.linkedin.com/in/example-dev",orquestación multi-agente
-logistica,,Andrea Gómez,FrioLog S.A.,Directora de operaciones,"https://www.linkedin.com/in/example-logistica",carga frágil y cadena de frío
+flecha,perfil,name,company,role,linkedin_url,hook,estado
+inversores,fondo,María López,Norte Ventures,Socia,"https://www.linkedin.com/in/example-fondo",marketplaces B2B y sostenibilidad,
+inversores,angel,Juan Pérez,,Business angel,"https://www.linkedin.com/in/example-angel",inversión de impacto,
+inversores,industrial,Carlos Gómez,Vidriería del Norte S.A.,Director general,"https://www.linkedin.com/in/example-industrial",vidrio templado y expansión,
+inversores,,Ana Ruiz,Fondo Horizonte,Analista,"https://www.linkedin.com/in/example-neutro",infraestructura de mercado,
+desarrolladores,fullstack,Tomás Ruiz,Indie Studio,Full-stack engineer,"https://www.linkedin.com/in/example-dev",orquestación multi-agente,
+desarrolladores,b2b,Lucía Fernández,Marketplace X,Backend engineer,"https://www.linkedin.com/in/example-b2b",arquitectura B2B,
+desarrolladores,multiagente,Diego Sosa,,Arquitecto de IA,"https://www.linkedin.com/in/example-ia",sistemas multi-agente y MCP,
+logistica,,Andrea Gómez,FrioLog S.A.,Directora de operaciones,"https://www.linkedin.com/in/example-logistica",carga frágil y cadena de frío,

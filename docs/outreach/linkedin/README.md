@@ -42,12 +42,16 @@ Abrí `drafts.md`, copiá y pegá cada bloque en LinkedIn, y registrá el avance
 | Columna | Descripción | Ejemplo |
 |---|---|---|
 | `flecha` | `inversores` \| `desarrolladores` \| `logistica` \| `generico` | `inversores` |
-| `perfil` | **Sub-perfil** dentro de una flecha. Hoy lo usa `inversores`: `fondo` \| `angel` \| `industrial`. Vacío = variante neutra. | `angel` |
+| `perfil` | **Sub-perfil** dentro de una flecha (ver abajo). Vacío = variante neutra. | `angel` |
 | `name` | Nombre completo | `María López` |
 | `company` | Empresa / fondo | `Norte Ventures` |
 | `role` | Cargo | `Socia` |
 | `linkedin_url` | URL del perfil | `https://www.linkedin.com/in/...` |
 | `hook` | Detalle real y breve para personalizar, **sin el conector** (opcional pero **muy** recomendado) | `marketplaces B2B` |
+| `estado` | Sólo para tu seguimiento (`nuevo`, `invitado`, `aceptado`, `respondio`, `archivado`). El motor no lo usa. | `invitado` |
+
+> **Acepta alias en español.** Si tu lista viene con `nombre`, `empresa`, `cargo`, `url`,
+> `gancho` o `status`, el motor los entiende igual. Podés pegar la lista como la tengas.
 
 > **La personalización manda.** Un `hook` concreto (un post que leíste, un dato real)
 > multiplica la tasa de aceptación y reduce el riesgo. Sin hook, el mensaje suena genérico.
@@ -63,4 +67,13 @@ de la secuencia a quién tenés enfrente, sin cambiar el mensaje de fondo:
 | `angel` | Inversores ángel | Cercano y directo («tu recorrido», «te dejo») |
 | `industrial` | Empresarios e industriales del rubro | Respetuoso («usted conoce el rubro», «le dejo») |
 | *(vacío)* | Cualquiera del espectro | Neutro; sirve para todos |
+
+### Sub-perfiles de la flecha `desarrolladores`
+
+| `perfil` | Para quién | Registro |
+|---|---|---|
+| `fullstack` | Full-stack / producto | De punta a punta; el rol se adapta |
+| `b2b` | Backend / marketplaces B2B | Transaccional (licitaciones, matching, pagos) |
+| `multiagente` | Arquitectos de IA / MCP | Enjambre de agentes y satélites |
+| *(vacío)* | Cualquier dev | Neutro |
 

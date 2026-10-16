@@ -6,8 +6,11 @@
 //   node docs/outreach/linkedin/generate-drafts.mjs
 //   node docs/outreach/linkedin/generate-drafts.mjs ruta/a/prospects.csv ruta/a/salida.md
 //
-// Entrada (CSV): flecha,name,company,role,linkedin_url,hook
+// Entrada (CSV): flecha,perfil,name,company,role,linkedin_url,hook,estado
 //   flecha = inversores | desarrolladores | logistica | generico
+//   perfil = sub-perfil dentro de una flecha (opcional; ver SEQUENCES)
+//   Acepta alias en español: nombre, empresa, cargo, url, gancho, status.
+//   `estado` es sólo para tu seguimiento: el motor no lo usa para elegir el copy.
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
@@ -166,20 +169,74 @@ const SEQUENCES = {
     },
   },
   desarrolladores: {
+    // El espectro técnico también es amplio. La columna `perfil` elige la variante:
+    // fullstack | b2b | multiagente. Sin `perfil`, versión neutra.
     label: 'Flecha 2 — Desarrolladores / Arquitectos',
     note: (p) =>
-      `Hola ${p.name}, vi tu experiencia en ${p.hook || 'software'}. Estoy armando el núcleo técnico de ` +
-      `Glass World Studio (marketplace vertical del vidrio) sobre arquitectura multi-agente. ` +
-      `Me gustaría conectar. Eduardo, fundador.`,
+      `Hola ${p.name}, vi tu experiencia en ${p.hook || 'software'}. Estoy armando el núcleo técnico ` +
+      `de Glass World Studio, un marketplace vertical del vidrio a escala global. Busco un dev que ` +
+      `quiera construirlo. Me gustaría conectar. Eduardo, fundador.`,
     opener: (p) =>
-      `Gracias por conectar, ${firstName(p.name)}. ¿Con qué stack y orquestación venís construyendo ` +
-      `sistemas multi-agente, y qué es lo que más te cuesta en ese tipo de arquitecturas?`,
+      `Gracias por conectar, ${firstName(p.name)}. Antes de contarte nada: ¿qué es lo que más te ` +
+      `gusta construir hoy, y con qué stack lo resolvés?`,
     follow1: () =>
-      `Te comparto el desafío, por si te resulta interesante: motorizar 5 satélites de ingeniería ` +
-      `predictiva sobre una arquitectura de agentes. ¿Cómo lo encararías vos?`,
+      `Te comparto el desafío, por si te resulta interesante: una plataforma B2B real (6 galaxias, ` +
+      `5 satélites) con un enjambre de agentes detrás. ¿Le ves lugar para vos?`,
     follow2: (p) =>
       `Sin apuro, ${firstName(p.name)}. Si te interesa sumarte a la base técnica del proyecto, ` +
       `avisame y te cuento más. Buena semana.`,
+
+    // --- Sub-perfiles (columna `perfil`) -----------------------------------
+    variants: {
+      // Full-stack / producto: de punta a punta.
+      fullstack: {
+        note: (p) =>
+          `Hola ${p.name}, vi tu experiencia en ${p.hook || 'full-stack'}. Estoy armando el núcleo ` +
+          `técnico de Glass World Studio, un marketplace vertical del vidrio, y busco un full-stack ` +
+          `que lo lleve de punta a punta. Me gustaría conectar. Eduardo, fundador.`,
+        opener: (p) =>
+          `Gracias por conectar, ${firstName(p.name)}. ¿Preferís construir producto (front + back) o ` +
+          `resolver infraestructura? Te lo pregunto porque el rol se puede adaptar a lo que más te guste.`,
+        follow1: () =>
+          `Te comparto el desafío: un marketplace completo (catálogo, licitaciones, perfiles, ` +
+          `credenciales) sobre una arquitectura multi-agente. ¿Lo encararías de punta a punta?`,
+        follow2: (p) =>
+          `Sin apuro, ${firstName(p.name)}. Si te interesa, te cuento el rol y las condiciones. ` +
+          `Buena semana.`,
+      },
+      // Backend / marketplaces B2B y plataformas transaccionales.
+      b2b: {
+        note: (p) =>
+          `Hola ${p.name}, vi tu experiencia en ${p.hook || 'plataformas B2B'}. Estoy armando el núcleo ` +
+          `técnico de Glass World Studio, un marketplace B2B vertical, y busco gente que haya ` +
+          `construido plataformas transaccionales. Me gustaría conectar. Eduardo, fundador.`,
+        opener: (p) =>
+          `Gracias por conectar, ${firstName(p.name)}. ¿Qué parte de un marketplace B2B te parece la ` +
+          `más difícil de construir bien: matching, licitaciones, pagos o trazabilidad?`,
+        follow1: () =>
+          `Te comparto el desafío: oferta y demanda del vidrio en tiempo real, licitaciones y un ` +
+          `catálogo multigalaxia. ¿Qué resolverías primero?`,
+        follow2: (p) =>
+          `Sin apuro, ${firstName(p.name)}. Si le ves encaje, te cuento el rol y las condiciones. ` +
+          `Buena semana.`,
+      },
+      // Arquitectura multi-agente / MCP / IA.
+      multiagente: {
+        note: (p) =>
+          `Hola ${p.name}, vi tu experiencia en ${p.hook || 'IA'}. Estoy armando el núcleo técnico de ` +
+          `Glass World Studio (marketplace vertical del vidrio) sobre arquitectura multi-agente. ` +
+          `Me gustaría conectar. Eduardo, fundador.`,
+        opener: (p) =>
+          `Gracias por conectar, ${firstName(p.name)}. ¿Con qué stack y orquestación venís construyendo ` +
+          `sistemas multi-agente, y qué es lo que más te cuesta en ese tipo de arquitecturas?`,
+        follow1: () =>
+          `Te comparto el desafío: motorizar 5 satélites de ingeniería predictiva sobre una arquitectura ` +
+          `de agentes. ¿Cómo lo encararías vos?`,
+        follow2: (p) =>
+          `Sin apuro, ${firstName(p.name)}. Si te interesa sumarte a la base técnica, avisame y te ` +
+          `cuento más. Buena semana.`,
+      },
+    },
   },
   logistica: {
     label: 'Flecha 3 — Logística / Cadena de suministro',
@@ -223,17 +280,44 @@ function main() {
 
   const rows = parseCsv(raw);
   if (rows.length < 2) {
-    console.error('El CSV no tiene prospectos (solo cabecera o vacío).');
+    console.error('El CSV no tiene prospectos: sólo cabecera o vacío. Agregá al menos una fila.');
     process.exitCode = 1;
     return;
   }
 
-  const header = rows[0].map((h) => h.trim().toLowerCase());
-  const index = Object.fromEntries(header.map((h, i) => [h, i]));
+  // Normalizamos los encabezados a nombres canónicos: aceptamos tanto las claves
+  // en inglés que usa el motor (name, company, role) como alias en español
+  // (nombre, empresa, cargo), para que la lista se pueda pegar como venga.
+  const ALIASES = {
+    flecha: ['flecha', 'arrow'],
+    perfil: ['perfil', 'profile'],
+    name: ['name', 'nombre'],
+    company: ['company', 'empresa', 'organizacion', 'organización'],
+    role: ['role', 'cargo', 'puesto'],
+    linkedin_url: ['linkedin_url', 'url', 'linkedin', 'perfil_url'],
+    hook: ['hook', 'gancho'],
+    estado: ['estado', 'status'],
+  };
+  const canonicalOf = (raw) => {
+    const h = raw.trim().toLowerCase();
+    for (const [canon, list] of Object.entries(ALIASES)) {
+      if (list.includes(h)) return canon;
+    }
+    return h;
+  };
+
+  const header = rows[0].map(canonicalOf);
+  const index = {};
+  header.forEach((h, i) => {
+    if (!(h in index)) index[h] = i;
+  });
   const required = ['flecha', 'name'];
   const missing = required.filter((key) => !(key in index));
   if (missing.length > 0) {
-    console.error(`Faltan columnas obligatorias: ${missing.join(', ')}`);
+    console.error(
+      `Faltan columnas obligatorias: ${missing.join(', ')} ` +
+        '(también acepto nombre / empresa / cargo como alias).',
+    );
     process.exitCode = 1;
     return;
   }
@@ -255,6 +339,7 @@ function main() {
     const baseSeq = SEQUENCES[flecha] ?? SEQUENCES.generico;
     const p = { name: get('name'), company: get('company'), role: get('role'), hook: get('hook') };
     const url = get('linkedin_url');
+    const estado = get('estado');
 
     if (flecha !== 'generico' && !SEQUENCES[flecha]) {
       warnings.push(`Flecha desconocida "${flecha}" para ${p.name} — se usó la secuencia genérica.`);
@@ -287,7 +372,7 @@ function main() {
     total += 1;
 
     lines.push(`## ${p.name}${p.role ? ` — ${p.role}` : ''}${p.company ? ` · ${p.company}` : ''}`);
-    lines.push(`*${seq.label}${appliedPerfil ? ` · perfil: ${appliedPerfil}` : ''}*`);
+    lines.push(`*${seq.label}${appliedPerfil ? ` · perfil: ${appliedPerfil}` : ''}${estado ? ` · estado: ${estado}` : ''}*`);
     if (url) lines.push(`<${url}>`);
     lines.push('');
     lines.push(`**Nota de invitación (${noteLen}/${NOTE_LIMIT}):**`);

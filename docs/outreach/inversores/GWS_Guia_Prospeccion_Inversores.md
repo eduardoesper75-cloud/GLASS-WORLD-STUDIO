@@ -71,6 +71,10 @@ Columnas:
 | `role` | Cargo real, leído de su perfil | `Director general` |
 | `linkedin_url` | URL del perfil | `https://www.linkedin.com/in/...` |
 | `hook` | **Un dato real y breve**, sin el conector | `vidrio templado y expansión` |
+| `estado` | Sólo para tu seguimiento: `nuevo`, `invitado`, `aceptado`, `respondio`, `archivado` | `invitado` |
+
+> **Acepta alias en español** (`nombre`, `empresa`, `cargo`, `url`, `gancho`, `status`): pegá la
+> lista como la tengas, el motor la entiende igual.
 
 **El `hook` es el 80% del resultado.** Antes de escribir la fila, leé su perfil 30 segundos y
 elegí **un** detalle concreto: una tesis, un portfolio, un post reciente, una planta, un rubro.

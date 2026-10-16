@@ -88,11 +88,26 @@ al año · +50 millones de personas), **la trilogía** como caso de valor y **el
 
 **`industrial`** — respetuoso (usted): *sigo el trabajo de {company} en el rubro*, apertura sobre qué le falta a la industria del vidrio, pasos en «Le dejo» y *un socio fundacional*.
 
-### Flecha 2 — Desarrolladores
-- **Nota:** `Hola {name}, vi tu experiencia en {hook}. Estoy armando el núcleo técnico de Glass World Studio (marketplace vertical del vidrio) sobre arquitectura multi-agente. Me gustaría conectar. Eduardo, fundador.`
-- **Apertura:** `Gracias por conectar, {nombre}. ¿Con qué stack y orquestación venís construyendo sistemas multi-agente, y qué es lo que más te cuesta en ese tipo de arquitecturas?`
-- **Seguimiento 1:** `Te comparto el desafío, por si te resulta interesante: motorizar 5 satélites de ingeniería predictiva sobre una arquitectura de agentes. ¿Cómo lo encararías vos?`
+### Flecha 2 — Desarrolladores / Arquitectos
+
+El espectro técnico también es amplio. La columna `perfil` (`fullstack` | `b2b` | `multiagente`,
+o vacío = neutro) ajusta el registro. El mensaje de fondo es el mismo: **un problema grande, un
+rol de base y "las condiciones las charlamos"**.
+
+**Neutro (sin `perfil`) — la base:**
+- **Nota:** `Hola {name}, vi tu experiencia en {hook}. Estoy armando el núcleo técnico de Glass World Studio, un marketplace vertical del vidrio a escala global. Busco un dev que quiera construirlo. Me gustaría conectar. Eduardo, fundador.`
+- **Apertura:** `Gracias por conectar, {nombre}. Antes de contarte nada: ¿qué es lo que más te gusta construir hoy, y con qué stack lo resolvés?`
+- **Seguimiento 1:** `Te comparto el desafío, por si te resulta interesante: una plataforma B2B real (6 galaxias, 5 satélites) con un enjambre de agentes detrás. ¿Le ves lugar para vos?`
 - **Seguimiento 2:** `Sin apuro, {nombre}. Si te interesa sumarte a la base técnica del proyecto, avisame y te cuento más. Buena semana.`
+
+**`fullstack`** — producto de punta a punta: la nota busca *un full-stack que lo lleve de punta a punta*; la apertura pregunta producto vs. infraestructura.
+
+**`b2b`** — plataformas transaccionales: la nota busca *gente que haya construido plataformas transaccionales*; la apertura pregunta por matching / licitaciones / pagos / trazabilidad.
+
+**`multiagente`** — IA y orquestación: la nota arranca por *arquitectura multi-agente*; la apertura pregunta por stack y orquestación.
+
+> Los mensajes completos de cada variante están en
+> `docs/outreach/desarrolladores/GWS_Secuencia_Outreach_Desarrolladores.md`.
 
 ### Flecha 3 — Logística y cadena de suministro
 - **Nota:** `Hola {name}, me interesa cómo {company} mueve carga frágil e insumos industriales. Estoy construyendo Glass World Studio, marketplace vertical del vidrio. Me gustaría conectar. Eduardo Esper, fundador.`
