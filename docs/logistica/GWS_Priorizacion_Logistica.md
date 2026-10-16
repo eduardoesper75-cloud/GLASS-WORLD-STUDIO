@@ -49,7 +49,22 @@ Fabricación de embalaje de exportación: caballete A-frame, crating de madera, 
 | Geodis Argentina | Argentina / global | [COMPLETAR] |
 | Kuehne + Nagel | Global (LatAm) | [COMPLETAR] |
 
-## Prioridad 4 — Seguro de carga (5)
+## Prioridad 4 — Navieras (2)
+
+| Organización | Cobertura | Canal |
+| --- | --- | --- |
+| Maersk | Global (Argentina) | [COMPLETAR] |
+| ONE (Ocean Network Express) | Global (LatAm) | [COMPLETAR] |
+
+## Prioridad 5 — Courier / última milla (3)
+
+| Organización | Cobertura | Canal |
+| --- | --- | --- |
+| DHL Express | Global | [COMPLETAR] |
+| FedEx | Global | [COMPLETAR] |
+| UPS | Global | [COMPLETAR] |
+
+## Prioridad 6 — Seguro de carga (5)
 
 | Organización | Cobertura | Canal |
 | --- | --- | --- |
@@ -59,21 +74,6 @@ Fabricación de embalaje de exportación: caballete A-frame, crating de madera, 
 | ADS Group International | Global | [COMPLETAR] |
 | International Cargo | Argentina (CABA) | intlcargo@intlcargo.com.ar |
 
-## Prioridad 5 — Navieras (2)
-
-| Organización | Cobertura | Canal |
-| --- | --- | --- |
-| Maersk | Global (Argentina) | [COMPLETAR] |
-| ONE (Ocean Network Express) | Global (LatAm) | [COMPLETAR] |
-
-## Prioridad 6 — Courier / última milla (3)
-
-| Organización | Cobertura | Canal |
-| --- | --- | --- |
-| DHL Express | Global | [COMPLETAR] |
-| FedEx | Global | [COMPLETAR] |
-| UPS | Global | [COMPLETAR] |
-
 ---
 
 ## Plan de contacto sugerido
@@ -81,7 +81,7 @@ Fabricación de embalaje de exportación: caballete A-frame, crating de madera, 
 1. **Arrancar por Prioridad 1** (arte frágil): son los que validan la viabilidad del traslado de
    piezas. Contactar de a 2–3 por semana, con la secuencia `logistica` del motor.
 2. **Seguir con Prioridad 2** (crating): el empaque es lo que abarata el arte frágil.
-3. **Recién después** forwarders/seguro/navieras/courier: son commodity y se resuelven una vez que
+3. **Recién después** forwarders/navieras/courier/seguro: son commodity y se resuelven una vez que
    el modelo de traslado está claro.
 
 **Nota de honestidad:** los canales `[COMPLETAR]` no se inventaron: no se encontró correo general

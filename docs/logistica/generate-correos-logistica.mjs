@@ -37,6 +37,15 @@ const CATEGORIA = {
     'El vidrio viaja: materia prima, piezas terminadas y obras cruzan fronteras todos los días. La ' +
     'logística internacional —flete marítimo y aéreo, aduana y documentación— es lo que conecta la ' +
     'oferta con la demanda global.',
+  naviera:
+    'El vidrio pesado —materia prima, contenedores y carga consolidada— cruza los océanos en buques. ' +
+    'Las navieras son la columna vertebral del comercio internacional del sector.',
+  courier:
+    'Muestras, insumos pequeños y herramientas necesitan llegar rápido y puerta a puerta: el envío ' +
+    'exprés suele ser la primera impresión de servicio que recibe un cliente.',
+  seguro_carga:
+    'Mover una pieza frágil sin respaldo es inaceptable. El seguro de carga y rotura protege el ' +
+    'valor real de cada obra y de cada lote industrial.',
   _:
     'El movimiento de piezas frágiles es el eslabón crítico del sector: es donde una obra se salva ' +
     'o se pierde.',
@@ -46,6 +55,9 @@ const ROL = {
   arte_fragil: 'operadores de arte frágil',
   empaque_crating: 'fabricantes de empaque técnico y crating',
   forwarder: 'forwarders y agentes de carga internacional',
+  naviera: 'navieras y operadores marítimos',
+  courier: 'operadores de courier y envío exprés',
+  seguro_carga: 'aseguradoras de carga y rotura',
   _: 'aliados logísticos',
 };
 
