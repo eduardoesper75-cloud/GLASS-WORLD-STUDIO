@@ -41,5 +41,8 @@ Thumbs.db
 data/raw/*
 !data/raw/.gitkeep
 
+# Datos crudos de la limpieza de correo (contienen PII; se regeneran con el CLI)
+data/mail-cleanup/
+
 # Esquemas JSON derivados de Zod (se regeneran con `pnpm generate:schemas`)
 packages/schemas/schemas/

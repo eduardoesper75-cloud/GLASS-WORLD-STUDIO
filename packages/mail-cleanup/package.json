@@ -1,0 +1,24 @@
+{
+  "name": "@gws/mail-cleanup",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CLI de auditoría de remitentes, baja automática (List-Unsubscribe / RFC 8058) y purga controlada a Trash de las casillas oficiales de GWS.",
+  "type": "module",
+  "scripts": {
+    "start": "node --use-system-ca --import tsx src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test \"src/**/*.test.ts\"",
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "dependencies": {
+    "imapflow": "^2.4.3",
+    "nodemailer": "^10.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/nodemailer": "^8.0.2",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
