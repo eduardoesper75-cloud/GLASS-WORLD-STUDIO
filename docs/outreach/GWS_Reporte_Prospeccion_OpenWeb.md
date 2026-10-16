@@ -165,3 +165,27 @@ La ruta correcta sigue siendo **introducción cálida** o el **canal corporativo
   y la lectura de perfiles públicos.
 - Varios sitios institucionales no respondieron (TLS inválido) o sólo ofrecen formulario.
 - **Sigue sin enviarse nada:** el envío es humano y las credenciales del buzón están pendientes.
+
+---
+
+## 8. Fase 3 — cartas institucionales y tanda 3 de devs (16-10-2026)
+
+### 8.1 Correos institucionales listos
+- Generados desde la carta con el generador `generate-correos-institucionales.mjs`.
+- **10 correos** con firma oficial al pie, para las organizaciones con **correo real**:
+  Alaya · Red Sudamericana (Angeles Inversionistas) · IESE BAN · ANFEVI · CAVIPLAN · AMEVEC ·
+  Vidrala · Envases del Sur · Family Capital · Adduntia.
+- Salida: `docs/outreach/inversores/GWS_Correos_Institucionales.md`.
+- 10 organizaciones sin correo directo → pasan a formulario web.
+
+### 8.2 Manifiesto condensado para formularios
+- `docs/outreach/inversores/GWS_Manifiesto_Condensado_Formulario.md`: versión A (~750 car.),
+  versión B micro (~330 car.), firma y tabla de entidades secundarias con su canal.
+
+### 8.3 Tanda 3 de devs (GitHub)
+- Script reusable: `docs/outreach/desarrolladores/harvest-github.mjs` (búsqueda + perfil público,
+  sin gastar el core).
+- **Ejecutado:** 8 consultas → **39 candidatos** → enriquecidos → **28 curados**.
+- **Pool total de la línea: 66 devs** — `arquitecto` 25 · `fullstack` 21 · `b2b` 15 · `multiagente` 5.
+- Envíos actualizados: `docs/outreach/desarrolladores/GWS_Envio_Devs.md` (66 envíos).
+- Candidatos crudos (para revisar): `docs/outreach/desarrolladores/github-tanda3.csv` (ignorado por git).
