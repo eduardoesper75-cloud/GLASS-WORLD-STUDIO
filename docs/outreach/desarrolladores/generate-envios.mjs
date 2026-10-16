@@ -42,6 +42,12 @@ const PERFIL = {
   multiagente:
     'Para el núcleo buscamos especialistas en arquitectura multi-agente y MCP para motorizar los ' +
     'satélites de ingeniería predictiva.',
+  seguridad:
+    'Para el núcleo buscamos especialistas en seguridad que blinden la plataforma: autenticación, ' +
+    'control de acceso, protección de datos y cumplimiento (GDPR/CCPA/PCI-DSS).',
+  datos:
+    'Para el núcleo buscamos especialistas en datos que diseñen el esquema, la optimización de ' +
+    'consultas y la performance de una plataforma global.',
   _:
     'Para el núcleo buscamos gente con oficio para construir una plataforma B2B real de alcance global.',
 };
@@ -103,6 +109,14 @@ function firstName(fullName) {
   return (fullName || '').trim().split(/\s+/)[0] || fullName || '';
 }
 
+// Si el nombre coincide con el handle del perfil de GitHub (nombre == último
+// segmento de la URL), saludamos con "@handle" en vez de un nombre propio.
+function esHandle(name, url) {
+  if (!name || /\s/.test(name) || !url) return false;
+  const slug = url.replace(/\/+$/, '').split('/').pop() || '';
+  return slug.toLowerCase() === name.trim().toLowerCase();
+}
+
 const here = dirname(fileURLToPath(import.meta.url));
 const inputPath = resolve(process.argv[2] ?? resolve(here, 'prospects_devs.csv'));
 const outputPath = resolve(process.argv[3] ?? resolve(here, 'GWS_Envio_Devs.md'));
@@ -112,8 +126,9 @@ function cuerpo(p) {
     ? `Vi tu trabajo en ${p.company}${p.hook ? ` — ${p.hook}` : ''} y me interesa tu perfil.`
     : `Vi tu perfil en GitHub${p.hook ? ` — ${p.hook}` : ''} y me interesa tu experiencia.`;
   const perfilPara = PERFIL[p.perfil] || PERFIL._;
+  const saludo = esHandle(p.name, p.url) ? `Hola @${p.name.trim()},` : `Hola ${firstName(p.name)},`;
   return [
-    `Hola ${firstName(p.name)},`,
+    saludo,
     '',
     personalization,
     '',
@@ -186,6 +201,7 @@ function main() {
       role: get('role'),
       hook: get('hook'),
       perfil: get('perfil').toLowerCase(),
+      url: get('url'),
     };
     const url = get('url');
     const email = get('email');

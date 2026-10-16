@@ -17,22 +17,23 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// --- Consultas de la Tanda 3 (editable) --------------------------------------
-// Enfocadas en: marketplaces B2B, Next.js/React/TypeScript y arquitectura de software.
+// --- Consultas de la Tanda 4 (editable) --------------------------------------
+// Enfocadas en: arquitectos de microservicios/sistemas distribuidos, fullstack
+// Next.js/TS/React con e-commerce B2B, y especialistas en seguridad y bases de datos.
 const QUERIES = [
-  'type:user marketplace in:bio language:TypeScript followers:>20',
-  'type:user "head of engineering" in:bio language:TypeScript followers:>20',
-  'type:user "tech lead" in:bio language:TypeScript followers:>30',
-  'type:user graphql in:bio language:TypeScript followers:>30',
-  'type:user "event-driven" in:bio language:TypeScript followers:>20',
-  'type:user "platform engineer" in:bio language:TypeScript followers:>30',
-  'type:user marketplace in:bio language:TypeScript location:Brazil followers:>3',
-  'type:user marketplace in:bio language:TypeScript location:Argentina followers:>3',
+  'type:user microservices in:bio language:TypeScript followers:>30',
+  'type:user "distributed systems" in:bio language:TypeScript followers:>30',
+  'type:user "system design" in:bio language:TypeScript followers:>50',
+  'type:user "e-commerce" in:bio language:TypeScript followers:>20',
+  'type:user "b2b" in:bio language:TypeScript followers:>30',
+  'type:user security in:bio language:TypeScript followers:>40',
+  'type:user database in:bio language:TypeScript followers:>50',
+  'type:user kubernetes in:bio language:TypeScript followers:>50',
 ];
 
 const here = dirname(fileURLToPath(import.meta.url));
 const existingCsv = resolve(here, 'prospects_devs.csv');
-const outCsv = resolve(here, 'github-tanda3.csv');
+const outCsv = resolve(here, process.argv[2] ?? 'github-tanda4.csv');
 const UA = { 'User-Agent': 'gws-prospecting', Accept: 'application/vnd.github+json' };
 const HTML_UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

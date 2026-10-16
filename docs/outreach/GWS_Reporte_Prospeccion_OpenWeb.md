@@ -189,3 +189,24 @@ La ruta correcta sigue siendo **introducción cálida** o el **canal corporativo
 - **Pool total de la línea: 66 devs** — `arquitecto` 25 · `fullstack` 21 · `b2b` 15 · `multiagente` 5.
 - Envíos actualizados: `docs/outreach/desarrolladores/GWS_Envio_Devs.md` (66 envíos).
 - Candidatos crudos (para revisar): `docs/outreach/desarrolladores/github-tanda3.csv` (ignorado por git).
+
+## 9. Logística — cierre de la vertical (16-10-2026)
+- Generador `generate-correos-logistica.mjs` generalizado: acepta prioridades por parámetro.
+- **4 sets de correo** con firma oficial al pie:
+  - `GWS_Correos_Logistica.md` — prioridades **1-2** (arte frágil + empaque/crating): 10 correos.
+  - `GWS_Correos_Forwarders.md` — prioridad **3**: 8 correos.
+  - `GWS_Correos_Logistica_Cierre.md` — prioridades **4-6** (navieras, courier, seguro): 10 correos.
+  - `GWS_Manifiesto_Condensado_Logistica.md` — notas para los formularios.
+- **Prioridades alineadas** al esquema oficial: arte frágil 1 · crating 2 · forwarders 3 ·
+  navieras 4 · courier 5 · seguro 6.
+- **28 organismos** con pieza lista. Índice: `GWS_Priorizacion_Logistica.md`.
+
+## 10. Fase 6 — tanda 4 de devs (16-10-2026)
+- Consultas enfocadas en: arquitectos de microservicios/sistemas distribuidos, fullstack
+  Next.js/TypeScript/React con e-commerce B2B, y especialistas en seguridad y bases de datos.
+- **Ejecutado:** 8 consultas → **55 candidatos** → enriquecidos → **32 curados**
+  (crudos en `github-tanda4.csv`, revisión en `github-tanda4-curados.csv`; ignorados por git).
+- Nuevos sub-perfiles: `seguridad` y `datos` (agregados a `generate-envios.mjs`).
+- **Pool total de la línea: 98 devs** — `arquitecto` 40 · `fullstack` 25 · `b2b` 17 ·
+  `seguridad` 8 · `multiagente` 7 · `datos` 1.
+- Envíos regenerados: `docs/outreach/desarrolladores/GWS_Envio_Devs.md` (**98 envíos**).
