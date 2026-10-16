@@ -13,13 +13,22 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// Sitio oficial (landing pública): respaldo de toda comunicación saliente.
+const SITE = 'https://glassworldstudio.com.ar';
+
 const SIGNATURE = [
   'Eduardo Esper',
   'Fundador — Glass World Studio',
+  `Web: ${SITE}`,
   'E-mail: esper.eduardo@gmail.com',
   'Teléfono / WhatsApp: +54 9 385 582-6289',
   'Santiago del Estero, República Argentina',
 ];
+
+// CTA obligatorio: en toda comunicación saliente se deriva al sitio oficial.
+const CTA =
+  'Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal ' +
+  `directo con la dirección del proyecto en ${SITE}`;
 
 const ASUNTO =
   'Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio';
@@ -131,6 +140,8 @@ function cuerpo(p) {
       'ciegas. Mostramos.',
     '',
     'Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.',
+    '',
+    CTA,
     '',
     'Cordialmente,',
     '',

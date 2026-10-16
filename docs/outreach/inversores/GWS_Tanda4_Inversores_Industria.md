@@ -4,7 +4,7 @@
 > Enfoque de esta tanda: **family offices** y **fondos con tesis Industrial / DeepTech /
 > B2B marketplace**, más **cámaras e instituciones del vidrio y los materiales**.
 > **Fuentes 100 % abiertas** (sitios oficiales y directorios públicos). **Sin LinkedIn, sin scraping.**
-> Firma oficial al pie en todos los envíos: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289**.
+> Firma oficial al pie en todos los envíos: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289 · Web <https://glassworldstudio.com.ar>**.
 
 ---
 
@@ -54,6 +54,7 @@ Eduardo Esper
 Fundador — Glass World Studio
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
+Web: https://glassworldstudio.com.ar
 Santiago del Estero, República Argentina
 ```
 

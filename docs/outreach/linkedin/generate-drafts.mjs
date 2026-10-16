@@ -20,7 +20,7 @@ const NOTE_LIMIT = 300; // límite de caracteres de la nota de invitación de Li
 
 // Trilogía comunicacional publicada: es la base del "caso de valor" (Paso 2) del
 // Kit de Inversores. Los comunicados viven en el sitio público de GWS.
-const SITE = 'https://glass-world-studio.vercel.app';
+const SITE = 'https://glassworldstudio.com.ar';
 const TRILOGY = {
   reaparicion: `${SITE}/novedades/reaparicion`,
   alianzas: `${SITE}/novedades/alianzas-estrategicas`,
@@ -31,6 +31,7 @@ const TRILOGY = {
 // (La nota de invitación de LinkedIn no la lleva: el tope es 300 caracteres.)
 const SIGNATURE = [
   'Eduardo Esper — Fundador, Glass World Studio',
+  `Web: ${SITE}`,
   'esper.eduardo@gmail.com · +54 9 385 582-6289',
 ];
 

@@ -43,4 +43,6 @@ Las puertas están abiertas para conversar.
 
 Un saludo cordial,  
 **Eduardo Esper**  
-`esper.eduardo@gmail.com`
+`esper.eduardo@gmail.com`  
+WhatsApp / Tel: `+54 9 385 582-6289`  
+**Web:** <https://glassworldstudio.com.ar>

@@ -179,7 +179,7 @@
   - Un **negocio de socios** (win-win), no un financiamiento a ciegas.
 - **El estado, sin maquillaje:** plataforma en producción · PI y marca en trámite ante el **INPI** · comunidad que validó la visión en la primera etapa.
 - **Próximo paso:** una charla franca, sin guion. **20–30 minutos.**
-- **Contacto:** Eduardo Esper · Fundador · esper.eduardo@gmail.com · WhatsApp +54 9 385 582-6289
+- **Contacto:** Eduardo Esper · Fundador · esper.eduardo@gmail.com · WhatsApp +54 9 385 582-6289 · Web <https://glassworldstudio.com.ar>
 
 **Notas del orador**
 
@@ -222,4 +222,5 @@ arquitectura lista. Eso se cuenta mirando a los ojos, no leyendo un papel.
 **Contacto oficial**
 Eduardo Esper — Fundador, Glass World Studio
 E-mail: esper.eduardo@gmail.com · WhatsApp / Tel: +54 9 385 582-6289
+Web: https://glassworldstudio.com.ar
 Santiago del Estero, República Argentina

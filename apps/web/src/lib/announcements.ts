@@ -15,6 +15,7 @@ export interface Announcement {
     name: string;
     role: string;
     contact: string;
+    site?: string;
   };
   lead: string[];
   sections: AnnouncementSection[];
@@ -32,6 +33,7 @@ export const reaparicion: Announcement = {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
     contact: 'esper.eduardo@gmail.com',
+    site: 'https://glassworldstudio.com.ar',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',
@@ -93,6 +95,7 @@ export const alianzas: Announcement = {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
     contact: 'esper.eduardo@gmail.com',
+    site: 'https://glassworldstudio.com.ar',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',
@@ -148,6 +151,7 @@ export const modeloDeAlianza: Announcement = {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
     contact: 'esper.eduardo@gmail.com',
+    site: 'https://glassworldstudio.com.ar',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',

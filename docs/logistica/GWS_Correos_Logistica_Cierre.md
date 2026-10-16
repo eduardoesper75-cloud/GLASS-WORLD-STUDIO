@@ -35,10 +35,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -74,10 +77,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -113,10 +119,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -152,10 +161,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -191,10 +203,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -230,10 +245,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -270,10 +288,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -309,10 +330,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -348,10 +372,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina
@@ -388,10 +415,13 @@ No pedimos dinero: proponemos una alianza. Como operadores logísticos oficiales
 
 Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.
 
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
+Web: https://glassworldstudio.com.ar
 E-mail: esper.eduardo@gmail.com
 Teléfono / WhatsApp: +54 9 385 582-6289
 Santiago del Estero, República Argentina

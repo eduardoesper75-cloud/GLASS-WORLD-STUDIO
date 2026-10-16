@@ -59,6 +59,11 @@ export function AnnouncementView({ announcement }: { announcement: Announcement 
           <strong>{announcement.author.name}</strong>
           <span>{announcement.author.role}</span>
           <a href={`mailto:${announcement.author.contact}`}>{announcement.author.contact}</a>
+          {announcement.author.site ? (
+            <a href={announcement.author.site}>
+              {announcement.author.site.replace(/^https?:\/\//, '')}
+            </a>
+          ) : null}
         </div>
 
         <footer className="announcement__footer">

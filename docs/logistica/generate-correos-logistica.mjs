@@ -13,13 +13,22 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// Sitio oficial (landing pública): respaldo de toda comunicación saliente.
+const SITE = 'https://glassworldstudio.com.ar';
+
 const SIGNATURE = [
   'Eduardo Esper',
   'Fundador — Glass World Studio',
+  `Web: ${SITE}`,
   'E-mail: esper.eduardo@gmail.com',
   'Teléfono / WhatsApp: +54 9 385 582-6289',
   'Santiago del Estero, República Argentina',
 ];
+
+// CTA obligatorio: en toda comunicación saliente se deriva al sitio oficial.
+const CTA =
+  'Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal ' +
+  `directo con la dirección del proyecto en ${SITE}`;
 
 // Framing central (post-16-10-2026): GWS busca ALIANZAS ESTRATÉGICAS en 3 ejes, en este orden:
 // 1) Inversores y capital · 2) Desarrolladores/tecnología · 3) Logística (pilar operativo).
@@ -163,6 +172,8 @@ function cuerpo(p) {
       'encontrarse.',
     '',
     'Si les interesa formar parte, respondé este mensaje y coordinamos 20 minutos. Sin compromiso.',
+    '',
+    CTA,
     '',
     'Cordialmente,',
     '',

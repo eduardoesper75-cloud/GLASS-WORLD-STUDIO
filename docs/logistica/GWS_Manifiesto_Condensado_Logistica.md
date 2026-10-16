@@ -7,7 +7,7 @@
 > de contacto de las empresas de **arte frágil que no exponen correo directo**.
 > **Firma obligatoria al pie de cada envío.**
 
-Contacto oficial: **Eduardo Esper · esper.eduardo@gmail.com · WhatsApp +54 9 385 582-6289**
+Contacto oficial: **Eduardo Esper · esper.eduardo@gmail.com · WhatsApp +54 9 385 582-6289 · Web <https://glassworldstudio.com.ar>**
 
 ---
 
@@ -19,7 +19,7 @@ Glass World Studio busca Alianzas Estratégicas: Inversores, Desarrolladores y L
 No pedimos dinero: proponemos una alianza estratégica. Si les interesa, quedo a disposición para una reunión breve.
 
 Eduardo Esper — Fundador, Glass World Studio
-esper.eduardo@gmail.com · +54 9 385 582-6289
+esper.eduardo@gmail.com · +54 9 385 582-6289 · Web https://glassworldstudio.com.ar
 ```
 
 ## Versión B — micro (~300 caracteres)
@@ -27,7 +27,7 @@ esper.eduardo@gmail.com · +54 9 385 582-6289
 ```
 Glass World Studio (Santiago del Estero, Argentina) es el ecosistema digital global del vidrio. Buscamos operadores de arte frágil como aliados logísticos oficiales para envíos internacionales de obras y piezas frágiles. No pedimos dinero: proponemos una alianza.
 
-Eduardo Esper, Fundador — esper.eduardo@gmail.com · +54 9 385 582-6289
+Eduardo Esper, Fundador — esper.eduardo@gmail.com · +54 9 385 582-6289 · Web https://glassworldstudio.com.ar
 ```
 
 > Si el formulario tiene campo *"asunto"*: **Alianzas estratégicas · Logística — Glass World Studio,
@@ -50,7 +50,7 @@ El traslado de obras y piezas de vidrio exige manejo especializado —embalaje m
 No pedimos dinero: proponemos una alianza. Si les interesa, quedo a disposición para una reunión breve.
 
 Eduardo Esper — Fundador, Glass World Studio
-esper.eduardo@gmail.com · +54 9 385 582-6289
+esper.eduardo@gmail.com · +54 9 385 582-6289 · Web https://glassworldstudio.com.ar
 ```
 
 ### XPO (Museums & Art)
@@ -66,7 +66,7 @@ El traslado de obras y piezas de vidrio exige manejo especializado: embalaje mus
 No pedimos dinero: proponemos una alianza. Si les interesa, quedo a disposición para una reunión breve.
 
 Eduardo Esper — Fundador, Glass World Studio
-esper.eduardo@gmail.com · +54 9 385 582-6289
+esper.eduardo@gmail.com · +54 9 385 582-6289 · Web https://glassworldstudio.com.ar
 ```
 
 ### EMO Trans
@@ -82,7 +82,7 @@ El traslado de obras y piezas de vidrio exige manejo especializado: embalaje mus
 No pedimos dinero: proponemos una alianza. Si les interesa, quedo a disposición para una reunión breve.
 
 Eduardo Esper — Fundador, Glass World Studio
-esper.eduardo@gmail.com · +54 9 385 582-6289
+esper.eduardo@gmail.com · +54 9 385 582-6289 · Web https://glassworldstudio.com.ar
 ```
 
 ---

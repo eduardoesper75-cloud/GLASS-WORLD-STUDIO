@@ -88,6 +88,9 @@ curl.exe -s https://glass-world-studio.vercel.app | Select-String "385 582-6289"
 
 > Confirmar que **no** quede ninguna ocurrencia del correo viejo (`eduesper@gmail.com`)
 > en el sitio publicado.
+>
+> **Dominio oficial público:** <https://glassworldstudio.com.ar> (landing: ecosistema, INPI y contacto).
+> El deploy de este repo (`glass-world-studio.vercel.app`) sirve además las rutas `/novedades/*`.
 
 ---
 

@@ -13,12 +13,21 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+// Sitio oficial (landing pública): respaldo de toda comunicación saliente.
+const SITE = 'https://glassworldstudio.com.ar';
+
 // Firma obligatoria: todo correo la lleva al pie.
 const SIGNATURE = [
   'Eduardo Esper',
   'Fundador — Glass World Studio',
+  `Web: ${SITE}`,
   'esper.eduardo@gmail.com · +54 9 385 582-6289',
 ];
+
+// CTA obligatorio: en toda comunicación saliente se deriva al sitio oficial.
+const CTA =
+  'Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal ' +
+  `directo con la dirección del proyecto en ${SITE}`;
 
 // Marco del Manifiesto de Convocatoria (párrafo central, común a todo envío).
 // Framing central (post-16-10-2026): GWS busca ALIANZAS ESTRATÉGICAS en 3 ejes, en este orden:
@@ -148,6 +157,8 @@ function cuerpo(p) {
     'Si te interesa sumarte como Tech Partner del núcleo, respondé este mensaje y coordinamos ' +
       '20 minutos. Sin compromiso.',
     '',
+    CTA,
+    '',
     ...SIGNATURE,
   ].join('\n');
 }
@@ -193,7 +204,7 @@ function main() {
   lines.push('> Marco: **Manifiesto de Convocatoria**. Firma obligatoria al pie.');
   lines.push('> Canal: **GitHub** (perfil público). Si el perfil expone correo, usarlo; si no, contactar por el perfil.');
   lines.push('> **Envío manual**, ritmo humano, máximo 3 toques. No automatizar cuentas.');
-  lines.push('> Firma: Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289');
+  lines.push(`> Firma: Eduardo Esper · Web: ${SITE} · esper.eduardo@gmail.com · +54 9 385 582-6289`);
   lines.push('');
   lines.push('---');
   lines.push('');
