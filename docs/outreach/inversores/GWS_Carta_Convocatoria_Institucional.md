@@ -8,11 +8,14 @@
 
 ---
 
-**Asunto:** Convocatoria a co-construir el ecosistema digital de la industria del vidrio
+**Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
 
 Estimados:
 
 Me dirijo a ustedes desde **Santiago del Estero, Argentina**, donde nació **Glass World Studio (GWS)**.
+
+**Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
+Prioridad: 1) **Inversores y capital** · 2) **Desarrolladores** (núcleo técnico) · 3) **Logística** (pilar operativo).
 
 Glass World Studio surge en un banco de trabajo. Tras **20 años de trayectoria como artista plástico,
 docente y discípulo del maestro Miguel Diez**, y tras años de investigación, detecté una **vacante
