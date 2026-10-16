@@ -5,7 +5,7 @@
 >
 > Pendientes técnicos para dejar la máquina de outreach **lista para enviar** y el sitio
 > **publicando el contacto oficial**. Ejecutar en orden.
-> Contacto oficial: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289**.
+> Contacto oficial: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 6 22-8400**.
 
 ---
 
@@ -83,7 +83,7 @@ npx vercel --prod
 ```powershell
 # la home y los anuncios deben mostrar el contacto oficial
 curl.exe -s https://glass-world-studio.vercel.app | Select-String "esper.eduardo@gmail.com"
-curl.exe -s https://glass-world-studio.vercel.app | Select-String "385 582-6289"
+curl.exe -s https://glass-world-studio.vercel.app | Select-String "385 6 22-8400"
 ```
 
 > Confirmar que **no** quede ninguna ocurrencia del correo viejo (`eduesper@gmail.com`)

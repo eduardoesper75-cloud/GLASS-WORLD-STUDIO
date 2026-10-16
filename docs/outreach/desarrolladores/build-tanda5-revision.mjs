@@ -52,7 +52,7 @@ L.push('');
 L.push(`> Generado por \`build-tanda5-revision.mjs\` el ${hoy}. Sólo datos **públicos** de GitHub.`);
 L.push('> **Estrategia de contacto: LinkedIn / redes, MANUAL** (omitido 100%: sin automatización ni scraping).');
 L.push('> Revisión humana pendiente: decidir a quién se contacta y con qué hook.');
-L.push('> Contacto al pie: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 582-6289**');
+L.push('> Contacto al pie: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 6 22-8400**');
 L.push('');
 L.push(`**Total pre-curados:** ${items.length} · ` +
   Object.entries(ejes).map(([k, v]) => `${LABEL[k] || k}: ${v.length}`).join(' · '));

@@ -135,7 +135,7 @@ costos confirmados. La prioridad 1 (arte frágil) es el núcleo y está sin vali
   manual** de las 4 credenciales (usuario). Ver `docs/security/GWS_S1_Remediacion_Credenciales.md`.
 - ✅ **Checklist de salida** (`GWS_Checklist_Salida_Operativa.md`): **redeploy hecho (16-10-2026)**.
   Contacto oficial publicado en `/novedades` (`esper.eduardo@gmail.com`), sin correo viejo. Brecha
-  menor: el **teléfono** `+54 9 385 582-6289` **no está en la web** (nunca estuvo).
+  menor: el **teléfono** `+54 9 385 6 22-8400` **no está en la web** (nunca estuvo).
 
 ---
 
@@ -249,5 +249,5 @@ Frente 1 — código de soporte (Frente: desarrollo/plataforma)
 
 **Contacto oficial**
 Eduardo Esper — Fundador, Glass World Studio
-E-mail: esper.eduardo@gmail.com · WhatsApp / Tel: +54 9 385 582-6289
+E-mail: esper.eduardo@gmail.com · WhatsApp / Tel: +54 9 385 6 22-8400
 Santiago del Estero, República Argentina

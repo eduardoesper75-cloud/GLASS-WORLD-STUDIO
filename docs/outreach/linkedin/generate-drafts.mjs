@@ -32,7 +32,7 @@ const TRILOGY = {
 const SIGNATURE = [
   'Eduardo Esper — Fundador, Glass World Studio',
   `Web: ${SITE}`,
-  'esper.eduardo@gmail.com · +54 9 385 582-6289',
+  'esper.eduardo@gmail.com · +54 9 385 6 22-8400',
 ];
 
 const here = dirname(fileURLToPath(import.meta.url));

@@ -48,7 +48,7 @@ mercado, propone.**
 > Estoy construyendo **Glass World Studio** para ser esa primera arquitectura. No te pido tiempo todavía. Solo quería saber si un mercado de ese tamaño, sin dueño digital, entra en tu radar.
 >
 > Eduardo Esper — Fundador, Glass World Studio
-> esper.eduardo@gmail.com · +54 9 385 582-6289 · Web https://glassworldstudio.com.ar
+> esper.eduardo@gmail.com · +54 9 385 6 22-8400 · Web https://glassworldstudio.com.ar
 
 ### LinkedIn (invitación + apertura)
 
@@ -130,7 +130,7 @@ mercado, propone.**
 > Y si no es tu momento, decímelo y no vuelvo a escribir hasta que haya una novedad real.
 >
 > Eduardo Esper — Fundador, Glass World Studio
-> esper.eduardo@gmail.com · +54 9 385 582-6289 · Web https://glassworldstudio.com.ar
+> esper.eduardo@gmail.com · +54 9 385 6 22-8400 · Web https://glassworldstudio.com.ar
 
 ### LinkedIn
 

@@ -160,7 +160,7 @@ Una vez cerrado S1:
 |---|---|---|---|
 | **B1** | ~~Fuente citable de las cifras de mercado~~ **✅ CERRADO (16-10-2026)** | Resuelto en `docs/outreach/GWS_B1_Fuentes_Cifras_Mercado.md`: vidrio plano USD 323.200 M (2025) → USD 450.200 M (2033), Grand View Research; se retira “+50 M” | Fuente nombrable en la 1.ª conversación (ver §6) |
 | **O1** | **API keys del runner** (OpenOutreach) | Cargar `OPENOUTFIND_LLM_API_KEY`, `OUTSEND_LLM_API_KEY` y `OPENOUTFIND_BETTERCONTACT_API_KEY` en su `.env` | `run.ps1 status` sin pendientes |
-| **O2** | ~~Redeploy del sitio~~ **✅ CERRADO (16-10-2026)** | `npx vercel --prod` ejecutado (deploy `READY`) | Contacto `esper.eduardo@gmail.com` en vivo en `/novedades`, sin correo viejo. Pendiente menor: el **teléfono** `+54 9 385 582-6289` no está en la web |
+| **O2** | ~~Redeploy del sitio~~ **✅ CERRADO (16-10-2026)** | `npx vercel --prod` ejecutado (deploy `READY`) | Contacto `esper.eduardo@gmail.com` en vivo en `/novedades`, sin correo viejo. Pendiente menor: el **teléfono** `+54 9 385 6 22-8400` no está en la web |
 | **B2** | **Esquema participación/compensación** | Definir rango fundacional + esquema inversor | Documento interno |
 | **B7** | **Tanda 5 de devs** | Correr `harvest-github.mjs` (MCP/datos/i18n) y curar | Pool ampliado |
 
@@ -215,5 +215,5 @@ titular codificado en base64 (`ZWR1YXJkb2VzcGVyNzVAZ21haWwuY29t` → `eduardoesp
 
 **Contacto oficial**
 Eduardo Esper — Fundador, Glass World Studio
-E-mail: esper.eduardo@gmail.com · WhatsApp / Tel: +54 9 385 582-6289
+E-mail: esper.eduardo@gmail.com · WhatsApp / Tel: +54 9 385 6 22-8400
 Santiago del Estero, República Argentina
