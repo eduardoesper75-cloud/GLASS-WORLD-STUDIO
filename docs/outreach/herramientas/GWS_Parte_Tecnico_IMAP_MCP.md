@@ -60,12 +60,13 @@ Fuente: `%USERPROFILE%\.imap-mcp\accounts.json` (credenciales resueltas por ento
 
 | Casilla | Credencial de aplicación (16 car.) | Resultado |
 |---|---|---|
-| eduardoesper75 | `[REDACTADO]` (en `.env.local`) | ✅ login IMAP OK |
-| esper.eduardo | `[REDACTADO]` (en `.env.local`) | ✅ login IMAP OK |
+| eduardoesper75 | `<IMAP_PASSWORD_HIDDEN>` (`IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD`) | ✅ login IMAP OK |
+| esper.eduardo | `<IMAP_PASSWORD_HIDDEN>` (`IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_PASSWORD`) | ✅ login IMAP OK |
 
 > 🔒 **Credenciales redactadas el 2026-10-16.** Los valores estaban en texto plano en este documento
 > versionado (fuga detectada en el relevamiento). **Rotar** las contraseñas de aplicación y de cuenta:
-> quedaron en el historial de Git. Regla: los secretos viven **sólo** en `.env` (ignorado por git).
+> quedaron en el historial de Git. Regla: los secretos viven **sólo** en `.env.local` (ignorado por git).
+> Procedimiento: `docs/security/GWS_S1_Remediacion_Credenciales.md`.
 
 Antecedentes (contraseñas de **cuenta**, no de aplicación): la contraseña de cuenta es válida
 en ambas casillas pero Gmail la rechaza por IMAP (*Application-specific password

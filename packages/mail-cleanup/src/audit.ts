@@ -220,11 +220,18 @@ export function renderMarkdown(report: AuditReport, top: number): string {
   const subs = report.senders.filter((sender) => sender.hasUnsubscribe).sort(sortLabel);
   lines.push(`## Suscripciones con baja automática disponible (${subs.length})`);
   lines.push('');
+  // Higiene de datos: el destino (URL/mailto de baja) suele incluir tokens de un
+  // solo uso y, a veces, el correo embebido (PII). NO se publica en el informe
+  // versionado: se reemplaza por un placeholder. Los valores crudos quedan sólo
+  // en `data/mail-cleanup/` (ignorado por git) para las operaciones reales.
+  lines.push('> 🔒 Los destinos de baja se omiten deliberadamente (contienen tokens/PII).');
+  lines.push('');
   lines.push('| Remitente / Dominio | Correos | Tipo | Método | Destino |');
   lines.push('|---|---:|---|---|---|');
   for (const sender of subs) {
     const method = sender.oneClick ? 'one-click' : sender.unsubscribeMailto ? 'mailto' : 'manual';
-    const destination = sender.unsubscribeHttp ?? sender.unsubscribeMailto ?? '—';
+    const hasTarget = sender.unsubscribeHttp !== undefined || sender.unsubscribeMailto !== undefined;
+    const destination = hasTarget ? '<UNSUBSCRIBE_URL_HIDDEN>' : '—';
     lines.push(
       `| ${escapeCell(sender.address || sender.domain)} | ${sender.count} | ${KIND_LABEL[sender.kind]} | ${method} | ${escapeCell(destination)} |`,
     );
