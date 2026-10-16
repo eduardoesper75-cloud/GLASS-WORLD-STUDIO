@@ -1,6 +1,6 @@
 # Correos de logística prioritaria listos — Glass World Studio
 
-> Prioridad 1 (**arte frágil**) y Prioridad 2 (**empaque técnico / crating**).
+> Prioridades incluidas: **1, 2**.
 > **Firma oficial al pie en todos.** Envío **manual**; verificar el canal antes de enviar.
 > Donde no hay correo, el canal es el formulario web (no se inventaron direcciones).
 

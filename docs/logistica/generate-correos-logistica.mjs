@@ -33,6 +33,10 @@ const CATEGORIA = {
     'El embalaje técnico —crating de madera, caballetes A-frame, pallets NIMF-15— es lo que hace ' +
     'viable exportar una pieza sin quebrarla. Es la base de toda la cadena y el punto donde una ' +
     'pieza se salva o se pierde.',
+  forwarder:
+    'El vidrio viaja: materia prima, piezas terminadas y obras cruzan fronteras todos los días. La ' +
+    'logística internacional —flete marítimo y aéreo, aduana y documentación— es lo que conecta la ' +
+    'oferta con la demanda global.',
   _:
     'El movimiento de piezas frágiles es el eslabón crítico del sector: es donde una obra se salva ' +
     'o se pierde.',
@@ -41,6 +45,7 @@ const CATEGORIA = {
 const ROL = {
   arte_fragil: 'operadores de arte frágil',
   empaque_crating: 'fabricantes de empaque técnico y crating',
+  forwarder: 'forwarders y agentes de carga internacional',
   _: 'aliados logísticos',
 };
 
@@ -98,7 +103,17 @@ const here = dirname(fileURLToPath(import.meta.url));
 const inputPath = resolve(process.argv[2] ?? resolve(here, 'logistica_aliados.csv'));
 const outputPath = resolve(process.argv[3] ?? resolve(here, 'GWS_Correos_Logistica.md'));
 
-const PRIORIDADES = new Set(['1', '2']);
+// Prioridades a incluir (arg 4, separadas por coma). Por defecto: 1-2 (arte frágil + crating).
+const PRIORIDADES = new Set((process.argv[4] ?? '1,2').split(',').map((s) => s.trim()));
+
+const ETIQUETA = {
+  arte_fragil: 'Arte frágil',
+  empaque_crating: 'Empaque / Crating',
+  forwarder: 'Forwarder / carga internacional',
+  naviera: 'Naviera',
+  courier: 'Courier / última milla',
+  seguro_carga: 'Seguro de carga',
+};
 
 function cuerpo(p) {
   const intro = CATEGORIA[p.categoria] || CATEGORIA._;
@@ -155,7 +170,7 @@ function main() {
   const lines = [];
   lines.push('# Correos de logística prioritaria listos — Glass World Studio');
   lines.push('');
-  lines.push('> Prioridad 1 (**arte frágil**) y Prioridad 2 (**empaque técnico / crating**).');
+  lines.push(`> Prioridades incluidas: **${[...PRIORIDADES].join(', ')}**.`);
   lines.push('> **Firma oficial al pie en todos.** Envío **manual**; verificar el canal antes de enviar.');
   lines.push('> Donde no hay correo, el canal es el formulario web (no se inventaron direcciones).');
   lines.push('');
@@ -181,7 +196,7 @@ function main() {
     if (hasEmail) listos.push(company);
     else sinEmail.push(company);
 
-    lines.push(`## ${company}${prioridad === '1' ? ' · Arte frágil' : ' · Empaque / Crating'}`);
+    lines.push(`## ${company} · ${ETIQUETA[categoria] || 'Logística'}`);
     lines.push(`**Categoría:** ${categoria || '—'} · **Prioridad:** ${prioridad || '—'}`);
     if (hasEmail) lines.push(`**Para:** ${email}`);
     else lines.push(`**Canal:** formulario web${website ? ` → ${website}` : ' [COMPLETAR]'} (sin correo público)`);
