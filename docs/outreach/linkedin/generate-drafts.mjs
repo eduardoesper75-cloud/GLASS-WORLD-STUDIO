@@ -27,6 +27,13 @@ const TRILOGY = {
   modelo: `${SITE}/novedades/modelo-de-alianza`,
 };
 
+// Firma obligatoria: TODO correo o publicación de convocatoria la lleva al pie.
+// (La nota de invitación de LinkedIn no la lleva: el tope es 300 caracteres.)
+const SIGNATURE = [
+  'Eduardo Esper — Fundador, Glass World Studio',
+  'eduesper@gmail.com · +54 9 385 582-6289',
+];
+
 const here = dirname(fileURLToPath(import.meta.url));
 const inputPath = resolve(process.argv[2] ?? resolve(here, 'prospects.csv'));
 const outputPath = resolve(process.argv[3] ?? resolve(here, 'drafts.md'));
@@ -392,6 +399,9 @@ function main() {
     lines.push('');
     lines.push(`**${seq.follow2Label ?? 'Seguimiento 2 (cierre amable, +5–6 días)'}:**`);
     lines.push(`> ${seq.follow2(p)}`);
+    lines.push('');
+    lines.push('**Firma obligatoria (todo correo la lleva al pie):**');
+    for (const l of SIGNATURE) lines.push(`> ${l}`);
     lines.push('');
     lines.push('---');
     lines.push('');
