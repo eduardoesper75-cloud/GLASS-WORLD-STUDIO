@@ -1,14 +1,16 @@
-// Cosecha de la Tanda 3 de devs — Glass World Studio (GitHub, API pública).
+// Cosecha de devs — Glass World Studio (GitHub, API pública).
+// Tanda actual configurada: TANDA 5 (MCP/agentes, datos/BI, i18n multi-región).
 //
 // Ejecutar CUANDO EL RATE LIMIT ESTÉ LIBRE:
 //   node docs/outreach/desarrolladores/harvest-github.mjs
+//   node docs/outreach/desarrolladores/harvest-github.mjs github-tandaN.csv
 //
 // Qué hace:
 //   1. Lee el rate limit de la API de GitHub y avisa si no hay margen.
 //   2. Corre las consultas de búsqueda definidas en QUERIES.
 //   3. Deduplica contra los logins ya presentes en prospects_devs.csv.
 //   4. Enriquece cada candidato leyendo su PERFIL PÚBLICO (bio, empresa, ubicación).
-//   5. Escribe la lista en github-tanda3.csv para tu curación manual.
+//   5. Escribe la lista en github-tanda5.csv para tu curación manual.
 //
 // Sin autenticar: search ~10 req/min, core ~60 req/hora. El script respeta el ritmo.
 // Regla: no inventar datos. Lo que no aparece, queda vacío.
@@ -17,23 +19,25 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// --- Consultas de la Tanda 4 (editable) --------------------------------------
-// Enfocadas en: arquitectos de microservicios/sistemas distribuidos, fullstack
-// Next.js/TS/React con e-commerce B2B, y especialistas en seguridad y bases de datos.
+// --- Consultas de la Tanda 5 (editable) --------------------------------------
+// Ejes especializados: MCP / protocolos agénticos, ingeniería de datos / BI,
+// e internacionalización (i18n) y plataformas multi-región.
 const QUERIES = [
-  'type:user microservices in:bio language:TypeScript followers:>30',
-  'type:user "distributed systems" in:bio language:TypeScript followers:>30',
-  'type:user "system design" in:bio language:TypeScript followers:>50',
-  'type:user "e-commerce" in:bio language:TypeScript followers:>20',
-  'type:user "b2b" in:bio language:TypeScript followers:>30',
-  'type:user security in:bio language:TypeScript followers:>40',
-  'type:user database in:bio language:TypeScript followers:>50',
-  'type:user kubernetes in:bio language:TypeScript followers:>50',
+  'type:user "model context protocol" in:bio language:TypeScript',
+  'type:user mcp in:bio language:TypeScript followers:>20',
+  'type:user "ai agents" in:bio language:TypeScript followers:>30',
+  'type:user "data engineering" in:bio language:TypeScript followers:>30',
+  'type:user "business intelligence" in:bio language:TypeScript followers:>20',
+  'type:user dbt in:bio language:TypeScript followers:>20',
+  'type:user i18n in:bio language:TypeScript followers:>20',
+  'type:user internationalization in:bio language:TypeScript followers:>30',
+  'type:user localization in:bio language:TypeScript followers:>20',
+  'type:user "multi-region" in:bio language:TypeScript followers:>20',
 ];
 
 const here = dirname(fileURLToPath(import.meta.url));
 const existingCsv = resolve(here, 'prospects_devs.csv');
-const outCsv = resolve(here, process.argv[2] ?? 'github-tanda4.csv');
+const outCsv = resolve(here, process.argv[2] ?? 'github-tanda5.csv');
 const UA = { 'User-Agent': 'gws-prospecting', Accept: 'application/vnd.github+json' };
 const HTML_UA = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

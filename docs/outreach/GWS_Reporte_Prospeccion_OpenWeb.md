@@ -210,3 +210,32 @@ La ruta correcta sigue siendo **introducción cálida** o el **canal corporativo
 - **Pool total de la línea: 98 devs** — `arquitecto` 40 · `fullstack` 25 · `b2b` 17 ·
   `seguridad` 8 · `multiagente` 7 · `datos` 1.
 - Envíos regenerados: `docs/outreach/desarrolladores/GWS_Envio_Devs.md` (**98 envíos**).
+
+## 11. Fase 7 — tanda 4 de inversores e industria (16-10-2026)
+- Enfoque: **family offices** y **fondos con tesis Industrial / DeepTech / B2B marketplace**,
+  más **cámaras e instituciones del vidrio y los materiales**. Fuentes **100 % abiertas**.
+- **Ejecutado:** búsqueda + verificación en sitios oficiales → **15 nuevos organismos**.
+- **8 con correo directo** (Glass Alliance Europe, Glass for Europe, Glass Packaging Institute,
+  Assovetro, BV Glas, ABIVIDRO, Inveready, FORUM Family Office) y **7 por formulario web**.
+- **Pool de la línea: 35 organismos** (18 con correo directo). Correos: **18** en
+  `docs/outreach/inversores/GWS_Correos_Institucionales.md`.
+- Curaduría: `docs/outreach/inversores/GWS_Tanda4_Inversores_Industria.md`.
+
+## 12. Fase 8 — parámetros tanda 5 de devs (definidos, 16-10-2026)
+- Ejes: **MCP / protocolos agénticos**, **ingeniería de datos / BI**, **i18n / multi-región**.
+- Definido en `harvest-github.mjs` (10 consultas) con salida por defecto `github-tanda5.csv`.
+- **No ejecutada todavía** (el pool se mantiene en **98** hasta correrla y curarla).
+
+## 13. Resumen consolidado del pool de prospección (16-10-2026)
+
+| Línea | Universo | Con canal directo | Archivo de envíos |
+|---|---|---|---|
+| **Desarrolladores / Arquitectos / Especialistas Tech** | **98** | 98 (GitHub) | `desarrolladores/GWS_Envio_Devs.md` |
+| **Operadores logísticos e infraestructura** | **28** | 18 por correo · 10 por formulario | `logistica/GWS_Correos_*.md` |
+| **Inversores e industria (Tanda 4 curada)** | **+15** (pool 35) | 18 de 35 por correo | `inversores/GWS_Correos_Institucionales.md` |
+
+**Totales con pieza de contacto lista:** 98 devs + 28 logísticos + 18 institucionales = **144 envíos**
+(+ formularios de las tres líneas).
+
+Pendientes técnicos: `docs/outreach/GWS_Checklist_Salida_Operativa.md`
+(password de aplicación de Google + redeploy del sitio).
