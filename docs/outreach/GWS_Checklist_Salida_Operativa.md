@@ -64,13 +64,16 @@ no tenga espacios y que el 2FA siga activo.
 cd "C:\Users\eduesper\Documents\Proyecto predeterminado"
 
 # 2) (una sola vez) vincular el proyecto si no lo está
-vercel link
+npx vercel link
 #    -> elegir el proyecto: glass-world-studio (org eduardoesper75-4497)
 
 # 3) build + deploy a producción
 pnpm install --frozen-lockfile
-vercel --prod
+npx vercel --prod
 ```
+
+> ⚠️ `vercel --prod` publica el **working tree** (incluye archivos sin commitear). Si no querés
+> publicar trabajo en curso, guardalo antes: `git stash push -u` → deploy → `git stash pop`.
 
 ### Verificación post-deploy
 
