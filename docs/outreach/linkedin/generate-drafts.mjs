@@ -20,7 +20,7 @@ const NOTE_LIMIT = 300; // límite de caracteres de la nota de invitación de Li
 
 // Trilogía comunicacional publicada: es la base del "caso de valor" (Paso 2) del
 // Kit de Inversores. Los comunicados viven en el sitio público de GWS.
-const SITE = 'https://glassworldstudio.com.ar';
+const SITE = 'https://www.glassworldstudio.com.ar';
 const TRILOGY = {
   reaparicion: `${SITE}/novedades/reaparicion`,
   alianzas: `${SITE}/novedades/alianzas-estrategicas`,
@@ -32,7 +32,7 @@ const TRILOGY = {
 const SIGNATURE = [
   'Eduardo Esper — Fundador, Glass World Studio',
   `Web: ${SITE}`,
-  'esper.eduardo@gmail.com · +54 9 385 6 22-8400',
+  'edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400',
 ];
 
 const here = dirname(fileURLToPath(import.meta.url));

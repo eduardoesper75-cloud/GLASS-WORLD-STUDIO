@@ -51,17 +51,20 @@
 
 Fuente: `%USERPROFILE%\.imap-mcp\accounts.json` (credenciales resueltas por entorno).
 
+> Nota (2026-10-17): la casilla legada se **retiró** del provisionamiento; las filas marcadas
+> *retirada* son datos históricos del relevamiento del 2026-10-16.
+
 | Clave | Casilla | Host / Puerto | `accountId` | Correos analizados |
 |---|---|---|---|---|
 | `eduardoesper75` | eduardoesper75@gmail.com | imap.gmail.com:993 | `63b1ad0e-f946-4d1c-856f-13d4d3da7527` | 573 / 718 |
-| `esper.eduardo` | esper.eduardo@gmail.com | imap.gmail.com:993 | `1d81db61-347b-458c-a790-37035827a7d3` | 723 / 916 |
+| `esper.eduardo` *(retirada)* | *(casilla legada, retirada el 2026-10-17)* | imap.gmail.com:993 | `1d81db61-347b-458c-a790-37035827a7d3` | 723 / 916 |
 
 ### 1.2 Validación de credenciales (prueba real contra Gmail)
 
 | Casilla | Credencial de aplicación (16 car.) | Resultado |
 |---|---|---|
 | eduardoesper75 | `<IMAP_PASSWORD_HIDDEN>` (`IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD`) | ✅ login IMAP OK |
-| esper.eduardo | `<IMAP_PASSWORD_HIDDEN>` (`IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_PASSWORD`) | ✅ login IMAP OK |
+| esper.eduardo *(retirada)* | *(retirada el 2026-10-17)* | — |
 
 > 🔒 **Credenciales redactadas el 2026-10-16.** Los valores estaban en texto plano en este documento
 > versionado (fuga detectada en el relevamiento). **Rotar** las contraseñas de aplicación y de cuenta:
@@ -107,7 +110,7 @@ Avast Mail Shield firma el TLS de `imap.gmail.com:993` con su propio CA
 | Casilla | Correos | Remitentes | Correo dominante |
 |---|---:|---:|---|
 | eduardoesper75@gmail.com | 573 | 105 | `hello@notify.railway.app` (62) |
-| esper.eduardo@gmail.com | 723 | 85 | `email@market.temuemail.com` (130) |
+| edu.esper@glassworldstudio.com.ar | 723 | 85 | `email@market.temuemail.com` (130) |
 
 ### 2.2 Top 35 remitentes (ambos buzones)
 
@@ -167,7 +170,7 @@ Avast Mail Shield firma el TLS de `imap.gmail.com:993` con su propio CA
 | 10 | email.openai.com | 34 |
 | 11 | accounts.google.com | 33 |
 | 12 | cinko.io | 32 |
-| 13 | glassworldstudio.com.ar | 31 |
+| 13 | www.glassworldstudio.com.ar | 31 |
 | 14 | smailer1.binance.com | 25 |
 | 15 | smailer2.binance.com | 24 |
 | 16 | arcap.org | 18 |
@@ -279,7 +282,7 @@ asociados a `chatex.ai` en la ventana auditada (ni en la otra casilla).
 $ pnpm --filter @gws/mail-cleanup start audit --days 365 --top 50
 • Auditando eduardoesper75@gmail.com (INBOX, 365d)…
   573 mensajes analizados (total en carpeta: 718)
-• Auditando esper.eduardo@gmail.com (INBOX, 365d)…
+• Auditando edu.esper@glassworldstudio.com.ar (INBOX, 365d)…
   723 mensajes analizados (total en carpeta: 916)
 ✔ Informe: docs/outreach/herramientas/GWS_Reporte_Ranking_Correo.md
 ✔ Datos:   data/mail-cleanup/audit-2026-10-16T06-12-15.json
@@ -320,13 +323,13 @@ que **ningún dominio protegido** entrara en el objetivo.
 | Ámbito | Dominios/cuentas preservados |
 |---|---|
 | Crypto / financiero | Binance (`smailer1/2`, `ses`), Coinbase, PayPal, Stripe, Mercado Pago, Naranja X, Banco Nación (`mailing.bna.com.ar`), Ualá, AstroPay, Brubank, Lemon, Ripio, Modo, Airtm, Pionex, 3Commas, TradingView y avisos de tarjeta/banco |
-| Hosting / infraestructura | DonWeb (todos sus dominios), Glass World Studio (`glassworldstudio.com.ar`), GitHub, NVIDIA, Railway, Vercel, Neon, Docker |
+| Hosting / infraestructura | DonWeb (todos sus dominios), Glass World Studio (`www.glassworldstudio.com.ar`), GitHub, NVIDIA, Railway, Vercel, Neon, Docker |
 | Redes | Facebook (`facebookmail.com`) |
 | Grupo D — cuentas/seguridad | Google Accounts (`noreply-accounts@google.com`, `no-reply@accounts.google.com`), alertas de seguridad, pagos Google, Google Workspace, YouTube |
 
 ### 4.2 Objetivo seleccionado y ejecutado (por dominio)
 
-| Dominio | Correos | e75 | esper.eduardo |
+| Dominio | Correos | e75 | esper.eduardo *(retirada)* |
 |---|---:|---:|---:|
 | market.temuemail.com | 130 | | 130 |
 | wordfence.com | 54 | 54 | |
@@ -383,7 +386,7 @@ $ pnpm --filter @gws/mail-cleanup start unsubscribe --senders … --apply
 
 $ pnpm --filter @gws/mail-cleanup start purge --senders … --apply --yes
   eduardoesper75@gmail.com: 145 mensajes → Trash
-  esper.eduardo@gmail.com:   247 mensajes → Trash
+  edu.esper@glassworldstudio.com.ar:   247 mensajes → Trash
 ✔ Purga: 392 mensajes a Trash
   → data/mail-cleanup/purge-2026-10-16T06-35-44.json
 ```
@@ -391,7 +394,7 @@ $ pnpm --filter @gws/mail-cleanup start purge --senders … --apply --yes
 | Casilla | Movidos a `Trash` |
 |---|---:|
 | eduardoesper75@gmail.com | 145 |
-| esper.eduardo@gmail.com | 247 |
+| edu.esper@glassworldstudio.com.ar | 247 |
 | **Total** | **392** |
 
 > Los correos permanecen **recuperables en `Trash`** durante el ciclo de retención
@@ -417,6 +420,6 @@ $ pnpm --filter @gws/mail-cleanup start purge --senders … --apply --yes
 **Contacto oficial**
 Eduardo Esper
 Fundador — Glass World Studio
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina

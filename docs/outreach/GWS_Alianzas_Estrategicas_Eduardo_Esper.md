@@ -32,6 +32,6 @@ Para aquellos aventureros y visionarios que entiendan la escala de lo que estamo
 
 Un saludo cordial,  
 **Eduardo Esper**  
-`esper.eduardo@gmail.com`  
-WhatsApp / Tel: `+54 9 385 6 22-8400`  
-**Web:** <https://glassworldstudio.com.ar>
+`edu.esper@glassworldstudio.com.ar`  
+WhatsApp / Tel: `+54 9 385 622-8400`  
+**Web:** <https://www.glassworldstudio.com.ar>

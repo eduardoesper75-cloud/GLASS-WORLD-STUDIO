@@ -13,24 +13,23 @@
 .EXAMPLE
   # 1) Revocá la vieja y generá la nueva en https://myaccount.google.com/apppasswords
   # 2) Ejecutá:
-  powershell -ExecutionPolicy Bypass -File tools/security/rotate-app-password.ps1 -Account esper.eduardo -Validate
-
-.EXAMPLE
-  powershell -ExecutionPolicy Bypass -File tools/security/rotate-app-password.ps1 -Account eduardoesper75
+  powershell -ExecutionPolicy Bypass -File tools/security/rotate-app-password.ps1 -Account eduardoesper75 -Validate
 #>
+#
+# NOTA: la casilla de envío del runner OpenOutreach es la INSTITUCIONAL
+# (edu.esper@glassworldstudio.com.ar, Don Web, NO Google): su contraseña se define en el
+# `.env` del runner, no con una app password de Google (Checklist de salida §1).
 param(
-  [ValidateSet('eduardoesper75', 'esper.eduardo')]
-  [string]$Account = 'esper.eduardo',
+  [ValidateSet('eduardoesper75')]
+  [string]$Account = 'eduardoesper75',
   [string]$EnvFile = (Join-Path $PSScriptRoot '..\..\.env.local'),
-  [switch]$Validate,
-  [string]$OutreachEnv = (Join-Path $env:LOCALAPPDATA 'gws-tools\openoutreach\.env')
+  [switch]$Validate
 )
 
 $ErrorActionPreference = 'Stop'
 
 $KEY = @{
   'eduardoesper75' = 'IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD'
-  'esper.eduardo'  = 'IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_PASSWORD'
 }[$Account]
 
 Write-Host "Casilla: $Account  ->  clave en .env: $KEY" -ForegroundColor Cyan
@@ -55,21 +54,6 @@ foreach ($l in (Get-Content $EnvFile)) {
 if (-not $found) { $out.Add("$KEY=$new") }
 [System.IO.File]::WriteAllLines($EnvFile, [string[]]$out, (New-Object System.Text.UTF8Encoding($false)))
 Write-Host "[OK] $KEY actualizada en $EnvFile (valor NO mostrado)." -ForegroundColor Green
-
-if ($Account -eq 'esper.eduardo' -and (Test-Path $OutreachEnv)) {
-  $oout = New-Object System.Collections.Generic.List[string]
-  $ofound = $false
-  foreach ($l in (Get-Content $OutreachEnv)) {
-    if ($l -match '^\s*OUTSEND_MAILBOX_PASSWORD\s*=') { $ofound = $true; $oout.Add("OUTSEND_MAILBOX_PASSWORD=$new") }
-    else { $oout.Add($l) }
-  }
-  if ($ofound) {
-    [System.IO.File]::WriteAllLines($OutreachEnv, [string[]]$oout, (New-Object System.Text.UTF8Encoding($false)))
-    Write-Host "[OK] OUTSEND_MAILBOX_PASSWORD actualizada en el .env del runner." -ForegroundColor Green
-  } else {
-    Write-Host "[i] El .env del runner no tiene OUTSEND_MAILBOX_PASSWORD; no se tocó." -ForegroundColor DarkYellow
-  }
-}
 
 Write-Host "`nRecomendado: correr el escáner de secretos -> tools\security\scan-secrets.ps1" -ForegroundColor Cyan
 if ($Validate) {

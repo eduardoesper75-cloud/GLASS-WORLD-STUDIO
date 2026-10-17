@@ -10,7 +10,7 @@
 //   IMAP_MCP_ACCOUNT_<NOMBRE>_IMAP_PASSWORD
 //
 // <NOMBRE> = nombre de la cuenta en MAYÚSCULAS con todo lo no alfanumérico
-// reemplazado por "_". Ej.: "esper.eduardo" -> ESPER_EDUARDO.
+// reemplazado por "_". Ej.: "eduardoesper75" -> EDUARDOESPER75.
 //
 // Así NINGÚN secreto se escribe en disco: solo viven en `.env` / `.env.local`
 // y en memoria del proceso (ver `launch.mjs`).
@@ -18,7 +18,7 @@
 // Uso:
 //   node provision-accounts.mjs
 //   node provision-accounts.mjs --mailbox "eduardoesper75=eduardoesper75@gmail.com"
-//   node provision-accounts.mjs --remove "esper.eduardo"
+//   node provision-accounts.mjs --remove "nombre"
 // =====================================================================
 
 import { randomUUID } from 'node:crypto';
@@ -30,9 +30,10 @@ const STORE_DIR = join(homedir(), '.imap-mcp');
 const ACCOUNTS_PATH = join(STORE_DIR, 'accounts.json');
 const KEY_PATH = join(STORE_DIR, '.key');
 
+// Casilla oficial de Gmail de GWS (canal secundario). La casilla institucional
+// (edu.esper@glassworldstudio.com.ar) no es de Gmail y se configura aparte.
 const DEFAULT_MAILBOXES = [
   { name: 'eduardoesper75', email: 'eduardoesper75@gmail.com' },
-  { name: 'esper.eduardo', email: 'esper.eduardo@gmail.com' },
 ];
 
 const IMAP_HOST = 'imap.gmail.com';

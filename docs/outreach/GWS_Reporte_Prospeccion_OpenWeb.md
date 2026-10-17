@@ -139,7 +139,7 @@ La ruta correcta sigue siendo **introducción cálida** o el **canal corporativo
   **perfil público** → curados a **25**. Total de la línea: **38**.
 - Nuevo sub-perfil **`arquitecto`** sumado al motor (APIs, microservicios, diseño de sistemas).
 - **Envíos listos** para manual: `docs/outreach/desarrolladores/GWS_Envio_Devs.md`, cada uno con el
-  marco del Manifiesto y la firma obligatoria (`esper.eduardo@gmail.com` · `+54 9 385 6 22-8400`).
+  marco del Manifiesto y la firma obligatoria (`edu.esper@glassworldstudio.com.ar` · `+54 9 385 622-8400`).
 - Generador de envíos: `docs/outreach/desarrolladores/generate-envios.mjs`.
 
 ### 7.2 Inversores e industria — canal institucional

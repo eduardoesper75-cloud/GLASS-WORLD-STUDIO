@@ -37,14 +37,14 @@ El servidor está instalado **fuera del repo**, junto al resto del tooling MCP:
    contraseñas de aplicación de Gmail (requieren verificación en dos pasos):
 
    ```dotenv
-   # eduardoesper75@gmail.com
+   # eduardoesper75@gmail.com (canal secundario oficial)
    IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_USERNAME=eduardoesper75@gmail.com
    IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD=xxxxxxxxxxxxxxxx
-
-   # esper.eduardo@gmail.com
-   IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_USERNAME=esper.eduardo@gmail.com
-   IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_PASSWORD=xxxxxxxxxxxxxxxx
    ```
+
+   > La casilla institucional `edu.esper@glassworldstudio.com.ar` **no** es de Gmail: su
+   > IMAP se configura con el proveedor del dominio (Don Web), no con contraseñas de
+   > aplicación de Google.
 
 4. **Registrar el MCP en OpenCode**: ya está hecho en `.opencode/opencode.json`
    (servidor `imap`, apuntando a `launch.mjs`).

@@ -16,8 +16,8 @@ Eso estamos construyendo: 6 galaxias y 5 satélites sobre una arquitectura de ag
 Si les resuena, quedo a disposición para una reunión breve.
 
 Eduardo Esper — Fundador, Glass World Studio
-esper.eduardo@gmail.com · +54 9 385 6 22-8400
-Web: https://glassworldstudio.com.ar
+edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400
+Web: https://www.glassworldstudio.com.ar
 ```
 
 ## Versión B — micro (~330 caracteres)
@@ -25,7 +25,7 @@ Web: https://glassworldstudio.com.ar
 ```
 Glass World Studio (Santiago del Estero, Argentina) construye la plataforma digital integral que la industria del vidrio —USD 323.200 M (2025) → USD 450.200 M (2033), y un mercado de taller que nadie mide— nunca tuvo. No pedimos dinero: ofrecemos co-construir. Ponemos mercado, arquitectura y plataforma en producción.
 
-Eduardo Esper, Fundador — esper.eduardo@gmail.com · +54 9 385 6 22-8400 · Web https://glassworldstudio.com.ar
+Eduardo Esper, Fundador — edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400 · Web https://www.glassworldstudio.com.ar
 ```
 
 > Si el formulario tiene campo *"asunto"*: **Alianzas estratégicas · Inversores — Convocatoria a

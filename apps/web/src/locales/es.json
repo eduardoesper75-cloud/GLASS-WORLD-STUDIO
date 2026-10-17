@@ -1,6 +1,6 @@
 {
   "messages": {
-    "pageTitle": "Glass World Studio — Plataforma con alma de taller, que se fortalece con tu crecimiento.",
+    "pageTitle": "Glass World Studio · Plataforma con alma de taller, que se fortalece con tu crecimiento.",
     "artwork": "Arte del vidrio",
     "selectLanguage": "Seleccionar idioma",
     "tagline": "Plataforma con alma de taller, que se fortalece con tu crecimiento",
@@ -15,6 +15,15 @@
     "submit": "Registrarse / acceder al taller",
     "pending": "La autenticación todavía no está conectada. Tus datos no se han enviado ni guardado.",
     "identityPreview": "Esta vista previa no transmite ni guarda tus datos de identidad. No se crea una cuenta.",
+    "registrationStep": "Credenciales",
+    "registrationTitle": "Comencemos por tu identidad.",
+    "registrationIntro": "Crea tu acceso para abrir tu espacio en Glass World Studio.",
+    "username": "Nombre de usuario",
+    "confirmPassword": "Confirmar contraseña",
+    "passwordHint": "Usa al menos 8 caracteres.",
+    "registrationPreviewNotice": "Vista previa: tus credenciales no se envían ni se guardan y todavía no se crea una cuenta.",
+    "passwordMismatch": "Las contraseñas deben coincidir exactamente.",
+    "continueToGalaxies": "Continuar a la selección de galaxia",
     "continueMembership": "Continuar a pertenencia",
     "membershipStep": "Tu órbita en el ecosistema",
     "membershipTitle": "Define tu pertenencia",
@@ -60,7 +69,15 @@
     "newsIntro": "Trilogía comunicacional de Glass World Studio: reaparición, alianzas estratégicas y modelo de alianza.",
     "newsRead": "Leer comunicado",
     "newsAll": "Todas las novedades",
-    "newsBack": "Volver al inicio"
+    "newsBack": "Volver al inicio",
+    "contactTitle": "Canales oficiales",
+    "contactWeb": "Sitio web",
+    "contactWhatsapp": "WhatsApp",
+    "convocatoriaTitle": "Alianzas estratégicas",
+    "convocatoriaLead": "Glass World Studio busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.",
+    "convocatoriaImageAlt": "Flyer de la convocatoria: «5.000 años de historia entran en la era digital».",
+    "contactEmailInstitutional": "Correo institucional",
+    "contactEmailPersonal": "Correo personal"
   },
   "dashboard": {
     "labels": {

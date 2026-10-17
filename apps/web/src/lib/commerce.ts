@@ -1,5 +1,5 @@
 /**
- * Arquitectura para comercio transfronterizo (Cross-Border) — Glass World Studio
+ * Arquitectura para comercio transfronterizo (Cross-Border): Glass World Studio
  *
  * Este módulo deja estructurados los parámetros para:
  * - Manejo de divisas globales (USD, EUR, etc.)

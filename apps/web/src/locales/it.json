@@ -1,6 +1,6 @@
 {
   "messages": {
-    "pageTitle": "Glass World Studio — Una piattaforma con l'anima di un laboratorio, che cresce con te.",
+    "pageTitle": "Glass World Studio · Una piattaforma con l'anima di un laboratorio, che cresce con te.",
     "artwork": "Arte del vetro",
     "selectLanguage": "Seleziona la lingua",
     "tagline": "Una piattaforma con l'anima di un laboratorio, che cresce con te.",
@@ -15,6 +15,15 @@
     "submit": "Registrati / accedi all'officina",
     "pending": "L'autenticazione non è ancora collegata. I tuoi dati non sono stati inviati né salvati.",
     "identityPreview": "Questa anteprima non trasmette né salva i tuoi dati identificativi. Non viene creato alcun account.",
+    "registrationStep": "Credenziali",
+    "registrationTitle": "Cominciamo dalla tua identità.",
+    "registrationIntro": "Crea i tuoi dati di accesso per aprire il tuo spazio in Glass World Studio.",
+    "username": "Nome utente",
+    "confirmPassword": "Conferma password",
+    "passwordHint": "Usa almeno 8 caratteri.",
+    "registrationPreviewNotice": "Anteprima: le credenziali non vengono inviate né salvate e non viene ancora creato alcun account.",
+    "passwordMismatch": "Le password devono corrispondere esattamente.",
+    "continueToGalaxies": "Continua alla selezione della galassia",
     "continueMembership": "Continua alla scelta di appartenenza",
     "membershipStep": "La tua orbita nell'ecosistema",
     "membershipTitle": "Definisci la tua appartenenza",
@@ -60,7 +69,15 @@
     "newsIntro": "Trilogia di comunicati di Glass World Studio: ritorno, alleanze strategiche e modello di alleanza.",
     "newsRead": "Leggi il comunicato",
     "newsAll": "Tutte le novità",
-    "newsBack": "Torna alla home"
+    "newsBack": "Torna alla home",
+    "contactTitle": "Canali ufficiali",
+    "contactWeb": "Sito web",
+    "contactWhatsapp": "WhatsApp",
+    "convocatoriaTitle": "Alleanze strategiche",
+    "convocatoriaLead": "Glass World Studio cerca Alleanze Strategiche: Investitori, Sviluppatori e Logistica.",
+    "convocatoriaImageAlt": "Locandina della campagna: «5.000 anni di storia entrano nell’era digitale».",
+    "contactEmailInstitutional": "Email istituzionale",
+    "contactEmailPersonal": "Email personale"
   },
   "dashboard": {
     "labels": {

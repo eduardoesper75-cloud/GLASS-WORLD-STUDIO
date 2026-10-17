@@ -53,10 +53,10 @@ Solo desde `.env` / `.env.local` (nunca en código). Por cada casilla:
 ```dotenv
 IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_USERNAME=eduardoesper75@gmail.com
 IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD=<contraseña de aplicación>
-
-IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_USERNAME=esper.eduardo@gmail.com
-IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_PASSWORD=<contraseña de aplicación>
 ```
+
+> La casilla institucional `edu.esper@glassworldstudio.com.ar` no es de Gmail: se
+> configura con el IMAP del proveedor del dominio (Don Web).
 
 ## Flujo recomendado (fases 2 → 4)
 

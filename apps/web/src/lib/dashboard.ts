@@ -5,7 +5,6 @@ export type DashboardLocale = Record<LanguageCode, string>;
 export interface DashboardModule {
   id: string;
   category: 'galaxy' | 'satellite';
-  icon: string;
   title: DashboardLocale;
   description: DashboardLocale;
   modules: DashboardLocale[];
@@ -56,21 +55,20 @@ export const dashboardLabels = {
 } satisfies Record<string, DashboardLocale>;
 
 const moduleDefinitions = [
-  { id: 'masters', category: 'galaxy', icon: '✳', accent: 'amber' },
-  { id: 'marketplace', category: 'galaxy', icon: '◇', accent: 'cyan' },
-  { id: 'community', category: 'galaxy', icon: '◎', accent: 'violet' },
-  { id: 'silicate-bonus', category: 'galaxy', icon: '♻', accent: 'green' },
-  { id: 'industry', category: 'galaxy', icon: '⌬', accent: 'blue' },
-  { id: 'materials', category: 'galaxy', icon: '✧', accent: 'pink' },
-  { id: 'supply-demand-radar', category: 'satellite', icon: '⌖', accent: 'cyan' },
-  { id: 'predictive-engineering', category: 'satellite', icon: '⌁', accent: 'violet' },
-  { id: 'professionals', category: 'satellite', icon: '⌘', accent: 'amber' },
-  { id: 'used-gws', category: 'satellite', icon: '↻', accent: 'green' },
-  { id: 'knowledge-vault', category: 'satellite', icon: '▤', accent: 'blue' },
+  { id: 'masters', category: 'galaxy', accent: 'amber' },
+  { id: 'marketplace', category: 'galaxy', accent: 'cyan' },
+  { id: 'community', category: 'galaxy', accent: 'violet' },
+  { id: 'silicate-bonus', category: 'galaxy', accent: 'green' },
+  { id: 'industry', category: 'galaxy', accent: 'blue' },
+  { id: 'materials', category: 'galaxy', accent: 'pink' },
+  { id: 'supply-demand-radar', category: 'satellite', accent: 'cyan' },
+  { id: 'predictive-engineering', category: 'satellite', accent: 'violet' },
+  { id: 'professionals', category: 'satellite', accent: 'amber' },
+  { id: 'used-gws', category: 'satellite', accent: 'green' },
+  { id: 'knowledge-vault', category: 'satellite', accent: 'blue' },
 ] satisfies Array<{
   id: DashboardModuleId;
   category: DashboardModule['category'];
-  icon: string;
   accent: string;
 }>;
 

@@ -14,14 +14,14 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 // Sitio oficial (landing pública): respaldo de toda comunicación saliente.
-const SITE = 'https://glassworldstudio.com.ar';
+const SITE = 'https://www.glassworldstudio.com.ar';
 
 // Firma obligatoria: todo correo la lleva al pie.
 const SIGNATURE = [
   'Eduardo Esper',
   'Fundador — Glass World Studio',
   `Web: ${SITE}`,
-  'esper.eduardo@gmail.com · +54 9 385 6 22-8400',
+  'edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400',
 ];
 
 // CTA obligatorio: en toda comunicación saliente se deriva al sitio oficial.
@@ -204,7 +204,7 @@ function main() {
   lines.push('> Marco: **Manifiesto de Convocatoria**. Firma obligatoria al pie.');
   lines.push('> Canal: **GitHub** (perfil público). Si el perfil expone correo, usarlo; si no, contactar por el perfil.');
   lines.push('> **Envío manual**, ritmo humano, máximo 3 toques. No automatizar cuentas.');
-  lines.push(`> Firma: Eduardo Esper · Web: ${SITE} · esper.eduardo@gmail.com · +54 9 385 6 22-8400`);
+  lines.push(`> Firma: Eduardo Esper · Web: ${SITE} · edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400`);
   lines.push('');
   lines.push('---');
   lines.push('');

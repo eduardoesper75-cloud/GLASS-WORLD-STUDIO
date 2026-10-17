@@ -35,15 +35,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -77,15 +77,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -119,15 +119,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -161,15 +161,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -203,15 +203,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -245,15 +245,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -287,15 +287,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -329,15 +329,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -371,15 +371,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -413,15 +413,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -455,15 +455,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -497,15 +497,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -539,15 +539,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -581,15 +581,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -623,15 +623,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -665,15 +665,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -707,15 +707,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 
@@ -749,15 +749,15 @@ Lo que ponemos sobre la mesa: el estudio de mercado de una industria sin dueño 
 
 Si el enfoque les resuena, con gusto coordinamos una reunión breve. Quedo a su disposición.
 
-Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://glassworldstudio.com.ar
+Conocé el ecosistema, la propuesta de valor, el resguardo legal ante el INPI y el canal directo con la dirección del proyecto en https://www.glassworldstudio.com.ar
 
 Cordialmente,
 
 Eduardo Esper
 Fundador — Glass World Studio
-Web: https://glassworldstudio.com.ar
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+Web: https://www.glassworldstudio.com.ar
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
 

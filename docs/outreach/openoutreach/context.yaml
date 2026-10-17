@@ -33,8 +33,8 @@ project:
 leader:
   name: Eduardo Esper
   role: Fundador
-  email: esper.eduardo@gmail.com
-  phone: "+54 9 385 6 22-8400"
+  email: edu.esper@glassworldstudio.com.ar
+  phone: "+54 9 385 622-8400"
   country_code: ar
 
 targets:
@@ -62,5 +62,5 @@ targets:
     goal: Alianzas estratégicas para la red de distribución real.
 
 contact_block:
-  email: esper.eduardo@gmail.com
-  whatsapp: "+54 9 385 6 22-8400"
+  email: edu.esper@glassworldstudio.com.ar
+  whatsapp: "+54 9 385 622-8400"

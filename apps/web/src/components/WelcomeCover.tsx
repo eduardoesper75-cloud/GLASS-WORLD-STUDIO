@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 
+import { ConvocatoriaFlyer } from '@/components/ConvocatoriaFlyer';
 import { useLanguage } from '@/components/LanguageProvider';
 import { getMessage } from '@/lib/i18n';
 
@@ -10,25 +11,20 @@ export function WelcomeCover() {
 
   return (
     <main className="landing" lang={language}>
-      <div className="landing__stars" aria-hidden="true" />
-
-      <header className="landing__masthead">
-        <p className="landing__eyebrow">{getMessage(language, 'artwork')}</p>
-      </header>
-
       <section className="landing__scene" aria-labelledby="landing-title">
-        <div className="landing__horizon" aria-hidden="true" />
-        <div className="glass-orb" aria-hidden="true">
-          <span className="glass-orb__core" />
-          <span className="glass-orb__ring glass-orb__ring--outer" />
-          <span className="glass-orb__ring glass-orb__ring--inner" />
-        </div>
+        <img
+          alt=""
+          aria-hidden="true"
+          className="landing__artwork"
+          fetchPriority="high"
+          height="1024"
+          src="/arte-del-vidrio-en-el-cosmos.png"
+          width="1536"
+        />
 
         <div className="landing__identity">
           <h1 id="landing-title">Glass World Studio</h1>
-          <p className="landing__plaque">
-            {getMessage(language, 'tagline')}
-          </p>
+          <p className="landing__plaque">{getMessage(language, 'tagline')}</p>
         </div>
 
         <Link
@@ -40,6 +36,8 @@ export function WelcomeCover() {
           <span className="landing__continue-label">{getMessage(language, 'continue')}</span>
         </Link>
       </section>
+
+      <ConvocatoriaFlyer variant="landing" />
     </main>
   );
 }

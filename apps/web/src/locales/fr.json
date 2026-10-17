@@ -1,6 +1,6 @@
 {
   "messages": {
-    "pageTitle": "Glass World Studio — Une plateforme avec l'âme d'un atelier, qui grandit avec vous.",
+    "pageTitle": "Glass World Studio · Une plateforme avec l'âme d'un atelier, qui grandit avec vous.",
     "artwork": "Art du verre",
     "selectLanguage": "Choisir la langue",
     "tagline": "Une plateforme avec l'âme d'un atelier, qui grandit avec vous.",
@@ -15,6 +15,15 @@
     "submit": "S'inscrire / accéder à l'atelier",
     "pending": "L'authentification n'est pas encore connectée. Vos informations n'ont pas été envoyées ni enregistrées.",
     "identityPreview": "Cet aperçu ne transmet ni n'enregistre vos données d'identité. Aucun compte n'est créé.",
+    "registrationStep": "Identifiants",
+    "registrationTitle": "Commençons par votre identité.",
+    "registrationIntro": "Créez vos identifiants pour ouvrir votre espace dans Glass World Studio.",
+    "username": "Nom d'utilisateur",
+    "confirmPassword": "Confirmer le mot de passe",
+    "passwordHint": "Utilisez au moins 8 caractères.",
+    "registrationPreviewNotice": "Aperçu : vos identifiants ne sont ni envoyés ni enregistrés et aucun compte n'est encore créé.",
+    "passwordMismatch": "Les mots de passe doivent correspondre exactement.",
+    "continueToGalaxies": "Continuer vers le choix de la galaxie",
     "continueMembership": "Continuer vers l'appartenance",
     "membershipStep": "Votre orbite dans l'écosystème",
     "membershipTitle": "Définissez votre appartenance",
@@ -60,7 +69,15 @@
     "newsIntro": "Trilogie de communiqués de Glass World Studio : réapparition, alliances stratégiques et modèle d'alliance.",
     "newsRead": "Lire le communiqué",
     "newsAll": "Toutes les actualités",
-    "newsBack": "Retour à l'accueil"
+    "newsBack": "Retour à l'accueil",
+    "contactTitle": "Canaux officiels",
+    "contactWeb": "Site web",
+    "contactWhatsapp": "WhatsApp",
+    "convocatoriaTitle": "Alliances stratégiques",
+    "convocatoriaLead": "Glass World Studio recherche des Alliances Stratégiques : Investisseurs, Développeurs et Logistique.",
+    "convocatoriaImageAlt": "Affiche de la campagne : « 5 000 ans d’histoire entrent dans l’ère numérique ».",
+    "contactEmailInstitutional": "E-mail institutionnel",
+    "contactEmailPersonal": "E-mail personnel"
   },
   "dashboard": {
     "labels": {

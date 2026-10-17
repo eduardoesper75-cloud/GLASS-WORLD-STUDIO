@@ -56,7 +56,7 @@ El deck **nunca** se envía en el Paso 1. Su lugar es la charla (o cuando lo pid
 
 **Base real del Kit** (todo verificado, nada inventado salvo las cifras de mercado, que hay que respaldar):
 
-- Sitio oficial: <https://glassworldstudio.com.ar> · Plataforma en producción (deploy): <https://glass-world-studio.vercel.app> (11 rutas activas)
+- Sitio oficial: <https://www.glassworldstudio.com.ar> · Plataforma en producción (deploy): <https://glass-world-studio.vercel.app> (11 rutas activas)
 - 6 Galaxias + 5 Satélites definidos y modelados
 - Trilogía comunicacional publicada y enlazable
 - PI y marca en trámite ante el INPI

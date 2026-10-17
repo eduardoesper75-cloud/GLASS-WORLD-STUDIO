@@ -49,7 +49,7 @@ export function DashboardHome() {
         key={module.id}
         className={`universe-card universe-card--${module.accent}`}
         type="button"
-        aria-label={`${module.title[language]} — ${t('openModule')}`}
+        aria-label={`${module.title[language]}: ${t('openModule')}`}
         onClick={(event) => {
           triggerRef.current = event.currentTarget;
           setSelectedModule(module);
@@ -57,9 +57,6 @@ export function DashboardHome() {
         aria-haspopup="dialog"
       >
         <span className="universe-card__topline">
-          <span className="universe-card__glyph" aria-hidden="true">
-            {module.icon}
-          </span>
           <span className="universe-card__arrow" aria-hidden="true">
             ↗
           </span>
@@ -75,13 +72,13 @@ export function DashboardHome() {
     <main className="dashboard" lang={language}>
       <div className="dashboard__stars" aria-hidden="true" />
       <header className="dashboard__header">
-        <Link className="dashboard__brand" href="/" aria-label="Glass World Studio — Layer 1">
+        <Link className="dashboard__brand" href="/" aria-label="Glass World Studio, Layer 1">
           <span className="dashboard__brand-mark" aria-hidden="true">
             G
           </span>
           <span>
             <strong>GLASS WORLD STUDIO</strong>
-            <small>THE GLASS UNIVERSE</small>
+            <small>The glass universe</small>
           </span>
         </Link>
         <div className="dashboard__header-tools">
@@ -91,7 +88,6 @@ export function DashboardHome() {
       </header>
 
       <section className="dashboard__hero" aria-labelledby="dashboard-title">
-        <p className="dashboard__eyebrow">GWS · MARKETPLACE VERTICAL</p>
         <h1 id="dashboard-title">{t('title')}</h1>
         <p>{t('intro')}</p>
         <div className="dashboard__connection" role="status">
@@ -102,18 +98,20 @@ export function DashboardHome() {
 
       <section className="dashboard__section" aria-labelledby="galaxies-title">
         <header className="dashboard__section-heading">
-          <span className="dashboard__section-index">01 / CORE</span>
           <h2 id="galaxies-title">{t('galaxySection')}</h2>
         </header>
-        <div className="universe-grid universe-grid--galaxies">{galaxies.map(renderModule)}</div>
+        <div className="universe-grid universe-grid--galaxies" data-ui="galaxy-marketplace">
+          {galaxies.map(renderModule)}
+        </div>
       </section>
 
       <section className="dashboard__section dashboard__section--satellites" aria-labelledby="satellites-title">
         <header className="dashboard__section-heading">
-          <span className="dashboard__section-index">02 / SERVICES</span>
           <h2 id="satellites-title">{t('satelliteSection')}</h2>
         </header>
-        <div className="universe-grid universe-grid--satellites">{satellites.map(renderModule)}</div>
+        <div className="universe-grid universe-grid--satellites" data-ui="service-marketplace">
+          {satellites.map(renderModule)}
+        </div>
       </section>
 
       <footer className="dashboard__footer">
@@ -150,9 +148,6 @@ export function DashboardHome() {
               {selectedModule.category === 'galaxy' ? t('galaxySection') : t('satelliteSection')}
             </p>
             <div className="module-modal__title-row">
-              <span className="module-modal__glyph" aria-hidden="true">
-                {selectedModule.icon}
-              </span>
               <h2 id="module-modal-title">{selectedModule.title[language]}</h2>
             </div>
             <p className="module-modal__description">{selectedModule.description[language]}</p>

@@ -9,7 +9,7 @@
 | Casilla | Mensajes analizados | Total en INBOX |
 |---|---:|---:|
 | eduardoesper75@gmail.com | 573 | 718 |
-| esper.eduardo@gmail.com | 723 | 916 |
+| edu.esper@glassworldstudio.com.ar | 723 | 916 |
 
 ## Ranking de remitentes (Top 50)
 

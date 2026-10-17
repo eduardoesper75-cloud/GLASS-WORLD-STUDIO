@@ -5,22 +5,35 @@
 >
 > Pendientes técnicos para dejar la máquina de outreach **lista para enviar** y el sitio
 > **publicando el contacto oficial**. Ejecutar en orden.
-> Contacto oficial: **Eduardo Esper · esper.eduardo@gmail.com · +54 9 385 6 22-8400**.
+> Contacto oficial: **Eduardo Esper · edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400**.
 
 ---
 
-## 1. Password de aplicación de Google (para `esper.eduardo@gmail.com`)
+## 1. Credenciales del emisor (casilla institucional en Don Web/Ferozo)
 
-> Google ya no acepta la contraseña normal para SMTP/IMAP: hay que generar una
-> **contraseña de aplicación** (16 caracteres). Vive sólo en tu `.env`, nunca en el repo.
+> La casilla institucional **`edu.esper@glassworldstudio.com.ar`** corre en el hosting
+> **Don Web/Ferozo** (SPF del dominio: `include:comp.hostmar.com`), **no en Google**.
+> Se autentica con la contraseña de la casilla y el servidor de correo del propio dominio.
+> Los secretos viven sólo en tu `.env`, nunca en el repo.
 
-1. Ingresá a la cuenta **esper.eduardo@gmail.com**.
-2. Verificá que la **verificación en dos pasos (2FA)** esté activa
-   (`https://myaccount.google.com/security`). Sin 2FA no hay contraseñas de aplicación.
-3. Creá la contraseña de aplicación: `https://myaccount.google.com/apppasswords`
-   - Nombre sugerido: **`GWS OpenOutreach`**
-   - Google devuelve un código de **16 letras** (mostrado en 4 grupos). Copialo **sin espacios**.
-4. Guardalo en el gestor de contraseñas. No lo pegues en ningún chat ni commit.
+**Datos de conexión del dominio** (verificados por DNS y prueba de puertos):
+
+| Protocolo | Servidor | Puerto | Cifrado |
+|---|---|---|---|
+| SMTP (saliente) | `mail.glassworldstudio.com.ar` | `465` | SSL/TLS |
+| SMTP (saliente, alterno) | `mail.glassworldstudio.com.ar` | `587` | STARTTLS |
+| IMAP (entrante) | `mail.glassworldstudio.com.ar` | `993` | SSL/TLS |
+
+- **Usuario:** la dirección completa (`edu.esper@glassworldstudio.com.ar`).
+- **Contraseña:** la de la casilla (definida en el panel). Es lo único que falta cargar.
+- **Puerto `25`:** no usar. Don Web lo bloquea para conexiones desde IPs dinámicas y no
+  está pensado para clientes de correo; usá siempre `465` (SSL) o `587` (STARTTLS).
+- Si hace falta reconfirmar los datos: panel → **Mi cuenta → Servicios → Gestionar → Correos →
+  Datos de Configuración** (o en Ferozo: **Email → Cuentas → ícono de información**).
+
+> ⚠️ **No** uses `smtp.gmail.com` / `imap.gmail.com` con esta casilla: el dominio institucional
+> no es de Google. Si preferís enviar por Gmail, el emisor debe ser el canal secundario
+> `eduardoesper75@gmail.com` con una contraseña de aplicación de Google.
 
 ### Seteo en el `.env` de OpenOutreach
 
@@ -30,19 +43,17 @@ Archivo (fuera del repo, con secretos reales):
 C:\Users\eduesper\AppData\Local\gws-tools\openoutreach\.env
 ```
 
-Variables a completar/actualizar (sólo nombres; **los valores no se versionan**):
-
 | Variable | Valor |
 |---|---|
-| `OUTSEND_MAILBOX_ADDRESS` | `esper.eduardo@gmail.com` |
-| `OUTSEND_MAILBOX_PASSWORD` | *(la contraseña de aplicación del paso 3)* |
-| `OUTSEND_SMTP_HOST` | `smtp.gmail.com` |
-| `OUTSEND_SMTP_PORT` | `465` |
-| `OUTSEND_IMAP_HOST` | `imap.gmail.com` |
-| `OUTSEND_IMAP_PORT` | `993` |
+| `OUTSEND_MAILBOX_ADDRESS` | `edu.esper@glassworldstudio.com.ar` |
+| `OUTSEND_MAILBOX_PASSWORD` | *(contraseña de la casilla en Don Web)* |
+| `OUTSEND_SMTP_HOST` | `mail.glassworldstudio.com.ar` |
+| `OUTSEND_SMTP_PORT` | `465` (SSL/TLS) |
+| `OUTSEND_IMAP_HOST` | `mail.glassworldstudio.com.ar` |
+| `OUTSEND_IMAP_PORT` | `993` (SSL/TLS) |
 
-> Si el runner espera otro proveedor SMTP/IMAP, ajustá host/puerto según corresponda.
-> `OUTSEND_MAILBOX_ADDRESS` ya quedó en `esper.eduardo@gmail.com`; falta la contraseña.
+> `OUTSEND_MAILBOX_ADDRESS` y los hosts/puertos ya quedaron fijados; **falta sólo
+> `OUTSEND_MAILBOX_PASSWORD`** (la contraseña de la casilla institucional).
 
 ### Verificación
 
@@ -51,8 +62,8 @@ Variables a completar/actualizar (sólo nombres; **los valores no se versionan**
 powershell -NoProfile -ExecutionPolicy Bypass -File gws-context/run.ps1 status
 ```
 
-Debe reportar la casilla autenticada. Si falla, revisá que la contraseña de aplicación
-no tenga espacios y que el 2FA siga activo.
+Debe reportar la casilla autenticada. Si falla, revisá que la contraseña de la casilla sea
+correcta y que el correo esté habilitado en el panel de Don Web.
 
 ---
 
@@ -82,14 +93,15 @@ npx vercel --prod
 
 ```powershell
 # la home y los anuncios deben mostrar el contacto oficial
-curl.exe -s https://glass-world-studio.vercel.app | Select-String "esper.eduardo@gmail.com"
-curl.exe -s https://glass-world-studio.vercel.app | Select-String "385 6 22-8400"
+curl.exe -s https://glass-world-studio.vercel.app | Select-String "edu.esper@glassworldstudio.com.ar"
+curl.exe -s https://glass-world-studio.vercel.app | Select-String "385 622-8400"
 ```
 
-> Confirmar que **no** quede ninguna ocurrencia del correo viejo (`eduesper@gmail.com`)
-> en el sitio publicado.
+> Confirmar que el sitio publicado muestre los canales oficiales —`edu.esper@glassworldstudio.com.ar`
+> (primario), `eduardoesper75@gmail.com` (secundario), `+54 9 385 622-8400` y
+> <https://www.glassworldstudio.com.ar>— y **ninguna** ocurrencia de un correo viejo.
 >
-> **Dominio oficial público:** <https://glassworldstudio.com.ar> (landing: ecosistema, INPI y contacto).
+> **Dominio oficial público:** <https://www.glassworldstudio.com.ar> (landing: ecosistema, INPI y contacto).
 > El deploy de este repo (`glass-world-studio.vercel.app`) sirve además las rutas `/novedades/*`.
 
 ---

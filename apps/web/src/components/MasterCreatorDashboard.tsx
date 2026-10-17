@@ -72,12 +72,12 @@ const emptyProductDraft: ProductDraft = {
   status: 'draft',
 };
 
-const tabs: { id: CreatorTab; label: string; icon: string }[] = [
-  { id: 'profile', label: 'Perfil', icon: '✦' },
-  { id: 'education', label: 'Cursos y contenidos', icon: '▤' },
-  { id: 'tools', label: 'Herramientas e insumos', icon: '⌁' },
-  { id: 'artwork', label: 'Arte y piezas', icon: '◇' },
-  { id: 'services', label: 'Servicios técnicos', icon: '⌘' },
+const tabs: { id: CreatorTab; label: string }[] = [
+  { id: 'profile', label: 'Perfil' },
+  { id: 'education', label: 'Cursos y contenidos' },
+  { id: 'tools', label: 'Herramientas e insumos' },
+  { id: 'artwork', label: 'Arte y piezas' },
+  { id: 'services', label: 'Servicios técnicos' },
 ];
 
 const currencyOptions = ['USD', 'ARS', 'EUR', 'BRL', 'CLP', 'MXN'];
@@ -115,7 +115,7 @@ export function MasterCreatorDashboard() {
   const [formError, setFormError] = useState('');
   const [loading, setLoading] = useState(true);
   const [redirecting, setRedirecting] = useState(false);
-  const [selectedAvatar, setSelectedAvatar] = useState('✦');
+  const [selectedAvatar, setSelectedAvatar] = useState('M');
 
   useEffect(() => {
     try {
@@ -126,7 +126,7 @@ export function MasterCreatorDashboard() {
         return;
       }
 
-      setSelectedAvatar(membership.avatar ?? '✦');
+      setSelectedAvatar(membership.avatar ?? 'M');
       const data = readStoredCreatorData();
       setCreatorData(data);
       setProfileDraft(data.profile);
@@ -358,7 +358,7 @@ export function MasterCreatorDashboard() {
           <span aria-hidden="true">G</span>
           <strong>GLASS WORLD<br />STUDIO</strong>
         </Link>
-        <p className="galaxy-one__sidebar-label">GALAXIA 01 · MAESTROS</p>
+        <p className="galaxy-one__sidebar-label">Galaxia de Maestros</p>
         <nav className="creator-dashboard__nav" aria-label="Secciones del panel">
           {tabs.map((tab) => (
             <button
@@ -374,7 +374,7 @@ export function MasterCreatorDashboard() {
               }}
               type="button"
             >
-              <span aria-hidden="true">{tab.icon}</span>{tab.label}
+              {tab.label}
             </button>
           ))}
         </nav>
@@ -386,7 +386,7 @@ export function MasterCreatorDashboard() {
       <section className="creator-dashboard__main">
         <header className="creator-dashboard__header">
           <div>
-            <p className="galaxy-one__eyebrow">ESTUDIO DE CREACIÓN · GALAXIA 1</p>
+            <p className="galaxy-one__eyebrow">Estudio de creación · Galaxia 1</p>
             <h1>Panel del Maestro</h1>
             <p>Configura tu perfil y gestiona el catálogo de tu taller.</p>
           </div>
@@ -424,7 +424,7 @@ export function MasterCreatorDashboard() {
           <form className="creator-panel" onSubmit={saveProfile}>
             <div className="creator-panel__heading">
               <div>
-                <p className="galaxy-one__eyebrow">IDENTIDAD PROFESIONAL</p>
+                <p className="galaxy-one__eyebrow">Identidad profesional</p>
                 <h2>Perfil y credenciales</h2>
               </div>
               <span className="creator-panel__avatar" aria-hidden="true">{selectedAvatar}</span>
@@ -557,7 +557,7 @@ export function MasterCreatorDashboard() {
             <form className="creator-panel" onSubmit={submitProduct}>
               <div className="creator-panel__heading">
                 <div>
-                  <p className="galaxy-one__eyebrow">CATÁLOGO DEL TALLER</p>
+                  <p className="galaxy-one__eyebrow">Catálogo del taller</p>
                   <h2>{tabs.find((tab) => tab.id === activeTab)?.label}</h2>
                 </div>
               </div>

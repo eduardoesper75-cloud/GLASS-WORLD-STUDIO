@@ -22,7 +22,7 @@ interface PrivacyConsentProps {
   termsHref?: string;
   /** Callback al guardar preferencias */
   onSave?: (prefs: ConsentPreferences) => void;
-  /** Mostrar opción "Do Not Sell" (CCPA/CPRA) — por defecto true */
+  /** Mostrar opción "Do Not Sell" (CCPA/CPRA); por defecto true */
   showDoNotSell?: boolean;
 }
 
@@ -142,7 +142,7 @@ export function PrivacyConsent({
               <label className="privacy-consent__item">
                 <input type="checkbox" checked disabled />
                 <span>
-                  <strong>Estrictamente necesarias</strong> — Requeridas para funcionamiento y
+                  <strong>Estrictamente necesarias</strong>: Requeridas para funcionamiento y
                   seguridad (no revocables).
                 </span>
               </label>
@@ -156,7 +156,7 @@ export function PrivacyConsent({
                   }
                 />
                 <span>
-                  <strong>Funcionales</strong> — Preferencias de idioma/región y experiencia de
+                  <strong>Funcionales</strong>: Preferencias de idioma/región y experiencia de
                   usuario.
                 </span>
               </label>
@@ -170,7 +170,7 @@ export function PrivacyConsent({
                   }
                 />
                 <span>
-                  <strong>Analíticas</strong> — Medición de rendimiento y uso agregado (anónimo
+                  <strong>Analíticas</strong>: Medición de rendimiento y uso agregado (anónimo
                   cuando sea viable).
                 </span>
               </label>
@@ -184,7 +184,7 @@ export function PrivacyConsent({
                   }
                 />
                 <span>
-                  <strong>Marketing</strong> — Solo con consentimiento explícito. Desactivado por
+                  <strong>Marketing</strong>: Solo con consentimiento explícito. Desactivado por
                   defecto.
                 </span>
               </label>
@@ -202,7 +202,7 @@ export function PrivacyConsent({
                     }
                   />
                   <span>
-                    <strong>Do Not Sell My Personal Information</strong> — Ejercer derecho a no
+                    <strong>Do Not Sell My Personal Information</strong>: Ejercer derecho a no
                     vender ni compartir información personal (aplica a residentes de California).
                   </span>
                 </label>

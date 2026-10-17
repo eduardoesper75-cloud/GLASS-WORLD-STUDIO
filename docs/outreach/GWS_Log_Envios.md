@@ -5,7 +5,7 @@
 > **Archivo generado automáticamente** por `tools/outreach/build-envios-log.mjs`. No editar a mano.
 > **Estado real, sin inventar.** Nada se marca «enviado» sin registro en `send-log.jsonl`.
 > Los correos viven en los CSV **ignorados por git**: acá solo van organización/nombre, canal y estado.
-> Contacto al pie: **Eduardo Esper · Web https://glassworldstudio.com.ar · esper.eduardo@gmail.com · +54 9 385 6 22-8400**
+> Contacto al pie: **Eduardo Esper · Web https://www.glassworldstudio.com.ar · edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400**
 
 Actualizado: 2026-10-16 15:26 (hora local)
 

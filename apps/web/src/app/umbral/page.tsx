@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 
+import { ConvocatoriaFlyer } from '@/components/ConvocatoriaFlyer';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { useLanguage } from '@/components/LanguageProvider';
 import { dashboardLabels, dashboardModules } from '@/lib/dashboard';
@@ -35,7 +36,11 @@ const professionalProfiles = professionalModule.modules.map((label, index) => ({
 export default function AccessThresholdPage() {
   const { language } = useLanguage();
   const router = useRouter();
-  const [step, setStep] = useState<2 | 3>(2);
+  const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [selectedGalaxies, setSelectedGalaxies] = useState<string[]>([]);
   const [selectedSpecialtiesByGalaxy, setSelectedSpecialtiesByGalaxy] = useState<
     Record<string, string[]>
@@ -50,6 +55,11 @@ export default function AccessThresholdPage() {
   const galaxyDialogRef = useRef<HTMLElement>(null);
   const galaxyDialogCloseRef = useRef<HTMLButtonElement>(null);
   const galaxyTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const registrationIsValid =
+    username.trim().length > 0 &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()) &&
+    password.length >= 8 &&
+    confirmPassword === password;
 
   useEffect(() => {
     try {
@@ -63,9 +73,6 @@ export default function AccessThresholdPage() {
       setSelectedSatellites(preferences.satellites);
       setSelectedProfiles(preferences.professionalProfiles);
       setSavedAvatar(preferences.avatar);
-      if (preferences.galaxies.length > 0 || preferences.professionalProfiles.length > 0) {
-        setStep(3);
-      }
     } catch (error) {
       console.error('Unable to load saved membership preferences.', error);
       setStorageError(true);
@@ -159,6 +166,16 @@ export default function AccessThresholdPage() {
     setNotice('');
   }
 
+  function continueRegistration(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (!registrationIsValid) {
+      return;
+    }
+
+    setNotice('');
+    setStep(2);
+  }
+
   function saveMembership(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (selectedGalaxies.length === 0 && selectedProfiles.length === 0) {
@@ -241,7 +258,91 @@ export default function AccessThresholdPage() {
       <LanguageSelector />
 
       <section className="threshold__panel membership-panel" aria-labelledby="threshold-title">
-        <p className="landing__eyebrow">{t('membershipStep')}</p>
+        {step > 1 && (
+          <p className="threshold__phase">
+            {step === 2 ? t('membershipStep') : t('selectionSummary')}
+          </p>
+        )}
+
+        {step === 1 && (
+          <div className="threshold-registration">
+            <div className="threshold-registration__content">
+              <div className="threshold-registration__heading">
+                <h1 id="threshold-title">{t('registrationTitle')}</h1>
+                <p className="threshold__lead">{t('registrationIntro')}</p>
+              </div>
+
+              <form className="threshold-registration__form" onSubmit={continueRegistration}>
+                <div className="threshold-registration__field">
+                  <label htmlFor="registration-username">{t('username')}</label>
+                  <input
+                    autoComplete="username"
+                    id="registration-username"
+                    name="username"
+                    onChange={(event) => setUsername(event.target.value)}
+                    required
+                    type="text"
+                    value={username}
+                  />
+                </div>
+                <div className="threshold-registration__field">
+                  <label htmlFor="registration-email">{t('email')}</label>
+                  <input
+                    autoComplete="email"
+                    id="registration-email"
+                    name="email"
+                    onChange={(event) => setEmail(event.target.value)}
+                    required
+                    type="email"
+                    value={email}
+                  />
+                </div>
+                <div className="threshold-registration__field">
+                  <label htmlFor="registration-password">{t('password')}</label>
+                  <input
+                    autoComplete="new-password"
+                    id="registration-password"
+                    minLength={8}
+                    name="password"
+                    onChange={(event) => setPassword(event.target.value)}
+                    required
+                    type="password"
+                    value={password}
+                  />
+                  <small>{t('passwordHint')}</small>
+                </div>
+                <div className="threshold-registration__field">
+                  <label htmlFor="registration-confirm-password">{t('confirmPassword')}</label>
+                  <input
+                    autoComplete="new-password"
+                    id="registration-confirm-password"
+                    name="confirmPassword"
+                    onChange={(event) => setConfirmPassword(event.target.value)}
+                    required
+                    type="password"
+                    value={confirmPassword}
+                    aria-invalid={confirmPassword.length > 0 && confirmPassword !== password}
+                  />
+                  {confirmPassword.length > 0 && confirmPassword !== password && (
+                    <small className="threshold-registration__error" role="alert">
+                      {t('passwordMismatch')}
+                    </small>
+                  )}
+                </div>
+                <p className="threshold-registration__note">{t('registrationPreviewNotice')}</p>
+                <button
+                  className="threshold__submit threshold-registration__submit"
+                  disabled={!registrationIsValid}
+                  type="submit"
+                >
+                  {t('continueToGalaxies')}
+                  <span aria-hidden="true">→</span>
+                </button>
+              </form>
+            </div>
+            <ConvocatoriaFlyer variant="threshold" />
+          </div>
+        )}
 
         {step === 2 && (
           <>
@@ -272,9 +373,6 @@ export default function AccessThresholdPage() {
                           type="button"
                         >
                           <span className="membership-galaxy-card__topline">
-                            <span className="membership-option__icon" aria-hidden="true">
-                              {module.icon}
-                            </span>
                             {isSelected && (
                               <span className="membership-galaxy-card__selected">
                                 {t('galaxySelected')}
@@ -335,7 +433,7 @@ export default function AccessThresholdPage() {
                         value={module.id}
                       />
                       <span className="membership-option__icon" aria-hidden="true">
-                        {module.icon}
+                        {module.title[language].slice(0, 1)}
                       </span>
                       <span className="membership-option__copy">
                         <strong>{module.title[language]}</strong>
@@ -375,7 +473,6 @@ export default function AccessThresholdPage() {
 
               <section className="stellar-credential" aria-labelledby="credential-title" aria-live="polite">
                 <div className="stellar-credential__header">
-                  <span className="stellar-credential__sigil" aria-hidden="true">✦</span>
                   <div>
                     <p className="stellar-credential__caption">{t('credentialCaption')}</p>
                     <h2 id="credential-title">{t('credentialTitle')}</h2>
@@ -396,7 +493,6 @@ export default function AccessThresholdPage() {
                         <ul>
                           {selectedGalaxyModules.map((module) => (
                             <li key={module.id}>
-                              <span aria-hidden="true">{module.icon}</span>
                               {module.title[language]}
                             </li>
                           ))}
@@ -435,7 +531,6 @@ export default function AccessThresholdPage() {
                         <ul>
                           {selectedSatelliteModules.map((module) => (
                             <li key={module.id}>
-                              <span aria-hidden="true">{module.icon}</span>
                               {module.title[language]}
                             </li>
                           ))}
@@ -458,6 +553,13 @@ export default function AccessThresholdPage() {
 
               <p className="membership-panel__notice">{t('membershipPreviewNotice')}</p>
               <div className="membership-actions">
+                <button
+                  className="membership-actions__back"
+                  onClick={() => setStep(1)}
+                  type="button"
+                >
+                  {t('backToIdentity')}
+                </button>
                 <button className="threshold__submit" type="submit">
                   {t('saveMembership')}
                   <span aria-hidden="true">→</span>
@@ -571,7 +673,6 @@ export default function AccessThresholdPage() {
           >
             <header className="galaxy-dialog__header">
               <div className="galaxy-dialog__identity">
-                <span aria-hidden="true">{activeGalaxy.icon}</span>
                 <div>
                   <p className="galaxy-dialog__eyebrow">{activeGalaxy.title[language]}</p>
                   <h2 id="galaxy-dialog-title">{t('specialtiesTitle')}</h2>

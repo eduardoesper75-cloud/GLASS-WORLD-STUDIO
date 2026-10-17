@@ -2,7 +2,7 @@
 
 > **Estado: DESPLEGADO Y VERIFICADO** · 15-10-2026
 > **URL pública (deploy): <https://glass-world-studio.vercel.app>**
-> **Dominio oficial: <https://glassworldstudio.com.ar>** (y <https://glassworldstudio.ar>)
+> **Dominio oficial: <https://www.glassworldstudio.com.ar>** (y <https://glassworldstudio.ar>)
 > Proyecto: `eduardoesper75-4497/glass-world-studio` · `main` · Next.js 15.5.27 · pnpm 9 workspace
 
 ---

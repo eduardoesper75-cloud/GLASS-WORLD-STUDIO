@@ -46,7 +46,7 @@ const copy: Record<
   }
 > = {
   es: {
-    eyebrow: 'GALAXIA 01 · ÍCONOS Y MAESTROS',
+    eyebrow: 'Galaxia de Maestros',
     welcome: 'Bienvenido al taller, Maestro.',
     intro: 'Un espacio para crear, enseñar y preservar el oficio del vidrio.',
     galaxy: 'Pertenencia · Galaxia 1',
@@ -72,7 +72,7 @@ const copy: Record<
     avatarNames: ['Maestro Vidriero', 'Maestro del fuego', 'Maestro del horno', 'Maestro artesano'],
   },
   en: {
-    eyebrow: 'GALAXY 01 · ICONS & MASTERS',
+    eyebrow: 'Masters Galaxy',
     welcome: 'Welcome to the studio, Master.',
     intro: 'A place to create, teach, and preserve the glassmaking craft.',
     galaxy: 'Membership · Galaxy 1',
@@ -98,7 +98,7 @@ const copy: Record<
     avatarNames: ['Glass Master', 'Flame Master', 'Kiln Master', 'Craft Master'],
   },
   pt: {
-    eyebrow: 'GALÁXIA 01 · ÍCONES E MESTRES',
+    eyebrow: 'Galáxia de Mestres',
     welcome: 'Bem-vindo à oficina, Mestre.',
     intro: 'Um espaço para criar, ensinar e preservar o ofício do vidro.',
     galaxy: 'Pertencimento · Galáxia 1',
@@ -124,7 +124,7 @@ const copy: Record<
     avatarNames: ['Mestre Vidreiro', 'Mestre do fogo', 'Mestre do forno', 'Mestre artesão'],
   },
   it: {
-    eyebrow: 'GALASSIA 01 · ICONE E MAESTRI',
+    eyebrow: 'Galassia dei Maestri',
     welcome: 'Benvenuto in laboratorio, Maestro.',
     intro: 'Uno spazio per creare, insegnare e preservare l’arte del vetro.',
     galaxy: 'Appartenenza · Galassia 1',
@@ -150,7 +150,7 @@ const copy: Record<
     avatarNames: ['Maestro del vetro', 'Maestro del fuoco', 'Maestro del forno', 'Maestro artigiano'],
   },
   fr: {
-    eyebrow: 'GALAXIE 01 · ICÔNES ET MAÎTRES',
+    eyebrow: 'Galaxie des maîtres',
     welcome: 'Bienvenue à l’atelier, Maître.',
     intro: 'Un espace pour créer, enseigner et préserver les métiers du verre.',
     galaxy: 'Appartenance · Galaxie 1',
@@ -176,7 +176,7 @@ const copy: Record<
     avatarNames: ['Maître verrier', 'Maître du feu', 'Maître du four', 'Maître artisan'],
   },
   de: {
-    eyebrow: 'GALAXIE 01 · IKONEN UND MEISTER',
+    eyebrow: 'Meister-Galaxie',
     welcome: 'Willkommen im Atelier, Meister.',
     intro: 'Ein Ort, um Glashandwerk zu schaffen, zu lehren und zu bewahren.',
     galaxy: 'Zugehörigkeit · Galaxie 1',
@@ -202,7 +202,7 @@ const copy: Record<
     avatarNames: ['Glasmeister', 'Flammenmeister', 'Ofenmeister', 'Handwerksmeister'],
   },
   zh: {
-    eyebrow: '星系 01 · 玻璃大师',
+    eyebrow: '玻璃大师星系',
     welcome: '欢迎来到工作室，大师。',
     intro: '在这里创作、教学并传承玻璃工艺。',
     galaxy: '所属 · 星系 1',
@@ -229,7 +229,7 @@ const copy: Record<
   },
 };
 
-const avatarSymbols = ['✦', '🔥', '◇', '✧'];
+const avatarSymbols = ['M', 'F', 'K', 'A'];
 const galaxies = dashboardModules.filter((module) => module.category === 'galaxy');
 
 export function GalaxyOneDashboard() {
@@ -409,7 +409,6 @@ export function GalaxyOneDashboard() {
           <div className="galaxy-one__curation-grid">
             {labels.topics.map((topic) => (
               <article className="galaxy-one__curation-card" key={topic}>
-                <span aria-hidden="true">✧</span>
                 <h3>{topic}</h3>
                 <p>{labels.internalContent}</p>
               </article>
@@ -419,27 +418,27 @@ export function GalaxyOneDashboard() {
 
         <section className="galaxy-one__quick-links" id="resources" aria-label={labels.resources}>
           <Link href="/inicio">
-            <span aria-hidden="true">▤</span><strong>{labels.resources}</strong>
+            <strong>{labels.resources}</strong>
           </Link>
           <Link href="/inicio" id="gallery">
-            <span aria-hidden="true">◇</span><strong>{labels.gallery}</strong>
+            <strong>{labels.gallery}</strong>
           </Link>
           <Link href="/professionals/dashboard">
-            <span aria-hidden="true">⌘</span><strong>{labels.professionals}</strong>
+            <strong>{labels.professionals}</strong>
           </Link>
         </section>
 
         <section className="galaxy-one__section" id="galaxies" aria-labelledby="galaxy-one-other">
           <div className="galaxy-one__section-heading">
             <div>
-              <p className="galaxy-one__eyebrow">GWS · THE GLASS UNIVERSE</p>
+              <p className="galaxy-one__eyebrow">The glass universe</p>
               <h2 id="galaxy-one-other">{labels.otherGalaxies}</h2>
             </div>
           </div>
           <div className="galaxy-one__galaxy-links">
             {galaxies.filter((module) => module.id !== 'masters').map((galaxy) => (
               <Link href={galaxyPathById[galaxy.id]} key={galaxy.id}>
-                <span aria-hidden="true">{galaxy.icon}</span>{galaxy.title[language]}<span aria-hidden="true">↗</span>
+                {galaxy.title[language]}
               </Link>
             ))}
           </div>
@@ -456,7 +455,7 @@ export function GalaxyOneDashboard() {
             role="dialog"
           >
             <span className="galaxy-welcome__sparkle" aria-hidden="true">
-              {welcomeComplete ? '✓' : '✦'}
+              {welcomeComplete ? 'OK' : 'GWS'}
             </span>
             <p className="galaxy-one__eyebrow">{labels.eyebrow}</p>
             <h2 id="galaxy-welcome-title">

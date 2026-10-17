@@ -15,7 +15,7 @@
 
 | Qué | Dónde | Estado |
 |---|---|---|
-| 2 contraseñas de aplicación (casillas `eduardoesper75` y `esper.eduardo`) | `GWS_Parte_Tecnico_IMAP_MCP.md` §1.2 | Redactadas en HEAD · **purgadas del historial ✅** |
+| 2 contraseñas de aplicación (casilla `eduardoesper75`) | `GWS_Parte_Tecnico_IMAP_MCP.md` §1.2 | Redactadas en HEAD · **purgadas del historial ✅** |
 | 2 contraseñas de cuenta (Google) | ídem | Ídem · **rotación pendiente** (titular) |
 | Riesgo de propagación | **Repo sin remoto** (`git remote -v` vacío) → la fuga es **local** | Mitigado (historial saneado; rotación pendiente) |
 
@@ -45,7 +45,11 @@
 
 ### 2.1 Contraseñas de aplicación (IMAP)
 
-Para **cada** casilla (`eduardoesper75@gmail.com` y `esper.eduardo@gmail.com`):
+Para la casilla de Gmail (**`eduardoesper75@gmail.com`**):
+
+> La casilla institucional (`edu.esper@glassworldstudio.com.ar`) corre en **Don Web, no en
+> Google**: su contraseña se gestiona en el panel del proveedor (ver `GWS_Checklist_Salida_Operativa.md` §1),
+> no como contraseña de aplicación.
 
 1. Ingresar a la cuenta y verificar que la **verificación en dos pasos (2FA)** esté activa:
    `https://myaccount.google.com/security`.
@@ -69,7 +73,6 @@ Para **cada** casilla (`eduardoesper75@gmail.com` y `esper.eduardo@gmail.com`):
 | Archivo | Clave | Valor |
 |---|---|---|
 | `<repo>\.env.local` | `IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD` | *(nueva contraseña de app)* |
-| `<repo>\.env.local` | `IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_PASSWORD` | *(nueva contraseña de app)* |
 | `C:\Users\eduesper\AppData\Local\gws-tools\openoutreach\.env` | `OUTSEND_MAILBOX_PASSWORD` | *(nueva contraseña de app de la casilla de envío)* |
 
 > El runner OpenOutreach y el CLI `@gws/mail-cleanup` leen de estos `.env` externos. Tras rotar,
@@ -78,7 +81,7 @@ Para **cada** casilla (`eduardoesper75@gmail.com` y `esper.eduardo@gmail.com`):
 > **Helper (recomendado, lo corre el titular):** tras crear la nueva app password, en vez de editar a
 > mano ejecutá:
 > ```powershell
-> powershell -ExecutionPolicy Bypass -File tools/security/rotate-app-password.ps1 -Account esper.eduardo -Validate
+> powershell -ExecutionPolicy Bypass -File tools/security/rotate-app-password.ps1 -Account eduardoesper75 -Validate
 > ```
 > Pide la nueva app password por **entrada segura** (nunca se muestra ni se versiona), actualiza
 > `.env.local` y el `.env` del runner, y (con `-Validate`) prueba la autenticación IMAP. El agente
@@ -160,7 +163,7 @@ Una vez cerrado S1:
 |---|---|---|---|
 | **B1** | ~~Fuente citable de las cifras de mercado~~ **✅ CERRADO (16-10-2026)** | Resuelto en `docs/outreach/GWS_B1_Fuentes_Cifras_Mercado.md`: vidrio plano USD 323.200 M (2025) → USD 450.200 M (2033), Grand View Research; se retira “+50 M” | Fuente nombrable en la 1.ª conversación (ver §6) |
 | **O1** | **API keys del runner** (OpenOutreach) | Cargar `OPENOUTFIND_LLM_API_KEY`, `OUTSEND_LLM_API_KEY` y `OPENOUTFIND_BETTERCONTACT_API_KEY` en su `.env` | `run.ps1 status` sin pendientes |
-| **O2** | ~~Redeploy del sitio~~ **✅ CERRADO (16-10-2026)** | `npx vercel --prod` ejecutado (deploy `READY`) | Contacto `esper.eduardo@gmail.com` en vivo en `/novedades`, sin correo viejo. Pendiente menor: el **teléfono** `+54 9 385 6 22-8400` no está en la web |
+| **O2** | ~~Redeploy del sitio~~ **✅ CERRADO (16-10-2026)** | `npx vercel --prod` ejecutado (deploy `READY`) | Contacto `edu.esper@glassworldstudio.com.ar` en vivo en `/novedades`, sin correo viejo. Pendiente menor: el **teléfono** `+54 9 385 622-8400` no está en la web |
 | **B2** | **Esquema participación/compensación** | Definir rango fundacional + esquema inversor | Documento interno |
 | **B7** | **Tanda 5 de devs** | Correr `harvest-github.mjs` (MCP/datos/i18n) y curar | Pool ampliado |
 
@@ -215,5 +218,5 @@ titular codificado en base64 (`ZWR1YXJkb2VzcGVyNzVAZ21haWwuY29t` → `eduardoesp
 
 **Contacto oficial**
 Eduardo Esper — Fundador, Glass World Studio
-E-mail: esper.eduardo@gmail.com · WhatsApp / Tel: +54 9 385 6 22-8400
+E-mail: edu.esper@glassworldstudio.com.ar · WhatsApp / Tel: +54 9 385 622-8400
 Santiago del Estero, República Argentina

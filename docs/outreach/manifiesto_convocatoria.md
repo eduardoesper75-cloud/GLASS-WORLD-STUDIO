@@ -76,9 +76,9 @@ No pedimos a ciegas. **Mostramos.**
 
 **Eduardo Esper**
 Fundador — Glass World Studio
-**E-mail:** esper.eduardo@gmail.com
-**Teléfono / WhatsApp:** +54 9 385 6 22-8400
-**Web:** <https://glassworldstudio.com.ar>
+**E-mail:** edu.esper@glassworldstudio.com.ar
+**Teléfono / WhatsApp:** +54 9 385 622-8400
+**Web:** <https://www.glassworldstudio.com.ar>
 Santiago del Estero, República Argentina
 
 ---
@@ -158,7 +158,7 @@ We do not ask blindly. **We show.**
 
 **Eduardo Esper**
 Founder — Glass World Studio
-**E-mail:** esper.eduardo@gmail.com
-**Phone / WhatsApp:** +54 9 385 6 22-8400
-**Web:** <https://glassworldstudio.com.ar>
+**E-mail:** edu.esper@glassworldstudio.com.ar
+**Phone / WhatsApp:** +54 9 385 622-8400
+**Web:** <https://www.glassworldstudio.com.ar>
 Santiago del Estero, Republic of Argentina

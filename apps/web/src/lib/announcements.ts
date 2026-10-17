@@ -32,8 +32,8 @@ export const reaparicion: Announcement = {
   author: {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
-    contact: 'esper.eduardo@gmail.com',
-    site: 'https://glassworldstudio.com.ar',
+    contact: 'edu.esper@glassworldstudio.com.ar',
+    site: 'https://www.glassworldstudio.com.ar',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',
@@ -67,9 +67,9 @@ export const reaparicion: Announcement = {
       heading: 'Tres Flechas Estratégicas',
       paragraphs: ['En esta nueva fase, la propuesta viene recargada y apuntada con tres flechas estratégicas bien claras:'],
       bullets: [
-        '🎯 Inversores: para escalar la infraestructura y expansión del ecosistema regional e internacional.',
-        '🎯 Comunidad de Programadores y Desarrolladores: para sumarse al desarrollo de los motores y la arquitectura multi-agente.',
-        '🎯 Logística y Cadena de Suministro: para conectar de forma directa la distribución, el transporte y la operatoria real de la industria.',
+        'Inversores: para escalar la infraestructura y expansión del ecosistema regional e internacional.',
+        'Comunidad de Programadores y Desarrolladores: para sumarse al desarrollo de los motores y la arquitectura multi-agente.',
+        'Logística y Cadena de Suministro: para conectar de forma directa la distribución, el transporte y la operatoria real de la industria.',
       ],
     },
     {
@@ -94,8 +94,8 @@ export const alianzas: Announcement = {
   author: {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
-    contact: 'esper.eduardo@gmail.com',
-    site: 'https://glassworldstudio.com.ar',
+    contact: 'edu.esper@glassworldstudio.com.ar',
+    site: 'https://www.glassworldstudio.com.ar',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',
@@ -150,8 +150,8 @@ export const modeloDeAlianza: Announcement = {
   author: {
     name: 'Eduardo Esper',
     role: 'Fundador · Glass World Studio',
-    contact: 'esper.eduardo@gmail.com',
-    site: 'https://glassworldstudio.com.ar',
+    contact: 'edu.esper@glassworldstudio.com.ar',
+    site: 'https://www.glassworldstudio.com.ar',
   },
   lead: [
     'Hola a todos, soy Eduardo Esper.',

@@ -144,6 +144,6 @@ son **Python + OAuth propio**; `mcp-email-server` y `google_workspace_mcp` son P
 **Contacto oficial**
 Eduardo Esper
 Fundador — Glass World Studio
-E-mail: esper.eduardo@gmail.com
-Teléfono / WhatsApp: +54 9 385 6 22-8400
+E-mail: edu.esper@glassworldstudio.com.ar
+Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina

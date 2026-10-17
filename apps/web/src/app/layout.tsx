@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
 import { LanguageProvider } from '@/components/LanguageProvider';
-import { LegalStyles } from '@/components/LegalStyles';
 import { PrivacyConsent } from '@/components/PrivacyConsent';
+import { SiteFooter } from '@/components/SiteFooter';
 import { site } from '@/lib/site';
 
 import './globals.css';
@@ -11,7 +11,7 @@ import './announcements.css';
 
 export const metadata: Metadata = {
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: `${site.name} · ${site.tagline}`,
     template: `%s · ${site.shortName}`,
   },
   description: site.description,
@@ -25,8 +25,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" data-scroll-behavior="smooth">
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
-        <LegalStyles />
+        <LanguageProvider>
+          {children}
+          <SiteFooter />
+        </LanguageProvider>
         <PrivacyConsent />
       </body>
     </html>

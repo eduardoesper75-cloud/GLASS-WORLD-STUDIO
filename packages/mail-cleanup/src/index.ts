@@ -43,7 +43,7 @@ Comandos:
   purge         Mueve a Trash los remitentes aprobados (dry-run por defecto).
 
 Opciones:
-  --accounts k1,k2   Filtra por clave de cuenta (EDUARDOESPER75, ESPER_EDUARDO).
+  --accounts k1,k2   Filtra por clave de cuenta (EDUARDOESPER75).
   --days <n>         Ventana de antigüedad en días (audit). Def: 365.
   --limit <n>        Máximo de mensajes por casilla (audit). Def: 2000.
   --mailbox <nombre> Carpeta a escanear (audit). Def: INBOX.

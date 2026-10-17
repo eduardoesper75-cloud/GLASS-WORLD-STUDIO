@@ -1,6 +1,6 @@
 {
   "messages": {
-    "pageTitle": "Glass World Studio — A platform with the soul of a workshop, growing stronger with you.",
+    "pageTitle": "Glass World Studio · A platform with the soul of a workshop, growing stronger with you.",
     "artwork": "Glass Art",
     "selectLanguage": "Select language",
     "tagline": "A platform with the soul of a workshop, growing stronger with you.",
@@ -15,6 +15,15 @@
     "submit": "Register / enter the workshop",
     "pending": "Authentication is not connected yet. Your information has not been sent or saved.",
     "identityPreview": "This preview does not transmit or save your identity details. No account is created.",
+    "registrationStep": "Credentials",
+    "registrationTitle": "Begin with your identity.",
+    "registrationIntro": "Create your access details to open your space in Glass World Studio.",
+    "username": "Username",
+    "confirmPassword": "Confirm password",
+    "passwordHint": "Use at least 8 characters.",
+    "registrationPreviewNotice": "Preview: your credentials are not sent or saved, and no account is created yet.",
+    "passwordMismatch": "Passwords must match exactly.",
+    "continueToGalaxies": "Continue to galaxy selection",
     "continueMembership": "Continue to membership",
     "membershipStep": "Your orbit in the ecosystem",
     "membershipTitle": "Define your membership",
@@ -60,7 +69,15 @@
     "newsIntro": "Glass World Studio communication trilogy: relaunch, strategic alliances, and the alliance model.",
     "newsRead": "Read announcement",
     "newsAll": "All news",
-    "newsBack": "Back to home"
+    "newsBack": "Back to home",
+    "contactTitle": "Official channels",
+    "contactWeb": "Website",
+    "contactWhatsapp": "WhatsApp",
+    "convocatoriaTitle": "Strategic alliances",
+    "convocatoriaLead": "Glass World Studio is seeking Strategic Alliances: Investors, Developers and Logistics.",
+    "convocatoriaImageAlt": "Campaign flyer: “5,000 years of history enter the digital era”.",
+    "contactEmailInstitutional": "Institutional email",
+    "contactEmailPersonal": "Personal email"
   },
   "dashboard": {
     "labels": {

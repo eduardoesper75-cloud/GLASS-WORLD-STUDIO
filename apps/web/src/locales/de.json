@@ -1,6 +1,6 @@
 {
   "messages": {
-    "pageTitle": "Glass World Studio — Eine Plattform mit Werkstattseele, die mit Ihnen wächst.",
+    "pageTitle": "Glass World Studio · Eine Plattform mit Werkstattseele, die mit Ihnen wächst.",
     "artwork": "Glaskunst",
     "selectLanguage": "Sprache auswählen",
     "tagline": "Eine Plattform mit Werkstattseele, die mit Ihnen wächst.",
@@ -15,6 +15,15 @@
     "submit": "Registrieren / Werkstatt betreten",
     "pending": "Die Authentifizierung ist noch nicht verbunden. Ihre Daten wurden weder gesendet noch gespeichert.",
     "identityPreview": "Diese Vorschau überträgt oder speichert keine Identitätsdaten. Es wird kein Konto erstellt.",
+    "registrationStep": "Zugangsdaten",
+    "registrationTitle": "Beginnen wir mit Ihrer Identität.",
+    "registrationIntro": "Erstellen Sie Ihre Zugangsdaten, um Ihren Bereich bei Glass World Studio zu öffnen.",
+    "username": "Benutzername",
+    "confirmPassword": "Passwort bestätigen",
+    "passwordHint": "Verwenden Sie mindestens 8 Zeichen.",
+    "registrationPreviewNotice": "Vorschau: Ihre Zugangsdaten werden weder gesendet noch gespeichert; ein Konto wird noch nicht erstellt.",
+    "passwordMismatch": "Die Passwörter müssen exakt übereinstimmen.",
+    "continueToGalaxies": "Weiter zur Galaxienauswahl",
     "continueMembership": "Weiter zur Zugehörigkeit",
     "membershipStep": "Deine Umlaufbahn im Ökosystem",
     "membershipTitle": "Lege deine Zugehörigkeit fest",
@@ -60,7 +69,15 @@
     "newsIntro": "Mitteilungs-Trilogie von Glass World Studio: Rückkehr, strategische Allianzen und Allianzmodell.",
     "newsRead": "Mitteilung lesen",
     "newsAll": "Alle Neuigkeiten",
-    "newsBack": "Zurück zur Startseite"
+    "newsBack": "Zurück zur Startseite",
+    "contactTitle": "Offizielle Kanäle",
+    "contactWeb": "Website",
+    "contactWhatsapp": "WhatsApp",
+    "convocatoriaTitle": "Strategische Allianzen",
+    "convocatoriaLead": "Glass World Studio sucht strategische Allianzen: Investoren, Entwickler und Logistik.",
+    "convocatoriaImageAlt": "Kampagnen-Flyer: „5.000 Jahre Geschichte treten in das digitale Zeitalter ein“.",
+    "contactEmailInstitutional": "Institutionelle E-Mail",
+    "contactEmailPersonal": "Persönliche E-Mail"
   },
   "dashboard": {
     "labels": {

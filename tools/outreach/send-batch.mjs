@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 // Envío automatizado de correos de outreach (logística / institucionales) — Glass World Studio.
 //
-// Compone cada correo con el copy CANÓNICO del archivo indicado y lo envía por SMTP de
-// Gmail usando curl, con *throttling* entre envíos y registro JSONL por correo.
+// Compone cada correo con el copy CANÓNICO del archivo indicado y lo envía por SMTP usando
+// curl, con *throttling* entre envíos y registro JSONL por correo. Emisor por defecto: la
+// casilla institucional (Don Web).
 // Sólo envía a destinatarios con correo real (`**Para:**`); los de formulario web NO se tocan.
 // Es IDEMPOTENTE: omite los correos ya enviados OK (usar --force para reenviar).
 //
@@ -25,7 +26,9 @@ import { tmpdir } from 'node:os';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ENV_LOCAL = resolve(ROOT, '.env.local');
 const LOG = resolve(ROOT, 'docs/logistica/send-log.jsonl');
-const SMTP = { host: 'smtp.gmail.com', port: 587 };
+// Transporte SMTP por defecto: la casilla INSTITUCIONAL (Don Web/Ferozo, canal primario).
+// Configurable por entorno; si sólo hay credenciales de Gmail, cae al canal secundario.
+const DEFAULT_SMTP = { host: 'mail.glassworldstudio.com.ar', port: 465 };
 
 const args = process.argv.slice(2);
 const opt = (k, d) => {
@@ -91,12 +94,12 @@ function buildMessage({ from, to, subject, body }) {
   return raw;
 }
 
-function curlSend({ from, to, pass, raw, insecure }) {
+function curlSend({ from, to, pass, raw, insecure, host, port }) {
   const file = resolve(tmpdir(), `gws-${randomUUID()}.eml`);
   writeFileSync(file, raw, 'utf8');
   const a = [
     '--silent', '--show-error',
-    '--url', `smtp://${SMTP.host}:${SMTP.port}`, '--ssl-reqd',
+    '--url', `smtp://${host}:${port}`, '--ssl-reqd',
     '--user', `${from}:${pass}`,
     '--mail-from', from, '--mail-rcpt', to, '--upload-file', file,
   ];
@@ -112,15 +115,41 @@ function curlSend({ from, to, pass, raw, insecure }) {
   }
 }
 
+// Resuelve el emisor SMTP a partir del entorno local.
+//   1) Casilla institucional en Don Web (primario): OUTSEND_MAILBOX_*.
+//   2) Respaldo: canal secundario de Gmail, si hay app password configurada.
+function resolveTransport(env) {
+  const institutional = {
+    address: env.OUTSEND_MAILBOX_ADDRESS || 'edu.esper@glassworldstudio.com.ar',
+    password: env.OUTSEND_MAILBOX_PASSWORD || '',
+    host: env.OUTSEND_SMTP_HOST || DEFAULT_SMTP.host,
+    port: Number(env.OUTSEND_SMTP_PORT || DEFAULT_SMTP.port),
+  };
+  if (institutional.password) return institutional;
+
+  const gmail = {
+    address: env.IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_USERNAME || 'eduardoesper75@gmail.com',
+    password: env.IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD || '',
+    host: 'smtp.gmail.com',
+    port: 587,
+  };
+  if (gmail.password) return gmail;
+  return null;
+}
+
 async function main() {
   const env = readEnv(ENV_LOCAL);
-  const from = env.IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_USERNAME;
-  const pass = env.IMAP_MCP_ACCOUNT_ESPER_EDUARDO_IMAP_PASSWORD;
-  if (!from || !pass) {
-    console.error('Faltan credenciales SMTP en .env.local (cuenta esper.eduardo).');
+  const transport = resolveTransport(env);
+  if (!transport) {
+    console.error(
+      'Faltan credenciales SMTP en .env.local: definí OUTSEND_MAILBOX_PASSWORD (casilla ' +
+        'institucional) o, como respaldo, la app password del canal Gmail.',
+    );
     process.exitCode = 1;
     return;
   }
+  const { address: from, password: pass, host, port } = transport;
+  console.log(`Emisor SMTP: ${from} · ${host}:${port}`);
 
   const done = new Set();
   if (existsSync(LOG)) {
@@ -145,9 +174,9 @@ async function main() {
   for (let i = 0; i < targets.length; i += 1) {
     const t = targets[i];
     const raw = buildMessage({ from, to: t.to, subject: t.asunto, body: t.body });
-    let r = curlSend({ from, to: t.to, pass, raw, insecure: false });
+    let r = curlSend({ from, to: t.to, pass, raw, insecure: false, host, port });
     if (!r.ok && /certificate|ssl|schannel|self-signed/i.test(r.err || '')) {
-      r = curlSend({ from, to: t.to, pass, raw, insecure: true });
+      r = curlSend({ from, to: t.to, pass, raw, insecure: true, host, port });
     }
     const rec = {
       ts: new Date().toISOString(),
