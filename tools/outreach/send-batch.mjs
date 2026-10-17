@@ -118,12 +118,13 @@ function curlSend({ from, to, pass, raw, insecure, host, port }) {
 // Resuelve el emisor SMTP a partir del entorno local.
 //   1) Casilla institucional en Don Web (primario): OUTSEND_MAILBOX_*.
 //   2) Respaldo: canal secundario de Gmail, si hay app password configurada.
-function resolveTransport(env) {
+function describeTransport(env) {
   const institutional = {
     address: env.OUTSEND_MAILBOX_ADDRESS || 'edu.esper@glassworldstudio.com.ar',
     password: env.OUTSEND_MAILBOX_PASSWORD || '',
     host: env.OUTSEND_SMTP_HOST || DEFAULT_SMTP.host,
     port: Number(env.OUTSEND_SMTP_PORT || DEFAULT_SMTP.port),
+    label: 'institucional (Don Web)',
   };
   if (institutional.password) return institutional;
 
@@ -132,24 +133,20 @@ function resolveTransport(env) {
     password: env.IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD || '',
     host: 'smtp.gmail.com',
     port: 587,
+    label: 'personal Gmail (respaldo)',
   };
   if (gmail.password) return gmail;
-  return null;
+
+  // Sin credenciales: se informa el emisor PREVISTO (canal primario) y se exige
+  // la contraseña recién al enviar de verdad.
+  return { ...institutional, label: 'institucional (Don Web) · SIN CREDENCIALES' };
 }
 
 async function main() {
   const env = readEnv(ENV_LOCAL);
-  const transport = resolveTransport(env);
-  if (!transport) {
-    console.error(
-      'Faltan credenciales SMTP en .env.local: definí OUTSEND_MAILBOX_PASSWORD (casilla ' +
-        'institucional) o, como respaldo, la app password del canal Gmail.',
-    );
-    process.exitCode = 1;
-    return;
-  }
+  const transport = describeTransport(env);
   const { address: from, password: pass, host, port } = transport;
-  console.log(`Emisor SMTP: ${from} · ${host}:${port}`);
+  console.log(`Emisor SMTP: ${from} · ${host}:${port} · ${transport.label}`);
 
   const done = new Set();
   if (existsSync(LOG)) {
@@ -158,14 +155,26 @@ async function main() {
       try { const r = JSON.parse(line); if (r.ok) done.add(r.to?.toLowerCase()); } catch { /* noop */ }
     }
   }
-  const targets = parseCorreos(readFileSync(SOURCE, 'utf8'))
-    .filter((t) => !ONLY || t.to === ONLY)
-    .filter((t) => flag('force') || !done.has(t.to.toLowerCase()));
+  const all = parseCorreos(readFileSync(SOURCE, 'utf8')).filter((t) => !ONLY || t.to === ONLY);
+  const targets = all.filter((t) => flag('force') || !done.has(t.to.toLowerCase()));
+  const omitted = all.length - targets.length;
   console.log(`Lote: ${TAG} · fuente: ${SOURCE}`);
-  console.log(`Modo: ${EXECUTE ? 'ENVÍO REAL' : 'DRY-RUN'} · destinatarios con email: ${targets.length} · ya enviados (se omiten): ${done.size} · throttle ${THROTTLE}ms`);
+  console.log(
+    `Modo: ${EXECUTE ? 'ENVÍO REAL' : 'DRY-RUN'} · con email en la fuente: ${all.length} · ` +
+      `ya enviados (se omiten): ${omitted} · a enviar: ${targets.length} · ` +
+      `en el log OK (global): ${done.size} · throttle ${THROTTLE}ms`,
+  );
   targets.forEach((t, i) => console.log(`  ${i + 1}. ${t.company} <${t.to}> — ${t.asunto}`));
   if (!EXECUTE) {
     console.log('\n(dry-run) No se envió nada. Agregá --execute para enviar.');
+    return;
+  }
+  if (!pass) {
+    console.error(
+      'Faltan credenciales SMTP en .env.local: definí OUTSEND_MAILBOX_PASSWORD (casilla ' +
+        'institucional de Don Web) o, como respaldo, la app password del canal Gmail.',
+    );
+    process.exitCode = 1;
     return;
   }
 

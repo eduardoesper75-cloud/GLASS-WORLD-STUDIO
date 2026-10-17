@@ -42,7 +42,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -84,7 +85,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -126,7 +128,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -168,7 +171,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -210,7 +214,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -252,7 +257,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -294,7 +300,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -336,7 +343,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -378,7 +386,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -420,7 +429,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -462,7 +472,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -504,7 +515,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -546,7 +558,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -588,7 +601,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -630,7 +644,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -672,7 +687,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -714,7 +730,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```
@@ -756,7 +773,8 @@ Cordialmente,
 Eduardo Esper
 Fundador — Glass World Studio
 Web: https://www.glassworldstudio.com.ar
-E-mail: edu.esper@glassworldstudio.com.ar
+E-mail institucional: edu.esper@glassworldstudio.com.ar
+E-mail personal (respaldo): eduardoesper75@gmail.com
 Teléfono / WhatsApp: +54 9 385 622-8400
 Santiago del Estero, República Argentina
 ```

@@ -108,7 +108,7 @@ L.push('> Orden de prioridad: 1) **Inversores y capital** · 2) **Desarrolladore
 L.push('> **Archivo generado automáticamente** por `tools/outreach/build-envios-log.mjs`. No editar a mano.');
 L.push('> **Estado real, sin inventar.** Nada se marca «enviado» sin registro en `send-log.jsonl`.');
 L.push('> Los correos viven en los CSV **ignorados por git**: acá solo van organización/nombre, canal y estado.');
-L.push('> Contacto al pie: **Eduardo Esper · Web https://www.glassworldstudio.com.ar · edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400**');
+L.push('> Contacto al pie: **Eduardo Esper · Web https://www.glassworldstudio.com.ar · edu.esper@glassworldstudio.com.ar · eduardoesper75@gmail.com · +54 9 385 622-8400**');
 L.push('');
 L.push(`Actualizado: ${nw.getFullYear()}-${p2(nw.getMonth() + 1)}-${p2(nw.getDate())} ${p2(nw.getHours())}:${p2(nw.getMinutes())} (hora local)`);
 L.push('');

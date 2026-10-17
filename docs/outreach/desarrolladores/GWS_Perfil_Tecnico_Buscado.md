@@ -105,7 +105,7 @@ posibilidad de **dejar huella** en algo global.
 2. Si hay match: acceso al repositorio y una **primera tarea concreta** (a modo de prueba mutua).
 3. Si funciona para los dos: se define el rol y **se pactan las condiciones**.
 
-**Contacto:** Eduardo Esper · Fundador · edu.esper@glassworldstudio.com.ar · WhatsApp +54 9 385 622-8400 · Web <https://www.glassworldstudio.com.ar>
+**Contacto:** Eduardo Esper · Fundador · edu.esper@glassworldstudio.com.ar · eduardoesper75@gmail.com · WhatsApp +54 9 385 622-8400 · Web <https://www.glassworldstudio.com.ar>
 
 ---
 

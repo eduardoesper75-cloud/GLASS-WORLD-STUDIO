@@ -21,7 +21,7 @@ const SIGNATURE = [
   'Eduardo Esper',
   'Fundador — Glass World Studio',
   `Web: ${SITE}`,
-  'edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400',
+  'edu.esper@glassworldstudio.com.ar · eduardoesper75@gmail.com · +54 9 385 622-8400',
 ];
 
 // CTA obligatorio: en toda comunicación saliente se deriva al sitio oficial.
@@ -204,7 +204,7 @@ function main() {
   lines.push('> Marco: **Manifiesto de Convocatoria**. Firma obligatoria al pie.');
   lines.push('> Canal: **GitHub** (perfil público). Si el perfil expone correo, usarlo; si no, contactar por el perfil.');
   lines.push('> **Envío manual**, ritmo humano, máximo 3 toques. No automatizar cuentas.');
-  lines.push(`> Firma: Eduardo Esper · Web: ${SITE} · edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400`);
+  lines.push(`> Firma: Eduardo Esper · Web: ${SITE} · edu.esper@glassworldstudio.com.ar · eduardoesper75@gmail.com · +54 9 385 622-8400`);
   lines.push('');
   lines.push('---');
   lines.push('');

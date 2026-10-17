@@ -249,5 +249,6 @@ Frente 1 — código de soporte (Frente: desarrollo/plataforma)
 
 **Contacto oficial**
 Eduardo Esper — Fundador, Glass World Studio
-E-mail: edu.esper@glassworldstudio.com.ar · WhatsApp / Tel: +54 9 385 622-8400
+E-mail: edu.esper@glassworldstudio.com.ar · eduardoesper75@gmail.com · WhatsApp / Tel: +54 9 385 622-8400
+Web: <https://www.glassworldstudio.com.ar>
 Santiago del Estero, República Argentina

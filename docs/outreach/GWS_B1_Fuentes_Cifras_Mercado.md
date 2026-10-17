@@ -5,7 +5,7 @@
 > **proyección a 2033**, no el tamaño actual; y la cifra “+50 M de personas” **no es sostible**
 > y debe quitarse o reformularse.
 >
-> Contacto oficial: **Eduardo Esper · edu.esper@glassworldstudio.com.ar · +54 9 385 622-8400 · Web <https://www.glassworldstudio.com.ar>**
+> Contacto oficial: **Eduardo Esper · edu.esper@glassworldstudio.com.ar · eduardoesper75@gmail.com · +54 9 385 622-8400 · Web <https://www.glassworldstudio.com.ar>**
 
 ---
 
@@ -109,6 +109,6 @@ Se presenta como **estimación de territorio a instrumentar** (la medición *es*
 
 **Contacto oficial**
 Eduardo Esper — Fundador, Glass World Studio
-E-mail: edu.esper@glassworldstudio.com.ar · WhatsApp / Tel: +54 9 385 622-8400
+E-mail: edu.esper@glassworldstudio.com.ar · eduardoesper75@gmail.com · WhatsApp / Tel: +54 9 385 622-8400
 Web: https://www.glassworldstudio.com.ar
 Santiago del Estero, República Argentina

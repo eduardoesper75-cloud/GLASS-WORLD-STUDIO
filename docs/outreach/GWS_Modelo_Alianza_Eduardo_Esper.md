@@ -30,6 +30,6 @@ Estamos construyendo una solución definitiva para un sector milenario.
 
 Un saludo cordial,
 **Eduardo Esper**
-`edu.esper@glassworldstudio.com.ar`
+`edu.esper@glassworldstudio.com.ar` · `eduardoesper75@gmail.com`
 WhatsApp / Tel: `+54 9 385 622-8400`
 **Web:** <https://www.glassworldstudio.com.ar>
