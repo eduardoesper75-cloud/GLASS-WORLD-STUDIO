@@ -3,6 +3,11 @@
 > Cómo pasar de **cero contactos** a los **primeros borradores listos** para copiar y pegar.
 > Sin automatizar LinkedIn, sin scrapear, sin bots. Humano en el bucle.
 > Última actualización: 15-10-2026
+>
+> **Modo vigente (17-10-2026) — investigación y scouting:** la lista se arma con el marco de
+> [`../GWS_Scouting_Puertas_Alto_Valor.md`](../GWS_Scouting_Puertas_Alto_Valor.md) y se cura con
+> `tools/outreach/scout-curate.mjs`. El envío está **bloqueado** (modo `reposo`, ver
+> [`../GWS_Modo_Operativo.md`](../GWS_Modo_Operativo.md)).
 
 El motor (`generate-drafts.mjs`) ya está listo y acepta **todo el espectro**: fondos,
 ángeles e industriales. Lo único que falta es la **lista**. Esta guía explica cómo armarla.

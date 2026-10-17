@@ -142,14 +142,41 @@ terceros) con el resumen por segmento, el estado por contacto y la elegibilidad 
 
 ## 7. Próximos hitos
 
+> Reordenados por el **pivote a investigación** del 17-10-2026 (ver §8). El envío queda **bloqueado**
+> mientras el modo operativo esté en `reposo`.
+
 | # | Hito | Estado |
 | --- | --- | --- |
-| 1 | Cargar `OUTSEND_MAILBOX_PASSWORD` y verificar el envío institucional con un correo de prueba propio | `[COMPLETAR: responsable/fecha]` |
-| 2 | Medir respuestas del 1er toque (30 envíos, 0 fallos) y registrar altas/bajas/rebotes | `[COMPLETAR: fecha de corte]` |
-| 3 | 2º toque a los elegibles (≥ 5 días sin respuesta, máx. 3 toques) | `[COMPLETAR: fecha]` |
-| 4 | **Logística especializada (alta prioridad):** coordinación de reunión con los forwarders y operadores de carga frágil/arte ya contactados | `[COMPLETAR: fecha/hora]` |
-| 5 | Agenda institucional con inversores (fondos/ángeles) sobre el material de los ejes 1 y 4 | `[COMPLETAR: fecha/hora]` |
-| 6 | Revisión del pulso técnico con desarrolladores por canal manual (GitHub / LinkedIn) | `[COMPLETAR: fecha]` |
+| 1 | **Pausa institucional:** modo operativo en `reposo` (envío bloqueado, modo consulta) | ✅ vigente desde 17-10-2026 |
+| 2 | **Scouting bloque A — logística de carga pesada y frágil** (alta prioridad): puertas verificadas con canal publicado | `[COMPLETAR: N objetivo y fecha]` |
+| 3 | **Scouting bloque B — inversores, fondos semilla y mecenas** con perfil tecnológico o industrial | `[COMPLETAR: N objetivo y fecha]` |
+| 4 | **Scouting bloque C — arquitectos de ecosistemas digitales avanzados** con obra pública verificable | `[COMPLETAR: N objetivo y fecha]` |
+| 5 | Curaduría de la base limpia (`scout-curate.mjs`) y revisión del listado selectivo | continuo |
+| 6 | **Medir respuestas del 1er toque** (30 envíos, 0 fallos) y registrar altas/bajas/rebotes | `[COMPLETAR: fecha de corte]` |
+| 7 | Cargar `OUTSEND_MAILBOX_PASSWORD` y verificar el envío institucional con un correo de prueba propio | `[COMPLETAR: responsable/fecha]` |
+| 8 | Reanudar el envío **selectivo** (sólo con `estado: activo` y tras el corte de medición) | `[COMPLETAR: fecha]` |
+| 9 | **Logística especializada (alta prioridad):** coordinación de reunión con los operadores de carga frágil/pesada | `[COMPLETAR: fecha/hora]` |
+| 10 | Agenda institucional con inversores sobre el material de los ejes 1 y 4 | `[COMPLETAR: fecha/hora]` |
+
+---
+
+## 8. Pivote a investigación y scouting (17-10-2026)
+
+La campaña **cambia de foco**: deja de escalar volumen y vuelve a **investigar a mano**.
+
+- **Objetivo nuevo:** compilar una **base limpia, orgánica y rigurosa de nuevas puertas
+  institucionales** (desarrolladores/arquitectos, inversores y mecenas con perfil tecnológico o
+  industrial, y logística especializada de carga pesada/frágil) para **golpear de forma selectiva**.
+- **Marco vigente:** [`GWS_Scouting_Puertas_Alto_Valor.md`](./GWS_Scouting_Puertas_Alto_Valor.md)
+  (criterios de alto valor, protocolo de verificación y curaduría).
+- **Estado operativo:** `reposo` en [`GWS_Modo_Operativo.md`](./GWS_Modo_Operativo.md) — el emisor
+  `send-batch.mjs` **se niega a enviar** en ese estado (verificado: `--execute` aborta sin enviar nada).
+- **Herramienta nueva:** `tools/outreach/scout-curate.mjs` — valida, deduplica (contra 236
+  organizaciones de las bases existentes y los 30 destinatarios ya contactados) y emite la base limpia
+  ordenada para contacto selectivo. **No envía nada.**
+- **Registros:** resguardados localmente, fuera de git (§5 del playbook).
+
+> No hay dato nuevo que reportar sobre envíos: **no se envió nada** durante el pivote.
 
 ---
 

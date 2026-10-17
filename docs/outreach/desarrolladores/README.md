@@ -5,6 +5,10 @@
 > Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) Logística (pilar operativo).
 > Objetivo: sumar **pocas personas, muy buenas**, al núcleo técnico.
 > Última actualización: 16-10-2026
+>
+> **Modo vigente (17-10-2026) — investigación y scouting:** los perfiles se investigan y verifican con
+> el marco de [`../GWS_Scouting_Puertas_Alto_Valor.md`](../GWS_Scouting_Puertas_Alto_Valor.md) y se
+> curan con `tools/outreach/scout-curate.mjs`. El envío está **bloqueado** (modo `reposo`).
 
 No es una búsqueda corporativa. Es una **etapa fundacional**: buscamos gente que quiera
 **construir**, no cubrir una vacante.

@@ -26,6 +26,15 @@ import { tmpdir } from 'node:os';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const ENV_LOCAL = resolve(ROOT, '.env.local');
 const LOG = resolve(ROOT, 'docs/logistica/send-log.jsonl');
+// Modo operativo VERSIONADO (docs/outreach/GWS_Modo_Operativo.md): `reposo` deja el sistema en
+// modo consulta e investigación pasiva y bloquea el envío real. Cambiarlo es un acto explícito.
+const MODO_PATH = resolve(ROOT, 'docs/outreach/GWS_Modo_Operativo.md');
+function modoOperativo() {
+  if (!existsSync(MODO_PATH)) return 'activo';
+  const m = readFileSync(MODO_PATH, 'utf8').match(/^estado:\s*(\S+)/m);
+  return (m ? m[1] : 'activo').toLowerCase();
+}
+
 // Transporte SMTP por defecto: la casilla INSTITUCIONAL (Don Web/Ferozo, canal primario).
 // Configurable por entorno; si sólo hay credenciales de Gmail, cae al canal secundario.
 const DEFAULT_SMTP = { host: 'mail.glassworldstudio.com.ar', port: 465 };
@@ -144,9 +153,13 @@ function describeTransport(env) {
 
 async function main() {
   const env = readEnv(ENV_LOCAL);
+  const modo = modoOperativo();
   const transport = describeTransport(env);
   const { address: from, password: pass, host, port } = transport;
   console.log(`Emisor SMTP: ${from} · ${host}:${port} · ${transport.label}`);
+  console.log(
+    `Modo operativo: ${modo}${modo === 'activo' ? '' : ' · ENVÍO BLOQUEADO (consulta e investigación)'}`,
+  );
 
   const done = new Set();
   if (existsSync(LOG)) {
@@ -167,6 +180,15 @@ async function main() {
   targets.forEach((t, i) => console.log(`  ${i + 1}. ${t.company} <${t.to}> — ${t.asunto}`));
   if (!EXECUTE) {
     console.log('\n(dry-run) No se envió nada. Agregá --execute para enviar.');
+    return;
+  }
+  if (modo !== 'activo') {
+    console.error(
+      `Envío bloqueado: el modo operativo es "${modo}" (${MODO_PATH}).\n` +
+        'Ese estado deja el sistema en consulta e investigación pasiva (pausa institucional).\n' +
+        'Para habilitar el envío: poné `estado: activo` en ese archivo, con fecha y motivo, y volvé a intentar.',
+    );
+    process.exitCode = 1;
     return;
   }
   if (!pass) {
