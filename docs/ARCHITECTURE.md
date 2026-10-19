@@ -22,13 +22,13 @@ GWS es una plataforma de **infraestructura de datos, curaduría técnica y ecosi
                              │
 ┌────────────────────────────▼────────────────────────────┐
 │            3. PIPELINE DE AUTOMATIZACIÓN                │
-│  • Ingesta, formateo y sincronización                    │
+│  • Ingesta, formateo y sincronización                   │
 │                      pipeline                           │
 └────────────────────────────┬────────────────────────────┘
                              │
 ┌────────────────────────────▼────────────────────────────┐
 │             4. CAPA DE DATOS Y ALMACENAMIENTO           │
-│  • Google Cloud / Drive & Docs REST API                  │
+│  • Google Cloud / Drive & Docs REST API                 │
 │  • Repositorio local / control de versiones             │
 │                        data                             │
 └─────────────────────────────────────────────────────────┘
