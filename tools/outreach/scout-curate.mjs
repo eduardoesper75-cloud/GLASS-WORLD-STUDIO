@@ -38,7 +38,18 @@ const PERFILES = {
   desarrolladores: ['fullstack', 'b2b', 'multiagente', 'arquitecto', 'seguridad', 'datos', ''],
   logistica: ['forwarder', 'naviera', 'courier', 'arte_fragil', 'empaque_crating', 'seguro_carga', 'carga_pesada', ''],
 };
-const ESTADOS = ['nuevo', 'a validar', 'contactado', 'respondio', 'baja', 'archivado'];
+const ESTADOS = [
+  'nuevo',
+  'a validar',
+  'contactado',
+  'respondio',
+  'baja',
+  'archivado',
+  // Estados de Fase 2 (orden de continuidad 2026-10-22).
+  'candidato',
+  'validado',
+  'descartado',
+];
 const CANALES = ['email_corporativo', 'formulario', 'perfil_publico', 'red_calida', 'evento', 'presencial'];
 const FREE_MAIL = /@(gmail|googlemail|hotmail|outlook|live|msn|yahoo|ymail|icloud|me|protonmail|proton|gmx|aol|zoho)\.[a-z.]+$/i;
 
@@ -189,6 +200,10 @@ rows.slice(1).forEach((r, i) => {
   if (eje in PERFILES && !PERFILES[eje].includes(perfil)) motivos.push(`perfil_fuera_del_eje:${perfil || '(vacío)'}`);
   if (!estado) motivos.push('sin_estado');
   else if (!ESTADOS.includes(estado)) motivos.push(`estado_invalido:${estado}`);
+  if (estado === 'descartado') {
+    motivos.push('descartado_manual');
+    if (!fila.notas) motivos.push('descartado_sin_motivo');
+  }
   if (!canal) motivos.push('sin_canal');
   else if (!CANALES.includes(canal)) motivos.push(`canal_invalido:${canal}`);
   if (!fuente) motivos.push('sin_fuente (el rigor exige fuente pública)');
@@ -243,6 +258,8 @@ const porEje = {};
 for (const r of OK) porEje[r.eje] = (porEje[r.eje] || 0) + 1;
 const conEmail = OK.filter((r) => r.canal === 'email_corporativo').length;
 const porFormulario = OK.filter((r) => r.canal === 'formulario').length;
+const validadas = OK.filter((r) => r.estado === 'validado').length;
+const candidatas = OK.filter((r) => r.estado === 'candidato').length;
 const selectivas = OK.filter((r) => r.canal === 'email_corporativo' || r.canal === 'red_calida').length;
 
 const outCsv = resolve(DIR, 'puertas-curadas.csv');
@@ -256,6 +273,7 @@ console.log('=== CURADURÍA DE PUERTAS INSTITUCIONALES (modo investigación, sin
 console.log(`Base de entrada : ${FILE}`);
 console.log(`Filas leídas    : ${rows.length - 1}`);
 console.log(`Puertas válidas : ${OK.length}   ·   Rechazadas: ${RECHAZADAS.length}`);
+console.log(`  Validadas: ${validadas}   ·   Candidatas: ${candidatas}`);
 console.log(`Base limpia     : ${outCsv}`);
 console.log('');
 console.log('Deduplicación contra bases existentes:');
@@ -289,6 +307,7 @@ if (flag('report')) {
   L.push('');
   L.push(`- Filas leídas: **${rows.length - 1}**`);
   L.push(`- Puertas válidas: **${OK.length}** · Rechazadas: **${RECHAZADAS.length}**`);
+  L.push(`- Validadas: **${validadas}** · Candidatas: **${candidatas}**`);
   L.push(`- Con email corporativo: **${conEmail}** · Por formulario: **${porFormulario}**`);
   L.push('');
   L.push('## Válidas por eje');
@@ -299,11 +318,11 @@ if (flag('report')) {
   L.push('');
   L.push('## Puertas válidas (ordenadas para contacto selectivo)');
   L.push('');
-  L.push('| Organización | Eje | Perfil | Canal | Prioridad | Fundamento | Fuente |');
-  L.push('| --- | --- | --- | --- | --- | --- | --- |');
+  L.push('| Organización | Eje | Perfil | Canal | Prioridad | Estado | Fundamento | Fuente |');
+  L.push('| --- | --- | --- | --- | --- | --- | --- | --- |');
   for (const r of OK) {
     L.push(
-      `| ${r.organizacion} | ${r.eje} | ${r.perfil || '-'} | ${r.canal} | ${r.prioridad} | ` +
+      `| ${r.organizacion} | ${r.eje} | ${r.perfil || '-'} | ${r.canal} | ${r.prioridad} | ${r.estado} | ` +
         `${r.fundamento.replace(/\|/g, '/')} | ${r.fuente} |`,
     );
   }

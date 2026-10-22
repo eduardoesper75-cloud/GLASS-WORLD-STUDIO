@@ -11,14 +11,21 @@
 > de bandeja está documentado. Ver
 > [`GWS_Informe_Continuidad_2026-10-22.md`](./GWS_Informe_Continuidad_2026-10-22.md).
 
+> **Actualización tras la Fase 2 (22-10-2026):** se validaron **20/20 puertas** (8 logística,
+> 6 inversores, 6 desarrolladores/arquitectos), **0 duplicadas, 0 enviadas**. El detalle está en
+> [`GWS_Informe_Fase2_Puertas_2026-10-22.md`](./GWS_Informe_Fase2_Puertas_2026-10-22.md).
+> Las secciones de este informe que describen “0 puertas” corresponden al corte anterior y quedan
+> como registro histórico.
+
 ---
 
 ## 0. Resumen ejecutivo
 
 La campaña **salió a la calle una vez**: **30 envíos reales el 16-10-2026**, **0 fallos** y
 **0 respuestas registradas**. Desde el **17-10** el sistema está en **modo `reposo`** (envío
-bloqueado por código) y el foco pasó a **investigación y scouting**. Al corte, la **base de
-scouting está vacía** (0 puertas válidas) y la campaña permanece **detenida a la espera de esa base**.
+bloqueado por código) y el foco pasó a **investigación y scouting**. Al corte del 22-10, la **base
+de scouting tiene 20/20 puertas validadas** y la campaña permanece **detenida a la espera de la
+aprobación de Fase 3**.
 
 | Indicador | Valor real |
 |---|---|
@@ -29,13 +36,13 @@ scouting está vacía** (0 puertas válidas) y la campaña permanece **detenida 
 | Reuniones | **0** |
 | Alianzas firmadas | **0** |
 | Modo operativo | **`reposo`** desde 17-10-2026 |
-| Puertas de scouting válidas | **0** (la base sólo tiene encabezado) |
-| Bloqueos abiertos | **2** (password institucional · universo SMTP agotado) |
+| Puertas de scouting válidas | **20** (8 logística + 6 inversores + 6 devs/arquitectos; 0 duplicadas) |
+| Bloqueos abiertos | **1 crítico** (password institucional) · **B2/B4** operativos, términos finales pendientes |
 
 > **Diagnóstico en una línea:** la campaña **funcionó técnicamente** (30/30 sin fallos), el copy de
 > las cifras **está corregido** y la Fase 1 **ya midió y sincronizó** (0 respuestas reales, 30 sin
-> novedad). Falta **base nueva** (0 puertas): el próximo movimiento es **curar y validar puertas**,
-> no enviar más.
+> novedad). La **base nueva ya existe (20/20)**: el próximo movimiento es **decidir la Fase 3**, no
+> enviar por impulso.
 
 ---
 
@@ -172,9 +179,9 @@ del eje, y no existe vía legítima para extraerla a escala.
   **detenida esperando esa base**.
 - **Durante el pivote no se envió nada** (confirmado por el registro: último envío 16-10).
 
-> **Observación:** la pausa prevista para un fin de semana **sigue vigente 5 días después**. No es un
-> error —es una decisión auditable—, pero implica que **la campaña está parada** hasta que se cargue
-> y cure la base de puertas.
+> **Observación:** la pausa prevista para un fin de semana **sigue vigente**. No es un error —es una
+> decisión auditable—, pero implica que **la campaña está parada** hasta que el titular decida la
+> Fase 3. La base de puertas ya está cargada y curada (20/20).
 
 ---
 
@@ -183,16 +190,16 @@ del eje, y no existe vía legítima para extraerla a escala.
 | # | Brecha / bloqueo | Estado | Impacto |
 |---|---|---|---|
 | **B1** | Cifras de mercado: **investigación cerrada y copy en español corregido** | 🟢 Cerrado (residual EN) | 🟡 Bajo |
-| **B2** | Esquema de **participación / compensación** (inversores y devs) | 🔴 Sin definir | 🔴 Crítico |
+| **B2** | Esquema de **participación / compensación** (inversores y devs) | 🟠 Operativo: posición cerrada; términos finales pendientes | 🟠 Alto |
 | **B3** | **Stack** de orquestación multi-agente y persistencia | 🔴 Sin definir | 🟠 Alto |
-| **B4** | **Modelo de ingresos / monetización** | 🔴 Sin definir | 🟠 Alto |
+| **B4** | **Modelo de ingresos / monetización** | 🟠 Operativo: comisión + suscripción + datos; precios pendientes | 🟠 Alto |
 | **B5** | **Persona decisora** por fondo (socio/analista) | 🔴 Sin identificar | 🟠 Alto |
 | **B6** | **Logística sin validar**: 0 acuerdos, 0 costos | 🔴 Sin validar | 🟠 Alto |
 | **O1** | **Password casilla institucional** (`OUTSEND_MAILBOX_PASSWORD`, Don Web) | 🔴 Faltante | 🔴 Bloqueante |
-| **O2** | **Universo SMTP agotado** (30/30 enviados) | 🔴 Agotado | 🔴 Bloqueante |
+| **O2** | **Universo SMTP agotado** (30/30 enviados) | 🟢 Cerrado: 20 puertas nuevas | 🟡 Bajo |
 | **O3** | **Registro desincronizado** (CSV vs. `send-log.jsonl`) | ✅ Sincronizado (18 + 12) | 🟡 Bajo |
 | **O4** | **Sin corte de respuestas** (`respuestas.jsonl`) | ✅ Barrido 22-10 · 0 reales · 30 sin novedad | 🟡 Bajo |
-| **B7** | **Base de scouting vacía** (0 puertas válidas) | 🟠 En curso | 🟠 Alto |
+| **B7** | **Base de scouting vacía** (0 puertas válidas) | 🟢 Cerrado: 20/20 validadas | 🟡 Bajo |
 | **B8** | **Canales manuales sin iniciar** (99 + 67 + 35) | 🟠 Pendiente | 🟠 Alto |
 | **B9** | Tanda 5 de devs **sin curar** (45 crudos) | 🟡 Pendiente | 🟡 Medio |
 
@@ -246,12 +253,12 @@ corregida (usa USD 323.2 B / 450.2 B y no menciona los 50 M de personas).
 
 ### 8.2 Corto plazo — 1 a 3 semanas (base limpia y definiciones)
 
-6. **Scouting bloque A — logística pesada/frágil:** cargar y curar puertas verificadas.
-7. **Scouting bloque B — inversores/mecenas** con tesis tecnológica o industrial.
-8. **Scouting bloque C — arquitectos** con obra pública verificable.
-9. **Cerrar B2** (participación/compensación) y **B4** (modelo de ingresos): sin esto no hay
-   conversación de fondo con inversores ni con devs.
-10. **Reanudar envío selectivo** sólo con `estado: activo` y sobre la base limpia curada.
+6. ✅ **Scouting bloque A — logística pesada/frágil:** 8 puertas validadas.
+7. ✅ **Scouting bloque B — inversores/mecenas:** 6 puertas validadas.
+8. ✅ **Scouting bloque C — devs/arquitectos:** 6 puertas validadas.
+9. ✅ **B2/B4:** posición operativa cerrada; términos finales pendientes de aprobación del titular.
+10. ⏳ **Reanudar envío selectivo:** no autorizado. Requiere aprobación de Fase 3 y casilla
+    institucional resuelta o aceptada como punto ciego.
 
 ### 8.3 Medio plazo — 3 a 6 semanas (contacto selectivo)
 
@@ -268,7 +275,7 @@ corregida (usa USD 323.2 B / 450.2 B y no menciona los 50 M de personas).
 | Envíos de 1er toque | filas OK en `send-log.jsonl` | **30** | +20 selectivos |
 | Tasa de respuesta | respuestas / enviados | **0 % registrado** | medir real |
 | Reuniones | acuerdos de agenda registrados | **0** | 3 |
-| Puertas verificadas | filas válidas en `puertas-curadas.csv` | **0** | 20 |
+| Puertas verificadas | filas válidas en `puertas-curadas.csv` | **20** | 20 (cumplido) |
 | Acuerdos / pilotos | alianzas firmadas | **0** | 1 piloto logístico |
 | Antigüedad del 1er toque | días desde el último envío | **6** | 5–10 |
 
@@ -285,7 +292,7 @@ corregida (usa USD 323.2 B / 450.2 B y no menciona los 50 M de personas).
 | `docs/logistica/seguimiento.md` | resumen por segmento y por contacto (generado 17-10) | ✅ real |
 | `docs/outreach/respuestas.jsonl` | 30 `sin_novedad` · 0 respuestas reales (barrido 22-10) | ✅ creado |
 | `docs/outreach/GWS_Log_Envios.md` | log legible (actualizado 16-10 15:26) | ✅ real |
-| `docs/outreach/scouting/GWS_Scouting_Informe.md` | 3 filas leídas · 0 válidas · 3 rechazadas | ✅ real |
+| `docs/outreach/scouting/GWS_Scouting_Informe.md` | 20 filas leídas · 20 válidas · 0 rechazadas | ✅ real (local) |
 | `docs/outreach/GWS_B1_Fuentes_Cifras_Mercado.md` | fuentes y corrección de cifras | ✅ cerrado |
 | `docs/outreach/GWS_Modo_Operativo.md` | `estado: reposo` desde 17-10 | ✅ vigente |
 | CSV de prospección | 35 inversores · 98 devs · 28 logística | ✅ sincronizados (18 + 12 enviados) |
@@ -294,10 +301,10 @@ corregida (usa USD 323.2 B / 450.2 B y no menciona los 50 M de personas).
 
 ## En una frase
 
-**La campaña no está rota: está detenida y sin medir.** Hizo 30 envíos perfectos con las cifras ya
-corregidas, pero todavía no sabe qué respondieron y no tiene base nueva. El siguiente paso no es
-enviar más: es **medir la bandeja, sincronizar el registro y curar 20 puertas buenas** antes de
-reanudar.
+**La campaña no está rota: está detenida, medida y con base nueva.** Hizo 30 envíos perfectos con
+las cifras ya corregidas, ya midió la bandeja (0 respuestas reales, 30 sin novedad) y tiene **20
+puertas validadas**. El siguiente paso no es enviar más: es **decidir la Fase 3** y resolver o
+aceptar el punto ciego de la casilla institucional.
 
 ---
 

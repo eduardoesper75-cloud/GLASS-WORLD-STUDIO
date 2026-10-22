@@ -1,6 +1,7 @@
 # GWS · Informe de Continuidad — Campaña de Alianzas Estratégicas
 
-> **Corte:** 22-10-2026 · **Fase 1 cerrada** · **Fase 2 pendiente**
+> **Corte:** 22-10-2026 · **Fase 1 cerrada** · **Fase 2 ejecutada** (20/20 puertas)
+> **Fase 2:** ver `docs/outreach/GWS_Informe_Fase2_Puertas_2026-10-22.md`.
 > **Alcance:** campaña de búsqueda de inversores, desarrolladores y logística.
 > **Método:** sólo datos reales y trazables. Cero métricas estimadas, cero contactos inventados.
 
@@ -21,8 +22,9 @@ La **Fase 1 (medición y saneamiento)** quedó cerrada:
   documentada** y el barrido de Gmail ya se hizo.
 - La campaña **sigue en `reposo`**. **No se envió ningún segundo toque.**
 
-**Estado real:** la campaña está **medida y sincronizada**, pero **sin base nueva**: **0 puertas
-válidas**. La Fase 2 (reconstrucción del universo) es el camino crítico.
+**Estado real:** la campaña está **medida, sincronizada y con base nueva**: **20/20 puertas
+validadas** (8 logística, 6 inversores, 6 desarrolladores/arquitectos). La Fase 3 sigue **no
+autorizada** y la campaña sigue en `reposo`.
 
 ---
 
@@ -121,17 +123,19 @@ Cada fila debe pasar:
 
 ### 4.6 Límite diario y exclusión
 
-Propuesta para la Fase 3:
+Regla adoptada para la Fase 3:
 
-- Máximo **5 primeros contactos por día** y **3 toques por contacto**.
+- Máximo **5 envíos por día en total** (primeros contactos o seguimientos) y **3 toques por contacto**.
 - **5 días hábiles** mínimos entre toques.
 - Lista de exclusión: respondió, bounce, unsubscribe, cliente/aliado existente y competidores
   directos.
 
 ### 4.7 Estado al corte
 
-**0 / 20 puertas.** No se inventaron contactos para “llegar” al número: la base se construye con
-investigación real y validación. Éste es el entregable pendiente de la Fase 2.
+**20 / 20 puertas validadas** (22-10-2026): 8 logística pesada/frágil, 6 inversores y 6
+desarrolladores/arquitectos. **0 duplicadas, 0 rechazadas.** Detalle y fuentes:
+`GWS_Informe_Fase2_Puertas_2026-10-22.md`. La base operativa (`puertas-curadas.csv`) es local y no
+se versiona por contener datos de contacto de terceros.
 
 ---
 
@@ -158,10 +162,10 @@ investigación real y validación. Éste es el entregable pendiente de la Fase 2
 | Casilla institucional no medida | 🔴 Abierto | Resolver password y repetir barrido |
 | Emisor real no probado por el log | 🟠 Declarado | Verificar en el próximo envío y registrar `from` |
 | “0 respuestas” ≠ “nadie respondió” | 🟠 Declarado | Medición parcial explicitada |
-| Universo SMTP agotado (30/30) | 🔴 Abierto | Fase 2: 20 puertas nuevas |
-| Base de scouting vacía (0/20) | 🔴 Abierto | Curación real con fuente citada |
-| B2/B4 sin definir | 🔴 Abierto | Cerrar antes de reactivar |
-| Riesgo de prometer participación/ingresos sin definir | 🟠 Alto | No afirmar nada hasta cerrar B2/B4 |
+| Universo SMTP agotado (30/30) | 🟢 Cerrado | 20 puertas nuevas validadas (Fase 2) |
+| Base de scouting (20/20) | 🟢 Cerrado | 20/20 validadas con fuente pública |
+| B2/B4 — posición operativa | 🟠 Operativo | Cerrados como posición; términos finales pendientes del titular |
+| Riesgo de prometer participación/ingresos sin definir | 🟠 Alto | Política: no se anuncian porcentajes ni ingresos |
 
 ---
 
@@ -198,9 +202,11 @@ investigación real y validación. Éste es el entregable pendiente de la Fase 2
 ## 8. Próximos pasos inmediatos
 
 1. **Owner:** definir/rotar la contraseña de la casilla institucional y cargarla en el `.env` de
-   OpenOutreach (procedimiento en el checklist).
-2. **Fase 2:** investigar y validar **20 puertas reales** con fuente citada, separadas por segmento.
-3. **Cerrar B2 y B4** antes de cualquier reactivación.
+   OpenOutreach (procedimiento en el checklist). Sin esto, la medición institucional sigue ciega.
+2. **Fase 2:** cerrada en su entregable principal (20/20). Ver
+   `GWS_Informe_Fase2_Puertas_2026-10-22.md`.
+3. **B2/B4:** cerrados como posición operativa; los términos económicos finales requieren
+   aprobación del titular antes de cualquier term sheet.
 4. **Mantener `reposo`** hasta que la Fase 1 esté cerrada y exista base nueva validada.
 5. **Fase 3:** recién entonces, segundo toque controlado y canales manuales.
 

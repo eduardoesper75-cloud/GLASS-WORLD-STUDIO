@@ -2,7 +2,7 @@
 
 estado: reposo
 desde: 2026-10-17
-motivo: pausa institucional de fin de semana — pivote a investigación y scouting de puertas de alto valor
+motivo: Fase 2 completada (20/20 puertas); reactivación de Fase 3 pendiente de decisión del titular
 responsable: Dirección del proyecto (Eduardo Esper)
 
 ---
@@ -33,11 +33,18 @@ propósito, un acto explícito y versionado: se edita este archivo, se revisa y 
 
 ## Cómo se reanuda (cuando corresponda)
 
-1. Confirmar el corte de medición: eventos del 1er toque registrados en
-   `docs/outreach/respuestas.jsonl` (respuestas, bounces, autorespuestas o `sin_novedad`).
-2. Revisar la lista selectiva: `docs/outreach/scouting/puertas-curadas.csv`.
-3. Cambiar la primera línea de este archivo a `estado: activo`, con la fecha y el motivo del reinicio.
-4. Verificar el emisor institucional (contraseña de la casilla Don Web en `.env.local`; ver
+> **Corte 2026-10-22:** la Fase 2 está completa (**20/20 puertas**). El estado **sigue en `reposo`**:
+> tener base no autoriza envíos. La reanudación requiere una decisión explícita del titular y la
+> compuerta de Fase 3.
+
+1. Confirmar que la Fase 1 está cerrada: casilla institucional resuelta **o** aceptada formalmente
+   como punto ciego declarado.
+2. Revisar la base selectiva `docs/outreach/scouting/puertas-curadas.csv` (20/20) y la lista de
+   exclusión `docs/outreach/scouting/exclusiones-fase3.csv` (30 contactos previos).
+3. Aprobar el límite diario (5 primeros contactos/día, 3 toques, 5 días hábiles entre toques) y, si
+   se va a enviar un term sheet, los términos finales de B2/B4.
+4. Cambiar la primera línea de este archivo a `estado: activo`, con la fecha y el motivo del reinicio.
+5. Verificar el emisor institucional (contraseña de la casilla Don Web en `.env.local`; ver
    [`GWS_Checklist_Salida_Operativa.md`](./GWS_Checklist_Salida_Operativa.md)) y recién entonces
    enviar de forma selectiva.
 
