@@ -55,6 +55,18 @@ C:\Users\eduesper\AppData\Local\gws-tools\openoutreach\.env
 > `OUTSEND_MAILBOX_ADDRESS` y los hosts/puertos ya quedaron fijados; **falta sólo
 > `OUTSEND_MAILBOX_PASSWORD`** (la contraseña de la casilla institucional).
 
+> **Estado al 22-10-2026:** la contraseña **sigue sin cargar**. La campaña operó con el respaldo
+> Gmail (`eduardoesper75@gmail.com`) y la casilla institucional **no pudo medirse**. Mientras no se
+> cargue, las respuestas que lleguen a `edu.esper@glassworldstudio.com.ar` quedan fuera del registro.
+> **Contingencia:** medir Gmail (hecho el 22-10) y repetir el barrido institucional al resolver el
+> acceso.
+>
+> **Acceso seguro (procedimiento):** (1) definir/rotar la contraseña desde el panel de Don Web;
+> (2) guardarla en el gestor de contraseñas del owner; (3) cargarla sólo en el `.env` de
+> OpenOutreach (fuera del repo); (4) verificar con `run.ps1 status`; (5) hacer un envío de prueba a
+> la propia casilla; (6) registrar la fecha acá. **Nunca** commitear el `.env` ni pegar la
+> contraseña en documentos.
+
 ### Verificación
 
 ```powershell

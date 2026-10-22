@@ -1,5 +1,9 @@
 # Parte de Situación Estratégica — Frente 2
 
+> ⚠️ **Documento superado (corte 16-10-2026).** No refleja la campaña actual: desde entonces hubo
+> **30 envíos reales**, el modo operativo pasó a `reposo` y las cifras de mercado fueron corregidas.
+> **Usar [`GWS_Informe_Situacion_Campana.md`](./GWS_Informe_Situacion_Campana.md) (corte 22-10-2026).**
+
 > **Glass World Studio (GWS) busca Alianzas Estratégicas: Inversores, Desarrolladores y Logística.**
 > Orden de prioridad: 1) Inversores y capital · 2) Desarrolladores · 3) Logística (pilar operativo).
 > Estado de situación del motor de alianzas.

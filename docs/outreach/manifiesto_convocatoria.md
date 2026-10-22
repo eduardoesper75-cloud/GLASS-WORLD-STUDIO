@@ -107,7 +107,8 @@ That is where GWS is born.
 
 ## II. THE HISTORIC VACANCY
 
-A millenary industry —**USD 450 billion per year, more than 50 million people**— still operates by
+A millenary industry —**flat glass moves USD 323.2 billion (2025), heading to USD 450.2 billion
+(2033)**— still operates by
 hand, fragmented across thousands of workshops, plants, distributors and artists who do not know
 each other. There is no place where the master, the factory, the refractory supplier, the fragile-
 cargo hauler and the international buyer speak the same language.

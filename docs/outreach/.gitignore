@@ -1,0 +1,4 @@
+# Registros de campaña con datos de terceros: locales, nunca versionados.
+# El esquema y el ejemplo viven en `respuestas.template.jsonl` (versionado).
+respuestas.jsonl
+respuestas-scan.json

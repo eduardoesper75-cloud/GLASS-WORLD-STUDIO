@@ -170,7 +170,7 @@ Los registros viven **fuera de git** por contener datos de terceros y se respald
 | Registro | Ruta |
 |---|---|
 | Envíos | `docs/logistica/send-log.jsonl` |
-| Respuestas / bajas / rebotes | `docs/logistica/respuestas.jsonl` |
+| Respuestas / bajas / rebotes | `docs/outreach/respuestas.jsonl` |
 | Seguimiento generado | `docs/logistica/seguimiento.md` |
 | Base de puertas | `docs/outreach/scouting/puertas.csv` |
 | Base limpia | `docs/outreach/scouting/puertas-curadas.csv` |
@@ -181,7 +181,7 @@ Respaldo (fuera del repo, sin secretos ni datos versionados):
 ```powershell
 $dst = "$env:LOCALAPPDATA\gws-tools\backups\$(Get-Date -Format yyyy-MM-dd_HHmm)"
 New-Item -ItemType Directory -Force $dst | Out-Null
-Copy-Item docs/logistica/send-log.jsonl, docs/logistica/respuestas.jsonl, docs/logistica/seguimiento.md $dst -ErrorAction SilentlyContinue
+Copy-Item docs/logistica/send-log.jsonl, docs/outreach/respuestas.jsonl, docs/outreach/respuestas-scan.json, docs/logistica/seguimiento.md $dst -ErrorAction SilentlyContinue
 Copy-Item docs/outreach/scouting/* $dst -ErrorAction SilentlyContinue
 ```
 

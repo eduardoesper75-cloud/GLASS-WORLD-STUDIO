@@ -33,8 +33,8 @@ propósito, un acto explícito y versionado: se edita este archivo, se revisa y 
 
 ## Cómo se reanuda (cuando corresponda)
 
-1. Confirmar el corte de medición: respuestas del 1er toque registradas en
-   `docs/logistica/respuestas.jsonl`.
+1. Confirmar el corte de medición: eventos del 1er toque registrados en
+   `docs/outreach/respuestas.jsonl` (respuestas, bounces, autorespuestas o `sin_novedad`).
 2. Revisar la lista selectiva: `docs/outreach/scouting/puertas-curadas.csv`.
 3. Cambiar la primera línea de este archivo a `estado: activo`, con la fecha y el motivo del reinicio.
 4. Verificar el emisor institucional (contraseña de la casilla Don Web en `.env.local`; ver

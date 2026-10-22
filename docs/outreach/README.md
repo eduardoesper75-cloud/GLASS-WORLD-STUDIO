@@ -17,6 +17,17 @@
 
 ---
 
+## Estado actual (22-10-2026)
+
+**Fase 1 cerrada:** 30 envíos reales, **0 respuestas reales**, **30 contactos sin novedad** y CSV
+sincronizados (18 inversores/industria + 12 logística). La campaña sigue en **`reposo`**; la Fase 2
+(**20 puertas validadas**) está pendiente.
+
+- [`GWS_Informe_Continuidad_2026-10-22.md`](./GWS_Informe_Continuidad_2026-10-22.md) — cierre de Fase 1 y plan de Fases 2–3.
+- [`GWS_Reporte_Bandeja_2026-10-22.md`](./GWS_Reporte_Bandeja_2026-10-22.md) — barrido de bandeja y eventos.
+
+---
+
 ## Empezá por acá
 
 | Documento | Para qué |
@@ -60,6 +71,8 @@
 | --- | --- | --- |
 | `tools/outreach/scout-curate.mjs` | **Curador del scouting:** valida, deduplica y emite la base limpia de puertas | No |
 | `tools/outreach/followup-status.mjs` | Estado por contacto y elegibilidad para el 2º toque (lee el registro real) | No |
+| `tools/outreach/review-inbox.mjs` | Barrido IMAP **de solo lectura**: clasifica respuestas, bounces, autorespuestas y bajas | No |
+| `tools/outreach/sync-campaign.mjs` | Sincroniza los CSV con `send-log.jsonl` (dry-run por defecto; `--apply` escribe) | No |
 | `tools/outreach/send-batch.mjs` | Emisor por lotes (idempotente, con *throttle*). **Bloqueado en modo `reposo`** | Sí, sólo con `estado: activo` |
 
 Generadores de piezas: `inversores/generate-correos-institucionales.mjs`,
@@ -72,8 +85,8 @@ Generadores de piezas: `inversores/generate-correos-institucionales.mjs`,
 
 | Registro | Ruta |
 | --- | --- |
-| Envíos | `docs/logistica/send-log.jsonl` |
-| Respuestas / bajas / rebotes | `docs/logistica/respuestas.jsonl` |
+| Envíos | `docs/logistica/send-log.jsonl` (**fuente canónica**) |
+| Respuestas / bajas / rebotes | `docs/outreach/respuestas.jsonl` |
 | Seguimiento | `docs/logistica/seguimiento.md` |
 | Base de puertas y base limpia | `docs/outreach/scouting/puertas.csv` · `puertas-curadas.csv` |
 

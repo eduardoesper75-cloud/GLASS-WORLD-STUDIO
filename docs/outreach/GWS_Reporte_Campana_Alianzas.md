@@ -8,6 +8,10 @@
 > estimadas ni contactos inventados. Las fechas de agenda pendientes quedan como
 > `[COMPLETAR: ...]` hasta que existan.
 
+> **Corte:** 17-10-2026. Para el estado medido al 22-10 (30 envíos, 0 respuestas reales,
+> 30 sin novedad, CSV sincronizados), ver
+> [`GWS_Informe_Continuidad_2026-10-22.md`](./GWS_Informe_Continuidad_2026-10-22.md).
+
 ---
 
 ## 1. Canales oficiales (obligatorios en toda comunicación)
@@ -105,11 +109,12 @@ Fuente: `docs/logistica/send-log.jsonl` (archivo de trabajo, ignorado por git).
 
 ## 5. Seguimiento y respuestas
 
-- **Respuestas registradas: 0.** El registro de respuestas (`docs/logistica/respuestas.jsonl`) todavía
-  no tiene entradas: no hay datos de respuesta que reportar.
+- **Respuestas registradas: 0.** Al 17-10 el registro (`docs/outreach/respuestas.jsonl`) no tenía
+  entradas. El barrido de solo lectura del **22-10** registró **30 contactos sin novedad** y
+  **0 respuestas reales** (ver el informe de continuidad).
 - **Puerta de la campaña:** medir la respuesta del 1er toque **antes** de un nuevo envío.
-- **Elegibles para 2º toque: 0** al día de hoy (la regla exige ≥ 5 días desde el último envío sin
-  respuesta, y un máximo de **3 toques** por contacto).
+- **Elegibles para 2º toque: 0** al 17-10. Al 22-10 los 30 cumplen el criterio de tiempo, pero la
+  Fase 1 prohíbe el segundo toque: la reactivación es Fase 3 (ver informe de continuidad).
 
 Herramienta de seguimiento (lee el registro real, no inventa datos):
 
