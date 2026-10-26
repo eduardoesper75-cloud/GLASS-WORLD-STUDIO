@@ -21,7 +21,7 @@
 .PARAMETER Bundle
   Bundle saneado. Default: el `gws-scrubbed-*.bundle` mas reciente en OutDir.
 .PARAMETER OutDir
-  Carpeta de artefactos (default: %LOCALAPPDATA%\Temp\opencode\gws-scrub).
+  Carpeta de artefactos (default: $env:LOCALAPPDATA\Temp\opencode\gws-scrub).
 .PARAMETER Branch
   Rama a reescribir (default: main).
 .PARAMETER Execute

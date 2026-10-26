@@ -3,7 +3,7 @@
 > **Estado: DESPLEGADO Y VERIFICADO** · 15-10-2026
 > **URL pública (deploy): <https://glass-world-studio.vercel.app>**
 > **Dominio oficial: <https://www.glassworldstudio.com.ar>** (y <https://glassworldstudio.ar>)
-> Proyecto: `eduardoesper75-4497/glass-world-studio` · `main` · Next.js 15.5.27 · pnpm 9 workspace
+> Proyecto: `<VERCEL_ORG>/glass-world-studio` · `main` · Next.js 15.5.27 · pnpm 9 workspace
 
 ---
 
@@ -96,7 +96,7 @@ build compila primero el motor en orden topológico (`schemas` antes que `taxono
 
 | Clave | Dónde vive realmente |
 |---|---|
-| `OPENOUTFIND_LLM_API_KEY` | `C:\Users\eduesper\AppData\Local\gws-tools\openoutreach\.env` |
+| `OPENOUTFIND_LLM_API_KEY` | `<LOCAL_OPENOUTREACH_ENV>` |
 | `OPENOUTFIND_BETTERCONTACT_API_KEY` | ídem |
 | `OPENOUTFIND_APOLLO_API_KEY` | ídem |
 | `OUTSEND_MAILBOX_PASSWORD` | ídem |
@@ -142,16 +142,17 @@ duplicaría contenido sin `hreflang`. Si algún día se migra a locales por ruta
 
 ```powershell
 # Requisito: CLI autenticada (vercel login)
-cd "C:\Users\eduesper\Documents\Proyecto predeterminado"   # SIEMPRE desde la raíz del repo
+cd (git rev-parse --show-toplevel)   # SIEMPRE desde la raíz del repo
 pnpm dlx vercel@latest --prod
 ```
 
 `vercel --prod` re-promociona la producción y actualiza el alias
 `https://glass-world-studio.vercel.app`.
 
-> El proyecto **no** tiene integración Git (el repo todavía no tiene remoto), así que el deploy es
-> **manual**. Cuando exista remoto en GitHub, conviene conectar el repo para despliegues automáticos
-> (Vercel respeta el Root Directory ya configurado).
+> El proyecto Vercel **no tiene una integración Git automática configurada (no consta)**, así que el
+> deploy es **manual**. El repositorio local sí es Git y tiene remoto GitHub; el proyecto Vercel no se
+> vincula automáticamente a ese remoto. Conectar la integración Vercel–GitHub es una decisión separada
+> y no se verificó desde la cuenta. (Vercel respeta el Root Directory ya configurado).
 
 ---
 

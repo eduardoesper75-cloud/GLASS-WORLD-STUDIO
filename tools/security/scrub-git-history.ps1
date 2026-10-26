@@ -22,7 +22,7 @@
 .PARAMETER Repo
   Ruta del repositorio en vivo (default: directorio actual).
 .PARAMETER OutDir
-  Carpeta de salida (default: %LOCALAPPDATA%\Temp\opencode\gws-scrub).
+  Carpeta de salida (default: $env:LOCALAPPDATA\Temp\opencode\gws-scrub).
 .PARAMETER ExtraSecrets
   Secretos adicionales a redactar (p. ej. contraseñas de cuenta ya no válidas).
 .PARAMETER ExtraSecretsFile
