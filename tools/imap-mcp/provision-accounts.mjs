@@ -10,14 +10,13 @@
 //   IMAP_MCP_ACCOUNT_<NOMBRE>_IMAP_PASSWORD
 //
 // <NOMBRE> = nombre de la cuenta en MAYÚSCULAS con todo lo no alfanumérico
-// reemplazado por "_". Ej.: "eduardoesper75" -> EDUARDOESPER75.
+// reemplazado por "_". Ej.: "mi-cuenta" -> MI_CUENTA.
 //
 // Así NINGÚN secreto se escribe en disco: solo viven en `.env` / `.env.local`
 // y en memoria del proceso (ver `launch.mjs`).
 //
 // Uso:
-//   node provision-accounts.mjs
-//   node provision-accounts.mjs --mailbox "eduardoesper75=eduardoesper75@gmail.com"
+//   node provision-accounts.mjs --mailbox "nombre=cuenta@dominio"
 //   node provision-accounts.mjs --remove "nombre"
 // =====================================================================
 
@@ -29,12 +28,6 @@ import { dirname, join } from 'node:path';
 const STORE_DIR = join(homedir(), '.imap-mcp');
 const ACCOUNTS_PATH = join(STORE_DIR, 'accounts.json');
 const KEY_PATH = join(STORE_DIR, '.key');
-
-// Casilla oficial de Gmail de GWS (canal secundario). La casilla institucional
-// (edu.esper@glassworldstudio.com.ar) no es de Gmail y se configura aparte.
-const DEFAULT_MAILBOXES = [
-  { name: 'eduardoesper75', email: 'eduardoesper75@gmail.com' },
-];
 
 const IMAP_HOST = 'imap.gmail.com';
 const IMAP_PORT = 993;
@@ -107,7 +100,15 @@ function upsert(accounts, mailbox) {
 
 function main() {
   const { mailboxes, remove } = parseArgs(process.argv.slice(2));
-  const target = mailboxes.length > 0 ? mailboxes : DEFAULT_MAILBOXES;
+  if (mailboxes.length === 0 && remove.length === 0) {
+    process.stderr.write(
+      'Uso: node provision-accounts.mjs --mailbox "nombre=cuenta@dominio" ' +
+        'o --remove "nombre"\n',
+    );
+    process.exitCode = 1;
+    return;
+  }
+  const target = mailboxes;
 
   const key = ensureKey();
   const accounts = loadAccounts();

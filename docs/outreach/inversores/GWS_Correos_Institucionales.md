@@ -8,7 +8,7 @@
 ---
 
 ## Alaya Capital Partners
-**Para:** info@alaya-capital.com
+**Para:** <DESTINATARIO>
 **Perfil:** fondo · **Web:** https://alaya-capital.com/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -51,7 +51,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Red Sudamericana de Inversiones
-**Para:** admin@angelesinversionistas.com
+**Para:** <DESTINATARIO>
 **Perfil:** angel · **Web:** https://www.angelesinversionistas.com/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -94,7 +94,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## IESE BAN
-**Para:** businessangels@iese.edu
+**Para:** <DESTINATARIO>
 **Perfil:** angel · **Web:** https://www.iese.edu/es/emprendedores/business-angels/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -137,7 +137,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## ANFEVI
-**Para:** asociacion@anfevi.com
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://www.anfevi.com/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -180,7 +180,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## CAVIPLAN
-**Para:** caviplan@caviplan.org.ar
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://www.caviplan.org.ar/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -223,7 +223,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## AMEVEC
-**Para:** contacto@amevec.mx
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://amevec.mx/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -266,7 +266,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Vidrala
-**Para:** marketing@vidrala.com
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://www.vidrala.com/es/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -309,7 +309,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Envases del Sur
-**Para:** info@envasesdelsur.com
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** http://www.envasesdelsur.com/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -352,7 +352,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Family Capital
-**Para:** contacto@familycapital.com.ar
+**Para:** <DESTINATARIO>
 **Perfil:** fondo · **Web:** https://familycapital.com.ar/en/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -395,7 +395,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Adduntia
-**Para:** info@adduntia.com
+**Para:** <DESTINATARIO>
 **Perfil:** fondo · **Web:** https://adduntia.com/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -438,7 +438,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Glass Alliance Europe
-**Para:** info@glassallianceeurope.eu
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://glassallianceeurope.eu/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -481,7 +481,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Glass for Europe
-**Para:** info@glassforeurope.com
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://glassforeurope.com/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -524,7 +524,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Glass Packaging Institute
-**Para:** sdefife@gpi.org
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://www.gpi.org/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -567,7 +567,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Assovetro
-**Para:** assovetro@assovetro.it
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://www.assovetro.it/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -610,7 +610,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Bundesverband Glasindustrie e.V.
-**Para:** info@bvglas.de
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://www.bvglas.de/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -653,7 +653,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Associação Brasileira das Indústrias de Vidro
-**Para:** contato@abividro.org.br
+**Para:** <DESTINATARIO>
 **Perfil:** industrial · **Web:** https://abividro.org.br/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -696,7 +696,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## Inveready
-**Para:** info@inveready.com
+**Para:** <DESTINATARIO>
 **Perfil:** fondo · **Web:** https://inveready.com/
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio
@@ -739,7 +739,7 @@ Santiago del Estero, República Argentina
 ---
 
 ## FORUM GmbH
-**Para:** info@forumgruppe.de
+**Para:** <DESTINATARIO>
 **Perfil:** fondo · **Web:** https://www.forumgruppe.de/es
 
 **Asunto:** Alianzas estratégicas · Inversores — Convocatoria a co-construir el ecosistema digital del vidrio

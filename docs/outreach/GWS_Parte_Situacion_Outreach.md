@@ -134,9 +134,10 @@ costos confirmados. La prioridad 1 (arte frágil) es el núcleo y está sin vali
 - **Versionado:** kits, manifiesto, secuencias, playbook, pitch deck, generadores, `prospects.template.csv`, reportes, CLI/partes de correo.
 - **Ignorado (PII, correcto):** `prospects.csv`, `prospects_devs.csv`, `github-tanda*.csv`, `drafts*.md`,
   `GWS_Envio_Devs.md`, `logistica_aliados.csv`, `agencias_tech.csv`, `data/mail-cleanup/`, `.env.local`.
-- ✅ **Fuga de secretos (S1) — RESUELTO (16-10-2026):** credenciales redactadas (`<REDACTADO>`) e
-  **historial saneado y adoptado**; escáner limpio (árbol + 48 commits). Falta solo la **rotación
-  manual** de las 4 credenciales (usuario). Ver `docs/security/GWS_S1_Remediacion_Credenciales.md`.
+- **Incidente S1 — estado no cerrado:** las credenciales fueron retiradas del árbol, pero la
+  **rotación de las cuatro credenciales sigue pendiente** y el **historial no se declara purgado**;
+  no hay evidencia actual de un escáner limpio sobre 48 commits. Ver
+  `docs/security/GWS_S1_Remediacion_Credenciales.md`.
 - ✅ **Checklist de salida** (`GWS_Checklist_Salida_Operativa.md`): **redeploy hecho (16-10-2026)**.
   Contacto oficial publicado en `/novedades` (`edu.esper@glassworldstudio.com.ar`), sin correo viejo. Brecha
   menor: el **teléfono** `+54 9 385 622-8400` **no está en la web** (nunca estuvo).

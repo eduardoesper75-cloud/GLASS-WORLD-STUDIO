@@ -129,22 +129,22 @@ function curlSend({ from, to, pass, raw, insecure, host, port }) {
 //   2) Respaldo: canal secundario de Gmail, si hay app password configurada.
 function describeTransport(env) {
   const institutional = {
-    address: env.OUTSEND_MAILBOX_ADDRESS || 'edu.esper@glassworldstudio.com.ar',
+    address: env.OUTSEND_MAILBOX_ADDRESS || '',
     password: env.OUTSEND_MAILBOX_PASSWORD || '',
     host: env.OUTSEND_SMTP_HOST || DEFAULT_SMTP.host,
     port: Number(env.OUTSEND_SMTP_PORT || DEFAULT_SMTP.port),
     label: 'institucional (Don Web)',
   };
-  if (institutional.password) return institutional;
+  if (institutional.address && institutional.password) return institutional;
 
   const gmail = {
-    address: env.IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_USERNAME || 'eduardoesper75@gmail.com',
+    address: env.IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_USERNAME || '',
     password: env.IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD || '',
     host: 'smtp.gmail.com',
     port: 587,
     label: 'personal Gmail (respaldo)',
   };
-  if (gmail.password) return gmail;
+  if (gmail.address && gmail.password) return gmail;
 
   // Sin credenciales: se informa el emisor PREVISTO (canal primario) y se exige
   // la contraseña recién al enviar de verdad.
@@ -191,10 +191,11 @@ async function main() {
     process.exitCode = 1;
     return;
   }
-  if (!pass) {
+  if (!from || !pass) {
     console.error(
-      'Faltan credenciales SMTP en .env.local: definí OUTSEND_MAILBOX_PASSWORD (casilla ' +
-        'institucional de Don Web) o, como respaldo, la app password del canal Gmail.',
+      'Faltan credenciales SMTP en .env.local: definí OUTSEND_MAILBOX_ADDRESS y ' +
+        'OUTSEND_MAILBOX_PASSWORD para la casilla institucional, o las variables explícitas ' +
+        'del canal Gmail de respaldo. No hay direcciones por defecto.',
     );
     process.exitCode = 1;
     return;

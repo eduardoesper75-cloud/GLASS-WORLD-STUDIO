@@ -9,7 +9,7 @@
 
 ## Universal Cargo Argentina · Arte frágil
 **Categoría:** arte_fragil · **Prioridad:** 1
-**Para:** info@universalcargo.com.ar
+**Para:** <DESTINATARIO>
 **Web:** https://esp.universalcargo.com.ar/categoria.asp?id=434
 
 **Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
@@ -138,7 +138,7 @@ Santiago del Estero, República Argentina
 
 ## Masterpiece International · Arte frágil
 **Categoría:** arte_fragil · **Prioridad:** 1
-**Para:** sales@masterpieceintl.com
+**Para:** <DESTINATARIO>
 **Web:** https://masterpieceintl.com/
 
 **Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
@@ -224,7 +224,7 @@ Santiago del Estero, República Argentina
 
 ## Movart · Arte frágil
 **Categoría:** arte_fragil · **Prioridad:** 1
-**Para:** c.arellano@movart.com.mx
+**Para:** <DESTINATARIO>
 **Web:** https://www.movart.com.mx/
 
 **Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
@@ -267,7 +267,7 @@ Santiago del Estero, República Argentina
 
 ## PalletCo · Empaque / Crating
 **Categoría:** empaque_crating · **Prioridad:** 2
-**Para:** info@palletco.com.ar
+**Para:** <DESTINATARIO>
 **Web:** https://palletco.com.ar/pallets-exportacion-nimf-15/
 
 **Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
@@ -310,7 +310,7 @@ Santiago del Estero, República Argentina
 
 ## Integral Project · Empaque / Crating
 **Categoría:** empaque_crating · **Prioridad:** 2
-**Para:** contacto@integralproject.cl
+**Para:** <DESTINATARIO>
 **Web:** https://integralproject.cl/tipos-de-embalajes/
 
 **Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
@@ -353,7 +353,7 @@ Santiago del Estero, República Argentina
 
 ## Embamat · Empaque / Crating
 **Categoría:** empaque_crating · **Prioridad:** 2
-**Para:** info@embamat.com
+**Para:** <DESTINATARIO>
 **Web:** https://embamat.eu/
 **Teléfono:** 937 360 660
 
@@ -397,7 +397,7 @@ Santiago del Estero, República Argentina
 
 ## Lumber & Pallets · Empaque / Crating
 **Categoría:** empaque_crating · **Prioridad:** 2
-**Para:** contacto@lumberandpallets.com
+**Para:** <DESTINATARIO>
 **Web:** https://www.lumberandpallets.com/
 
 **Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio

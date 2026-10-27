@@ -58,29 +58,8 @@ Santiago del Estero, República Argentina
 
 ## Rutas de contacto institucional (extraídas de sitios oficiales)
 
-| Organización | Canal de contacto | Fuente |
-| --- | --- | --- |
-| Alaya Capital Partners | info@alaya-capital.com | alaya-capital.com |
-| Kibo Ventures | [COMPLETAR: formulario/emisión] | kiboventures.com |
-| Caixa Capital Risc | [COMPLETAR: sitio con error TLS] | criteriacaixa.com |
-| Fondo de Fondos (MX) | [COMPLETAR: formulario] | fdf.mx |
-| 54 Ventures | [COMPLETAR] | — |
-| Red Sudamericana de Inversiones | admin@angelesinversionistas.com | angelesinversionistas.com |
-| Business Angels Club | formulario: businessangelsclub.org/contacto.html | businessangelsclub.org |
-| IESE Business Angels Network | businessangels@iese.edu | iese.edu |
-| AEBAN | [COMPLETAR: sitio con error TLS] | aeban.es |
-| ANFEVI | asociacion@anfevi.com | anfevi.com |
-| CAVIPLAN | caviplan@caviplan.org.ar | caviplan.org.ar |
-| CAFAVI | [COMPLETAR] | guiadelpackaging.com.ar |
-| AMEVEC | contacto@amevec.mx | amevec.mx |
-| Vidrala | marketing@vidrala.com | vidrala.com |
-| Verallia Argentina | [COMPLETAR: formulario] | ar.verallia.com |
-| Rigolleau | formulario: rigolleau.com.ar/index.php/contacto/ | rigolleau.com.ar |
-| Envases del Sur | info@envasesdelsur.com | envasesdelsur.com |
-| Family Capital | contacto@familycapital.com.ar | familycapital.com.ar |
-| Adduntia Multifamily Office | info@adduntia.com | adduntia.com |
-| MdF Family Partners | [COMPLETAR] | wefamilyoffices.com |
+La tabla de contactos institucionales se mantiene fuera de esta versión publicable.
+Las direcciones concretas deben completarse o consultarse desde la fuente oficial antes de
+cualquier envío; no se incluyen en el documento para evitar publicar datos de terceros.
 
-*Los correos son direcciones institucionales generales publicadas por cada organización en su propio
-sitio. Verificar antes de enviar. No se inventaron contactos: lo no confirmado queda como
-`[COMPLETAR]`.*
+*Los contactos no confirmados quedan como `[COMPLETAR]` en el flujo de trabajo interno.*

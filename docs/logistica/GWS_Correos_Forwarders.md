@@ -9,7 +9,7 @@
 
 ## Oceanic Logística · Forwarder / carga internacional
 **Categoría:** forwarder · **Prioridad:** 3
-**Para:** contacto@oceanic-international.com
+**Para:** <DESTINATARIO>
 **Web:** https://www.oceanicinternationaltrade.com/
 
 **Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
@@ -52,7 +52,7 @@ Santiago del Estero, República Argentina
 
 ## BAIFF Freight · Forwarder / carga internacional
 **Categoría:** forwarder · **Prioridad:** 3
-**Para:** comercial@baiffreight.com.ar
+**Para:** <DESTINATARIO>
 **Web:** https://freightforwarderservices.com/argentina/
 **Teléfono:** +54 11 5218-1800
 
@@ -182,7 +182,7 @@ Santiago del Estero, República Argentina
 
 ## Atlantic Cargo SRL / Transmodal · Forwarder / carga internacional
 **Categoría:** forwarder · **Prioridad:** 3
-**Para:** bmezzabotta@transmodal.com.ar
+**Para:** <DESTINATARIO>
 **Web:** https://fiata.org/directory/ar/
 **Teléfono:** +54 9 341 581 8628
 

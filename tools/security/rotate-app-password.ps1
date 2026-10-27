@@ -13,24 +13,22 @@
 .EXAMPLE
   # 1) Revocá la vieja y generá la nueva en https://myaccount.google.com/apppasswords
   # 2) Ejecutá:
-  powershell -ExecutionPolicy Bypass -File tools/security/rotate-app-password.ps1 -Account eduardoesper75 -Validate
+  powershell -ExecutionPolicy Bypass -File tools/security/rotate-app-password.ps1 -Account "mi-cuenta" -Validate
 #>
 #
 # NOTA: la casilla de envío del runner OpenOutreach es la INSTITUCIONAL
 # (edu.esper@glassworldstudio.com.ar, Don Web, NO Google): su contraseña se define en el
 # `.env` del runner, no con una app password de Google (Checklist de salida §1).
 param(
-  [ValidateSet('eduardoesper75')]
-  [string]$Account = 'eduardoesper75',
+  [Parameter(Mandatory=$true)]
+  [string]$Account,
   [string]$EnvFile = (Join-Path $PSScriptRoot '..\..\.env.local'),
   [switch]$Validate
 )
 
 $ErrorActionPreference = 'Stop'
 
-$KEY = @{
-  'eduardoesper75' = 'IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD'
-}[$Account]
+$KEY = 'IMAP_MCP_ACCOUNT_' + (($Account.ToUpperInvariant() -replace '[^A-Z0-9]', '_')) + '_IMAP_PASSWORD'
 
 Write-Host "Casilla: $Account  ->  clave en .env: $KEY" -ForegroundColor Cyan
 Write-Host "Paso previo (manual): revocá la app password vieja y creá una nueva en" -ForegroundColor Yellow

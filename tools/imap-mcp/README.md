@@ -14,7 +14,7 @@ World Studio usando [`nikolausm/imap-mcp-server`](https://github.com/nikolausm/i
 El servidor está instalado **fuera del repo**, junto al resto del tooling MCP:
 
 ```
-%LOCALAPPDATA%\gws-tools\imap-mcp-server\node_modules\imap-mcp-server\dist\index.js
+$env:LOCALAPPDATA\gws-tools\imap-mcp-server\node_modules\imap-mcp-server\dist\index.js
 ```
 
 ## Puesta en marcha
@@ -30,24 +30,25 @@ El servidor está instalado **fuera del repo**, junto al resto del tooling MCP:
 2. **Dar de alta las casillas** (crea `~/.imap-mcp/accounts.json`, sin secretos):
 
    ```powershell
-   node tools/imap-mcp/provision-accounts.mjs
+   node tools/imap-mcp/provision-accounts.mjs --mailbox "nombre=cuenta@dominio"
    ```
 
 3. **Definir credenciales en `.env.local`** (nunca versionado). Las claves son
    contraseñas de aplicación de Gmail (requieren verificación en dos pasos):
 
    ```dotenv
-   # eduardoesper75@gmail.com (canal secundario oficial)
-   IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_USERNAME=eduardoesper75@gmail.com
-   IMAP_MCP_ACCOUNT_EDUARDOESPER75_IMAP_PASSWORD=xxxxxxxxxxxxxxxx
+   # Cuenta secundaria explícita (sin valores por defecto en el repo)
+   IMAP_MCP_ACCOUNT_<NOMBRE>_IMAP_USERNAME=cuenta@dominio
+   IMAP_MCP_ACCOUNT_<NOMBRE>_IMAP_PASSWORD=xxxxxxxxxxxxxxxx
    ```
 
    > La casilla institucional `edu.esper@glassworldstudio.com.ar` **no** es de Gmail: su
    > IMAP se configura con el proveedor del dominio (Don Web), no con contraseñas de
    > aplicación de Google.
 
-4. **Registrar el MCP en OpenCode**: ya está hecho en `.opencode/opencode.json`
-   (servidor `imap`, apuntando a `launch.mjs`).
+4. **Registrar el MCP en OpenCode**: `.opencode/opencode.json` contiene una
+   configuración propuesta (servidor `imap`, apuntando a `launch.mjs`). La carga
+   efectiva por OpenCode **no está verificada**; no debe presentarse como operativa.
 
 ## Requisitos de credenciales (importante)
 

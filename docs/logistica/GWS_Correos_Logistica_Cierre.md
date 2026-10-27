@@ -311,7 +311,7 @@ Santiago del Estero, República Argentina
 
 ## Chubb Chile · Seguro de carga
 **Categoría:** seguro_carga · **Prioridad:** 6
-**Para:** transportes.cl@chubb.com
+**Para:** <DESTINATARIO>
 **Web:** https://www.chubb.com/cl-es/empresas/empresas-por-tipo-transporte.html
 
 **Asunto:** Alianzas estratégicas · Logística — Glass World Studio, el ecosistema global del vidrio
@@ -397,7 +397,7 @@ Santiago del Estero, República Argentina
 
 ## International Cargo · Seguro de carga
 **Categoría:** seguro_carga · **Prioridad:** 6
-**Para:** intlcargo@intlcargo.com.ar
+**Para:** <DESTINATARIO>
 **Web:** http://www.intlcargo.com.ar/seguro_internacional.html
 **Teléfono:** +54 11 4384 5555
 
