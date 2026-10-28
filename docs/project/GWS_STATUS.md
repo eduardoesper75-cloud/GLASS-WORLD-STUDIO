@@ -1,79 +1,94 @@
 # GWS · Estado de trabajo
 
-**Fecha:** 2026-10-26
-**Rama de preparación:** `integration/gws-two-fronts-20261026`
-**Commit base:** `77301a0`
-**HEAD de preparación:** `e457dfb`
-**Rama publicada:** `workspace/2026-10-24`
-**SHA remoto verificado:** `e457dfb`
+**Fecha:** 2026-10-27
+**Rama de preparación:** `docs/GWS-TWO-FRONTS-WORKFLOW-001-circuito-operativo`
+**Commit base:** `1bdafd2df3057d633c47a998da982ef5aca7830f`
+**Rama publicada de referencia:** `workspace/2026-10-24`
+**SHA remoto verificado:** `1bdafd2df3057d633c47a998da982ef5aca7830f`
 **Remoto:** `https://github.com/eduardoesper75-cloud/GLASS-WORLD-STUDIO.git`
 
 ## 1. Avances comprobados
 
-- El Workspace A es la fuente canónica: repositorio Git, remoto `origin`,
-  upstream `origin/workspace/2026-10-24` y HEAD `77301a0`.
-- Al inicio de la preparación, `workspace/2026-10-24` estaba en `77301a0`.
-  Tras la aprobación, el remoto quedó verificado en `e457dfb`.
-- La ruta declarada como Workspace B no existe. La copia observada en
-  `D:\Downloads` es un repositorio distinto, sin `apps/web` ni paquete GWS; no
-  contiene trabajo exclusivo que incorporar.
-- Se creó un worktree separado y reversible para la preparación. El árbol
-  original no fue reseteado ni limpiado; conserva su estado local.
-- Se prepararon y publicaron los 29 archivos de gobernanza revisados, sin
-  activar agentes. La copia coincide byte a byte con el Workspace A.
-- Se prepararon y publicaron los 3 archivos del paquete S1.
-- Se prepararon tres documentos de planificación en `docs/project/`, todavía
-  no publicados.
-- Se prepararon correcciones documentales y defaults explícitos para C, todavía
-  no publicados. No se ejecutaron esos scripts.
-- La auditoría `docs/agents/GWS_PRE_APPROVAL_AUDIT.md` no se copió al worktree.
-- Tras publicar A y S1, el worktree conserva 10 archivos modificados y 3
-  archivos nuevos de C/P, sin stage ni commit.
+- El Workspace A es la fuente canónica y está alineado con
+  `origin/workspace/2026-10-24` en `1bdafd2`.
+- El worktree de integración existente sigue en `1bdafd2`, limpio y sin
+  reutilizarse para el trabajo diario.
+- La rama documental de esta orden nace de `1bdafd2` y contiene únicamente la
+  preparación del circuito operativo, las plantillas y la actualización de
+  planificación.
+- Los cambios locales de configuración, los archivos ya trackeados y la
+  auditoría no trackeada permanecen en el Workspace A; no se copiaron a esta
+  rama.
+- La rama documental fue publicada en el PR #1; el PR está abierto y no
+  fusionado. No se crearon issues, Project, workflows ni reglas de protección.
 
-## 2. Bloqueos
+## 2. Línea base funcional
 
-- **Publicación:** A y S1 fueron aprobados y publicados en `e457dfb`. C y P
-  siguen sin aprobación de publicación.
-- **Rotación S1:** el titular confirmó la revocación de las cuatro credenciales;
-  no hay verificación independiente de ese estado.
-- **Contactos:** el titular aprobó los contactos propios para C, pero C no fue
-  seleccionado para publicar. No se borraron contactos por patrón.
-- **Registros privados:** la retirada del árbol publicado está propuesta, no
-  ejecutada; las copias locales se preservan.
-- **MCP:** no se verificó el consumidor ni la carga efectiva de la configuración.
-  No se publican placeholders como configuración operativa.
-- **`main`:** no se modificó y no comparte ancestro con la rama de preparación.
-- **Tablero GitHub:** no se creó. Faltan permisos y aprobación del lote.
+`GWS-GITHUB-CONSTRUCTION-BASELINE-001` no tiene evidencia de ejecución en
+documentos, commits, issues o PRs consultados. Se mantiene como dependencia.
+Las tareas de construcción propuestas no se inician hasta que esa línea base
+esté disponible o el titular autorice un alcance alternativo.
 
-## 3. Pruebas
+### 2.1 Inventario y pruebas
 
-- `git diff --check` sobre el worktree: sin errores.
-- `node --check` sobre los tres scripts `.mjs`: sin errores.
-- Parser de PowerShell sobre los tres scripts `.ps1`: sin errores.
-- `node tools/governance/verify-agents.mjs`: 346/346, 0 fallos.
-- Búsqueda de patrones de secretos duros en los candidatos: 0 coincidencias;
-  alcance limitado al texto actual, no al historial ni a tokens/PII de terceros.
-- Revisión de que no se copiaron configuraciones MCP ni la auditoría.
-- Los 29 archivos de gobernanza y los 3 archivos S1 copiados coinciden con el
-  Workspace A. Dos hashes de una auditoría anterior (Director de Arte y
-  estándar de arte) no coinciden con esa ronda antigua; no hay una línea base
-  de hashes de la revisión más reciente, por lo que la inmovilidad desde esa
-  revisión queda **parcialmente verificada**.
-- No se ejecutó un build como prueba de seguridad. No se ejecutaron envíos,
-  rotaciones ni purgas.
+- **Inventario estático:** documentado en el informe de revisión
+  `GWS-PR1-AND-PRODUCT-BASELINE-001`; cubre rutas, paquetes, datos,
+  autenticación, persistencia, pruebas e integraciones.
+- **Validación ejecutable:** no ejecutada. `node_modules` no está presente y no
+  se instalaron dependencias en esta revisión.
+- **Línea base formal:** no completada. El inventario no reemplaza la tarea
+  `GWS-GITHUB-CONSTRUCTION-BASELINE-001` ni una prueba de producto.
 
-## 4. Decisiones pendientes
+## 3. Revisión de GitHub
 
-1. Aprobar o rechazar la publicación de C.
-2. Aprobar o rechazar la publicación de P.
-3. Aprobar o rechazar la propuesta de retirada de registros privados.
-4. Confirmar las dos diferencias de hash frente a la auditoría anterior, o
-   aceptar el estado actual como base revisada.
-5. Autorizar una tarea separada para MCP.
-6. Definir la estrategia de base estable para `main`; no hay ancestro común.
+Inventario consultado en el remoto:
 
-## 5. Siguiente tarea
+- 0 issues abiertos.
+- 1 PR abierto: #1, contra `workspace/2026-10-24`, no fusionado.
+- La base no contiene `.github`; el PR #1 incorpora dos plantillas de GitHub.
+- 0 workflows de GitHub Actions.
+- No se observó un Project asociado al repositorio.
+- La protección de ramas no pudo verificarse sin autenticación; no se asume
+  activa ni inactiva.
+- El remoto conserva las ramas `main`, `gws` y `workspace/2026-10-24`.
 
-`GWS-SYNC-001` queda parcialmente integrada: A y S1 están publicados. La
-siguiente unidad es revisar C y P para una eventual segunda publicación, sin
-ejecutar la retirada de registros ni publicar configuraciones MCP.
+No se duplicaron plantillas ni se crearon issues, Project, workflows o reglas de
+protección.
+
+## 4. Bloqueos
+
+- **Publicación documental:** publicada en el PR #1; revisión y merge pendientes.
+- **Recursos GitHub:** requieren aprobación separada; no se crean en esta orden.
+- **Seguridad histórica:** falta verificación independiente de la revocación;
+  archivos locales preservados. La exclusión del PR no los convierte en privados
+  ni los retira del árbol publicado.
+- **MCP:** consumidor y carga efectiva no verificados.
+- **Harness:** no hay backend de inferencia autorizado.
+- **`main`:** la `main` local es ancestro de la rama; `origin/main` no comparte
+  ancestro común. La transición es una línea separada y no se ejecuta aquí.
+
+## 5. Pruebas de esta preparación
+
+- `git diff --check`: PASS, sin errores de whitespace.
+- Revisión de enlaces internos y archivos referenciados: PASS.
+- Revisión de secretos en los documentos preparados: sin credenciales,
+  tokens ni contraseñas; solo referencias a las reglas de revisión.
+- Validación de la plantilla de issue: revisión manual de la sintaxis YAML; no
+  hay parser YAML instalado en el entorno.
+- No se ejecutó build ni typecheck de producto. Tampoco se ejecutaron pruebas
+  de producto; esta orden no modifica código y las dependencias no están
+  instaladas.
+
+## 6. Decisiones pendientes
+
+1. Revisar el PR #1 y decidir si se fusiona; no hay aprobación formal registrada.
+2. Confirmar si se completa primero `GWS-GITHUB-CONSTRUCTION-BASELINE-001`.
+3. Aprobar o rechazar la creación futura de issues, Project y protecciones.
+4. Mantener separadas las decisiones de seguridad histórica, MCP, Harness y
+   `main`.
+
+## 7. Siguiente tarea
+
+La siguiente entrada es `TWO_FRONTS_WORKFLOW_REVIEW`: revisar el PR #1 y no
+fusionar sin aprobación humana. No se inicia una tarea de producto hasta
+resolver la dependencia de línea base.
