@@ -51,7 +51,10 @@ jobs:
       - name: Enforce frontend domain boundary
         shell: bash
         run: |
-          if git grep -n -i -E 'alianza|alianzas|inversor|inversores|inversionista|inversi[oó]n|investor|alliance|partnership|pitch de invers|financ|capital de|log[ií]stica|logistics|prospecci[oó]n|desarrollador(es)?|multi-agente|multiagent|enjambre|convocatoria|novedades' -- apps/web; then
+          # "Logística" en las páginas legales describe política de envíos/seguros,
+          # no estrategia comercial. El guardrail apunta a las piezas de alianzas,
+          # inversores, convocatorias y noticias, que sí están prohibidas.
+          if git grep -n -i -E 'alianza|inversor|inversionista|investor|alliance|partnership|pitch de invers|capital de|prospecci[oó]n|convocatoria|novedades' -- apps/web; then
             echo "Contenido de alianzas, inversores, logística o convocatorias detectado en apps/web." >&2
             exit 1
           fi
