@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Glass World Studio · Monoplaza UI baseline</title>
+  <style>
+    :root {
+      --ink: #0d0b09;
+      --panel: #17130f;
+      --line: rgba(238, 209, 154, 0.18);
+      --gold: #e8c98f;
+      --muted: #b9ab97;
+      --paper: #f3e9d7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 82% 8%, rgba(189, 115, 43, 0.2), transparent 26rem),
+        radial-gradient(circle at 8% 40%, rgba(93, 126, 160, 0.12), transparent 30rem),
+        var(--ink);
+      color: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+    }
+    a { color: var(--gold); }
+    .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 72px 0 42px; border-bottom: 1px solid var(--line); }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font: 600 11px/1.2 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0; font-size: clamp(42px, 8vw, 92px); line-height: .92; font-weight: 500; letter-spacing: -.045em; }
+    .lead { max-width: 720px; margin: 24px 0 0; color: var(--muted); font-size: 19px; }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 30px;
+      color: var(--muted); font: 12px/1.4 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: .04em;
+    }
+    .meta strong { color: var(--paper); font-weight: 600; }
+    .notice {
+      margin: 28px 0 0; padding: 18px 20px; border: 1px solid var(--line);
+      background: rgba(255,255,255,.025); color: var(--muted); font-size: 14px;
+    }
+    main { padding: 38px 0 20px; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
+    .card {
+      overflow: hidden; border: 1px solid var(--line); background: var(--panel);
+      box-shadow: 0 24px 80px rgba(0,0,0,.25);
+    }
+    .card:first-child { grid-column: 1 / -1; }
+    .shot { display: block; width: 100%; height: auto; background: #070605; }
+    .card-body { padding: 20px 22px 24px; border-top: 1px solid var(--line); }
+    .route {
+      margin: 0 0 8px; color: var(--gold);
+      font: 600 11px/1.3 ui-sans-serif, system-ui, sans-serif;
+      letter-spacing: .12em; text-transform: uppercase;
+    }
+    h2 { margin: 0 0 8px; font-size: 27px; line-height: 1.1; font-weight: 500; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+    footer { padding: 28px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    code { color: var(--paper); font: 12px ui-monospace, SFMono-Regular, Consolas, monospace; }
+    @media (max-width: 760px) {
+      header { padding-top: 48px; }
+      .grid { grid-template-columns: 1fr; }
+      .card:first-child { grid-column: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <p class="eyebrow">Glass World Studio · Monoplaza UI</p>
+      <h1>Baseline visual<br>del frente web.</h1>
+      <p class="lead">Capturas del build de producción local de la interfaz construida en VS Code. La app se validó con typecheck y build; esta página deja una referencia visual fija para revisión.</p>
+      <div class="meta">
+        <span><strong>Tarea</strong> GWS-BASELINE-AND-MONOPLAZA-SYNC-001</span>
+        <span><strong>Baseline de código</strong> 1bdafd2</span>
+        <span><strong>Build</strong> Next.js 15.5.27</span>
+        <span><strong>Idiomas</strong> es · en · pt · it · fr · de · zh</span>
+      </div>
+      <p class="notice">Esta es una galería estática de auditoría visual. El runtime interactivo de Next.js se ejecutó y validó localmente; GitHub Pages no ejecuta el servidor Next.js.</p>
+    </header>
+
+    <main>
+      <div class="grid">
+        <article class="card">
+          <img class="shot" src="screenshots/landing.png" alt="Portada de bienvenida de Glass World Studio" loading="eager">
+          <div class="card-body">
+            <p class="route">/ · WelcomeCover</p>
+            <h2>Portada de bienvenida</h2>
+            <p>Identidad, arte principal, selector de idioma y acceso al Umbral. El aviso de privacidad se aceptó para la captura.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="shot" src="screenshots/umbral.png" alt="Formulario de acceso del Umbral" loading="lazy">
+          <div class="card-body">
+            <p class="route">/umbral · Umbral de suscripción</p>
+            <h2>Acceso e identidad</h2>
+            <p>Formulario de registro, selector de idioma y estados de validación local. No crea cuentas reales.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="shot" src="screenshots/inicio.png" alt="Hub de las seis galaxias" loading="lazy">
+          <div class="card-body">
+            <p class="route">/inicio · Hub de galaxias</p>
+            <h2>Seis galaxias</h2>
+            <p>Navegación principal del marketplace, módulos de galaxia y aviso explícito de que los datos en vivo no están conectados.</p>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <p>Build local verificado: <code>pnpm --filter @gws/web typecheck</code> y <code>pnpm --filter @gws/web build</code>. Las capturas no representan una cuenta, suscripción o compra real.</p>
+      <p><a href="https://github.com/eduardoesper75-cloud/GLASS-WORLD-STUDIO">Repositorio GLASS-WORLD-STUDIO</a> · rama <code>feat/GWS-WEB-001-monoplaza-frontend</code></p>
+    </footer>
+  </div>
+</body>
+</html>
