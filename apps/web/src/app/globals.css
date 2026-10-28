@@ -645,7 +645,10 @@ code {
   gap: 18px;
   overflow: hidden;
   padding: 72px var(--page-gutter) 16px;
-  background: var(--ground);
+  background:
+    radial-gradient(120% 90% at 82% 18%, rgba(194, 174, 112, 0.1), transparent 58%),
+    radial-gradient(80% 70% at 8% 82%, rgba(139, 185, 177, 0.05), transparent 62%),
+    var(--ground);
   isolation: isolate;
 }
 
@@ -655,7 +658,18 @@ code {
   inset: 0 0 0 46%;
   background: url('/arte-del-vidrio-en-el-cosmos.png') 63% center / cover no-repeat;
   content: '';
-  opacity: 0.13;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.threshold::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 11, 9, 0.72), transparent 54%, rgba(8, 11, 9, 0.26)),
+    radial-gradient(ellipse at center, transparent 32%, rgba(8, 11, 9, 0.58) 100%);
+  content: '';
   pointer-events: none;
 }
 
@@ -674,9 +688,32 @@ code {
 }
 
 .threshold__panel {
+  position: relative;
+  overflow: hidden;
   padding: clamp(20px, 3.5vw, 48px);
-  border-radius: var(--radius);
-  background: var(--ground-raised);
+  border: 1px solid rgba(194, 174, 112, 0.14);
+  border-radius: calc(var(--radius) + 3px);
+  background: linear-gradient(145deg, rgba(34, 39, 36, 0.94), rgba(21, 25, 23, 0.97));
+  box-shadow:
+    0 30px 90px rgba(4, 6, 5, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.threshold__panel::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 0 46%;
+  background: url('/arte-del-vidrio-en-el-cosmos.png') 78% 18% / cover no-repeat;
+  content: '';
+  opacity: 0.11;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 54%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 54%);
+  pointer-events: none;
+}
+
+.threshold__panel > * {
+  position: relative;
+  z-index: 1;
 }
 
 .threshold__panel h1,
@@ -1739,7 +1776,10 @@ code {
 .galaxy-one,
 .creator-dashboard {
   min-height: 100dvh;
-  background: var(--ground);
+  background:
+    radial-gradient(110% 80% at 88% 8%, rgba(194, 174, 112, 0.09), transparent 56%),
+    radial-gradient(70% 70% at 8% 92%, rgba(139, 185, 177, 0.05), transparent 62%),
+    var(--ground);
 }
 
 .galaxy-one {
@@ -2406,17 +2446,53 @@ code {
 }
 
 .membership-destination {
+  position: relative;
   display: grid;
   min-height: 100dvh;
   align-content: center;
   justify-items: start;
   gap: 18px;
+  overflow: hidden;
   padding: clamp(24px, 8vw, 120px);
-  background: var(--ground);
+  background:
+    radial-gradient(90% 80% at 88% 14%, rgba(194, 174, 112, 0.12), transparent 58%),
+    radial-gradient(70% 70% at 6% 88%, rgba(139, 185, 177, 0.06), transparent 64%),
+    var(--ground);
+  isolation: isolate;
+}
+
+.membership-destination::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 0 38%;
+  background: url('/arte-del-vidrio-en-el-cosmos.png') 72% center / cover no-repeat;
+  content: '';
+  opacity: 0.12;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 42%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 42%);
+  pointer-events: none;
+}
+
+.membership-destination::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(ellipse at 42% 46%, transparent 28%, rgba(8, 11, 9, 0.62) 100%);
+  content: '';
+  pointer-events: none;
+}
+
+.membership-destination > p,
+.membership-destination > h1,
+.membership-destination > section,
+.membership-destination > a {
+  position: relative;
+  z-index: 1;
 }
 
 .membership-destination__top {
   position: absolute;
+  z-index: 2;
   top: 16px;
   right: 16px;
 }
@@ -2437,9 +2513,13 @@ code {
 
 .membership-destination section {
   width: min(100%, 720px);
-  padding: 20px;
-  border-radius: var(--radius);
-  background: var(--tile);
+  padding: 22px;
+  border: 1px solid rgba(194, 174, 112, 0.13);
+  border-radius: calc(var(--radius) + 2px);
+  background: linear-gradient(145deg, rgba(34, 39, 36, 0.9), rgba(27, 32, 29, 0.94));
+  box-shadow:
+    0 24px 60px rgba(4, 6, 5, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
 }
 
 .membership-destination h2 {
@@ -2457,7 +2537,9 @@ code {
 
 .legal {
   min-height: 100dvh;
-  background: var(--ground);
+  background:
+    radial-gradient(90% 75% at 92% 4%, rgba(194, 174, 112, 0.08), transparent 56%),
+    var(--ground);
   color: var(--ink);
 }
 

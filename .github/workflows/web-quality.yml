@@ -1,0 +1,73 @@
+name: Web quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - "feat/**"
+      - "workspace/**"
+      - "docs/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: web-quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  web-quality:
+    name: web-quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build engine packages
+        run: pnpm build:engine
+
+      - name: Typecheck web
+        run: pnpm --filter @gws/web typecheck
+
+      - name: Build web
+        run: pnpm --filter @gws/web build
+
+      - name: Enforce frontend domain boundary
+        shell: bash
+        run: |
+          if git grep -n -i -E 'alianza|alianzas|inversor|inversores|inversionista|inversi[oó]n|investor|alliance|partnership|pitch de invers|financ|capital de|log[ií]stica|logistics|prospecci[oó]n|desarrollador(es)?|multi-agente|multiagent|enjambre|convocatoria|novedades' -- apps/web; then
+            echo "Contenido de alianzas, inversores, logística o convocatorias detectado en apps/web." >&2
+            exit 1
+          fi
+
+      - name: Reject production source maps
+        shell: bash
+        run: |
+          if find apps/web/.next -name '*.map' -print -quit | grep -q .; then
+            echo "Se detectaron mapas de fuente en el artefacto web." >&2
+            exit 1
+          fi
+
+      - name: Reject committed credentials
+        shell: bash
+        run: |
+          if git grep -n -I -E 'gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA |OPENSSH |EC )?PRIVATE KEY-----' -- .; then
+            echo "Posible credencial o clave privada detectada en el repositorio." >&2
+            exit 1
+          fi
