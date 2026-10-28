@@ -44,7 +44,7 @@ pnpm --filter @gws/web typecheck    PASS
 pnpm --filter @gws/web build        PASS
 ```
 
-El build generó 15 rutas. No se ejecutaron pruebas de producto porque el
+El build generó 11 rutas. No se ejecutaron pruebas de producto porque el
 workspace web no tiene suite de pruebas.
 
 ## 4. Previsualización

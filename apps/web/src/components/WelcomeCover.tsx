@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 
-import { ConvocatoriaFlyer } from '@/components/ConvocatoriaFlyer';
 import { useLanguage } from '@/components/LanguageProvider';
 import { getMessage } from '@/lib/i18n';
 
@@ -36,8 +35,6 @@ export function WelcomeCover() {
           <span className="landing__continue-label">{getMessage(language, 'continue')}</span>
         </Link>
       </section>
-
-      <ConvocatoriaFlyer variant="landing" />
     </main>
   );
 }

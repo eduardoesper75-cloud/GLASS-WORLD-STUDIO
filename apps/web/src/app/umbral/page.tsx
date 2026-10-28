@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 
-import { ConvocatoriaFlyer } from '@/components/ConvocatoriaFlyer';
 import { LanguageSelector } from '@/components/LanguageSelector';
 import { useLanguage } from '@/components/LanguageProvider';
 import { dashboardLabels, dashboardModules } from '@/lib/dashboard';
@@ -340,7 +339,6 @@ export default function AccessThresholdPage() {
                 </button>
               </form>
             </div>
-            <ConvocatoriaFlyer variant="threshold" />
           </div>
         )}
 
