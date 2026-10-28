@@ -10,7 +10,7 @@
 
 ## Flujo de trabajo
 
-1. Crea una rama descriptiva: `feat/taxonomia-slumping`, `fix/validacion-id`, `docs/pipeline`.
+1. Crea una rama descriptiva: `feat/GWS-TAX-001-taxonomia-slumping`, `fix/GWS-VAL-001-validacion-id`, `docs/GWS-WORKFLOW-001-pipeline`.
 2. Implementa con cambios pequeños y enfocados.
 3. Antes de commitear:
 

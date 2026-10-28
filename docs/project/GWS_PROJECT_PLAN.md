@@ -57,20 +57,20 @@ es la identidad del repositorio y la presencia del remoto.
 | M2 · Planificación | Plan, backlog, estado y circuito versionables | En revisión |
 | M3 · Saneamiento | Correcciones documentales y defaults explícitos publicados | Integrado |
 | M4 · Publicación | Paquetes exactos aprobados y publicados | Integrado: `1bdafd2` |
-| M5 · Gestión | Backlog versionado; tablero remoto solo con permisos y aprobación | En revisión |
+| M5 · Gestión | Backlog versionado; tablero remoto solo con permisos y aprobación | En revisión (PR #1) |
 | M6 · Alineación | `main` y ramas reconciliadas con evidencia | Bloqueado |
 
 ## 5. Dependencias
 
 - `M1`, `M2` y `M3` dependen de que el Workspace A siga siendo la fuente.
 - `M4` quedó cerrado con la publicación de A, S1, C y P en `1bdafd2`.
-- `M5` depende de la aprobación del lote documental y de permisos para recursos
-  remotos.
+- `M5` está en revisión en el PR #1. La aprobación del lote documental y los
+  permisos para recursos remotos son decisiones separadas.
 - `M6` depende de una estrategia para `main` y de evidencia de ancestro común.
 - La línea base funcional `GWS-GITHUB-CONSTRUCTION-BASELINE-001` no está
   ejecutada; las tareas de producto dependen de ella.
-- La rotación de credenciales y la retirada de registros privados dependen del
-  titular; no se infieren de una publicación saneada.
+- La rotación de credenciales y el saneamiento de archivos locales ya
+  trackeados dependen del titular; no se infieren de una publicación saneada.
 
 ## 6. Criterios de aceptación del circuito
 
@@ -81,7 +81,9 @@ es la identidad del repositorio y la presencia del remoto.
 - Las configuraciones MCP no se publican como operativas.
 - Las pruebas declaradas se ejecutan y las no ejecutadas se informan.
 - El SHA remoto se verifica después del push.
-- Las copias locales de registros privados se preservan.
+- Las modificaciones locales a archivos ya trackeados y la auditoría no
+  trackeada se preservan fuera del PR; la exclusión no las convierte en
+  privadas ni las retira del árbol publicado.
 
 ## 7. Revisión e integración
 
@@ -93,6 +95,9 @@ es la identidad del repositorio y la presencia del remoto.
 6. Integrar sin auto-merge y verificar el SHA remoto.
 7. Actualizar el estado y emitir el parte de sesión.
 
+Estado actual: el lote documental ya está publicado en el PR #1. Los pasos 3 y
+4 se cumplieron; quedan la revisión humana y la decisión de merge.
+
 El circuito completo, los estados de tarea y las reglas de permisos están en
 `GWS_TWO_FRONTS_OPERATING_MODEL.md`.
 
@@ -100,8 +105,10 @@ El circuito completo, los estados de tarea y las reglas de permisos están en
 
 - **S1:** la rotación de las cuatro credenciales históricas sigue pendiente de
   verificación independiente. No se declara resuelta.
-- **Registros privados:** se preservan localmente; su retirada del árbol
-  publicado requiere una tarea separada y aprobación.
+- **Archivos locales ya trackeados:** las modificaciones locales y la auditoría
+  no trackeada se preservan fuera del PR. La exclusión no las convierte en
+  privadas ni las retira del árbol publicado; cualquier saneamiento o retirada
+  requiere una tarea de seguridad separada y aprobación.
 - **Contactos:** no se borran contactos públicos por coincidencia de patrón ni
   se marca aprobación del titular sin evidencia.
 - **MCP:** consumidores y carga efectiva no verificados; configuración fuera de
@@ -119,6 +126,6 @@ titular.
 
 ## 10. Siguiente tarea
 
-`TWO_FRONTS_WORKFLOW_REVIEW`: revisar este circuito y el lote documental antes de
-publicar. Después, resolver la dependencia de línea base antes de iniciar una
-tarea de producto.
+`TWO_FRONTS_WORKFLOW_REVIEW`: revisar el PR #1 y sus siete archivos; no fusionar
+sin aprobación humana. Después, resolver la dependencia de línea base antes de
+iniciar una tarea de producto.

@@ -1,6 +1,6 @@
 # GWS — Circuito operativo de los dos frentes
 
-**Estado:** preparado para revisión; no publicado todavía.
+**Estado:** publicado en el PR #1; en revisión; no fusionado.
 **Fecha:** 2026-10-27
 **Base de trabajo:** `workspace/2026-10-24`
 **Commit base:** `1bdafd2df3057d633c47a998da982ef5aca7830f`

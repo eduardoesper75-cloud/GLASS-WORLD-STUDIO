@@ -16,10 +16,11 @@
 - La rama documental de esta orden nace de `1bdafd2` y contiene únicamente la
   preparación del circuito operativo, las plantillas y la actualización de
   planificación.
-- Los cambios locales privados/config y la auditoría permanecen en el
-  Workspace A; no se copiaron a esta rama.
-- No se publicaron documentos ni se crearon recursos remotos en esta
-  preparación.
+- Los cambios locales de configuración, los archivos ya trackeados y la
+  auditoría no trackeada permanecen en el Workspace A; no se copiaron a esta
+  rama.
+- La rama documental fue publicada en el PR #1; el PR está abierto y no
+  fusionado. No se crearon issues, Project, workflows ni reglas de protección.
 
 ## 2. Línea base funcional
 
@@ -28,13 +29,23 @@ documentos, commits, issues o PRs consultados. Se mantiene como dependencia.
 Las tareas de construcción propuestas no se inician hasta que esa línea base
 esté disponible o el titular autorice un alcance alternativo.
 
+### 2.1 Inventario y pruebas
+
+- **Inventario estático:** documentado en el informe de revisión
+  `GWS-PR1-AND-PRODUCT-BASELINE-001`; cubre rutas, paquetes, datos,
+  autenticación, persistencia, pruebas e integraciones.
+- **Validación ejecutable:** no ejecutada. `node_modules` no está presente y no
+  se instalaron dependencias en esta revisión.
+- **Línea base formal:** no completada. El inventario no reemplaza la tarea
+  `GWS-GITHUB-CONSTRUCTION-BASELINE-001` ni una prueba de producto.
+
 ## 3. Revisión de GitHub
 
 Inventario consultado en el remoto:
 
 - 0 issues abiertos.
-- 0 PRs abiertos.
-- No existe `.github` en el remoto al momento de la consulta.
+- 1 PR abierto: #1, contra `workspace/2026-10-24`, no fusionado.
+- La base no contiene `.github`; el PR #1 incorpora dos plantillas de GitHub.
 - 0 workflows de GitHub Actions.
 - No se observó un Project asociado al repositorio.
 - La protección de ramas no pudo verificarse sin autenticación; no se asume
@@ -46,10 +57,11 @@ protección.
 
 ## 4. Bloqueos
 
-- **Publicación documental:** pendiente de aprobación del lote exacto.
+- **Publicación documental:** publicada en el PR #1; revisión y merge pendientes.
 - **Recursos GitHub:** requieren aprobación separada; no se crean en esta orden.
 - **Seguridad histórica:** falta verificación independiente de la revocación;
-  registros privados preservados.
+  archivos locales preservados. La exclusión del PR no los convierte en privados
+  ni los retira del árbol publicado.
 - **MCP:** consumidor y carga efectiva no verificados.
 - **Harness:** no hay backend de inferencia autorizado.
 - **`main`:** la `main` local es ancestro de la rama; `origin/main` no comparte
@@ -63,12 +75,13 @@ protección.
   tokens ni contraseñas; solo referencias a las reglas de revisión.
 - Validación de la plantilla de issue: revisión manual de la sintaxis YAML; no
   hay parser YAML instalado en el entorno.
-- No se ejecutó build de producto porque esta orden no modifica código de
-  producto.
+- No se ejecutó build ni typecheck de producto. Tampoco se ejecutaron pruebas
+  de producto; esta orden no modifica código y las dependencias no están
+  instaladas.
 
 ## 6. Decisiones pendientes
 
-1. Aprobar o rechazar la publicación de este lote documental.
+1. Revisar el PR #1 y decidir si se fusiona; no hay aprobación formal registrada.
 2. Confirmar si se completa primero `GWS-GITHUB-CONSTRUCTION-BASELINE-001`.
 3. Aprobar o rechazar la creación futura de issues, Project y protecciones.
 4. Mantener separadas las decisiones de seguridad histórica, MCP, Harness y
@@ -76,5 +89,6 @@ protección.
 
 ## 7. Siguiente tarea
 
-La siguiente entrada es `TWO_FRONTS_WORKFLOW_REVIEW`. No se inicia una tarea de
-producto hasta resolver la dependencia de línea base.
+La siguiente entrada es `TWO_FRONTS_WORKFLOW_REVIEW`: revisar el PR #1 y no
+fusionar sin aprobación humana. No se inicia una tarea de producto hasta
+resolver la dependencia de línea base.

@@ -41,23 +41,26 @@ Máximo cinco tareas. Todas dependen de la línea base funcional y permanecen en
 
 | ID | Objetivo | Módulo | Prioridad | Dependencias | Estado |
 |---|---|---|---|---|---|
-| `GWS-WEB-001` | Consumir la taxonomía canónica de `@gws/taxonomy` en la web en lugar de datos cableados. | `apps/web` · `packages/taxonomy` | P1 | Línea base | Backlog |
-| `GWS-WEB-002` | Renderizar las Fichas de Curaduría publicadas desde `data/curated` con el contrato de `@gws/schemas`. | `apps/web` · `data/curated` | P1 | Línea base; `GWS-WEB-001` | Backlog |
+| `GWS-WEB-001` | Conectar el adaptador existente de la taxonomía canónica con la UI, eliminar la duplicación de IDs y resolver los nombres en siete idiomas; no recrear el adaptador. | `apps/web` · `packages/taxonomy` | P1 | Línea base; decisión de idiomas | Backlog |
+| `GWS-WEB-002` | Renderizar las fichas disponibles de `data/curated` con el contrato de `@gws/schemas` y un filtro de estado explícito; definir una ficha de prueba publicada. | `apps/web` · `data/curated` | P1 | Línea base; decisión de datos | Backlog |
 | `GWS-WEB-003` | Implementar la ruta `/taxonomia` usando la taxonomía canónica. | `apps/web` | P2 | Línea base; `GWS-WEB-001` | Backlog |
 | `GWS-WEB-004` | Implementar la ruta `/ficha/[id]` para fichas publicadas. | `apps/web` | P2 | Línea base; `GWS-WEB-002` | Backlog |
-| `GWS-WEB-005` | Definir la ruta `/dashboard` y su relación con `/professionals/dashboard`, sin duplicar estado local. | `apps/web` | P2 | Línea base; decisión de UX | Backlog |
+| `GWS-WEB-005` | Definir la ruta `/dashboard` y su relación con las superficies existentes, sin duplicar estado local; decisión de UX previa. | `apps/web` | P2 | Línea base; decisión de UX | Backlog |
 
 ### Tarea recomendada para comenzar, después de la línea base
 
-`GWS-WEB-001` · Consumir la taxonomía canónica.
+`GWS-WEB-001` · Conectar la taxonomía canónica (reformulada).
 
-Valor: elimina una duplicación de datos, establece una sola fuente de verdad y
-desbloquea las rutas de taxonomía y fichas. Es la tarea de menor ambigüedad para
-empezar después de confirmar la línea base; no requiere autenticación ni
-persistencia de servidor.
+Valor: elimina la duplicación de IDs y nombres, usa el adaptador existente y
+desbloquea la ruta `/taxonomia`. Requiere una decisión explícita sobre los siete
+idiomas y no requiere autenticación ni persistencia de servidor.
 
 No se recomienda iniciar `GWS-WEB-002` a `GWS-WEB-005` antes de confirmar la
-línea base y revisar el alcance con el titular.
+línea base y revisar el alcance con el titular. La ficha existente en
+`data/curated` está en estado `draft`; no hay fichas publicadas.
+
+El manifiesto de alcance de `GWS-WEB-001` y la decisión de traducciones están en
+[`GWS_WEB_001_MANIFEST.md`](GWS_WEB_001_MANIFEST.md).
 
 ## 4. Registro de tareas base
 
