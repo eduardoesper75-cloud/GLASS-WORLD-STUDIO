@@ -1,0 +1,116 @@
+name: Tarea GWS
+description: Registrar una tarea de construcción o mantenimiento de GWS.
+title: "[TASK] "
+labels: []
+body:
+  - type: input
+    id: task-id
+    attributes:
+      label: ID de tarea
+      description: "Formato: GWS-<módulo>-<número>, por ejemplo GWS-WEB-001."
+      placeholder: "GWS-WEB-001"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema
+      description: Qué necesidad o problema concreto se atiende.
+    validations:
+      required: true
+
+  - type: input
+    id: user
+    attributes:
+      label: Usuario beneficiado
+      description: Persona o rol que recibe el valor.
+    validations:
+      required: true
+
+  - type: input
+    id: module
+    attributes:
+      label: Bloque o módulo
+      description: Área del repositorio o del producto.
+      placeholder: "apps/web · packages/taxonomy"
+    validations:
+      required: true
+
+  - type: textarea
+    id: included
+    attributes:
+      label: Alcance incluido
+      description: Qué entra en esta tarea.
+    validations:
+      required: true
+
+  - type: textarea
+    id: excluded
+    attributes:
+      label: Alcance excluido
+      description: Qué no entra y queda para otra tarea.
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencias
+      description: Tareas, decisiones o recursos necesarios.
+    validations:
+      required: true
+
+  - type: textarea
+    id: files
+    attributes:
+      label: Archivos previstos
+      description: Rutas que se espera tocar. No incluir datos privados.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Criterios de aceptación
+      description: Condiciones verificables para cerrar la tarea.
+    validations:
+      required: true
+
+  - type: textarea
+    id: tests
+    attributes:
+      label: Pruebas
+      description: Pruebas previstas y evidencia esperada.
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Riesgos
+      description: Riesgos técnicos, de seguridad o de producto.
+    validations:
+      required: true
+
+  - type: input
+    id: owner
+    attributes:
+      label: Responsable
+      description: Persona o rol responsable.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: state
+    attributes:
+      label: Estado
+      options:
+        - Backlog
+        - Preparado
+        - En curso
+        - En revisión
+        - Bloqueado
+        - Integrado
+    validations:
+      required: true

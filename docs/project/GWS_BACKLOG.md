@@ -1,106 +1,112 @@
-# GWS · Backlog inicial
+# GWS · Backlog y líneas de trabajo
 
-**Corte:** 2026-10-26, previo a la publicación.
-Estados permitidos: **Propuesta**, **Autorizada**, **En curso**, **Bloqueada**,
-**Validada**, **Integrada**. El tablero remoto no se creó: este backlog es la
-fuente versionada hasta que exista una aprobación y permisos suficientes.
+**Corte:** 2026-10-27
+**Base de trabajo:** `workspace/2026-10-24`
+**Commit base verificado:** `1bdafd2df3057d633c47a998da982ef5aca7830f`
+**Circuito:** [`GWS_TWO_FRONTS_OPERATING_MODEL.md`](GWS_TWO_FRONTS_OPERATING_MODEL.md)
+**Remoto:** `https://github.com/eduardoesper75-cloud/GLASS-WORLD-STUDIO.git`
 
-## 1. Tareas
+Estados: **Backlog**, **Preparado**, **En curso**, **En revisión**, **Bloqueado**,
+**Integrado**. «Validado» es un resultado de comprobaciones, no un estado.
 
-| ID | Objetivo | Bloque / galaxia | Prioridad | Responsable propuesto | Dependencias | Estado | Evidencia de cierre |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| GWS-BASE-001 | Resolver y registrar el workspace canónico. | Base / transversal | P0 | Operador técnico | Comparación A/B | Validada | Workspace A contiene Git, remoto y rama; B observado no contiene GWS. |
-| GWS-SYNC-001 | Publicar el avance local aprobado. | Base / publicación | P0 | Titular + operador | Aprobación del paquete exacto | En curso | A y S1 publicados en `e457dfb`; C y P no publicados; sin fuerza. |
-| GWS-SEC-001 | Registrar el estado de revocación de credenciales, sin valores. | Seguridad / transversal | P0 | Titular | Confirmación del titular | Validada | Titular confirmó revocación; sin verificación independiente. |
-| GWS-SEC-002 | Retirar o redactar registros operativos del árbol público, según aprobación. | Seguridad / publicación | P0 | Titular + operador | Aprobación y copias locales | Propuesta | Propuesta de retirada preparada; no ejecutada. |
-| GWS-GOV-001 | Versionar las 20 definiciones de agentes y los documentos asociados. | Gobernanza / transversal | P1 | Operador técnico | Revisión del diff | Integrada | Commit `75a736d`; remoto `e457dfb`; agentes no activados. |
-| GWS-PLAN-001 | Establecer tablero y rutina de partes. | Planificación / transversal | P1 | Operador técnico | Aprobación de documentos | En curso | Plan, backlog y estado preparados; no publicados; tablero pendiente. |
-| GWS-G1-001 | Consolidar investigación G1 y fuentes disponibles. | Investigación / G1 | P2 | Titular + investigación | Fuentes y alcance | Propuesta | Sin fuentes nuevas verificadas en este registro. |
-| GWS-UX-001 | Revisar decisiones pendientes del entorno sensorial. | Experiencia / UX | P2 | Titular + diseño | Decisiones de producto | Propuesta | Requiere revisión de alcance; no se inventan galaxias ni satélites. |
-| GWS-HARNESS-001 | Resolver backend autorizado para inferencia real. | Harness / infraestructura | P1 | Titular + operador | Proveedor y autorización | Bloqueada | No hay backend autorizado ni evidencia de inferencia real. |
-| GWS-MCP-001 | Identificar consumidores y resolver configuración MCP en tarea separada. | MCP / infraestructura | P2 | Operador técnico | Consumidor y carga verificada | Bloqueada | Configuraciones no publicadas; carga efectiva no verificada. |
+## 1. Línea base funcional
 
-## 2. Rutina de los dos frentes
+La tarea `GWS-GITHUB-CONSTRUCTION-BASELINE-001` **no tiene evidencia de
+ejecución** en este repositorio: no aparece en documentos, commits, issues ni
+PRs consultados. Se mantiene como dependencia y no se repite dentro de esta
+orden.
 
-1. Identificar el ID de tarea.
-2. Registrar rama y commit base.
-3. Delimitar archivos y criterio de aceptación.
-4. Ejecutar una unidad de trabajo.
-5. Probar.
-6. Revisar.
-7. Publicar el cambio autorizado.
-8. Actualizar estado.
-9. Emitir un parte breve.
+Por ese motivo, las tareas de producto siguientes están propuestas, no
+aprobadas ni preparadas para implementación. No se inicia ninguna hasta que la
+línea base funcional esté disponible o el titular autorice expresamente un
+alcance alternativo.
 
-No se mantienen dos operadores editando los mismos archivos sin coordinación.
-No se activan agentes sin asignación y permisos explícitos. No se declara
-sincronización continua si no existe automatización verificada.
+## 2. Líneas separadas
 
-## 3. Borradores de issues (sin crear)
+| Línea | Estado | Siguiente paso | Dependencia |
+|---|---|---|---|
+| Construcción de producto | Bloqueada por línea base | Confirmar baseline y priorizar | `GWS-GITHUB-CONSTRUCTION-BASELINE-001` |
+| Seguridad histórica y credenciales | Bloqueada | Decisión del titular y verificación independiente | Registros privados y confirmación del titular |
+| Configuración MCP | Bloqueada | Identificar consumidor y verificar carga efectiva | Tarea MCP separada |
+| Inferencia real de Harness | Bloqueada | Autorización de backend y proveedor | Decisión del titular |
+| Transición futura de `main` | Bloqueada | Definir ancestro común y estrategia de base | Aprobación del titular |
 
-Estos textos son para aprobación; no se publicaron en GitHub.
+Un bloqueo de estas líneas no impide una tarea independiente que sea segura y
+esté aprobada.
 
-### GWS-BASE-001
+## 3. Backlog de construcción propuesto
 
-**Título:** `GWS-BASE-001 · Registrar workspace canónico`
-**Cuerpo:** Confirmar el workspace con repositorio Git y remoto como fuente
-canónica. Documentar que la ruta alternativa no contiene el proyecto GWS y
-preservar ambas ubicaciones. Criterio: evidencia de raíz Git, rama, HEAD y
-remoto; sin copiar carpetas completas.
+Máximo cinco tareas. Todas dependen de la línea base funcional y permanecen en
+**Backlog**. No son requisitos de producto aprobados.
 
-### GWS-SYNC-001
+| ID | Objetivo | Módulo | Prioridad | Dependencias | Estado |
+|---|---|---|---|---|---|
+| `GWS-WEB-001` | Consumir la taxonomía canónica de `@gws/taxonomy` en la web en lugar de datos cableados. | `apps/web` · `packages/taxonomy` | P1 | Línea base | Backlog |
+| `GWS-WEB-002` | Renderizar las Fichas de Curaduría publicadas desde `data/curated` con el contrato de `@gws/schemas`. | `apps/web` · `data/curated` | P1 | Línea base; `GWS-WEB-001` | Backlog |
+| `GWS-WEB-003` | Implementar la ruta `/taxonomia` usando la taxonomía canónica. | `apps/web` | P2 | Línea base; `GWS-WEB-001` | Backlog |
+| `GWS-WEB-004` | Implementar la ruta `/ficha/[id]` para fichas publicadas. | `apps/web` | P2 | Línea base; `GWS-WEB-002` | Backlog |
+| `GWS-WEB-005` | Definir la ruta `/dashboard` y su relación con `/professionals/dashboard`, sin duplicar estado local. | `apps/web` | P2 | Línea base; decisión de UX | Backlog |
 
-**Título:** `GWS-SYNC-001 · Publicar avance local aprobado`
-**Cuerpo:** Publicar únicamente los paquetes aprobados desde la rama de
-integración. Verificar diff staged, ejecutar pruebas estáticas y comprobar el SHA
-remoto. No usar `git add .`, fuerza ni reescritura de historial.
+### Tarea recomendada para comenzar, después de la línea base
 
-### GWS-SEC-001
+`GWS-WEB-001` · Consumir la taxonomía canónica.
 
-**Título:** `GWS-SEC-001 · Registrar revocación de credenciales`
-**Cuerpo:** Registrar el estado de las cuatro credenciales históricas sin incluir
-valores. No declarar rotación hasta contar con confirmación del titular.
+Valor: elimina una duplicación de datos, establece una sola fuente de verdad y
+desbloquea las rutas de taxonomía y fichas. Es la tarea de menor ambigüedad para
+empezar después de confirmar la línea base; no requiere autenticación ni
+persistencia de servidor.
 
-### GWS-SEC-002
+No se recomienda iniciar `GWS-WEB-002` a `GWS-WEB-005` antes de confirmar la
+línea base y revisar el alcance con el titular.
 
-**Título:** `GWS-SEC-002 · Retirar o redactar registros operativos`
-**Cuerpo:** Preparar la retirada del árbol publicado de los registros aprobados,
-preservando copias locales. Excluirlos de un commit no los vuelve privados ni
-elimina el historial. No ejecutar sin aprobación.
+## 4. Registro de tareas base
 
-### GWS-GOV-001
+| ID | Resultado | Estado | Evidencia |
+|---|---|---|---|
+| `GWS-BASE-001` | Workspace canónico identificado y documentado. | Integrado | Workspace A con Git, remoto y rama; D no es fuente GWS. |
+| `GWS-SYNC-001` | Paquetes A, S1, C y P publicados sin fuerza. | Integrado | Remoto `workspace/2026-10-24` en `1bdafd2`. |
+| `GWS-GOV-001` | Gobernanza de agentes versionada sin activarlos. | Integrado | Commit `75a736d`. |
+| `GWS-PLAN-001` | Plan, backlog, estado y circuito de trabajo actualizados. | En revisión | Esta rama documental. |
+| `GWS-SEC-001` | Estado de credenciales registrado sin valores. | En revisión | Confirmación del titular; sin verificación independiente. |
+| `GWS-SEC-002` | Tratamiento de registros privados. | Backlog | Requiere aprobación y copias locales. |
+| `GWS-MCP-001` | Configuración MCP. | Bloqueado | Consumidor y carga efectiva no verificados. |
+| `GWS-HARNESS-001` | Backend de inferencia real. | Bloqueado | Sin backend autorizado. |
 
-**Título:** `GWS-GOV-001 · Versionar gobernanza de agentes`
-**Cuerpo:** Incorporar las 20 definiciones y los documentos asociados sin
-activar agentes ni servicios. Verificar que no haya cambios posteriores a la
-revisión.
+## 5. Propuestas no priorizadas
 
-### GWS-PLAN-001
+Estas propuestas no forman parte del backlog activo de construcción:
 
-**Título:** `GWS-PLAN-001 · Planificación y rutina de partes`
-**Cuerpo:** Versionar plan, backlog y estado. El tablero remoto queda pendiente
-de permisos y aprobación agrupada.
+- `GWS-G1-001`: consolidar investigación de Galaxia 1.
+- `GWS-UX-001`: revisar decisiones del entorno sensorial.
 
-### GWS-G1-001
+No se convierten en requisitos aprobados ni se implementan en esta orden.
 
-**Título:** `GWS-G1-001 · Consolidar investigación G1`
-**Cuerpo:** Reunir fuentes disponibles y separar propuestas de requisitos
-aprobados. No inventar alcance de galaxias o satélites.
+## 6. Tablero único propuesto
 
-### GWS-UX-001
+Si se crea un tablero de GitHub, será uno solo para GWS, con estas columnas:
 
-**Título:** `GWS-UX-001 · Revisar decisiones del entorno sensorial`
-**Cuerpo:** Revisar decisiones pendientes de experiencia y accesibilidad con el
-titular. No convertir propuestas conceptuales en requisitos aprobados.
+`Backlog` · `Preparado` · `En curso` · `En revisión` · `Bloqueado` · `Integrado`
 
-### GWS-HARNESS-001
+Vistas sugeridas: tareas activas, bloqueos y separación por línea de trabajo.
+El tablero **no se creó**; requiere aprobación separada.
 
-**Título:** `GWS-HARNESS-001 · Resolver backend de inferencia`
-**Cuerpo:** Identificar el backend autorizado para inferencia real y evitar
-repetir simulaciones sin cambios relevantes. Documentar límites y aprobación.
+## 7. Issues propuestos
 
-### GWS-MCP-001
+No hay issues abiertos en el remoto. Los títulos propuestos para las cinco
+tareas son:
 
-**Título:** `GWS-MCP-001 · Resolver configuración MCP`
-**Cuerpo:** Identificar consumidores y verificar la carga efectiva antes de
-publicar configuración operativa. Mantener placeholders fuera de la entrega.
+1. `GWS-WEB-001 · Consumir taxonomía canónica en la web`
+2. `GWS-WEB-002 · Renderizar fichas de curaduría publicadas`
+3. `GWS-WEB-003 · Implementar ruta /taxonomia`
+4. `GWS-WEB-004 · Implementar ruta /ficha/[id]`
+5. `GWS-WEB-005 · Definir ruta /dashboard`
+
+No se crearon issues. Los cuerpos deben completarse con la plantilla de tarea y
+no deben incluir datos privados.
+
+## 8. Regla de avance
+
+El orden es: confirmar la línea base, preparar una sola tarea, abrir un PR
+contra `workspace/2026-10-24`, revisar, integrar y actualizar este backlog. No
+se publican cambios privados, no se activan agentes por incorporar definiciones,
+no hay auto-merge y el despliegue no es un requisito implícito.

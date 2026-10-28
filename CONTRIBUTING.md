@@ -33,6 +33,22 @@
 
    Ejemplo: `feat(taxonomy): añade nodo flame-marbling`.
 
+## Circuito de los dos frentes
+
+El trabajo local y la revisión en GitHub forman un solo proyecto. La base
+compartida es `workspace/2026-10-24`; cada tarea usa una rama corta con su ID
+(`feat/<task-id>-<descripcion>`, `fix/...`, `docs/...` o `chore/...`) y se
+revisa mediante un PR contra esa base, no contra `main`.
+
+Antes de empezar, verificá la base y el estado del árbol. Una tarea de
+implementación activa por operador; no edites los mismos archivos desde dos
+frentes sin coordinación. No publiques registros privados ni configuraciones
+excluidas. No actives agentes por incorporar sus definiciones. No uses
+auto-merge y no consideres el despliegue un requisito implícito.
+
+El ciclo completo, los estados, el parte de sesión y los permisos están en
+[`docs/project/GWS_TWO_FRONTS_OPERATING_MODEL.md`](docs/project/GWS_TWO_FRONTS_OPERATING_MODEL.md).
+
 ## Dónde va cada cambio
 
 | Cambio | Ubicación |
