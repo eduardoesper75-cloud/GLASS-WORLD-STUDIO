@@ -45,6 +45,9 @@ jobs:
       - name: Typecheck web
         run: pnpm --filter @gws/web typecheck
 
+      - name: Verify canonical taxonomy projection
+        run: pnpm --filter @gws/taxonomy exec tsx --tsconfig ../../apps/web/tsconfig.json ../../apps/web/scripts/verify-taxonomy-view.ts
+
       - name: Build web
         run: pnpm --filter @gws/web build
 
