@@ -14,7 +14,7 @@ import {
   saveMembershipPreferences,
   type MembershipPreferences,
 } from '@/lib/membership';
-import { membershipSpecialties } from '@/lib/specialties';
+import { selectLocalizedLabel, type TaxonomyView } from '@/lib/taxonomy-contract';
 
 const copy: Record<
   LanguageCode,
@@ -232,7 +232,7 @@ const copy: Record<
 const avatarSymbols = ['M', 'F', 'K', 'A'];
 const galaxies = dashboardModules.filter((module) => module.category === 'galaxy');
 
-export function GalaxyOneDashboard() {
+export function GalaxyOneDashboard({ taxonomyView }: { taxonomyView: TaxonomyView }) {
   const { language } = useLanguage();
   const router = useRouter();
   const labels = copy[language];
@@ -247,7 +247,9 @@ export function GalaxyOneDashboard() {
 
   useEffect(() => {
     try {
-      const storedPreferences = readMembershipPreferences();
+      const storedPreferences = readMembershipPreferences(
+        taxonomyView.specialties.map((specialty) => specialty.id),
+      );
       if (!storedPreferences || !storedPreferences.galaxies.includes('masters')) {
         setRedirecting(true);
         router.replace('/umbral');
@@ -266,7 +268,7 @@ export function GalaxyOneDashboard() {
     } finally {
       setLoading(false);
     }
-  }, [labels.avatarError, router]);
+  }, [labels.avatarError, router, taxonomyView]);
 
   useEffect(() => {
     if (!showWelcome) {
@@ -325,7 +327,10 @@ export function GalaxyOneDashboard() {
 
     try {
       const updatedPreferences = { ...preferences, avatar: selectedAvatar };
-      saveMembershipPreferences(updatedPreferences);
+      saveMembershipPreferences(
+        updatedPreferences,
+        taxonomyView.specialties.map((specialty) => specialty.id),
+      );
       setPreferences(updatedPreferences);
       setWelcomeComplete(true);
       setError('');
@@ -349,7 +354,7 @@ export function GalaxyOneDashboard() {
   }
 
   const masterGalaxy = galaxies.find((module) => module.id === 'masters');
-  const masteredTechniques = membershipSpecialties.filter((specialty) =>
+  const masteredTechniques = taxonomyView.specialties.filter((specialty) =>
     preferences.specialtiesByGalaxy.masters?.includes(specialty.id),
   );
 
@@ -392,7 +397,7 @@ export function GalaxyOneDashboard() {
           {masteredTechniques.length > 0 && (
             <ul className="galaxy-one__techniques" aria-label={labels.resources}>
               {masteredTechniques.slice(0, 4).map((technique) => (
-                <li key={technique.id}>{technique.name[language]}</li>
+                <li key={technique.id}>{selectLocalizedLabel(technique.name, language)}</li>
               ))}
             </ul>
           )}

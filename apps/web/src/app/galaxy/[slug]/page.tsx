@@ -4,6 +4,7 @@ import { GalaxyOneDashboard } from '@/components/GalaxyOneDashboard';
 import { OtherGalaxyDashboard } from '@/components/OtherMembershipDashboards';
 import { dashboardModules } from '@/lib/dashboard';
 import { galaxyPathById } from '@/lib/membership';
+import { getTaxonomyView } from '@/lib/taxonomy';
 
 const galaxyIdBySlug = Object.fromEntries(
   Object.entries(galaxyPathById).map(([id, path]) => [path.split('/').at(-1), id]),
@@ -21,7 +22,8 @@ export default async function GalaxyDashboardPage({
   }
 
   if (galaxyId === 'masters') {
-    return <GalaxyOneDashboard />;
+    const taxonomyView = getTaxonomyView();
+    return <GalaxyOneDashboard taxonomyView={taxonomyView} />;
   }
 
   const module = dashboardModules.find((item) => item.id === galaxyId);

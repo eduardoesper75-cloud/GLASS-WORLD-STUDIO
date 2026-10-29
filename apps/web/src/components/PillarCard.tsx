@@ -1,4 +1,4 @@
-import type { PillarView } from '@/lib/taxonomy';
+import type { PillarView } from '@/lib/taxonomy-contract';
 
 /** Tarjeta de un pilar técnico, alimentada por `@gws/taxonomy`. */
 export function PillarCard({ pillar }: { pillar: PillarView }) {

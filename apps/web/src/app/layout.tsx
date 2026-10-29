@@ -7,7 +7,6 @@ import { SiteFooter } from '@/components/SiteFooter';
 import { site } from '@/lib/site';
 
 import './globals.css';
-import './announcements.css';
 
 export const metadata: Metadata = {
   title: {

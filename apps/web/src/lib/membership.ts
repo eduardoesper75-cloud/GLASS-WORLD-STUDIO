@@ -1,5 +1,4 @@
 import { dashboardModules } from '@/lib/dashboard';
-import { membershipSpecialties } from '@/lib/specialties';
 
 export const MEMBERSHIP_STORAGE_KEY = 'gws-membership-preferences';
 
@@ -38,28 +37,39 @@ const galaxyIds = dashboardModules
 const satelliteIds = dashboardModules
   .filter((module) => module.category === 'satellite')
   .map((module) => module.id);
-const specialtyIds = membershipSpecialties.map((specialty) => specialty.id);
 
-function isStringArray(value: unknown, allowedValues: readonly string[]): value is string[] {
+function isUniqueStringArray(value: unknown): value is string[] {
   return (
     Array.isArray(value) &&
     new Set(value).size === value.length &&
-    value.every((item): item is string => typeof item === 'string' && allowedValues.includes(item))
+    value.every((item): item is string => typeof item === 'string')
+  );
+}
+
+function isStringArray(value: unknown, allowedValues: readonly string[]): value is string[] {
+  return (
+    isUniqueStringArray(value) && value.every((item) => allowedValues.includes(item))
   );
 }
 
 function isSpecialtyMap(
   value: unknown,
   selectedGalaxyIds: string[],
+  allowedSpecialtyIds?: readonly string[],
 ): value is Record<string, string[]> {
   return (
     typeof value === 'object' &&
     value !== null &&
     !Array.isArray(value) &&
-    Object.entries(value).every(
-      ([galaxyId, selectedIds]) =>
-        selectedGalaxyIds.includes(galaxyId) && isStringArray(selectedIds, specialtyIds),
-    )
+    Object.entries(value).every(([galaxyId, selectedIds]) => {
+      if (!selectedGalaxyIds.includes(galaxyId)) {
+        return false;
+      }
+
+      return allowedSpecialtyIds
+        ? isStringArray(selectedIds, allowedSpecialtyIds)
+        : isUniqueStringArray(selectedIds);
+    })
   );
 }
 
@@ -82,7 +92,9 @@ export function createMembershipPreferences(selection: {
   };
 }
 
-export function readMembershipPreferences(): MembershipPreferences | null {
+export function readMembershipPreferences(
+  allowedSpecialtyIds?: readonly string[],
+): MembershipPreferences | null {
   const stored = window.localStorage.getItem(MEMBERSHIP_STORAGE_KEY);
   if (!stored) {
     return null;
@@ -104,7 +116,7 @@ export function readMembershipPreferences(): MembershipPreferences | null {
     'professionalProfiles' in value ? value.professionalProfiles : [];
 
   if (
-    !isSpecialtyMap(specialtiesByGalaxy, value.galaxies) ||
+    !isSpecialtyMap(specialtiesByGalaxy, value.galaxies, allowedSpecialtyIds) ||
     !isStringArray(satellites, satelliteIds) ||
     !isStringArray(professionalProfiles, professionalProfileIds)
   ) {
@@ -125,6 +137,28 @@ export function readMembershipPreferences(): MembershipPreferences | null {
   });
 }
 
-export function saveMembershipPreferences(preferences: MembershipPreferences): void {
+export function validateMembershipPreferences(
+  preferences: MembershipPreferences,
+  allowedSpecialtyIds?: readonly string[],
+): void {
+  if (
+    !isStringArray(preferences.galaxies, galaxyIds) ||
+    !isSpecialtyMap(
+      preferences.specialtiesByGalaxy,
+      preferences.galaxies,
+      allowedSpecialtyIds,
+    ) ||
+    !isStringArray(preferences.satellites, satelliteIds) ||
+    !isStringArray(preferences.professionalProfiles, professionalProfileIds)
+  ) {
+    throw new Error('Membership preferences have an invalid format.');
+  }
+}
+
+export function saveMembershipPreferences(
+  preferences: MembershipPreferences,
+  allowedSpecialtyIds?: readonly string[],
+): void {
+  validateMembershipPreferences(preferences, allowedSpecialtyIds);
   window.localStorage.setItem(MEMBERSHIP_STORAGE_KEY, JSON.stringify(preferences));
 }
